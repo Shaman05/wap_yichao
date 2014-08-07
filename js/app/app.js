@@ -1,4 +1,4 @@
-//配置require
+﻿//配置require
 require.config({
   baseUrl: './js',
   urlArgs: 't=1407419714540',
