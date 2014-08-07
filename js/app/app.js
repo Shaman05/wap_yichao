@@ -1,7 +1,7 @@
 //配置require
 require.config({
   baseUrl: './js',
-  urlArgs: 't=1407398345062',
+  urlArgs: 't=1407405693010',
   paths: {
     //Core Libraries
     'zepto': 'lib/zepto',
