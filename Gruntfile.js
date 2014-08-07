@@ -38,8 +38,8 @@ module.exports = function(grunt) {
             ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
 
     clean: {
-      build: ['./.build'],
-      dist: ['./dist/*']
+      dist: ['./dist/*'],
+      build: ['./.build']
     },
 
     concat: {
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
           './css/pro.css',
           './css/main.css'
         ],
-        dest: './.build/css/app.min.css'
+        dest: './.build/css/app.css'
       }
     },
 
@@ -58,16 +58,14 @@ module.exports = function(grunt) {
       },
       app: {
         files: {
-          'app.min.css': './.build/css/app.min.css'
+          './dist/css/app.min.css': './.build/css/app.css'
         }
       }
     },
 
     copy: {
       css: {
-        files: {
-          './dist/css/app.min.css': ['./.build/css/app.min.css']
-        }
+        src: './.build/css/app.min.css'
       }
     }
 
@@ -91,10 +89,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch'); // 监听文件变化
   grunt.loadNpmTasks('grunt-zip'); // 压缩文件和解压文件*/
 
-  // 合并lib中的组建
-  grunt.registerTask('default', ['clean', 'concat:css', 'cssmin', 'copy']);
-
-  // 发布任务
-  //grunt.registerTask('publish', ['copy']);
+  grunt.registerTask('default', [
+    'clean:dist',
+    'concat:css',
+    'cssmin',
+    'copy',
+    'clean:build'
+  ]);
 
 };

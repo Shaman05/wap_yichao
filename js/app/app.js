@@ -1,18 +1,17 @@
 //配置require
 require.config({
   baseUrl: './js',
-  urlArgs: 't=1407405693010',
+  urlArgs: 't=1407419714540',
   paths: {
     //Core Libraries
     'zepto': 'lib/zepto',
     'underscore': 'lib/underscore',
     'backbone': 'lib/backbone',
-    //base
-    'config': 'app/base/config',
     'artTemplate': 'lib/template',
-    'helper': 'app/base/helper',
 
     /******************************app*****************************/
+    'config': 'app/config',
+    'helper': 'app/common/helper',
     'router': 'app/router/router'
   },
   //配置依赖项
@@ -36,6 +35,8 @@ require.config({
   }
 });
 
-require(['backbone'], function (Backbone) {
+require(['backbone', 'artTemplate', 'underscore'], function (Backbone, t, _) {
   console.log(Backbone);
+  console.log(t);
+  console.log(_);
 });
