@@ -6,6 +6,7 @@ Thumbs.db
 .svn
 .CVS
 .cache
+.build
 *.log
 *.sass-cache
 dist
