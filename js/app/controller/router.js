@@ -27,9 +27,11 @@ define(['util'], function(util) {
     },
 
     action: function(hash) {
-      hash = hash || 'ac=home';
+      hash = hash || APP.config.homeAction;
       var params = util.getParam(hash);
       var ac = params['ac'] || '404';
+      APP.ac = ac;
+      ac = ac.replace(/\./g, '/');
       require(['app/view/' + ac], function(view){
         new view(params);
       });

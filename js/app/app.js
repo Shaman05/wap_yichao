@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created with JetBrains PhpStorm.
  * User: Chen Chao
  * Date: 14-8-7
@@ -9,7 +9,7 @@
 
 require.config({
   baseUrl: './js',
-  urlArgs: 't=1407500477149',
+  urlArgs: 't=1407505051006',
   waitSeconds: 200,
   paths: {
     /*****Core*****/
@@ -46,12 +46,16 @@ require.config({
       'exports': 'Backbone'
     },
     'router': {
-      'deps': ['backbone'],
+      'deps': ['backbone', 'config'],
       'exports': 'router'
     }
   }
 });
 
-require(['router'], function (router) {
+require(['router', 'artTemplate'], function (router, artTemplate) {
+
+  _.artTemplate = artTemplate;
+  APP.config.template.call(_);
+
   new router();
 });

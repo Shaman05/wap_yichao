@@ -49,20 +49,6 @@ module.exports = function(grunt) {
           './css/main.css'
         ],
         dest: './.build/css/app.css'
-      },
-      js: {
-        src: [
-          './js/lib/zepto.js',
-          './js/lib/underscore.js',
-          './js/lib/backbone.js',
-          './js/lib/template.js',
-          './js/plugin/text.js',
-          './js/app/config',
-          './js/app/common/util',
-          './js/app/common/helper',
-          './js/app/controller/router'
-        ],
-        dest: './.build/js/app.js'
       }
     },
 
@@ -78,9 +64,22 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      options: {
+        banner: '<%= banner %>'
+      },
       appjs: {
         files: {
-          './dist/js/app.min.js': ['./.build/js/app.js']
+          './dist/js/app.min.js': [
+            './js/lib/zepto.js',
+            './js/lib/underscore.js',
+            './js/lib/backbone.js',
+            './js/lib/template.js',
+            './js/plugin/text.js',
+            './js/app/config',
+            './js/app/common/util',
+            './js/app/common/helper',
+            './js/app/controller/router'
+          ]
         }
       }
     }
