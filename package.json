@@ -1,10 +1,14 @@
 {
-  "title": "https://wap.yichao.cn/",
+  "title": "yichao",
   "name": "yichao",
   "description": "mobile-webapp-of-yichao",
   "homepage": "https://wap.yichao.cn/",
   "version": "0.0.1",
-  "author": {},
+  "author": {
+    "name": "chenchao",
+    "email": "chenchao@upg.cn",
+    "github": "https://github.com/Shaman05/"
+  },
   "engines": {
     "node": ">= 0.10.20"
   },

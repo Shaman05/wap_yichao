@@ -45,8 +45,8 @@ module.exports = function(grunt) {
     concat: {
       css: {
         src: [
-          './css/pro.css',
-          './css/main.css'
+          './css/base.css',
+          './css/common.css'
         ],
         dest: './.build/css/app.css'
       }
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
       },
       app: {
         files: {
-          './dist/css/app.min.css': './.build/css/app.css'
+          './dist/app.min.css': './.build/css/app.css'
         }
       }
     },
@@ -108,9 +108,9 @@ module.exports = function(grunt) {
     'clean:dist',
     'concat',
     'cssmin',
-    'uglify'
+    'uglify',
     //'copy',
-    //'clean:build'
+    'clean:build'
   ]);
 
 };
