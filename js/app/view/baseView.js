@@ -7,18 +7,18 @@
 
 "use strict";
 
-define(['text!app/template/common/header.html', 'text!app/template/common/footer.html'], function(header, footer){
+define(['text!app/template/public/header.html', 'text!app/template/public/footer.html'], function(header, footer){
 
   return {
     el: '#wrap',
-    initialize: function(){
-      this.render();
+    initialize: function(data){
+      this.render(data);
     },
-    render: function(){
-      var content = this._render();
+    render: function(data){
+      var content = this._render(data);
       this.$el.html(header + content + footer);
     },
-    _render: function(){
+    _render: function(data){
       return '';
     }
   }

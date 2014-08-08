@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Created with JetBrains PhpStorm.
  * User: Chen Chao
  * Date: 14-8-7
@@ -9,7 +9,7 @@
 
 require.config({
   baseUrl: './js',
-  urlArgs: 't=1407460819090',
+  urlArgs: 't=1407500477149',
   waitSeconds: 200,
   paths: {
     /*****Core*****/

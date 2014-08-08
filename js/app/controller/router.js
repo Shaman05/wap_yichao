@@ -29,21 +29,12 @@ define(['util'], function(util) {
     action: function(hash) {
       hash = hash || 'ac=home';
       var params = util.getParam(hash);
-      var ac = params['ac'];
-      if(!ac){
-        this['four0four'](params);
-      }else{
-        ac = ac.replace('.', '/');
-        require(['app/view/' + ac], function(view){
-          new view(params);
-        });
-      }
-    },
-
-    four0four: function(params){
-      console.log('404 page! params:' , params);
-      //todo
+      var ac = params['ac'] || '404';
+      require(['app/view/' + ac], function(view){
+        new view(params);
+      });
     }
+
   });
 
 });

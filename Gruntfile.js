@@ -49,6 +49,20 @@ module.exports = function(grunt) {
           './css/main.css'
         ],
         dest: './.build/css/app.css'
+      },
+      js: {
+        src: [
+          './js/lib/zepto.js',
+          './js/lib/underscore.js',
+          './js/lib/backbone.js',
+          './js/lib/template.js',
+          './js/plugin/text.js',
+          './js/app/config',
+          './js/app/common/util',
+          './js/app/common/helper',
+          './js/app/controller/router'
+        ],
+        dest: './.build/js/app.js'
       }
     },
 
@@ -63,9 +77,11 @@ module.exports = function(grunt) {
       }
     },
 
-    copy: {
-      css: {
-        src: './.build/css/app.min.css'
+    uglify: {
+      appjs: {
+        files: {
+          './dist/js/app.min.js': ['./.build/js/app.js']
+        }
       }
     }
 
@@ -75,7 +91,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  //grunt.loadNpmTasks('grunt-contrib-copy');
   /*grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-update-submodules'); // 负责初始化和更新submodule
   grunt.loadNpmTasks('grunt-cmd-transport');
@@ -83,7 +100,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-cmd-transport');
-  grunt.loadNpmTasks('grunt-contrib-uglify'); // 压缩js
   grunt.loadNpmTasks('grunt-size'); // 报告文件大小
   grunt.loadNpmTasks('grunt-jsbint'); // 代码规范检测
   grunt.loadNpmTasks('grunt-contrib-watch'); // 监听文件变化
@@ -91,10 +107,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'clean:dist',
-    'concat:css',
+    'concat',
     'cssmin',
-    'copy',
-    'clean:build'
+    'uglify'
+    //'copy',
+    //'clean:build'
   ]);
 
 };
