@@ -44,6 +44,10 @@ require.config({
     'backbone': {
       'deps': ['zepto', 'underscore'],
       'exports': 'Backbone'
+    },
+    'router': {
+      'deps': ['backbone'],
+      'exports': 'router'
     }
   }
 });

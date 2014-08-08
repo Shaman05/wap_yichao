@@ -7,12 +7,15 @@
 
 "use strict";
 
-define(['app/view/baseView'], function(baseView){
+define(['app/view/baseView', 'text!app/template/home.html'], function(baseView, tpl){
 
   return Backbone.View.extend(
     $.extend(baseView, {
-      id: 'index-page',
-      model: null
+      id: 'home-page',
+      model: null,
+      _render: function(){
+        return tpl;
+      }
     })
   );
 

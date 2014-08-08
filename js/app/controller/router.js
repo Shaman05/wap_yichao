@@ -7,29 +7,28 @@
 
 'use strict';
 
-define(['backbone', 'util'], function(backbone, util) {
+define(['util'], function(util) {
 
   requirejs.onError = function (err) {
     console.log(err.requireType);
     //todo
   };
 
-  return backbone.Router.extend({
+  return Backbone.Router.extend({
 
     initialize: function() {
-      backbone.history.start({
+      Backbone.history.start({
         pustState: true
       });
     },
 
-    //路由规则例如: #ac=user.login(用户登录)
     routes: {
       '*ac': 'action'
     },
 
     action: function(hash) {
+      hash = hash || 'ac=home';
       var params = util.getParam(hash);
-      console.log(params);
       var ac = params['ac'];
       if(!ac){
         this['four0four'](params);
@@ -43,6 +42,7 @@ define(['backbone', 'util'], function(backbone, util) {
 
     four0four: function(params){
       console.log('404 page! params:' , params);
+      //todo
     }
   });
 
