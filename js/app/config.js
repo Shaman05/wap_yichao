@@ -4,5 +4,10 @@
  * Date: 14-8-7
  * Time: 下午10:32
  */
- 
- 
+
+var App = {
+  Models : {},
+  Routers : {},
+  Collections : {},
+  Views : {}
+};

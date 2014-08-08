@@ -1,18 +1,31 @@
-﻿//配置require
+﻿/**
+ * Created with JetBrains PhpStorm.
+ * User: Chen Chao
+ * Date: 14-8-7
+ * Time: 下午7:43
+ */
+
+'use strict';
+
 require.config({
   baseUrl: './js',
-  urlArgs: 't=1407419714540',
+  urlArgs: 't=1407460819090',
+  waitSeconds: 200,
   paths: {
-    //Core Libraries
+    /*****Core*****/
     'zepto': 'lib/zepto',
     'underscore': 'lib/underscore',
     'backbone': 'lib/backbone',
     'artTemplate': 'lib/template',
 
-    /******************************app*****************************/
+    /*****plugin*****/
+    'text': 'plugin/text',
+
+    /*****app*****/
     'config': 'app/config',
+    'util': 'app/common/util',
     'helper': 'app/common/helper',
-    'router': 'app/router/router'
+    'router': 'app/controller/router'
   },
   //配置依赖项
   shim: {
@@ -35,8 +48,6 @@ require.config({
   }
 });
 
-require(['backbone', 'artTemplate', 'underscore'], function (Backbone, t, _) {
-  console.log(Backbone);
-  console.log(t);
-  console.log(_);
+require(['router'], function (router) {
+  new router();
 });
