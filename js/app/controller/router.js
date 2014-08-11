@@ -10,8 +10,11 @@
 define(['util'], function(util) {
 
   requirejs.onError = function (err) {
-    console.log(err.requireType);
+    var typeErr = err.requireType;
     //todo
+    if(typeErr == 'scripterror'){
+      window.location.hash = '#ac=404';
+    }
   };
 
   return Backbone.Router.extend({
@@ -32,8 +35,9 @@ define(['util'], function(util) {
       var ac = params['ac'] || '404';
       APP.ac = ac;
       ac = ac.replace(/\./g, '/');
-      require(['app/view/' + ac], function(view){
-        new view(params);
+      require(['app/view/' + ac, 'text!app/template/' + ac + '.html'], function(view, tpl){
+        params._APP_TPL = tpl;
+        new view(params, tpl);
       });
     }
 
