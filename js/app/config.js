@@ -17,7 +17,8 @@
 
     noHeader: [],
     noFooter: [
-      'user.login'
+      'user.login',
+      'zhangyaling.user.register'
     ],
 
     template: function(){

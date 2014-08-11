@@ -1,0 +1,1442 @@
+$fontYaHei: "Microsoft Yahei" !default; 
+$red : #b81c2b !default;
+$red_01:#d00000;
+@import 'D:\sassData\sassCore\base';
+em,i{ font-style: normal;}
+a,a:link{
+    color:$black;
+    &:hover{
+        color:$black;
+    }
+
+}
+@mixin ovh($value : hidden){
+	overflow: $value;
+}
+@mixin width($value : auto){
+	width:$value;
+}
+@mixin height($extend:true, $value : auto, $lvaue:auto){
+    @if($extend){
+        height:$value;
+    }@else{
+        height:$value;
+        line-height: $lvaue;
+    }
+	
+}
+@mixin position($value){
+    @if($value == 0){
+        position:relative;
+    }@else if($value == 1){
+        position: absolute;
+    }@else if($value == 2){
+        position: fixed;
+    }@else if($value == 3){
+        position: static;
+    }
+	
+}
+@mixin borders($size:1px, $style:solid, $colors:#dddddd){
+  border:$size $style $colors;  
+}
+$white:#ffffff;
+$gray :#bcbcbc;
+$c6:#666666;
+$cd:#dddddd;
+$cc:#cccccc;
+$c98:#989898;
+body{font-family:$fontYaHei; color:$black;}
+.fl{
+  @include float;
+}
+.fr{
+  @include float(right);
+}
+.f075{
+  font-size: 0.75em;
+}
+.f1{
+  font-size: 1em;
+}
+.f12{
+  font-size: 1.2em;
+}
+.f13{
+  font-size: 1.3em;
+}
+.f14{
+ font-size: 1.4em;
+}
+
+.f15{
+  font-size: 1.5em;
+}
+.tac{text-align:center;}
+.tar{text-align: right}
+.tal{text-align: left;}
+.fixclear{clear:both; font-size:0; line-height: 0; }
+.iconsBg{
+    background: url(../images/mobileBg.png) no-repeat;
+    @include inline-block(false);
+    vertical-align: middle;
+}
+.icons{
+	@include width(30px);
+	@include height(true,26px);
+}
+#header{
+	@include height(true,45px);
+    background: $red;
+    @include ovh(hidden);
+    @include width(100%);
+}
+.topNav{
+    	@include ovh(hidden);
+    	li{
+    		@include float(left);
+    	&.item1{
+    			@include width(60%);
+                padding:0 0 0 4%;
+    			@at-root.logoImg{
+    				background:url(../images/logo.png) no-repeat left center;
+    				display: block;
+    				@include height(true,45px);
+    			}
+    		}
+    	&.item2{
+    			@include width(36%);
+                a{
+                    @include inline-block(false);
+                    display:-moz-inline-stack;*display:inline;zoom:1;
+                    letter-space:-6px;
+                    @include height(true,45px);
+                    padding:2px 0 0;
+                    vertical-align: middle;
+                    @extend .tac;
+                    &.goods{
+                        @include width(30%);
+                        .icons{
+                           @extend .iconsBg;
+                            background-position: -12px 0;
+                            @include width(25px);
+                            @include height(true,18px);
+                        }
+                    }
+                    &.shiptCart{
+                         /* margin-right:2%;   */
+                          @include width(36%);
+                        .icons{
+                            @extend .iconsBg;
+                            background-position: -43px 0;
+                            @include width(24px);
+                            @include height(true,18px);
+                        }
+
+                    }
+                    &.orders{
+                        @include width(26%);
+                     .icons{
+                       @extend .iconsBg;
+                        background-position: -73px 0;
+                        @include width(20px);
+                        @include height(true,18px);
+                     } 
+                    }
+                     .txt{padding:2px 0 0;color:$white; font-size:0.7em}
+                }
+    		}
+    	}	
+    } 
+
+/* top Nav Bar style */
+.navBar { @include height(true,50px); padding: 0 20px; background: #e6e6e6; @extend .tac;}
+.navBar .backGo{float: left;font-size:2.2em; font-family: $fontCn; color:#313131; /* @include width(20x); */ @include height(false,50px,50px); line-height: 50px; text-align:left;}
+.navBar .home{@include width(32px); @include height(true,31px); @extend .iconsBg; float: right; background-position: -100px 0; margin-top:12px; display: inline;}
+.navBar .txt{/* float: left; width:78%; */  @include height(false,auto,50px); color:#363636; font-size: 1.6em; @extend .tac;}
+
+/* product style */
+#proWapper{
+    padding:20px 0 0 15px
+}
+.proList{
+    @include ovh(hidden);
+    li{
+        @include float(left);
+        @include width(50%);
+        padding:0 15px 0 0;
+        margin-bottom: 20px;
+        display: inline;
+        @include prefixer(box-sizing, border-box, o webkit moz);
+        .proImg{
+           display:block;
+           @include ovh(hidden);
+            @include borders;
+            img{width:100%;}
+        }
+        .proName{
+            padding-top: 5px;
+             @include height(false,auto,20px);
+            font-size:1em;
+            color:#000000;
+            em{color:$red;}
+        }
+    }
+}
+/*! pages */
+.pagesOn{
+    padding:20px 0 0;
+     @include height(true,40px);
+    @extend .tac;
+    a.pageUp,a.pageNext{
+        @include inline-block(false);
+        @include width(21%);
+        @include prefixer(border-radius, $smallRadius, o webkit moz);
+        @extend .tac;
+        @include height(false,30px,30px);
+        background: $cd; 
+        color:$white;
+        @at-root a.pageUp{
+            margin-right:20px;
+        }
+    }
+}
+/*! footer style  */
+#footer{
+   .footerNav{
+    border-top:#d3d3d3 solid 1px; border-bottom:#d3d3d3 solid 1px; /* margin-top:30px; */ padding:15px 12px; @include height(true,25px);
+    .footerNavList li{
+        @include float(left);
+        @include ovh(hidden);
+        @include height(false,auto,25px);
+        padding:0 10px 0 5px;
+        a{
+            font-size:1.1em;
+            color:#01488a;
+        }
+        &.backTop{
+            @include float(right);
+        }
+    }
+   }
+   .footerTxt{
+    text-align:center; 
+    @include height(false,80px,25px); 
+    color:$c6; padding:5% 0 0;
+    a{
+      font-size: 1.1em;
+    }
+  }
+}
+
+/* ! button style all */
+.btn{
+    @include prefixer(border-radius, 4px, o webkit moz);
+    @include height(true,auto,35px); 
+     border:none; 
+     font-family:$fontYaHei;
+}
+.buttonGray{
+    @extend .btn;
+    font-size:1.2em; background: #d3d3d3; color:#3c3c3c; 
+   }
+.buttonRed{
+     @extend .btn;
+    font-size:1.5em; background:$red; color:$white; 
+}
+.buttonYellow{
+     @extend .btn;
+    font-size:1.2em; background:#ff6c00; 
+    color:$white;
+    @include inline-block(false);
+}
+.onoff{
+    @include ovh(hidden);
+    @include inline-block(false);
+   /*  @include float(left); */
+    margin:0 15px -6px 0;
+    width: 30px;
+    @include height(true,18px);
+    @include prefixer(border-radius, 30px, o webkit moz);
+    border: solid 2px $cd;
+}
+.onoff label{
+   display: block;
+    margin-left: -10px;
+    width: 30px;
+    @include height(true,18px);
+    @extend .tar;
+     @include prefixer(border-radius, 20px, o webkit moz);
+    background: #f4f4f4;
+}
+.onoff i{
+    display: block;
+    width: 30px;
+     @include height(true,18px); 
+    @include prefixer(border-radius, 18px, o webkit moz);
+   background: #ffbd00;
+}
+.onoff i::after{
+  @extend .iconsBg;
+    @include position(0);
+    top:-2px;left:3px;
+    z-index:10;
+    @include inline-block(false);
+    content: '';
+    width: 25px;
+     @include height(true,25px); 
+    background-position: -72px -23px;
+}
+/* can delete */
+.onoff-on label{
+    margin-left: 0;
+}
+.onoff label{
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+.onoff:hover label{
+    margin-left: 0;
+}
+/* ---- end ---- */
+/* ! for all Input styles */
+.inputCommon{
+    border:1px solid #cd;
+    background: $white;
+     @include height(false,40px,40px); 
+
+}
+/* !for comments style All */
+#comments{
+    padding:15px 10px 0;
+}
+.commontsTitles{display: block;font-size:1.2em; padding:0 0 15px; @include position(0);}
+.commontsTitles .ec1{ @include position(1); top:5%;right:5%; font-size:1em;}
+.commentsList{
+    li{
+        border-top: 1px solid $cd;
+        padding:15px 0 ;
+        p{
+            &.userName{
+                padding:0 0 3px;
+                 @include height(false,auto,22px); 
+                em{
+                    @include inline-block(false);
+                    &.names{
+                        padding:0 15px 0 0;
+                    }
+                }
+            }
+        &.times{color:$grayDark; padding:4px 0 0;}
+        }
+    }
+}
+
+/* !comments star */
+.comXin{
+    @include width(56px);
+    @include height(true,10px);
+    vertical-align: middle;
+    background:url(../images/xinxin.png) no-repeat;
+    &.xin_1{background-position:0 -61px;}
+    &.xin_2{background-position:0 -47px;}
+    &.xin_3{background-position:0 -31px;}
+    &.xin_4{background-position:0 -17px;}
+   @include position(0);
+    top:-2px;
+}
+
+/* ! for login  style*/
+/* .loginLogo{
+    .logoImg{
+        @include center-block(false);
+        background-position: center center;
+    }
+} */
+#loginWapper{padding:20px 10px 0;}
+.loginGo{
+    li{
+        margin-bottom: 17px;
+        @include height(true,42px);
+        @include position(0);
+        text-align:center;
+        .inputCommon{
+            @include width(98%); 
+          padding:0 28px 0 30px;
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box; /* 2 */
+          box-sizing: border-box;
+          &.regInp{
+            padding:0 0 0 10px;
+            width:72%;
+          }
+       }
+     .inpIcons{
+       @extend .iconsBg;
+       @include width(25px);  
+       @include height(true,32px); 
+       background-position:0 -19px;
+       @include position(1);
+       left:10px; top:5px;
+     }
+     .inpPwd{
+      @extend .iconsBg;
+       @include width(21px);  
+       @include height(true,25px); 
+       background-position:-26px -22px;
+       @include position(1);
+       left:10px; top:8px;
+     }
+     .updown{
+      @include prefixer(transform, rotate(90deg), ms o moz webkit);
+        @include position(1);
+        right:15px; top:5px;
+        color:$cc;
+        font-size:1.4em;
+     }
+     .buttonRed{
+        display: inline-block;
+        @include width(99%);
+        @include height(true,40px);
+     }
+     &.last{
+        .lookpwd{
+            @include float(left);
+        }
+        .account{
+            @include float(right);
+        }
+     }
+     &.btns{margin:7px 0;}
+     &.yesNo{margin-bottom: 0;  @include height(true,28px); }
+     .verfiy{
+        padding:0 0 0 10px;
+        font-size: 11px;
+        .icons{
+           @extend .iconsBg;
+            background-position: -52px -24px;;
+            width:17px;
+            @include height(true,19px);
+        }
+     }
+    }
+     &.regGo{
+        li{text-align: left;}
+    }
+}
+
+/* for product  style */
+.proInfoBox{
+    padding:0 10px;   
+}
+.h3Title{
+@include height(false,25px,25px);
+         padding:15px 0 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include ovh(hidden);
+         font-size: 1.6em;
+         color:#0a0a0a;
+        &.red{color:#e86464; padding:0;}
+    }
+    .priceOne{
+        em{font-size:2em; color:$red; @include float(left);}
+        i{ @include float(left); margin:10px 0 0 5px; } 
+    }
+    .priced{clear:both; text-decoration: line-through; line-height: 20px;}
+    .priceOne,.priced{color:$c98;}
+.proOpt{
+  li{
+     @include ovh(hidden);
+     color:$grayDark;
+     padding: 2%;
+     @include height(false,auto,26px);
+    &.first{
+       border-top:#cccccc solid 1px;
+       border-bottom:#cccccc solid 1px;
+       p{
+        @include inline-block(false);
+        em{color:$red;}
+        &.one{width:29%;}
+        &.two{width:29%;}
+        &.last{padding:0;}
+       }
+    }
+    .name,.ctent{
+        @include float(left);
+    }
+    .name{
+        width:18%;
+    }
+    .ctent{
+        width:82%;
+        a{
+            @include inline-block(false);
+            height: 25px;
+            padding:0 5%;
+            border:#cccccc solid 1px;
+            margin:0 2% 2% 0;
+            color:$black;
+            &:hover{
+                border:#b81c2b solid 4px;
+               @include height(false,19px,19px);
+            }
+            &.lastA{
+                background:#dfdfdf;
+                border:none;
+                @include height(false,26px,26px);
+            }
+        }
+    }
+  }
+}
+.addGou{
+    @include height(false,40px,40px);
+    background: #e6e6e6;
+    @extend .tac;
+    padding:1%;
+    margin-top:15px;
+    em{
+         font-size: 1.7em;
+         color:#c00000;
+         padding:0 10px 0 0;
+    }
+    .buttonYellow{
+        @include height(false, 30px,28px);
+    }
+}
+
+.kehuPh{ @include height(false, 45px,45px); background:#e21111; padding:0 0 0 15%; color:$white; font-size:1.2em;}
+.imgContent{
+    @include height(false, auto,25px);
+    text-align:center;
+    @include max-screen(320px){
+      img{width:320px;}
+    }
+    @include screen(330px, 1280px){
+      img{width:auto;}
+    }
+}
+.qqAndW{
+  border-top:#d3d3d3 solid 10px;
+  @extend .tac;
+  padding:10% 0;
+  .qq{
+    @include inline-block(false);
+    width:40%;
+    .icons{
+      @extend .iconsBg;
+      width:30px;
+      @include height(true, 33px);
+      background-position:-137px 0;
+    }
+    .txt{@include height(false, auto, 25px);}
+  }
+  .ww{
+    @extend .qq;
+    .icons{
+      background-position:-174px 0;
+    }
+    .txt{@include height(false, auto, 25px);}
+  }
+}
+
+/* banner scrollImgs */
+ @include max-screen(320px){
+     .scrollImg{
+      width:320px;
+       @include height(true, 270px);
+      @include ovh(hidden);
+      @include position(0);
+      .imgListA{
+        width:1200px;
+        @include ovh(hidden);
+        li{
+          @include float(left);
+          img{width:320px;}
+        }
+      }
+      .pointersGo{
+        @include position(1);
+        bottom: 15px;
+        left:45%;
+        a{
+          @include inline-block(false);
+          width:8px; @include height(true, 8px);
+          background: #ffffff;
+          @include prefixer(border-radius,30px, webkit o moz);
+          &.focus{
+            background: #b81b2c;
+          }
+        }
+      }
+     }
+    }
+@include screen(330px, 640px){
+  .scrollImg{
+      width:640px;
+      @include height(true, 300px);
+      @include ovh(hidden);
+      @include position(0);
+      .imgListA{
+        width:1500px;
+        @include ovh(hidden);
+        li{
+          @include float(left);
+          img{width:640px;}
+        }
+      }
+      .pointersGo{
+        @include position(1);
+        bottom: 15px;
+        left:45%;
+        a{
+          @include inline-block(false);
+          width:8px; @include height(true, 8px);
+          background: #ffffff;
+          @include prefixer(border-radius,30px, webkit o moz);
+          &.focus{
+            background: #b81b2c;
+          }
+        }
+      }
+     }
+}
+@include screen(650px, 1024px){
+  .scrollImg{
+      width:800px;
+       @include height(true, 300px);
+      @include ovh(hidden);
+      @include position(0);
+      .imgListA{
+        width:1600px;
+        @include ovh(hidden);
+        li{
+          @include float(left);
+          img{width:800px;}
+        }
+      }
+      .pointersGo{
+        @include position(1);
+        bottom: 15px;
+        left:45%;
+        a{
+          @include inline-block(false);
+          width:8px; @include height(true, 8px);
+          background: #ffffff;
+          @include prefixer(border-radius,30px, webkit o moz);
+          &.focus{
+            background: #b81b2c;
+          }
+        }
+      }
+     }
+}
+.proDetails{
+  border-bottom:#ebebeb solid 1px;
+  line-height: 40px;
+  font-size:1.2em;
+  padding:0 2%;
+  .dian{
+    @include inline-block(false);
+    width:5px; 
+    @include height(true, 5px);
+    margin:0 8px 3px 0;
+    background: #797979;
+    @include prefixer(border-radius, 50px, webkit o moz);
+    vertical-align: middle;
+  }
+}
+/*! for produtc index style*/
+/* for index banner scrollImg */
+@include max-screen(320px){
+     .indexScroll{
+      width:320px;
+      @include height(true, 150px);
+      @include ovh(hidden);
+      @include position(0);
+      .indImgListA{
+        width:1200px;
+        @include ovh(hidden);
+        li{
+          @include float(left);
+          img{width:320px;}
+        }
+      }
+      .indexPt{
+        @include position(1);
+        bottom: 5px;
+        left:45%;
+        a{
+          @include inline-block(false);
+          width:8px; @include height(true, 8px);
+          background: #bababa;
+          @include prefixer(border-radius,30px, webkit o moz);
+          &.focus{
+            background: #b81b2c;
+          }
+        }
+      }
+     }
+    }
+
+    .indexOrderList{
+      border-bottom:#f4f4f4 solid 15px;
+      @include ovh(hidden);
+      li{
+        @include float(left);
+        border-right:#f4f4f4 solid 1px;
+        border-bottom: #f4f4f4 solid 1px;
+        width:33%;
+        @extend .tac;
+        font-size:1.2em;
+        padding:5% 0 3%;
+        a{
+          display: block;
+        }
+        @at-root .indImgIcn{
+          @extend .iconsBg;
+          width:39px; 
+          @include height(true, 40px);
+          &.ic_1{background-position: -214px -1px;}
+          &.ic_2{background-position: -260px 2px; width:42px;}
+          &.ic_3{background-position: -306px -1px; width:28px}
+          &.ic_4{background-position: -214px -50px; width:43px;}
+          &.ic_5{background-position: -261px -50px; width:48px}
+          &.ic_6{background-position: -319px -50px; width:34px;}
+        }
+        .txt{
+          line-height: 38px;
+        }
+      }
+    }
+    .in_jingkuang{
+      @include height(false, auto, 40px);
+      padding:0 0 5% ;
+      @include position(0);
+      a{
+        @include position(1);
+        right:5%;
+        top:5%;
+        font-family: $fontCn;
+        font-weight: bold;
+      }
+      em{
+        font-size:1.1em;
+      }
+    }
+      
+.noteBtn{
+  border:none;
+  background: #b81c2a;
+  line-height: 20px;
+  color:$white;
+  font-size: 0.7em;
+  font-weight: normal;
+  padding:0 15px 0 5px;
+  @include position(0); left:5px; bottom:2px;
+  @include inline-block (false);
+}
+.noteBtn::after{
+  content:"";
+  @include position(1);
+  right:-12px; top:0;
+  width:20px;
+  height: 20px;
+  background:$white;
+  @include prefixer(transform, rotate(45deg))
+}
+
+/* for product sort style */
+.sortList{
+  li{
+    @include height(false, auto, 40px);
+    border-bottom:#d4d4d4 solid 1px;
+    &.lst{
+      border-bottom:none;
+    }
+    .oneName{
+     display: block;
+     @include height(false, 40px, 40px);
+     @include position(0);
+     background: #f4f4f4;
+     @extend .f13;
+     padding:0 5%;
+     .downOrUP{
+      @include position(1);
+      right:8%;
+      top:3%;
+      color:$c6;
+      @extend .f14;
+     }
+    }
+    ul{display:none;}
+    li{
+      @include ovh(hidden);
+       .oneName{background: $white;}
+       ul{
+        padding:0 5%;
+       }
+       li{
+        @include float(left);
+        width:50%;
+        border:none;
+       }
+    }
+
+  }
+}
+.brandBox{
+  padding:10px 0 10px 10px; 
+}
+.brandList{
+  @include ovh(hidden);
+  li{
+    @include float(left);
+    @include screen(650px, 1280px){
+        width:25%;
+      }
+    width:50%;
+    padding:0 10px 20px 0;
+    @include prefixer(box-sizing, border-box, webkit o moz);
+    text-align:center;
+    .brandImg{
+      display: block;
+      @include ovh(hidden);
+      @include max-screen(320px){
+        img{height:190px; width:150px;}
+      }
+       @include screen(330px, 640px){
+        img{height:200px; width:180px;}
+      }
+      @include screen(650px, 1280px){
+        img{height:360px; width:280px;}
+      }
+    }
+    .brandName{
+       display: block;
+       background:$white;
+       padding:8%;
+       .brandName{
+        padding:15px 0 0;
+        font-size:1.2em;
+        font-weight: bold;
+       }
+       @include max-screen(320px){
+        img{height:15px;}
+      }
+       @include screen(330px, 640px){
+        img{height:20px;}
+      }
+       @include screen(650px, 1280px){
+        img{height:auto;}
+      }
+    }
+  }
+}
+
+.groupBox{padding:10px 0 0;}
+.groupPro{
+  li{
+    margin-bottom: 20px;
+    .groupImg{
+      padding:0 6%;
+      .imgs{
+        display: block;
+        @extend .tac;
+        @include ovh(hidden);
+        @include max-screen(320px){
+        img{height:195px; width:280px;}
+      }
+       @include screen(330px, 640px){
+        img{height:220px; width:300px;}
+      }
+      @include screen(650px, 1280px){
+        img{height:auto; width:auto;}
+      }
+      }
+      .gtexts{
+        line-height: 20px;
+        @extend .f12;
+        margin:5px 0 0;
+      }
+    }
+    .groupPrice{
+      background: $c6;
+      @include height(false,35px,35px);
+      color:$white;
+      @extend .f12;
+      @extend .tac;
+      margin:5px 0 0;
+      i{
+        text-decoration: line-through;
+      }
+      a{
+        background:#f74c00;
+        color:#ffffff;
+        padding: 0 5px;
+         @extend .fr;
+        @include height(false,35px,35px);
+        font-size:1.15em;
+      }
+    }
+  }
+}
+.groupInfo{
+  border-bottom:#c7c7c7 solid 1px;
+  padding:0 10px;
+  li{
+    @include ovh(hidden);
+    margin-bottom: 20px;
+    .imgFl{
+      @extend .fl;
+      @include borders;
+      width:36%;
+      img{height:100%; width:100%;}
+    }
+    .groupCont{
+      width:60%;
+      @extend .fl;
+      padding: 0 0 0 2%;
+      .grupTitle{font-size:1.1em;}
+      .gprice{color:$red; line-height: 28px;}
+      .groupStl{
+        a{
+          @include inline-block;
+          line-height: 20px;
+          border:#b0b0b0 solid 1px;
+          padding:0 10px;
+          margin:0 5px 5px 0;
+          &:hover{
+            border:#c80000 solid 2px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+.groupInfoBuy{
+  @extend .tac;
+  padding: 5% 0 0;
+  @extend .f13;
+  em{
+    text-decoration: line-through;
+  }
+  .buttonRed{
+    background: $red_01;
+    padding:1% 5%;
+    font-size: 1em;
+    margin: 15px 0 0;
+  }
+}
+
+.selectMore{padding:10px;}
+.sctN{line-height: 40px; font-size:1.4em;}
+.sctList{
+  a{
+    @include inline-block;
+    background: #eeeeee;
+    margin: 0 5px 8px 0;
+    color:#3d3d3d;
+    padding: 0 3%;
+    line-height: 30px;
+    &:hover{
+      background:#b81c2a;
+      color:$white;
+    }
+  }
+}
+.moreTaoC{
+  @include ovh(hidden);
+  ul{
+    @include ovh(hidden);
+    li{
+      @extend .fl;
+      width:40%;
+      margin:0 20px 0 0;
+      display: inline;
+      .mImg{
+        @include borders;
+        @include ovh(hidden);
+        img{
+          width:100%;
+        }
+      }
+    }
+  }
+}
+/* shopingCar style */
+.proCarList{
+  &.proCarList_ord{
+    li{
+      padding:0 2% 5% ;
+      border:none;
+    }
+  }
+  li{
+    border-top:$cd solid 1px;
+    &.nobd{border:none;}
+    padding:5% 2% 5%;
+    @include ovh(hidden);
+   /*  @include prefixer(box-sizing, border-box, webkit o moz); */
+    .radius{
+      @extend .fl;
+      width:10%;
+      padding:11% 0 0;
+      @extend .tac;
+    }
+    .carProImg{
+      @extend .fl;
+      width:30%;
+      @extend .tac;
+      @include borders;
+      img{
+        width:100%;
+      }
+    }
+    .carContent{
+      @extend .fl;
+      width:55%;
+      padding:0 0 0 3%;
+      .carProTitle{
+        @include ovh(hidden);
+        display: block;
+        text-align: justify;
+       a{
+        @extend .fl;
+         width:80%;
+         display: block;
+         font-size: 1.1em;
+       }
+       .cpPrice{
+        @extend .fr;
+        width:20%;
+        font-size: 0.85em;
+        text-align:right;
+       }
+      }
+      .sezhi{padding:3% 0; font-size :1em;}
+    }
+    @at-root.carBtnBox{
+      clear: both;
+      padding:5% 0 0 10%;
+      a{
+        @include inline-block; color:$white; padding:2% 5%; font-size:1.1em; background:#b81c2b;
+        margin-right: 5%;
+        &.gntbg{background:#228811;}
+      }
+    }
+    &.focus{background:#efefef;}
+  }
+}
+/* RADIO BUTTONS */
+ .regular-radio {
+  display: none;
+}
+
+.regular-radio + label {
+  -webkit-appearance: none;
+  background-color: $white;
+  border: 1px solid #ababab;
+  padding: 2px;
+  border-radius: 50px;
+  @include inline-block;
+  @include position(0);
+  vertical-align: middle;
+}
+
+.regular-radio:checked + label:after {
+  content: ' ';
+  width: 12px;
+  height: 12px;
+  @include prefixer(border-radius,50px, webkit o moz);
+  @include position(1);
+  top: 3px;
+  background-color: $red;
+  border:none;
+  left: 3px;
+  font-size: 32px;
+}
+
+.regular-radio:checked + label {
+  background-color: $white;
+  color: #99a1a7;
+ border: 1px solid $red;
+}
+
+.regular-radio + label:active, .regular-radio:checked + label:active {
+}
+
+.big-radio + label {
+  padding: 10px;
+}
+
+.big-radio:checked + label:after {
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  @extend .iconsBg;
+  background-position: -194px -45px;
+}
+.yanguangdanBox{ 
+  width:95%; margin: 13px auto;
+  .buttonRed{
+   @include prefixer(border-radius, 0, webkit o moz);
+    font-size:1.2em;
+    width:100%;
+    margin:1px 0 0;
+    line-height: 30px;
+  }
+}
+.yanguangdan{
+  @include borders;
+  @include position(0);
+  background:$white;
+  padding:2%;
+  @include prefixer(box-sizing, border-sizing, webkit o moz);
+  &.yanguangdan_noB{
+    border:0;
+  }
+  .emjiao{
+    @include position(1);
+    top:-7px;
+    left:20%;
+    @include inline-block;
+    width:23px; height:7px;
+    @extend .iconsBg;
+    background-position:-187px -67px;
+  }
+  .yanTime{
+    color:$grayDark;
+    a{
+      @include inline-block;
+      background: #dfdfdf;
+      line-height: 25px;
+      padding:0 5%; 
+      color:#000000;
+      margin:0 5px 0 0;
+    }
+  }
+}
+.yanBox{
+  &.yanBox_bdYes{@include borders; margin:10px 0 0; padding:0 0 10px;}
+  table{
+    width:100%;
+    td{
+      line-height: 30px;
+      padding:0 0 0 10px;
+    }
+  }
+}
+.yesnobtn{
+  @extend .tac;
+  margin: 5% 0 0;
+  button{
+    line-height: 20px;
+    padding:0 5%;
+    border:none;
+    &.affirm{
+      background:$red;
+      color:$white;
+    }
+    &.cancel{
+      background:none;
+      color:#b3b3b3;
+    }
+  }
+}
+.carNote{
+  @extend .tac; font-size:1.2em; color:#b3b3b3; padding:3% 0;
+}
+.clearing{
+  border-top: $cd 1px solid;
+  border-bottom: $cd 1px solid;
+  background: #f4f4f4;
+  padding:6% 2%;
+  margin:0 0 5%;
+  @include prefixer(box-sizing, border-box, webkit o moz);
+  @include ovh(hidden);
+  span{
+    @extend .fl;
+    &.sp_01{
+      width:25%;
+      @extend .tac;
+      @extend .f13;
+      padding:2% 0 0;
+    }
+    &.sp_02{
+      width:40%;
+      padding: 0 2% 0 0;
+      @extend .tar;
+      p{
+        display: block;
+        @extend .f13;
+        color:$red;
+        font-weight:bold;
+      }
+      span{display:block; float:none;}
+    }
+    &.sp_03{
+      width:30%;
+      @extend .tar;
+      .buttonRed{
+        width:100px;
+        line-height: 40px;
+        &.disab{background: $grayDark;}
+      }
+    }
+  }
+}
+.userAdress{
+  background: #e7e7e7;
+  @include ovh(hidden);
+  .userAdL{
+    width:92%;
+    padding:5% 0;
+    @extend .fl;
+    @include ovh(hidden);
+    background: #f4f4f4;
+    .adIcon{
+    @extend .fl;
+    width:25px;
+    height: 33px;
+    @extend .iconsBg;
+    background-position:-165px -46px;
+    vertical-align: middle;
+    margin:8% 4% 0 3%;
+  }
+  .adContent{
+    @extend .fl;
+    width:80%;
+    .nameAndPhone{
+      @extend .f12;
+      em{
+        padding:0 10% 0 0;
+      }
+    }
+    .adText{line-height: 20px; padding:1% 0 0;  }
+  }
+  }
+  .adNext{
+    @extend .fl;
+    width:8%;
+    padding:12% 0 0;
+    @extend .tac;
+    font-family: $fontCn;
+    @extend .f15;
+    font-weight: bold;
+  }
+}
+.payWay{
+  border:$cd solid 1px;
+  padding:5% 6%;
+   p{
+      color:$c6;
+    }
+  .payBtn{
+    padding:5% 0 0 5%;
+   a{
+     @include inline-block;
+    color:#333333;
+    background: #f2f1ef;
+    @include borders;
+    line-height: 30px; 
+    @extend .tac;
+    padding:0 5%;
+    @at-root.mr5{margin-right:5%;}
+    &:hover{
+      color:$white;
+      background:$red;
+       @include borders(1px, solid, $red);
+    }
+   }
+  }
+}
+.titleName{
+  color:$c6;
+  font-size: 1.3em;
+  padding:5% 0 5% 8%;
+}
+.orderDl{
+  border-top:$cd solid 1px;
+  padding:5% 4%;
+  @at-root.lh40{
+     line-height: 40px;
+  }
+  p{
+    input[type="text"]{
+      @include borders;
+      width:90%;
+      height: 25px;
+      line-height: 25px;
+      padding:0 0 0 2%;
+      color:#989898;
+    }
+    em{
+      color:#989898;
+      @include inline-block;
+    }
+    a{
+      @include inline-block;
+      @include borders;
+      background:#f2f1ef;
+      padding:0 5%;
+      line-height: 25px;
+      margin-left: 5%;
+      &:hover{
+        background:#b81c2a;
+        color:$white;
+      }
+
+    }
+  }
+}
+.youhui{
+@include borders;
+@include ovh(hidden);
+display:block;
+.flIn{
+  width:78%;
+  input[type="text"]{
+    width:94%;
+    padding:0 0 0 5%;
+    border:none; 
+    background:$white;
+    line-height: 30px;
+  }
+}
+.frBtn{
+  border-left:$cd solid 1px;
+  width:20%;
+  input[type="submit"]{
+    background:none;
+    border:0;
+    line-height: 30px;
+    color:#989898;
+    width:100%;
+  }
+}
+}
+.orderD1Tb{
+  td{
+   /*  line-height: 30px; */
+    &.red{
+      color:$red;
+      padding:0 0 0 5px;
+    }
+  }
+}
+.leaveMess{
+  background:#f4f4f4;
+  @include prefixer(border-radius, 5px, webkit o moz);
+  padding:2%;
+   color:#989898;
+  em{
+    @include inline-block;
+  }
+  input[type="text"]{
+    width:72%; line-height: 25px; border:0; background:none;
+    color:#989898;
+  }
+}
+.diyongj{
+  @include ovh(hidden);
+  padding:5% 0 0;
+ color:#989898;
+}
+.addBtnbox{
+  padding: 5%  0 5% 15%;
+  height: 200px;
+  @at-root.buttonRed_add{
+    border-radius:0;
+    line-height: 40px;
+    padding:0 5%;
+    @extend .f13;
+  }
+}
+.addressli{
+  li{
+    border-top:#cccccc solid 1px;
+    padding:5%;
+    
+    @include ovh(hidden);
+    .label{
+      @extend .fl;
+      width:25%;
+      line-height: 30px;
+    }
+   .span{
+      @extend .fl;
+      width:70%;
+      .inputCommon{
+        width:100%;
+        height: 28px; 
+        line-height: 28px;
+      }
+      &.tars{
+        @extend .tar;
+        @extend .f13;
+        font-family: $fontCn;
+       cursor:pointer;
+      }
+      .buttonRed{
+     @extend .buttonRed_add;
+      }
+   }
+  }
+}
+.cityList{
+  li{
+    border-top:#cccccc solid 1px;
+    a{
+      display: block;
+      line-height: 50px;
+       padding: 0 5%;
+      @extend .f13;
+      &:hover{
+        background:#cccccc;
+      }
+    }
+    li{
+        a{
+          padding: 0 5% 0 10%;
+        }
+        li{
+        a{
+          padding: 0 5% 0 15%;
+        }
+      }
+      }
+  }
+}
+.succNote{
+  border-bottom:#d3d3d3 solid 1px;
+  padding: 8%;
+  line-height: 24px;
+  @extend .f13;
+}
+.zhifuway{
+  @extend .tac;
+  padding:8% 8% 15%;
+  .buttonYellow{
+    margin:8% 0 0;
+    line-height: 40px;
+    padding:0 10%;
+    @extend .f13;
+  }
+  .phNote{
+    @extend .f15;
+    @extend .tal;
+    padding:6% 0 2%; 
+  }
+  .sf{
+    color:$grayDark;
+    @extend .tal;
+  }
+}
+
+
