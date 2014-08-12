@@ -5,7 +5,7 @@
  * Time: 下午2:35
  */
 
-define(['baseModel'], function (baseModel) {
+define(['./baseModel'], function (baseModel) {
 
   "use strict";
 

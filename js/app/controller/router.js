@@ -35,9 +35,7 @@ define(['util'], function(util) {
       var ac = params['ac'] || '404';
       APP.ac = ac;
       ac = ac.replace(/\./g, '/');
-
       require(['app/view/' + ac, 'text!app/template/' + ac + '.html'], function(view, tpl){
-        console.log(tpl);
         params._APP_TPL = tpl;
         new view(params);
       });

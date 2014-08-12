@@ -23,9 +23,7 @@ require.config({
     'config': 'app/config',
     'util': 'app/common/util',
     'helper': 'app/common/helper',
-    'router': 'app/controller/router',
-    'baseModel': 'app/model/baseModel',
-    'baseView': 'app/view/baseView'
+    'router': 'app/controller/router'
   },
   //配置依赖项
   shim: {

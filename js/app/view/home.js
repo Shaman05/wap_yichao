@@ -5,9 +5,9 @@
  * Time: 下午3:32
  */
 
-"use strict";
-
 define(['app/view/baseView'], function(baseView){
+
+  "use strict";
 
   return Backbone.View.extend(
     $.extend(baseView, {

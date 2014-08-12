@@ -5,14 +5,20 @@
  * Time: 下午4:55
  */
 
-"use strict";
+define(['app/view/baseView', 'app/model/userModel'], function(baseView, model){
 
-define(['app/view/baseView'], function(baseView){
+  "use strict";
 
   return Backbone.View.extend(
     $.extend(baseView, {
       id: 'user-login',
-      model: null
+      model: new model,
+      events: {
+        'click #loginBtn': 'doLogin'
+      },
+      doLogin: function(){
+        console.log(new Date());
+      }
     })
   );
 
