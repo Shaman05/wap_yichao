@@ -5,8 +5,6 @@
  * Time: 下午7:43
  */
 
-'use strict';
-
 require.config({
   baseUrl: './js',
   urlArgs: 't=1407718643768',
@@ -25,7 +23,9 @@ require.config({
     'config': 'app/config',
     'util': 'app/common/util',
     'helper': 'app/common/helper',
-    'router': 'app/controller/router'
+    'router': 'app/controller/router',
+    'baseModel': 'app/model/baseModel',
+    'baseView': 'app/view/baseView'
   },
   //配置依赖项
   shim: {
@@ -52,10 +52,13 @@ require.config({
   }
 });
 
-require(['router', 'artTemplate'], function (router, artTemplate) {
+require(['router', 'artTemplate', 'helper'], function (router, artTemplate) {
+
+  "use strict";
 
   _.artTemplate = artTemplate;
   APP.config.template.call(_);
 
   new router();
+
 });

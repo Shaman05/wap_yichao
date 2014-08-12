@@ -7,15 +7,12 @@
 
 "use strict";
 
-define(['app/view/baseView', 'text!app/template/user/login.html'], function(baseView, tpl){
+define(['app/view/baseView'], function(baseView){
 
   return Backbone.View.extend(
     $.extend(baseView, {
       id: 'user-login',
-      model: null,
-      _render: function(){
-        return tpl;
-      }
+      model: null
     })
   );
 

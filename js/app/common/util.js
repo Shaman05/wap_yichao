@@ -5,9 +5,9 @@
  * Time: 下午2:27
  */
 
-"use strict";
-
 define(function(){
+
+  "use strict";
 
   return {
 
@@ -21,7 +21,19 @@ define(function(){
         params[paramArr[0]] = paramArr[1];
       });
       return params;
-    }
+    },
+
+    showLoading: function(){
+      //todo
+      console.log('show loading ...');
+    },
+
+    hideLoading: function(){
+      //todo
+      console.log('hide loading ...');
+    },
+
+    alert: function(){}
 
   }
 

@@ -5,17 +5,21 @@
  * Time: 下午10:32
  */
 
-"use strict";
-
 (function(){
+
+  "use strict";
 
   window.APP = {};
 
   window.APP.config = {
+    domain: 'https://wap.yichao.cn',
+    apiUrl: '/wap/',
     homeAction: 'ac=home',
     needLogin: true,
 
-    noHeader: [],
+    noHeader: [
+      'user.login'
+    ],
     noFooter: [
       'user.login',
       'zhangyaling.user.register'

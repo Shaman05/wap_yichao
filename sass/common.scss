@@ -238,17 +238,28 @@ body{font-family:$fontYaHei; color:$black;}
 }
 .buttonGray{
     @extend .btn;
-    font-size:1.2em; background: #d3d3d3; color:#3c3c3c; 
+    @extend .f12; background: #d3d3d3; color:#3c3c3c; 
    }
 .buttonRed{
      @extend .btn;
-    font-size:1.5em; background:$red; color:$white; 
+    @extend .f15; background:$red; color:$white; 
 }
 .buttonYellow{
      @extend .btn;
-    font-size:1.2em; background:#ff6c00; 
+    @extend .f12; background:#ff6c00; 
     color:$white;
     @include inline-block(false);
+}
+.buttonGray_01{
+  font-family:$fontYaHei;
+  @extend .f12;
+  background: #7e7e7e;
+  color:$white;
+  border:none;
+}
+.buttonGreen{
+  @extend .buttonGray_01;
+   background:#009c07;
 }
 .onoff{
     @include ovh(hidden);
@@ -312,7 +323,7 @@ body{font-family:$fontYaHei; color:$black;}
 #comments{
     padding:15px 10px 0;
 }
-.commontsTitles{display: block;font-size:1.2em; padding:0 0 15px; @include position(0);}
+.commontsTitles{display: block;@extend .f12; padding:0 0 15px; @include position(0);}
 .commontsTitles .ec1{ @include position(1); top:5%;right:5%; font-size:1em;}
 .commentsList{
     li{
@@ -508,7 +519,7 @@ body{font-family:$fontYaHei; color:$black;}
     }
 }
 
-.kehuPh{ @include height(false, 45px,45px); background:#e21111; padding:0 0 0 15%; color:$white; font-size:1.2em;}
+.kehuPh{ @include height(false, 45px,45px); background:#e21111; padding:0 0 0 15%; color:$white; @extend .f12;}
 .imgContent{
     @include height(false, auto,25px);
     text-align:center;
@@ -637,7 +648,7 @@ body{font-family:$fontYaHei; color:$black;}
 .proDetails{
   border-bottom:#ebebeb solid 1px;
   line-height: 40px;
-  font-size:1.2em;
+  @extend .f12;
   padding:0 2%;
   .dian{
     @include inline-block(false);
@@ -691,7 +702,7 @@ body{font-family:$fontYaHei; color:$black;}
         border-bottom: #f4f4f4 solid 1px;
         width:33%;
         @extend .tac;
-        font-size:1.2em;
+        @extend .f12;
         padding:5% 0 3%;
         a{
           display: block;
@@ -821,7 +832,7 @@ body{font-family:$fontYaHei; color:$black;}
        padding:8%;
        .brandName{
         padding:15px 0 0;
-        font-size:1.2em;
+        @extend .f12;
         font-weight: bold;
        }
        @include max-screen(320px){
@@ -976,6 +987,13 @@ body{font-family:$fontYaHei; color:$black;}
       border:none;
     }
   }
+  /* &.allOrder{
+    li{
+      border-top:none;
+      border-bottom: #f4f4f4 solid 10px;
+      padding:5% 2%;
+    }
+  } */
   li{
     border-top:$cd solid 1px;
     &.nobd{border:none;}
@@ -1001,6 +1019,18 @@ body{font-family:$fontYaHei; color:$black;}
       @extend .fl;
       width:55%;
       padding:0 0 0 3%;
+      &.orderCon{
+        width:65%;
+        .carProTitle{
+           a{
+          width:70%;
+        }
+          em{
+            width:30%;
+          }
+        }
+       
+      }
       .carProTitle{
         @include ovh(hidden);
         display: block;
@@ -1086,7 +1116,7 @@ body{font-family:$fontYaHei; color:$black;}
   width:95%; margin: 13px auto;
   .buttonRed{
    @include prefixer(border-radius, 0, webkit o moz);
-    font-size:1.2em;
+    @extend .f12;
     width:100%;
     margin:1px 0 0;
     line-height: 30px;
@@ -1104,7 +1134,7 @@ body{font-family:$fontYaHei; color:$black;}
   .emjiao{
     @include position(1);
     top:-7px;
-    left:20%;
+    left:15%;
     @include inline-block;
     width:23px; height:7px;
     @extend .iconsBg;
@@ -1150,7 +1180,7 @@ body{font-family:$fontYaHei; color:$black;}
   }
 }
 .carNote{
-  @extend .tac; font-size:1.2em; color:#b3b3b3; padding:3% 0;
+  @extend .tac; @extend .f12; color:#b3b3b3; padding:3% 0;
 }
 .clearing{
   border-top: $cd 1px solid;
@@ -1438,5 +1468,178 @@ display:block;
     @extend .tal;
   }
 }
+.order_state{
+  @include ovh(hidden);
+  border-bottom:#cccccc solid 1px;
+  padding:5%;
+  margin-bottom: 5%;
+  &.bdbN{
+    border-bottom: none;
+  }
+  .fl{
+    width:70%;
+    .p_state{
+      @extend .f12;
+    }
+  }
+  .fr{
+    width:30%;
+    padding:3% 0 0;
+    @extend .tar;
+    .buttonGray_01{
+      padding:5% 10%;
+      color:$white;
+    }
+  }
+  .orderInfos{
+    em.f1{
+      padding:0 30px 0 0;
+    }
+  }
+  .order_user{
+    @extend .orderInfos;
+    em{@extend .f13;}
+  }
+}
+.moreP{
+  line-height: 30px;
+  color:$grayDark;
+  @extend .tac;
+  @extend .f1;
+}
 
+.allPrices{
+  border-left:$red solid 1px;
+  padding: 5% 5% 5% 10%;
+  @include ovh(hidden);
+  .fl{
+    width:60%;
+    em{color:$red;}
+  }
+  .fr{
+    width:40%;
+    @extend .tar;
+    @at-root.buttonYw{
+      @extend .buttonYellow;
+      @include prefixer(border-radius, 30px, webkit o moz);
+      padding:2% 15%;
+    }
+    @at-root.buttonGn{
+      @extend .buttonYw;
+    }
+   }
+  }
+.myAllOrder{
+  border-bottom:#f4f4f4 solid 10px;
+}
 
+.stepBox{
+  @include position(0);
+  width:95%;
+  margin: 8% auto;
+  height:4px; 
+  background: #cccccc;
+  font-size: 0; 
+  line-height: 0;
+  em{
+    @include position(1);
+    top:-10px;
+    background:#cccccc;
+    @include prefixer(border-radius, 50px, webkit moz o);
+    width:24px; height:24px;
+    &.sp1{ left:-1%}
+    &.sp2{left:48%;}
+    &.sp3{left:95%;}
+    &.focus{
+      background: $red;
+    }
+  }
+}
+.feedback{
+  padding:5% ;
+  line-height: 22px;
+}
+.services{
+  li{
+    border-bottom:#d3d3d3 solid 1px;
+    padding:10%;
+    @include ovh(hidden);
+    &.last{
+        border:0;
+      }
+    .labels{
+      @extend .fl;
+      width:35%;
+      @extend .tac;
+      padding:4% 0 0;
+      em{
+        @extend .iconsBg;
+       &.icn1{
+         width:30px; height:33px;
+         background-position: -135px 0;
+       }
+       &.icn2{
+         width:30px; height:33px;
+         background-position: -174px 0;
+       }
+       &.icn3{
+         width:39px; height:29px;
+         background-position: -121px -36px;
+       }
+      }
+    }
+    .spans{
+      @extend .fl;
+      width:65%;
+      @extend .f13;
+    }
+  }
+}
+.zhiBox{margin-bottom:20px;}
+.zhilist{
+  li{
+    border-bottom: #cccccc solid 1px;
+    a{
+      display: block;
+      @include ovh(hidden);
+      padding:3% 5%;
+      line-height: 25px;
+      @extend .f12;
+      .fr{font-family:$fontCn; font-weight:bold;}
+    }
+  }
+}
+.wenTitles{
+  @extend .f14;
+  padding:5%;
+  @extend .tac;
+}
+.wenText{
+  padding:0 5%;
+  line-height: 25px;
+  p{
+    text-indent: 24px;
+    padding:0 0 20px;
+  }
+  img{
+    width:100%;
+    margin:10px 0;
+  }
+}
+.wenpage{
+  border-top: #cccccc solid 1px;
+  padding:3% 5%;
+  p{
+    line-height: 30px;
+    @include ovh(hidden);
+    em{
+      width:20%;
+    }
+    a{
+      max-width: 80%;
+      @include ovh(hidden);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    }
+  }
+}

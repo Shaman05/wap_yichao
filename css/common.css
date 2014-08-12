@@ -455,7 +455,7 @@ body {
   font-family: "Microsoft Yahei";
   color: black; }
 
-.fl, .groupInfo li .imgFl, .groupInfo li .groupCont, .moreTaoC ul li, .proCarList li .radius, .proCarList li .carProImg, .proCarList li .carContent, .proCarList li .carContent .carProTitle a, .clearing span, .userAdress .userAdL, .userAdress .userAdL .adIcon, .userAdress .userAdL .adContent, .userAdress .adNext, .addressli li .label, .addressli li .span {
+.fl, .groupInfo li .imgFl, .groupInfo li .groupCont, .moreTaoC ul li, .proCarList li .radius, .proCarList li .carProImg, .proCarList li .carContent, .proCarList li .carContent .carProTitle a, .clearing span, .userAdress .userAdL, .userAdress .userAdL .adIcon, .userAdress .userAdL .adContent, .userAdress .adNext, .addressli li .label, .addressli li .span, .services li .labels, .services li .spans {
   float: left; }
 
 .fr, .groupPro li .groupPrice a, .proCarList li .carContent .carProTitle .cpPrice {
@@ -464,25 +464,25 @@ body {
 .f075 {
   font-size: 0.75em; }
 
-.f1 {
+.f1, .moreP {
   font-size: 1em; }
 
-.f12, .groupPro li .groupImg .gtexts, .groupPro li .groupPrice, .userAdress .userAdL .adContent .nameAndPhone {
+.f12, .buttonGray, .buttonYellow, .buttonYw, .buttonGn, .buttonGray_01, .buttonGreen, .commontsTitles, .kehuPh, .proDetails, .indexOrderList li, .brandList li .brandName .brandName, .groupPro li .groupImg .gtexts, .groupPro li .groupPrice, .yanguangdanBox .buttonRed, .carNote, .userAdress .userAdL .adContent .nameAndPhone, .order_state .fl .p_state, .order_state .groupInfo li .imgFl .p_state, .groupInfo li .order_state .imgFl .p_state, .order_state .groupInfo li .groupCont .p_state, .groupInfo li .order_state .groupCont .p_state, .order_state .moreTaoC ul li .p_state, .moreTaoC ul .order_state li .p_state, .order_state .proCarList li .radius .p_state, .proCarList li .order_state .radius .p_state, .order_state .proCarList li .carProImg .p_state, .proCarList li .order_state .carProImg .p_state, .order_state .proCarList li .carContent .p_state, .proCarList li .order_state .carContent .p_state, .proCarList li .carContent .carProTitle .order_state a .p_state, .order_state .clearing span .p_state, .clearing .order_state span .p_state, .order_state .userAdress .userAdL .p_state, .userAdress .order_state .userAdL .p_state, .userAdress .userAdL .order_state .adIcon .p_state, .userAdress .userAdL .order_state .adContent .p_state, .order_state .userAdress .adNext .p_state, .userAdress .order_state .adNext .p_state, .order_state .addressli li .label .p_state, .addressli li .order_state .label .p_state, .order_state .addressli li .span .p_state, .addressli li .order_state .span .p_state, .order_state .services li .labels .p_state, .services li .order_state .labels .p_state, .order_state .services li .spans .p_state, .services li .order_state .spans .p_state, .zhilist li a {
   font-size: 1.2em; }
 
-.f13, .sortList li .oneName, .groupInfoBuy, .clearing span.sp_01, .clearing span.sp_02 p, .buttonRed_add, .addressli li .span .buttonRed, .addressli li .span.tars, .cityList li a, .succNote, .zhifuway .buttonYellow {
+.f13, .sortList li .oneName, .groupInfoBuy, .clearing span.sp_01, .clearing span.sp_02 p, .buttonRed_add, .addressli li .span .buttonRed, .addressli li .span.tars, .cityList li a, .succNote, .zhifuway .buttonYellow, .zhifuway .buttonYw, .zhifuway .buttonGn, .order_state .order_user em, .services li .spans {
   font-size: 1.3em; }
 
-.f14, .sortList li .oneName .downOrUP {
+.f14, .sortList li .oneName .downOrUP, .wenTitles {
   font-size: 1.4em; }
 
-.f15, .userAdress .adNext, .zhifuway .phNote {
+.f15, .buttonRed, .userAdress .adNext, .zhifuway .phNote {
   font-size: 1.5em; }
 
-.tac, .topNav li.item2 a, .navBar, .navBar .txt, .pagesOn, .pagesOn a.pageUp, .pagesOn a.pageNext, .addGou, .qqAndW, .indexOrderList li, .groupPro li .groupImg .imgs, .groupPro li .groupPrice, .groupInfoBuy, .proCarList li .radius, .proCarList li .carProImg, .yesnobtn, .carNote, .clearing span.sp_01, .userAdress .adNext, .payWay .payBtn a, .zhifuway {
+.tac, .topNav li.item2 a, .navBar, .navBar .txt, .pagesOn, .pagesOn a.pageUp, .pagesOn a.pageNext, .addGou, .qqAndW, .indexOrderList li, .groupPro li .groupImg .imgs, .groupPro li .groupPrice, .groupInfoBuy, .proCarList li .radius, .proCarList li .carProImg, .yesnobtn, .carNote, .clearing span.sp_01, .userAdress .adNext, .payWay .payBtn a, .zhifuway, .moreP, .services li .labels, .wenTitles {
   text-align: center; }
 
-.tar, .onoff label, .clearing span.sp_02, .clearing span.sp_03, .addressli li .span.tars {
+.tar, .onoff label, .clearing span.sp_02, .clearing span.sp_03, .addressli li .span.tars, .order_state .fr, .order_state .groupPro li .groupPrice a, .groupPro li .groupPrice .order_state a, .order_state .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .order_state .cpPrice, .allPrices .fr, .allPrices .groupPro li .groupPrice a, .groupPro li .groupPrice .allPrices a, .allPrices .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .allPrices .cpPrice {
   text-align: right; }
 
 .tal, .zhifuway .phNote, .zhifuway .sf {
@@ -493,7 +493,7 @@ body {
   font-size: 0;
   line-height: 0; }
 
-.iconsBg, .topNav li.item2 a.goods .icons, .topNav li.item2 a.shiptCart .icons, .topNav li.item2 a.orders .icons, .navBar .home, .onoff i::after, .loginGo li .inpIcons, .loginGo li .inpPwd, .loginGo li .verfiy .icons, .qqAndW .qq .icons, .qqAndW .ww .icons, .indImgIcn, .big-radio:checked + label:after, .yanguangdan .emjiao, .userAdress .userAdL .adIcon {
+.iconsBg, .topNav li.item2 a.goods .icons, .topNav li.item2 a.shiptCart .icons, .topNav li.item2 a.orders .icons, .navBar .home, .onoff i::after, .loginGo li .inpIcons, .loginGo li .inpPwd, .loginGo li .verfiy .icons, .qqAndW .qq .icons, .qqAndW .ww .icons, .indImgIcn, .big-radio:checked + label:after, .yanguangdan .emjiao, .userAdress .userAdL .adIcon, .services li .labels em {
   background: url(../images/mobileBg.png) no-repeat;
   display: inline-block;
   vertical-align: middle; }
@@ -663,7 +663,7 @@ body {
     font-size: 1.1em; }
 
 /* ! button style all */
-.btn, .buttonGray, .buttonRed, .buttonYellow {
+.btn, .buttonGray, .buttonRed, .buttonYellow, .buttonYw, .buttonGn {
   -o-border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -673,20 +673,26 @@ body {
   font-family: "Microsoft Yahei"; }
 
 .buttonGray {
-  font-size: 1.2em;
   background: #d3d3d3;
   color: #3c3c3c; }
 
 .buttonRed {
-  font-size: 1.5em;
   background: #b81c2b;
   color: white; }
 
-.buttonYellow {
-  font-size: 1.2em;
+.buttonYellow, .buttonYw, .buttonGn {
   background: #ff6c00;
   color: white;
   display: inline-block; }
+
+.buttonGray_01, .buttonGreen {
+  font-family: "Microsoft Yahei";
+  background: #7e7e7e;
+  color: white;
+  border: none; }
+
+.buttonGreen {
+  background: #009c07; }
 
 .onoff {
   overflow: hidden;
@@ -760,7 +766,6 @@ body {
 
 .commontsTitles {
   display: block;
-  font-size: 1.2em;
   padding: 0 0 15px;
   position: relative; }
 
@@ -960,7 +965,7 @@ body {
     font-size: 1.7em;
     color: #c00000;
     padding: 0 10px 0 0; }
-  .addGou .buttonYellow {
+  .addGou .buttonYellow, .addGou .buttonYw, .addGou .buttonGn {
     height: 30px;
     line-height: 28px; }
 
@@ -969,8 +974,7 @@ body {
   line-height: 45px;
   background: #e21111;
   padding: 0 0 0 15%;
-  color: white;
-  font-size: 1.2em; }
+  color: white; }
 
 .imgContent {
   height: auto;
@@ -1090,7 +1094,6 @@ body {
 .proDetails {
   border-bottom: #ebebeb solid 1px;
   line-height: 40px;
-  font-size: 1.2em;
   padding: 0 2%; }
   .proDetails .dian {
     display: inline-block;
@@ -1142,7 +1145,6 @@ body {
     border-right: #f4f4f4 solid 1px;
     border-bottom: #f4f4f4 solid 1px;
     width: 33%;
-    font-size: 1.2em;
     padding: 5% 0 3%; }
     .indexOrderList li a {
       display: block; }
@@ -1278,7 +1280,6 @@ body {
       padding: 8%; }
       .brandList li .brandName .brandName {
         padding: 15px 0 0;
-        font-size: 1.2em;
         font-weight: bold; }
       @media screen and (max-width: 320px) {
         .brandList li .brandName img {
@@ -1402,55 +1403,69 @@ body {
           width: 100%; }
 
 /* shopingCar style */
-.proCarList.proCarList_ord li {
-  padding: 0 2% 5%;
-  border: none; }
-.proCarList li {
-  border-top: #dddddd solid 1px;
-  padding: 5% 2% 5%;
-  overflow: hidden;
-  /*  @include prefixer(box-sizing, border-box, webkit o moz); */ }
-  .proCarList li.nobd {
+.proCarList {
+  /* &.allOrder{
+    li{
+      border-top:none;
+      border-bottom: #f4f4f4 solid 10px;
+      padding:5% 2%;
+    }
+  } */ }
+  .proCarList.proCarList_ord li {
+    padding: 0 2% 5%;
     border: none; }
-  .proCarList li .radius {
-    width: 10%;
-    padding: 11% 0 0; }
-  .proCarList li .carProImg {
-    width: 30%;
-    border: 1px solid #dddddd; }
-    .proCarList li .carProImg img {
-      width: 100%; }
-  .proCarList li .carContent {
-    width: 55%;
-    padding: 0 0 0 3%; }
-    .proCarList li .carContent .carProTitle {
-      overflow: hidden;
-      display: block;
-      text-align: justify; }
-      .proCarList li .carContent .carProTitle a {
-        width: 80%;
+  .proCarList li {
+    border-top: #dddddd solid 1px;
+    padding: 5% 2% 5%;
+    overflow: hidden;
+    /*  @include prefixer(box-sizing, border-box, webkit o moz); */ }
+    .proCarList li.nobd {
+      border: none; }
+    .proCarList li .radius {
+      width: 10%;
+      padding: 11% 0 0; }
+    .proCarList li .carProImg {
+      width: 30%;
+      border: 1px solid #dddddd; }
+      .proCarList li .carProImg img {
+        width: 100%; }
+    .proCarList li .carContent {
+      width: 55%;
+      padding: 0 0 0 3%; }
+      .proCarList li .carContent.orderCon {
+        width: 65%; }
+        .proCarList li .carContent.orderCon .carProTitle a {
+          width: 70%; }
+        .proCarList li .carContent.orderCon .carProTitle em {
+          width: 30%; }
+      .proCarList li .carContent .carProTitle {
+        overflow: hidden;
         display: block;
-        font-size: 1.1em; }
-      .proCarList li .carContent .carProTitle .cpPrice {
-        width: 20%;
-        font-size: 0.85em;
-        text-align: right; }
-    .proCarList li .carContent .sezhi {
-      padding: 3% 0;
-      font-size: 1em; }
-  .carBtnBox {
-    clear: both;
-    padding: 5% 0 0 10%; }
-    .carBtnBox a {
-      color: white;
-      padding: 2% 5%;
-      font-size: 1.1em;
-      background: #b81c2b;
-      margin-right: 5%; }
-      .carBtnBox a.gntbg {
-        background: #228811; }
-  .proCarList li.focus {
-    background: #efefef; }
+        text-align: justify; }
+        .proCarList li .carContent .carProTitle a {
+          width: 80%;
+          display: block;
+          font-size: 1.1em; }
+        .proCarList li .carContent .carProTitle .cpPrice {
+          width: 20%;
+          font-size: 0.85em;
+          text-align: right; }
+      .proCarList li .carContent .sezhi {
+        padding: 3% 0;
+        font-size: 1em; }
+    .carBtnBox {
+      clear: both;
+      padding: 5% 0 0 10%; }
+      .carBtnBox a {
+        color: white;
+        padding: 2% 5%;
+        font-size: 1.1em;
+        background: #b81c2b;
+        margin-right: 5%; }
+        .carBtnBox a.gntbg {
+          background: #228811; }
+    .proCarList li.focus {
+      background: #efefef; }
 
 /* RADIO BUTTONS */
 .regular-radio {
@@ -1503,7 +1518,6 @@ body {
     -o-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    font-size: 1.2em;
     width: 100%;
     margin: 1px 0 0;
     line-height: 30px; }
@@ -1522,7 +1536,7 @@ body {
   .yanguangdan .emjiao {
     position: absolute;
     top: -7px;
-    left: 20%;
+    left: 15%;
     width: 23px;
     height: 7px;
     background-position: -187px -67px; }
@@ -1559,7 +1573,6 @@ body {
       color: #b3b3b3; }
 
 .carNote {
-  font-size: 1.2em;
   color: #b3b3b3;
   padding: 3% 0; }
 
@@ -1764,7 +1777,7 @@ body {
 
 .zhifuway {
   padding: 8% 8% 15%; }
-  .zhifuway .buttonYellow {
+  .zhifuway .buttonYellow, .zhifuway .buttonYw, .zhifuway .buttonGn {
     margin: 8% 0 0;
     line-height: 40px;
     padding: 0 10%; }
@@ -1772,3 +1785,141 @@ body {
     padding: 6% 0 2%; }
   .zhifuway .sf {
     color: #999999; }
+
+.order_state {
+  overflow: hidden;
+  border-bottom: #cccccc solid 1px;
+  padding: 5%;
+  margin-bottom: 5%; }
+  .order_state.bdbN {
+    border-bottom: none; }
+  .order_state .fl, .order_state .groupInfo li .imgFl, .groupInfo li .order_state .imgFl, .order_state .groupInfo li .groupCont, .groupInfo li .order_state .groupCont, .order_state .moreTaoC ul li, .moreTaoC ul .order_state li, .order_state .proCarList li .radius, .proCarList li .order_state .radius, .order_state .proCarList li .carProImg, .proCarList li .order_state .carProImg, .order_state .proCarList li .carContent, .proCarList li .order_state .carContent, .order_state .proCarList li .carContent .carProTitle a, .proCarList li .carContent .carProTitle .order_state a, .order_state .clearing span, .clearing .order_state span, .order_state .userAdress .userAdL, .userAdress .order_state .userAdL, .order_state .userAdress .userAdL .adIcon, .userAdress .userAdL .order_state .adIcon, .order_state .userAdress .userAdL .adContent, .userAdress .userAdL .order_state .adContent, .order_state .userAdress .adNext, .userAdress .order_state .adNext, .order_state .addressli li .label, .addressli li .order_state .label, .order_state .addressli li .span, .addressli li .order_state .span, .order_state .services li .labels, .services li .order_state .labels, .order_state .services li .spans, .services li .order_state .spans {
+    width: 70%; }
+  .order_state .fr, .order_state .groupPro li .groupPrice a, .groupPro li .groupPrice .order_state a, .order_state .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .order_state .cpPrice {
+    width: 30%;
+    padding: 3% 0 0; }
+    .order_state .fr .buttonGray_01, .order_state .groupPro li .groupPrice a .buttonGray_01, .groupPro li .groupPrice .order_state a .buttonGray_01, .order_state .proCarList li .carContent .carProTitle .cpPrice .buttonGray_01, .proCarList li .carContent .carProTitle .order_state .cpPrice .buttonGray_01, .order_state .fr .buttonGreen, .order_state .groupPro li .groupPrice a .buttonGreen, .groupPro li .groupPrice .order_state a .buttonGreen, .order_state .proCarList li .carContent .carProTitle .cpPrice .buttonGreen, .proCarList li .carContent .carProTitle .order_state .cpPrice .buttonGreen {
+      padding: 5% 10%;
+      color: white; }
+  .order_state .orderInfos em.f1, .order_state .order_user em.f1, .order_state .orderInfos em.moreP, .order_state .order_user em.moreP {
+    padding: 0 30px 0 0; }
+
+.moreP {
+  line-height: 30px;
+  color: #999999; }
+
+.allPrices {
+  border-left: #b81c2b solid 1px;
+  padding: 5% 5% 5% 10%;
+  overflow: hidden; }
+  .allPrices .fl, .allPrices .groupInfo li .imgFl, .groupInfo li .allPrices .imgFl, .allPrices .groupInfo li .groupCont, .groupInfo li .allPrices .groupCont, .allPrices .moreTaoC ul li, .moreTaoC ul .allPrices li, .allPrices .proCarList li .radius, .proCarList li .allPrices .radius, .allPrices .proCarList li .carProImg, .proCarList li .allPrices .carProImg, .allPrices .proCarList li .carContent, .proCarList li .allPrices .carContent, .allPrices .proCarList li .carContent .carProTitle a, .proCarList li .carContent .carProTitle .allPrices a, .allPrices .clearing span, .clearing .allPrices span, .allPrices .userAdress .userAdL, .userAdress .allPrices .userAdL, .allPrices .userAdress .userAdL .adIcon, .userAdress .userAdL .allPrices .adIcon, .allPrices .userAdress .userAdL .adContent, .userAdress .userAdL .allPrices .adContent, .allPrices .userAdress .adNext, .userAdress .allPrices .adNext, .allPrices .addressli li .label, .addressli li .allPrices .label, .allPrices .addressli li .span, .addressli li .allPrices .span, .allPrices .services li .labels, .services li .allPrices .labels, .allPrices .services li .spans, .services li .allPrices .spans {
+    width: 60%; }
+    .allPrices .fl em, .allPrices .groupInfo li .imgFl em, .groupInfo li .allPrices .imgFl em, .allPrices .groupInfo li .groupCont em, .groupInfo li .allPrices .groupCont em, .allPrices .moreTaoC ul li em, .moreTaoC ul .allPrices li em, .allPrices .proCarList li .radius em, .proCarList li .allPrices .radius em, .allPrices .proCarList li .carProImg em, .proCarList li .allPrices .carProImg em, .allPrices .proCarList li .carContent em, .proCarList li .allPrices .carContent em, .proCarList li .carContent .carProTitle .allPrices a em, .allPrices .clearing span em, .clearing .allPrices span em, .allPrices .userAdress .userAdL em, .userAdress .allPrices .userAdL em, .userAdress .userAdL .allPrices .adIcon em, .userAdress .userAdL .allPrices .adContent em, .allPrices .userAdress .adNext em, .userAdress .allPrices .adNext em, .allPrices .addressli li .label em, .addressli li .allPrices .label em, .allPrices .addressli li .span em, .addressli li .allPrices .span em, .allPrices .services li .labels em, .services li .allPrices .labels em, .allPrices .services li .spans em, .services li .allPrices .spans em {
+      color: #b81c2b; }
+  .allPrices .fr, .allPrices .groupPro li .groupPrice a, .groupPro li .groupPrice .allPrices a, .allPrices .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .allPrices .cpPrice {
+    width: 40%; }
+    .buttonYw, .buttonGn {
+      -webkit-border-radius: 30px;
+      -o-border-radius: 30px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+      padding: 2% 15%; }
+
+.myAllOrder {
+  border-bottom: #f4f4f4 solid 10px; }
+
+.stepBox {
+  position: relative;
+  width: 95%;
+  margin: 8% auto;
+  height: 4px;
+  background: #cccccc;
+  font-size: 0;
+  line-height: 0; }
+  .stepBox em {
+    position: absolute;
+    top: -10px;
+    background: #cccccc;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    width: 24px;
+    height: 24px; }
+    .stepBox em.sp1 {
+      left: -1%; }
+    .stepBox em.sp2 {
+      left: 48%; }
+    .stepBox em.sp3 {
+      left: 95%; }
+    .stepBox em.focus {
+      background: #b81c2b; }
+
+.feedback {
+  padding: 5%;
+  line-height: 22px; }
+
+.services li {
+  border-bottom: #d3d3d3 solid 1px;
+  padding: 10%;
+  overflow: hidden; }
+  .services li.last {
+    border: 0; }
+  .services li .labels {
+    width: 35%;
+    padding: 4% 0 0; }
+    .services li .labels em.icn1 {
+      width: 30px;
+      height: 33px;
+      background-position: -135px 0; }
+    .services li .labels em.icn2 {
+      width: 30px;
+      height: 33px;
+      background-position: -174px 0; }
+    .services li .labels em.icn3 {
+      width: 39px;
+      height: 29px;
+      background-position: -121px -36px; }
+  .services li .spans {
+    width: 65%; }
+
+.zhiBox {
+  margin-bottom: 20px; }
+
+.zhilist li {
+  border-bottom: #cccccc solid 1px; }
+  .zhilist li a {
+    display: block;
+    overflow: hidden;
+    padding: 3% 5%;
+    line-height: 25px; }
+    .zhilist li a .fr, .zhilist .groupPro li a .groupPrice a, .groupPro .zhilist li a .groupPrice a, .zhilist .groupPro li .groupPrice a a, .groupPro .zhilist li .groupPrice a a, .zhilist .proCarList li a .carContent .carProTitle .cpPrice, .proCarList .zhilist li a .carContent .carProTitle .cpPrice, .zhilist .proCarList li .carContent .carProTitle a .cpPrice, .proCarList .zhilist li .carContent .carProTitle a .cpPrice {
+      font-family: "SimSun";
+      font-weight: bold; }
+
+.wenTitles {
+  padding: 5%; }
+
+.wenText {
+  padding: 0 5%;
+  line-height: 25px; }
+  .wenText p {
+    text-indent: 24px;
+    padding: 0 0 20px; }
+  .wenText img {
+    width: 100%;
+    margin: 10px 0; }
+
+.wenpage {
+  border-top: #cccccc solid 1px;
+  padding: 3% 5%; }
+  .wenpage p {
+    line-height: 30px;
+    overflow: hidden; }
+    .wenpage p em {
+      width: 20%; }
+    .wenpage p a {
+      max-width: 80%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }

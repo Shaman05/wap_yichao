@@ -5,9 +5,9 @@
  * Time: 下午2:40
  */
 
-'use strict';
-
 module.exports = function(grunt) {
+
+  'use strict';
 
   var appJsPath = './js/app/app.js';
   var indexFile = './index.html';

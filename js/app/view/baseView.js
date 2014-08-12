@@ -17,6 +17,7 @@ define([
   return {
     el: '#wrap',
     initialize: function(data){
+      //console.log(data);
       this.render(data);
     },
     render: function(data){
