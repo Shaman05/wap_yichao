@@ -15,17 +15,17 @@ define([
   var config = APP.config;
 
   return {
-    el: '#wrap',
+    el: '.app_wrap',
+    id: 'normal_page',
     initialize: function(data){
-      //console.log(data);
       this.render(data);
     },
     render: function(data){
       var content = this._render(data);
-      this.$el.html(content);
+      this.$el.attr('id', this.id).html(content);
     },
     _render: function(data){
-      var tpl = this.tpl || data._APP_TPL;
+      var tpl = this.tpl || data._APP_TPL || '<p class="no_tpl_assigned">No template assigned!</p>';
       var action = APP.ac;
       if(_.indexOf(config.noHeader, action) < 0){
         tpl = header + tpl;
@@ -35,7 +35,7 @@ define([
       }
       var renderFn = _.artTemplate.compile(tpl);
       var _data = $.extend(data, this.setData());
-      return renderFn(_data) || 'No template!';
+      return renderFn(_data);
     },
     setData: function(){
       return {};

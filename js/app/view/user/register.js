@@ -5,22 +5,15 @@
  * Time: 下午3:32
  */
 
-define(['app/view/baseView'], function(baseView){
+"use strict";
 
-  "use strict";
+define(['app/view/baseView'], function(baseView){
 
   return Backbone.View.extend(
     $.extend(baseView, {
       id: 'home-page',
       model: null,
       setData: function(){
-        $.get(
-          '/Interfaces/GoodsHandler.ashx',
-          { OP: "GoodsType", Number: Math.random() },
-          function(){
-
-          }
-        );
         return {
           a: 123,
           b: 456

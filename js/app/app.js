@@ -7,7 +7,7 @@
 
 require.config({
   baseUrl: './js',
-  urlArgs: 't=1407718643768',
+  urlArgs: 't=1407919484305',
   waitSeconds: 200,
   paths: {
     /*****Core*****/
@@ -18,6 +18,7 @@ require.config({
 
     /*****plugin*****/
     'text': 'plugin/text',
+    'fastClick': 'plugin/fastclick',
 
     /*****app*****/
     'config': 'app/config',
@@ -58,5 +59,9 @@ require(['router', 'artTemplate', 'helper'], function (router, artTemplate) {
   APP.config.template.call(_);
 
   new router();
+
+  /*require(['fastClick'], function (fc) {
+    fc.attach(document.body);
+  });*/
 
 });
