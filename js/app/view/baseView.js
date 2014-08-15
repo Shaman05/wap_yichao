@@ -9,10 +9,12 @@
 
 define([
   'text!app/template/public/header.html',
+  'text!app/template/public/titleBar.html',
   'text!app/template/public/footer.html'
-], function(header, footer){
+], function(header, titleBar, footer){
 
   var config = APP.config;
+  var pageMap = config.pageName;
 
   return {
     el: '.app_wrap',
@@ -25,21 +27,43 @@ define([
       this.$el.attr('id', this.id).html(content);
     },
     _render: function(data){
-      var tpl = this.tpl || data._APP_TPL || '<p class="no_tpl_assigned">No template assigned!</p>';
-      var action = APP.ac;
-      if(_.indexOf(config.noHeader, action) < 0){
-        tpl = header + tpl;
+      var tpl = '';
+      var content = this.tpl || data._APP_TPL || '<p class="no_tpl_assigned">No template assigned!</p>';
+      var ac = data.ac;
+      if(_.indexOf(config.noHeader, ac) < 0){
+        tpl += header;
       }
-      if(_.indexOf(config.noFooter, action) < 0){
+      if(_.indexOf(config.noTitleBar, ac) < 0){
+        tpl += titleBar;
+      }
+      tpl += content;
+      if(_.indexOf(config.noFooter, ac) < 0){
         tpl = tpl + footer;
       }
       var renderFn = _.artTemplate.compile(tpl);
-      var _data = $.extend(data, this.setData());
+      var _data = $.extend(data, {
+        pageName: parseAction(ac, pageMap)
+      });
+      _data = $.extend(_data, this.data());
       return renderFn(_data);
     },
-    setData: function(){
+    data: function(){
       return {};
     }
+  }
+
+  //解析ac 从配置取出页面名称
+  function parseAction(ac, map){
+    var path = ac.split('.');
+    var base = path[0];
+    var newMap = map[base];
+    if(!newMap){
+      return 'No title';
+    }
+    if(typeof newMap == 'string'){
+      return newMap;
+    }
+    return parseAction(path[1], newMap);
   }
 
 });
