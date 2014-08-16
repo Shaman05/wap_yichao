@@ -49,8 +49,12 @@
         sort: '所有商品分类'
       },
       search: {
-        search: '搜索',
-        searchlist: '搜索结果列表'
+        index: '搜索',
+        list: '搜索'
+      },
+      shiti: {
+        index: '实体店',
+        list: '实体店'
       },
       user: {
         addAddress: '填写订单信息',
