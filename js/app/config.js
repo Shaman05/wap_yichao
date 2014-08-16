@@ -28,7 +28,7 @@
     ],
     noFooter: [
       'user.login',
-      'zhangyaling.user.register'
+      'user.register'
     ],
 
     //页面
@@ -47,6 +47,10 @@
         product_info: '产品详情',
         product_list: '产品框架框',
         sort: '所有商品分类'
+      },
+      search: {
+        search: '搜索',
+        searchlist: '搜索结果列表'
       },
       user: {
         addAddress: '填写订单信息',
