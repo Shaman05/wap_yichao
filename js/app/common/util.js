@@ -10,22 +10,6 @@ define(function(){
   "use strict";
 
   return {
-
-    events: function(){
-      //返回顶部
-      $(document).on('click', '#backTop', function(){
-        $.scrollTo({
-          endY: 0,
-          duration: 300,
-          callback: function() {}
-        });
-      });
-      //商品菜单
-      $(document).on('click', '#goodsTypeView', function(){
-        $('#goodsTypeList').toggle();
-      });
-    },
-
     getParam: function(url){
       var hash = url || location.hash;
       hash = hash.replace(/&amp;/g, '&');

@@ -23,6 +23,7 @@ require.config({
     /*****app*****/
     'config': 'app/config',
     'util': 'app/common/util',
+    'events': 'app/common/events',
     'helper': 'app/common/helper',
     'router': 'app/controller/router'
   },
@@ -51,7 +52,7 @@ require.config({
   }
 });
 
-require(['router', 'artTemplate', 'util', 'helper'], function (router, artTemplate, util) {
+require(['router', 'artTemplate', 'events', 'helper'], function (router, artTemplate, events) {
 
   "use strict";
 
@@ -64,6 +65,6 @@ require(['router', 'artTemplate', 'util', 'helper'], function (router, artTempla
     fc.attach(document.body);
   });*/
 
-  util.events();
+  events.init();
 
 });

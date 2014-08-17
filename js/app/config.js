@@ -62,8 +62,8 @@
         shoppingcart: '购物车'
       },
       search:{
-        search: '搜索',
-        searchlist: '搜索'
+        index: '搜索',
+        list: '搜索'
       },
       entity: {
         index: '实体店名',

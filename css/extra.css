@@ -1,0 +1,36 @@
+/*顶部商品导航菜单*/
+header .popBox{
+    background: #ffffff;
+    top: 60px;
+    display: none;
+    z-index: 999;
+}
+
+/*实体店列表*/
+.listmore_shop > li{
+    position: relative;
+}
+.listmore_shop > li ul,
+.listmore_shop .s_down{
+    display: none;
+}
+.listmore_shop .open ul,
+.listmore_shop .open .s_down{
+    display: block;
+}
+.listmore_shop > li:after{
+    content: '+';
+    color: #808080;
+    position: absolute;
+    right: 30px;
+    top: 8px;
+}
+.listmore_shop > .open:after{
+    content: '-';
+    right: 33px;
+}
+
+/*实体店详情*/
+.shitiInfos{
+    display: none;
+}
