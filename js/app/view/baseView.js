@@ -25,6 +25,7 @@ define([
     render: function(data){
       var content = this._render(data);
       this.$el.attr('id', this.id).html(content);
+      this.ready();
     },
     _render: function(data){
       var tpl = '';
@@ -49,8 +50,11 @@ define([
     },
     data: function(){
       return {};
+    },
+    ready: function(){
+      //page ready
     }
-  }
+  };
 
   //解析ac 从配置取出页面名称
   function parseAction(ac, map){

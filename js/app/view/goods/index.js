@@ -6,11 +6,11 @@ define(['app/view/baseView'], function(baseView){
     $.extend(baseView, {
       id: 'home-page',
       model: null,
-      setData: function(){
-        return {
-          a: 123,
-          b: 456
-        };
+      ready: function(){
+        $(".js-slider3").slider({
+          direction: "left",
+          height: 150
+        });
       }
     })
   );

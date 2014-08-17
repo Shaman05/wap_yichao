@@ -1800,3 +1800,320 @@ window.Zepto = Zepto
     }
   };
 }(Zepto));
+
+(function($){
+  var touch = {},
+    touchTimeout, tapTimeout, swipeTimeout, longTapTimeout,
+    longTapDelay = 750,
+    gesture
+
+  function swipeDirection(x1, x2, y1, y2) {
+    return Math.abs(x1 - x2) >=
+      Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'Left' : 'Right') : (y1 - y2 > 0 ? 'Up' : 'Down')
+  }
+
+  function longTap() {
+    longTapTimeout = null
+    if (touch.last) {
+      touch.el.trigger('longTap')
+      touch = {}
+    }
+  }
+
+  function cancelLongTap() {
+    if (longTapTimeout) clearTimeout(longTapTimeout)
+    longTapTimeout = null
+  }
+
+  function cancelAll() {
+    if (touchTimeout) clearTimeout(touchTimeout)
+    if (tapTimeout) clearTimeout(tapTimeout)
+    if (swipeTimeout) clearTimeout(swipeTimeout)
+    if (longTapTimeout) clearTimeout(longTapTimeout)
+    touchTimeout = tapTimeout = swipeTimeout = longTapTimeout = null
+    touch = {}
+  }
+
+  function isPrimaryTouch(event){
+    return (event.pointerType == 'touch' ||
+      event.pointerType == event.MSPOINTER_TYPE_TOUCH)
+      && event.isPrimary
+  }
+
+  function isPointerEventType(e, type){
+    return (e.type == 'pointer'+type ||
+      e.type.toLowerCase() == 'mspointer'+type)
+  }
+
+  $(document).ready(function(){
+    var now, delta, deltaX = 0, deltaY = 0, firstTouch, _isPointerType
+
+    if ('MSGesture' in window) {
+      gesture = new MSGesture()
+      gesture.target = document.body
+    }
+
+    $(document)
+      .bind('MSGestureEnd', function(e){
+        var swipeDirectionFromVelocity =
+          e.velocityX > 1 ? 'Right' : e.velocityX < -1 ? 'Left' : e.velocityY > 1 ? 'Down' : e.velocityY < -1 ? 'Up' : null;
+        if (swipeDirectionFromVelocity) {
+          touch.el.trigger('swipe')
+          touch.el.trigger('swipe'+ swipeDirectionFromVelocity)
+        }
+      })
+      .on('touchstart MSPointerDown pointerdown', function(e){
+        if((_isPointerType = isPointerEventType(e, 'down')) &&
+          !isPrimaryTouch(e)) return
+        firstTouch = _isPointerType ? e : e.touches[0]
+        if (e.touches && e.touches.length === 1 && touch.x2) {
+          // Clear out touch movement data if we have it sticking around
+          // This can occur if touchcancel doesn't fire due to preventDefault, etc.
+          touch.x2 = undefined
+          touch.y2 = undefined
+        }
+        now = Date.now()
+        delta = now - (touch.last || now)
+        touch.el = $('tagName' in firstTouch.target ?
+          firstTouch.target : firstTouch.target.parentNode)
+        touchTimeout && clearTimeout(touchTimeout)
+        touch.x1 = firstTouch.pageX
+        touch.y1 = firstTouch.pageY
+        if (delta > 0 && delta <= 250) touch.isDoubleTap = true
+        touch.last = now
+        longTapTimeout = setTimeout(longTap, longTapDelay)
+        // adds the current touch contact for IE gesture recognition
+        if (gesture && _isPointerType) gesture.addPointer(e.pointerId);
+      })
+      .on('touchmove MSPointerMove pointermove', function(e){
+        if((_isPointerType = isPointerEventType(e, 'move')) &&
+          !isPrimaryTouch(e)) return
+        firstTouch = _isPointerType ? e : e.touches[0]
+        cancelLongTap()
+        touch.x2 = firstTouch.pageX
+        touch.y2 = firstTouch.pageY
+
+        deltaX += Math.abs(touch.x1 - touch.x2)
+        deltaY += Math.abs(touch.y1 - touch.y2)
+      })
+      .on('touchend MSPointerUp pointerup', function(e){
+        if((_isPointerType = isPointerEventType(e, 'up')) &&
+          !isPrimaryTouch(e)) return
+        cancelLongTap()
+
+        // swipe
+        if ((touch.x2 && Math.abs(touch.x1 - touch.x2) > 30) ||
+          (touch.y2 && Math.abs(touch.y1 - touch.y2) > 30))
+
+          swipeTimeout = setTimeout(function() {
+            touch.el.trigger('swipe')
+            touch.el.trigger('swipe' + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)))
+            touch = {}
+          }, 0)
+
+        // normal tap
+        else if ('last' in touch)
+        // don't fire tap when delta position changed by more than 30 pixels,
+        // for instance when moving to a point and back to origin
+          if (deltaX < 30 && deltaY < 30) {
+            // delay by one tick so we can cancel the 'tap' event if 'scroll' fires
+            // ('tap' fires before 'scroll')
+            tapTimeout = setTimeout(function() {
+
+              // trigger universal 'tap' with the option to cancelTouch()
+              // (cancelTouch cancels processing of single vs double taps for faster 'tap' response)
+              var event = $.Event('tap')
+              event.cancelTouch = cancelAll
+              touch.el.trigger(event)
+
+              // trigger double tap immediately
+              if (touch.isDoubleTap) {
+                if (touch.el) touch.el.trigger('doubleTap')
+                touch = {}
+              }
+
+              // trigger single tap after 250ms of inactivity
+              else {
+                touchTimeout = setTimeout(function(){
+                  touchTimeout = null
+                  if (touch.el) touch.el.trigger('singleTap')
+                  touch = {}
+                }, 250)
+              }
+            }, 0)
+          } else {
+            touch = {}
+          }
+        deltaX = deltaY = 0
+
+      })
+      // when the browser window loses focus,
+      // for example when a modal dialog is shown,
+      // cancel all ongoing events
+      .on('touchcancel MSPointerCancel pointercancel', cancelAll)
+
+    // scrolling the window indicates intention of the user
+    // to scroll, not tap or swipe, so cancel all ongoing events
+    $(window).on('scroll', cancelAll)
+  })
+
+  ;['swipe', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown',
+    'doubleTap', 'tap', 'singleTap', 'longTap'].forEach(function(eventName){
+      $.fn[eventName] = function(callback){ return this.on(eventName, callback) }
+    })
+})(Zepto);
+
+/*!
+ zepto.slider v1.0.0 http://yanhaijing.com/zepto.slider LICENSE
+ */
+/* Build time: March 12, 2014 11:10:19 */
+/**
+ * zepto.slider plugin
+ * @author yanxuefeng
+ */
+(function($){
+  "use strict";
+  $.fn.slider = function(opt){
+    var
+      o = $.extend({
+        startIndex: -1,
+        time: 3000,
+        animationTime: 500,
+        direction: "up",
+        autoAnimation: true,
+        imgWrap: ".js-slider-img-wrap",
+        img: "li",
+        numWrap: ".js-slider-num-wrap",
+        num: "li",
+        preventTouch: false,
+        circle: false,
+        height: 0
+      }, opt);
+    return $(this).each(function () {
+      var
+        $slider = $(this),
+        $imgWrap = $(o.imgWrap, $slider),
+        $imgs = $(o.img, $imgWrap),
+        $numWrap = $(o.numWrap, $slider),
+        $nums = $(o.num, $numWrap),
+        len = $imgs.length,
+        width = 320,
+        height = 180,
+        curIndex = o.startIndex,
+        timeout,
+        _h;
+
+      function fixIndex(index) {
+        return (index + len) % len;
+      }
+      function updateSize() {
+        var direction = o.direction;
+        width = $slider.width();
+        $imgs.width(width);
+        height = $imgs.height();
+        _h = o.height || height;
+        $slider.height(_h);
+        if (direction === "up" || direction === "down") {
+          $imgWrap.width(width).height(_h * len);
+        } else if (direction === "left" || direction === "right") {
+          $imgWrap.width(width * len).height(_h);
+        }
+      }
+      function stopAutoAnimation() {
+        window.clearTimeout(timeout);
+      }
+      function translate(index, time) {
+        var
+          direction = o.direction,
+          transition;
+        index = fixIndex(index || 0);
+        curIndex = index;
+        time = time || o.animationTime;
+        $nums.removeClass("js-slider-num-cur").eq(index).addClass("js-slider-num-cur");
+        if (direction === "up" || direction === "down") {
+          transition = -(height * index) + "px";
+          $imgWrap.css({'-webkit-transform':'translateY('+ transition +')','-webkit-transition': time + 'ms linear'});
+        } else if (direction === "left" || direction === "right") {
+          transition = -(width * index) + "px";
+          $imgWrap.css({'-webkit-transform':'translateX('+ transition +')','-webkit-transition': time + 'ms linear'});
+        }
+      }
+      function initEvent() {
+        var
+          direction = o.direction;
+        $slider.swipeLeft(function (e) {
+          if (!o.circle && (curIndex + 1) >= len) {
+            return 0;
+          }
+          translate(curIndex + 1);
+          stopAutoAnimation();
+          return 1;
+        });
+        $slider.swipeRight(function (e) {
+          if (!o.circle && (curIndex - 1) < 0) {
+            return 0;
+          }
+          translate(curIndex - 1);
+          stopAutoAnimation();
+          return 1;
+        });
+        if (o.preventTouch) {
+          $slider.on("touchstart", function (e) {
+            e.preventDefault();
+          });
+          $slider.on("touchmove", function (e) {
+            e.preventDefault();
+          });
+        }
+
+        $(window).on("load", function (e) {
+          updateSize();
+        });
+        $(window).on("resize", function (e) {
+          updateSize();
+        });
+
+      }
+      function initAutoAnimation() {
+        function animation() {
+          var
+            direction = o.direction;
+          if (direction === "up") {
+            translate(curIndex + 1);
+          } else if (direction === "down") {
+            translate(curIndex - 1);
+          } else if (direction === "left") {
+            translate(curIndex + 1);
+          } else {
+            translate(curIndex - 1);
+          }
+
+          timeout = window.setTimeout(animation, o.time + o.animationTime);
+        }
+
+        if (o.autoAnimation) {
+          animation();
+        }
+      }
+      function init() {
+        var
+          direction = o.direction;
+        if (direction === "up" || direction === "down") {
+          $slider.addClass("js-slider js-slider-v");
+        } else if (direction === "left" || direction === "right") {
+          $slider.addClass("js-slider js-slider-h");
+          $imgs.addClass("js-slider-img");
+        }
+        $imgWrap.addClass("js-slider-img-wrap");
+        $numWrap.addClass("js-slider-num-wrap");
+        $nums.addClass("js-slider-num");
+        updateSize();
+        translate(curIndex);
+        initEvent();
+        initAutoAnimation();
+      }
+
+      init();
+    });
+  };
+}(Zepto));

@@ -34,3 +34,14 @@ header .popBox{
 .shitiInfos{
     display: none;
 }
+
+/* Carousel */
+.js-slider{overflow:hidden;position:relative}
+.js-slider-img-wrap{overflow:hidden}
+.js-slider-h .js-slider-img{float:left}
+.js-slider-num-wrap{position:absolute;bottom:5px;right:5px;z-index:1000}
+.js-slider-num{float:left}.js-slider-num-cur{color:#ff0000}
+.slider-pic img{width:100%;height:auto;}
+.slider-num li{margin-left: 4px;width: 12px;height: 12px;border-radius: 6px;text-indent: -9999px;background-color: #3c1809;}
+.slider-num .js-slider-num-cur{background-color:#f00;}
+/* Carousel */
