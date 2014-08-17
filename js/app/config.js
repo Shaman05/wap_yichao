@@ -12,14 +12,13 @@
   window.APP = {};
 
   window.APP.config = {
-    domain: 'https://wap.yichao.cn',
+    domain: 'wap.yichao.cn',
     apiUrl: '/wap/',
     homeAction: 'ac=home',
     needLogin: true,
 
     //模板碎片配置
     noHeader: [
-      'user.login'
     ],
     noTitleBar: [
       'home',
@@ -28,7 +27,8 @@
     ],
     noFooter: [
       'user.login',
-      'user.register'
+      'zhangyaling.user.register',
+      'goods.brand'
     ],
 
     //页面
@@ -48,14 +48,6 @@
         product_list: '产品框架框',
         sort: '所有商品分类'
       },
-      search: {
-        index: '搜索',
-        list: '搜索'
-      },
-      shiti: {
-        index: '实体店',
-        list: '实体店'
-      },
       user: {
         addAddress: '填写订单信息',
         address: '填写订单信息',
@@ -68,6 +60,14 @@
         register: '用户注册',
         service: '咨询客服',
         shoppingcart: '购物车'
+      },
+      search:{
+        search: '搜索',
+        searchlist: '搜索'
+      },
+      entity: {
+        index: '实体店名',
+        list: '实体店'
       }
     },
 

@@ -51,7 +51,7 @@ require.config({
   }
 });
 
-require(['router', 'artTemplate', 'helper'], function (router, artTemplate) {
+require(['router', 'artTemplate', 'util', 'helper'], function (router, artTemplate, util) {
 
   "use strict";
 
@@ -63,5 +63,7 @@ require(['router', 'artTemplate', 'helper'], function (router, artTemplate) {
   /*require(['fastClick'], function (fc) {
     fc.attach(document.body);
   });*/
+
+  util.events();
 
 });

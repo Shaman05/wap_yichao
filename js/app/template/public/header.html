@@ -1,10 +1,19 @@
 <header id="header">
     <ul class="topNav">
-        <li class="item1">dd<!-- <a href=""  class="logoImg"></a> --></li>
+        <li class="item1"><a href=""  class="logoImg"></a></li>
         <li class="item2">
-            <a href="" class="goods"><em class="icons"></em><p class="txt">商品</p></a>
-            <a href="" class="shiptCart"><em class="icons"></em><p class="txt">购物车</p></a>
-            <a href="" class="orders"><em class="icons"></em><p class="txt">订单</p></a>
+            <a href="javascript:" class="goods" id="goodsTypeView"><em class="icn_top"></em><p class="txt">商品</p></a>
+            <a href="#ac=user.shoppingcart" class="shoptCart"><em class="icn_top"></em><p class="txt">购物车</p></a>
+            <a href="#ac=user.myorder" class="orders"><em class="icn_top"></em><p class="txt">订单</p></a>
         </li>
     </ul>
+    <div id="goodsTypeList" class="popBox" style="background: #ffffff; top: 60px; display: none">
+        <ul>
+            <li><a href="#ac=goods.product_list&type=1">眼镜框</a></li>
+            <li><a href="#ac=goods.product_list&type=2">眼镜片</a></li>
+            <li><a href="#ac=goods.product_list&type=3">隐形眼镜</a></li>
+            <li><a href="#ac=goods.product_list&type=4">护理液</a></li>
+            <li><a href="#ac=goods.product_list&type=5">伴侣盒</a></li>
+        </ul>
+    </div>
 </header>

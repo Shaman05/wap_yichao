@@ -1,4 +1,4 @@
-.groupInfo li .groupCont .groupStl a, .sctList a, .carBtnBox a, .regular-radio + label, .yanguangdan .emjiao, .yanguangdan .yanTime a, .payWay .payBtn a, .orderDl p em, .orderDl p a, .leaveMess em, .search label, .updown_go em, .s_down {
+.indImgIcn, .groupInfo li .groupCont .groupStl a, .sctList a, .moreTaoC ul li .lx a, .moreTaoC .num em, .carBtnBox a, .regular-radio + label, .yanguangdan .emjiao, .yanguangdan .yanTime span .aa, .payWay .payBtn a, .orderDl p em, .orderDl p a, .leaveMess em, .search label, .updown_go em, .s_down {
   display: inline-block; }
 
 /**
@@ -26,7 +26,7 @@ html {
 body {
   margin: 0;
   /* 1 */
-  font-size: 0.75em;
+  font-size: 0.875em;
   /* 0 */
   line-height: 1.5;
   /* 0 */
@@ -455,31 +455,34 @@ body {
   font-family: "Microsoft Yahei";
   color: black; }
 
-.fl, .groupInfo li .imgFl, .groupInfo li .groupCont, .moreTaoC ul li, .proCarList li .radius, .proCarList li .carProImg, .proCarList li .carContent, .proCarList li .carContent .carProTitle a, .clearing span, .userAdress .userAdL, .userAdress .userAdL .adIcon, .userAdress .userAdL .adContent, .userAdress .adNext, .addressli li .label, .addressli li .span, .services li .labels, .services li .spans, .allgoodsst li, .serviceList ul li, .serviceList ul li .icn_label, .serviceList ul li .con_span, .otherName ul li, .listmore_shop li ul li {
+.fl, .groupInfo li .imgFl, .groupInfo li .groupCont, .moreTaoC ul li, .proCarList li .radius, .proCarList li .carProImg, .proCarList li .carContent, .proCarList li .carContent .carProTitle a, .yanguangdan .yanTime label, .yanguangdan .yanTime span, .clearing span, .userAdress .userAdL, .userAdress .userAdL .adIcon, .userAdress .userAdL .adContent, .userAdress .adNext, .addressli li .label, .addressli li .span, .services li .labels, .services li .spans, .allgoodsst li, .serviceList ul li, .serviceList ul li .icn_label, .serviceList ul li .con_span, .otherName ul li, .listmore_shop li ul li, .circular {
   float: left; }
 
 .fr, .groupPro li .groupPrice a, .proCarList li .carContent .carProTitle .cpPrice, .listmore_shop li em {
   float: right; }
 
-.f075 {
+.f12, .brandList li .brandName, .moreTaoC ul li .mpc em, .proCarList li .carContent .sezhi, .yanguangdan .yanTime, .yesnobtn button, .orderD1Tb td, .serviceList ul li .con_span .txt_s {
   font-size: 0.75em; }
 
-.f1, .moreP {
+.f14, .sortList li li li, .groupInfoBuy .buttonRed, .serviceList ul li .icn_label.icn_label3 {
+  font-size: 0.875em; }
+
+.f16, .kehuPh, .sortList li li .oneName, .carBtnBox a, #loading {
   font-size: 1em; }
 
-.f12, .buttonGray, .buttonYellow, .buttonYw, .buttonGn, .buttonGray_01, .buttonGreen, .commontsTitles, .kehuPh, .proDetails, .indexOrderList li, .brandList li .brandName .brandName, .groupPro li .groupImg .gtexts, .groupPro li .groupPrice, .yanguangdanBox .buttonRed, .carNote, .userAdress .userAdL .adContent .nameAndPhone, .order_state .fl .p_state, .order_state .groupInfo li .imgFl .p_state, .groupInfo li .order_state .imgFl .p_state, .order_state .groupInfo li .groupCont .p_state, .groupInfo li .order_state .groupCont .p_state, .order_state .moreTaoC ul li .p_state, .moreTaoC ul .order_state li .p_state, .order_state .proCarList li .radius .p_state, .proCarList li .order_state .radius .p_state, .order_state .proCarList li .carProImg .p_state, .proCarList li .order_state .carProImg .p_state, .order_state .proCarList li .carContent .p_state, .proCarList li .order_state .carContent .p_state, .proCarList li .carContent .carProTitle .order_state a .p_state, .order_state .clearing span .p_state, .clearing .order_state span .p_state, .order_state .userAdress .userAdL .p_state, .userAdress .order_state .userAdL .p_state, .userAdress .userAdL .order_state .adIcon .p_state, .userAdress .userAdL .order_state .adContent .p_state, .order_state .userAdress .adNext .p_state, .userAdress .order_state .adNext .p_state, .order_state .addressli li .label .p_state, .addressli li .order_state .label .p_state, .order_state .addressli li .span .p_state, .addressli li .order_state .span .p_state, .order_state .services li .labels .p_state, .services li .order_state .labels .p_state, .order_state .services li .spans .p_state, .services li .order_state .spans .p_state, .order_state .allgoodsst li .p_state, .allgoodsst .order_state li .p_state, .order_state .serviceList ul li .p_state, .serviceList ul .order_state li .p_state, .serviceList ul li .order_state .icn_label .p_state, .serviceList ul li .order_state .con_span .p_state, .order_state .otherName ul li .p_state, .otherName ul .order_state li .p_state, .order_state .listmore_shop li ul li .p_state, .listmore_shop li ul .order_state li .p_state, .zhilist li a, .serviceList ul li .con_span .txt, .updown_go, .updown_go em {
-  font-size: 1.2em; }
+.f18, .commontsTitles, .in_jingkuang em, .sortList li .oneName, .groupInfoBuy, .moreTaoC ul li .mpc, .clearing span.sp_03 .buttonRed, .titleName, .zhifuway .phNote {
+  font-size: 1.125em; }
 
-.f13, .sortList li .oneName, .groupInfoBuy, .clearing span.sp_01, .clearing span.sp_02 p, .buttonRed_add, .addressli li .span .buttonRed, .addressli li .span.tars, .cityList li a, .succNote, .zhifuway .buttonYellow, .zhifuway .buttonYw, .zhifuway .buttonGn, .order_state .order_user em, .services li .spans, .shoppName, .listmore_shop li a.cityName {
-  font-size: 1.3em; }
+.f20, .commontsTitles .ec1, .loginGo li .buttonRed, .sctN, .addressli li .span.tars, .wenTitles {
+  font-size: 1.25em; }
 
-.f14, .sortList li .oneName .downOrUP, .wenTitles {
-  font-size: 1.4em; }
+.f25, .h3Title, .priceOne em, .sortList li .oneName .downOrUP, .userAdress .adNext {
+  font-size: 1.5625em; }
 
-.f15, .buttonRed, .userAdress .adNext, .zhifuway .phNote {
+.f15 {
   font-size: 1.5em; }
 
-.tac, .topNav li.item2 a, .navBar, .navBar .txt, .pagesOn, .pagesOn a.pageUp, .pagesOn a.pageNext, .addGou, .qqAndW, .indexOrderList li, .groupPro li .groupImg .imgs, .groupPro li .groupPrice, .groupInfoBuy, .proCarList li .radius, .proCarList li .carProImg, .yesnobtn, .carNote, .clearing span.sp_01, .userAdress .adNext, .payWay .payBtn a, .zhifuway, .moreP, .services li .labels, .wenTitles, .search label.searchBtn input[type="submit"], .serviceList ul li .icn_label, .updown_go, .shitiInfos {
+.tac, .topNav li.item2 a, .navBar, .navBar .txt, .pagesOn, .pagesOn a.pageUp, .pagesOn a.pageNext, .addGou, .qqAndW, .indexOrderList li, .groupPro li .groupImg .imgs, .groupPro li .groupPrice, .groupInfoBuy, .moreTaoC ul li .buyBtn, .moreTaoC .num, .proCarList li .radius, .proCarList li .carProImg, .carBtnBox a, .yesnobtn, .carNote, .clearing span.sp_01, .userAdress .adNext, .payWay .payBtn a, .addressli li .span .buttonRed, .zhifuway, .moreP, .services li .labels, .wenTitles, .search label.searchBtn input[type="submit"], .serviceList ul li .icn_label, .updown_go, .shitiInfos, .popBox ul li, #loading {
   text-align: center; }
 
 .tar, .onoff label, .clearing span.sp_02, .clearing span.sp_03, .addressli li .span.tars, .order_state .fr, .order_state .groupPro li .groupPrice a, .groupPro li .groupPrice .order_state a, .order_state .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .order_state .cpPrice, .order_state .listmore_shop li em, .listmore_shop li .order_state em, .allPrices .fr, .allPrices .groupPro li .groupPrice a, .groupPro li .groupPrice .allPrices a, .allPrices .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .allPrices .cpPrice, .allPrices .listmore_shop li em, .listmore_shop li .allPrices em {
@@ -496,66 +499,80 @@ body {
   font-size: 0;
   line-height: 0; }
 
-.iconsBg, .topNav li.item2 a.goods .icons, .topNav li.item2 a.shiptCart .icons, .topNav li.item2 a.orders .icons, .navBar .home, .onoff i::after, .loginGo li .inpIcons, .loginGo li .inpPwd, .loginGo li .verfiy .icons, .qqAndW .qq .icons, .qqAndW .ww .icons, .indImgIcn, .big-radio:checked + label:after, .yanguangdan .emjiao, .userAdress .userAdL .adIcon, .services li .labels em {
-  background: url(../images/mobileBg.png) no-repeat;
+.iconsBg, .topNav li.item2 a .icn_top, .navBar .backGo, .navBar .home, .onoff i::after, .loginGo li .inpIcons, .loginGo li .inpPwd, .loginGo li .verfiy .icons, .qqAndW .qq .icons, .qqAndW .ww .icons, .big-radio:checked + label:after, .userAdress .userAdL .adIcon, .services li .labels em, .serviceList ul li .icn_label {
+  /* background: url(../images/mobileBg.png) no-repeat; */
+  background: url(../images/allIcn.png) no-repeat;
   display: inline-block;
-  vertical-align: middle; }
-
-.icons {
-  width: 30px;
-  height: 26px; }
+  vertical-align: middle;
+  /* @include prefixer(background-size, 150px auto, webkit o moz); */ }
 
 #header {
-  height: 45px;
   background: #b81c2b;
   overflow: hidden;
-  width: 100%; }
+  width: 100%;
+  padding: 2% 0; }
 
 .topNav {
   overflow: hidden; }
-  .topNav li {
-    float: left; }
-    .topNav li.item1 {
-      width: 60%;
-      padding: 0 0 0 4%; }
-      .logoImg {
-        background: url(../images/logo.png) no-repeat left center;
-        display: block;
-        height: 45px; }
-    .topNav li.item2 {
-      width: 36%; }
-      .topNav li.item2 a {
-        display: inline-block;
-        display: -moz-inline-stack;
-        *display: inline;
-        zoom: 1;
-        letter-space: -6px;
-        height: 45px;
+  .topNav li.item1 {
+    float: left;
+    width: 60%;
+    padding: 0 0 0 4%; }
+    .logoImg {
+      background: url(../images/logo.png) no-repeat left center;
+      display: block;
+      height: 45px;
+      -webkit-background-size: 180px 30px;
+      -o-background-size: 180px 30px;
+      -moz-background-size: 180px 30px;
+      background-size: 180px 30px; }
+      @media screen and (min-width: 720px) {
+        .logoImg {
+          -webkit-background-size: contain;
+          -o-background-size: contain;
+          -moz-background-size: contain;
+          background-size: contain; } }
+  .topNav li.item2 {
+    width: 36%;
+    float: right; }
+    .topNav li.item2 a {
+      display: inline-block;
+      display: -moz-inline-stack;
+      *display: inline;
+      zoom: 1;
+      letter-space: -6px;
+      height: 45px;
+      padding: 2px 0 0;
+      vertical-align: middle; }
+      .topNav li.item2 a .icn_top {
+        -webkit-background-size: 48px auto;
+        -o-background-size: 48px auto;
+        -moz-background-size: 48px auto;
+        background-size: 48px auto; }
+      .topNav li.item2 a.goods {
+        width: 30%; }
+        .topNav li.item2 a.goods .icn_top {
+          background-position: 2px -481px;
+          width: 25px;
+          height: 20px; }
+      .topNav li.item2 a.shoptCart {
+        /* margin-right:2%;   */
+        width: 36%; }
+        .topNav li.item2 a.shoptCart .icn_top {
+          background-position: 2px -512px;
+          width: 25px;
+          height: 20px; }
+      .topNav li.item2 a.orders {
+        width: 26%; }
+        .topNav li.item2 a.orders .icn_top {
+          background-position: 2px -541px;
+          width: 20px;
+          height: 20px; }
+      .topNav li.item2 a .txt {
         padding: 2px 0 0;
-        vertical-align: middle; }
-        .topNav li.item2 a.goods {
-          width: 30%; }
-          .topNav li.item2 a.goods .icons {
-            background-position: -12px 0;
-            width: 25px;
-            height: 18px; }
-        .topNav li.item2 a.shiptCart {
-          /* margin-right:2%;   */
-          width: 36%; }
-          .topNav li.item2 a.shiptCart .icons {
-            background-position: -43px 0;
-            width: 24px;
-            height: 18px; }
-        .topNav li.item2 a.orders {
-          width: 26%; }
-          .topNav li.item2 a.orders .icons {
-            background-position: -73px 0;
-            width: 20px;
-            height: 18px; }
-        .topNav li.item2 a .txt {
-          padding: 2px 0 0;
-          color: white;
-          font-size: 0.7em; }
+        color: white;
+        font-size: 0.7em;
+        display: block; }
 
 /* top Nav Bar style */
 .navBar {
@@ -566,28 +583,31 @@ body {
 .navBar .backGo {
   float: left;
   font-size: 2.2em;
+  text-indent: -999px;
   font-family: "SimSun";
   color: #313131;
-  /* @include width(20x); */
-  height: 50px;
-  line-height: 50px;
-  line-height: 50px;
-  text-align: left; }
+  width: 8%;
+  height: 30px;
+  text-align: left;
+  background-position: 2px -334px;
+  background-size: 37px auto;
+  position: relative;
+  top: 20%; }
 
 .navBar .home {
   width: 32px;
   height: 31px;
   float: right;
-  background-position: -100px 0;
-  margin-top: 12px;
-  display: inline; }
+  background-position: 2px -310px;
+  margin-top: 9px;
+  display: inline;
+  background-size: 38px auto; }
 
 .navBar .txt {
-  /* float: left; width:78%; */
   height: auto;
   line-height: 50px;
   color: #363636;
-  font-size: 1.6em; }
+  font-size: 1.5em; }
 
 /* product style */
 #proWapper {
@@ -633,6 +653,7 @@ body {
     border-radius: 3px;
     height: 30px;
     line-height: 30px;
+    max-width: 85px;
     background: #dddddd;
     color: white; }
     a.pageUp {
@@ -734,13 +755,17 @@ body {
 .onoff i::after {
   position: relative;
   top: -2px;
-  left: 3px;
+  left: 1px;
   z-index: 10;
   display: inline-block;
   content: '';
   width: 25px;
   height: 25px;
-  background-position: -72px -23px; }
+  background-position: 3px -474px;
+  -o-background-size: 31px;
+  -webkit-background-size: 31px;
+  -moz-background-size: 31px;
+  background-size: 31px; }
 
 /* can delete */
 .onoff-on label {
@@ -770,13 +795,13 @@ body {
 .commontsTitles {
   display: block;
   padding: 0 0 15px;
-  position: relative; }
+  position: relative;
+  line-height: 30px; }
 
 .commontsTitles .ec1 {
   position: absolute;
   top: 5%;
-  right: 5%;
-  font-size: 1em; }
+  right: 5%; }
 
 .commentsList li {
   border-top: 1px solid #dddddd;
@@ -838,14 +863,14 @@ body {
   .loginGo li .inpIcons {
     width: 25px;
     height: 32px;
-    background-position: 0 -19px;
+    background-position: 0 -47px;
     position: absolute;
     left: 10px;
     top: 5px; }
   .loginGo li .inpPwd {
     width: 21px;
     height: 25px;
-    background-position: -26px -22px;
+    background-position: 0 -133px;
     position: absolute;
     left: 10px;
     top: 8px; }
@@ -877,9 +902,13 @@ body {
     padding: 0 0 0 10px;
     font-size: 11px; }
     .loginGo li .verfiy .icons {
-      background-position: -52px -24px;
-      width: 17px;
-      height: 19px; }
+      background-position: 0 -3px;
+      -webkit-background-size: 27px auto;
+      -o-background-size: 27px auto;
+      -moz-background-size: 27px auto;
+      background-size: 27px auto;
+      width: 20px;
+      height: 25px; }
 .loginGo.regGo li {
   text-align: left; }
 
@@ -894,14 +923,12 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  font-size: 1.6em;
   color: #0a0a0a; }
   .h3Title.red {
     color: #e86464;
     padding: 0; }
 
 .priceOne em {
-  font-size: 2em;
   color: #b81c2b;
   float: left; }
 .priceOne i {
@@ -926,7 +953,8 @@ body {
     border-top: #cccccc solid 1px;
     border-bottom: #cccccc solid 1px; }
     .proOpt li.first p {
-      display: inline-block; }
+      display: inline-block;
+      font-size: 0.8125em; }
       .proOpt li.first p em {
         color: #b81c2b; }
       .proOpt li.first p.one {
@@ -938,9 +966,10 @@ body {
   .proOpt li .name, .proOpt li .ctent {
     float: left; }
   .proOpt li .name {
-    width: 18%; }
+    width: 22%;
+    max-width: 63px; }
   .proOpt li .ctent {
-    width: 82%; }
+    width: 78%; }
     .proOpt li .ctent a {
       display: inline-block;
       height: 25px;
@@ -970,7 +999,9 @@ body {
     padding: 0 10px 0 0; }
   .addGou .buttonYellow, .addGou .buttonYw, .addGou .buttonGn {
     height: 30px;
-    line-height: 28px; }
+    line-height: 28px;
+    position: relative;
+    top: -3px; }
 
 .kehuPh {
   height: 45px;
@@ -997,14 +1028,23 @@ body {
     display: inline-block;
     width: 40%; }
     .qqAndW .qq .icons, .qqAndW .ww .icons {
-      width: 30px;
-      height: 33px;
-      background-position: -137px 0; }
+      width: 35px;
+      height: 36px;
+      background-position: 0 -200px;
+      -webkit-background-size: 45px auto;
+      -o-background-size: 45px auto;
+      -moz-background-size: 45px auto;
+      background-size: 45px auto; }
     .qqAndW .qq .txt, .qqAndW .ww .txt {
       height: auto;
       line-height: 25px; }
   .qqAndW .ww .icons {
-    background-position: -174px 0; }
+    width: 39px;
+    background-position: 0 -260px;
+    -webkit-background-size: 45px auto;
+    -o-background-size: 45px auto;
+    -moz-background-size: 45px auto;
+    background-size: 45px auto; }
   .qqAndW .ww .txt {
     height: auto;
     line-height: 25px; }
@@ -1158,25 +1198,42 @@ body {
     .indexOrderList li a {
       display: block; }
     .indImgIcn {
-      width: 39px;
-      height: 40px; }
+      background: url(../images/mobileBg_01.png) no-repeat;
+      -webkit-background-size: 55px auto;
+      -o-background-size: 55px auto;
+      -moz-background-size: 55px auto;
+      background-size: 55px auto;
+      height: 41px; }
       .indImgIcn.ic_1 {
-        background-position: -214px -1px; }
-      .indImgIcn.ic_2 {
-        background-position: -260px 2px;
+        background-position: 0 -1px;
         width: 42px; }
+      .indImgIcn.ic_2 {
+        background-position: 0 -79px;
+        width: 42px;
+        -webkit-background-size: 46px auto;
+        -o-background-size: 46px auto;
+        -moz-background-size: 46px auto;
+        background-size: 46px auto; }
       .indImgIcn.ic_3 {
-        background-position: -306px -1px;
-        width: 28px; }
+        background-position: 0 -182px;
+        width: 28px;
+        -webkit-background-size: 50px auto;
+        -o-background-size: 50px auto;
+        -moz-background-size: 50px auto;
+        background-size: 50px auto; }
       .indImgIcn.ic_4 {
-        background-position: -214px -50px;
-        width: 43px; }
+        background-position: 6px -46px;
+        width: 43px;
+        -webkit-background-size: 56px auto;
+        -o-background-size: 56px auto;
+        -moz-background-size: 56px auto;
+        background-size: 56px auto; }
       .indImgIcn.ic_5 {
-        background-position: -261px -50px;
-        width: 48px; }
+        background-position: 0 -151px;
+        width: 56px; }
       .indImgIcn.ic_6 {
-        background-position: -319px -50px;
-        width: 34px; }
+        background-position: 0 -245px;
+        width: 47px; }
     .indexOrderList li .txt {
       line-height: 38px; }
 
@@ -1191,8 +1248,6 @@ body {
     top: 5%;
     font-family: "SimSun";
     font-weight: bold; }
-  .in_jingkuang em {
-    font-size: 1.1em; }
 
 .noteBtn {
   border: none;
@@ -1270,24 +1325,23 @@ body {
         width: 25%; } }
     .brandList li .brandImg {
       display: block;
-      overflow: hidden; }
-      @media screen and (max-width: 320px) {
-        .brandList li .brandImg img {
-          height: 190px;
-          width: 150px; } }
-      @media screen and (min-width: 330px) and (max-width: 640px) {
-        .brandList li .brandImg img {
-          height: 200px;
-          width: 180px; } }
-      @media screen and (min-width: 650px) and (max-width: 1280px) {
-        .brandList li .brandImg img {
-          height: 360px;
-          width: 280px; } }
+      overflow: hidden;
+      /* @include max-screen(320px){
+        img{height:190px; width:150px;}
+      }
+       @include screen(330px, 540px){
+        img{height:200px; width:180px;}
+      }
+      @include screen(650px, 1280px){
+        img{height:360px; width:280px;}
+      } */ }
+      .brandList li .brandImg img {
+        width: 100%; }
     .brandList li .brandName {
       display: block;
       background: white;
       padding: 8%; }
-      .brandList li .brandName .brandName {
+      .brandList li .brandName .bdName {
         padding: 15px 0 0;
         font-weight: bold; }
       @media screen and (max-width: 320px) {
@@ -1357,7 +1411,7 @@ body {
       width: 60%;
       padding: 0 0 0 2%; }
       .groupInfo li .groupCont .grupTitle {
-        font-size: 1.1em; }
+        font-weight: normal; }
       .groupInfo li .groupCont .gprice {
         color: #b81c2b;
         line-height: 28px; }
@@ -1371,21 +1425,20 @@ body {
           line-height: 18px; }
 
 .groupInfoBuy {
-  padding: 5% 0 0; }
+  padding: 5% 0; }
   .groupInfoBuy em {
     text-decoration: line-through; }
   .groupInfoBuy .buttonRed {
     background: #d00000;
-    padding: 1% 5%;
-    font-size: 1em;
-    margin: 15px 0 0; }
+    padding: 2% 5%;
+    margin: 15px 0 0;
+    max-width: 120px; }
 
 .selectMore {
   padding: 10px; }
 
 .sctN {
-  line-height: 40px;
-  font-size: 1.4em; }
+  line-height: 40px; }
 
 .sctList a {
   background: #eeeeee;
@@ -1400,16 +1453,53 @@ body {
 .moreTaoC {
   overflow: hidden; }
   .moreTaoC ul {
-    overflow: hidden; }
+    overflow: hidden;
+    width: 700px; }
     .moreTaoC ul li {
       width: 40%;
-      margin: 0 20px 0 0;
+      max-width: 145px;
+      margin: 0 8px 0 8px;
       display: inline; }
       .moreTaoC ul li .mImg {
         border: 1px solid #dddddd;
         overflow: hidden; }
         .moreTaoC ul li .mImg img {
           width: 100%; }
+      .moreTaoC ul li .mpc {
+        color: #b81c2b;
+        font-weight: bold; }
+        .moreTaoC ul li .mpc em {
+          color: #686868;
+          font-weight: normal; }
+      .moreTaoC ul li .mTitle {
+        line-height: 20px; }
+      .moreTaoC ul li .lx a {
+        background: #988574;
+        color: white;
+        line-height: 18px;
+        padding: 0 2%;
+        margin-right: 5px; }
+      .moreTaoC ul li .buyBtn {
+        display: block;
+        line-height: 25px;
+        background: #b81c2b;
+        color: white; }
+  .moreTaoC .num {
+    /* @include position(1); */
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    padding: 2% 0; }
+    .moreTaoC .num em {
+      width: 12px;
+      height: 12px;
+      background: #d3d3d3;
+      -webkit-border-radius: 40px;
+      -o-border-radius: 40px;
+      -moz-border-radius: 40px;
+      border-radius: 40px; }
+      .moreTaoC .num em.focus {
+        background: #e03d34; }
 
 /* shopingCar style */
 .proCarList {
@@ -1437,7 +1527,8 @@ body {
       width: 30%;
       border: 1px solid #dddddd; }
       .proCarList li .carProImg img {
-        width: 100%; }
+        width: 100%;
+        max-width: 640px; }
     .proCarList li .carContent {
       width: 55%;
       padding: 0 0 0 3%; }
@@ -1453,26 +1544,26 @@ body {
         text-align: justify; }
         .proCarList li .carContent .carProTitle a {
           width: 80%;
-          display: block;
-          font-size: 1.1em; }
+          display: block; }
         .proCarList li .carContent .carProTitle .cpPrice {
           width: 20%;
-          font-size: 0.85em;
+          font-size: 0.75em;
           text-align: right; }
       .proCarList li .carContent .sezhi {
-        padding: 3% 0;
-        font-size: 1em; }
+        padding: 3% 0; }
     .carBtnBox {
       clear: both;
       padding: 5% 0 0 10%; }
       .carBtnBox a {
         color: white;
-        padding: 2% 5%;
-        font-size: 1.1em;
+        padding: 2%;
         background: #b81c2b;
+        max-width: 120px;
         margin-right: 5%; }
         .carBtnBox a.gntbg {
           background: #228811; }
+        .carBtnBox a:hover, .carBtnBox a:link {
+          color: white; }
     .proCarList li.focus {
       background: #efefef; }
 
@@ -1517,7 +1608,11 @@ body {
   height: 20px;
   left: 0;
   top: 0;
-  background-position: -194px -45px; }
+  background-position: 3px -1218px;
+  -webkit-background-size: 75px auto;
+  -moz-background-size: 75px auto;
+  -o-background-size: 75px auto;
+  background-size: 75px auto; }
 
 .yanguangdanBox {
   width: 95%;
@@ -1529,7 +1624,7 @@ body {
     border-radius: 0;
     width: 100%;
     margin: 1px 0 0;
-    line-height: 30px; }
+    line-height: 36px; }
 
 .yanguangdan {
   border: 1px solid #dddddd;
@@ -1544,19 +1639,30 @@ body {
     border: 0; }
   .yanguangdan .emjiao {
     position: absolute;
-    top: -7px;
+    top: -6px;
     left: 15%;
-    width: 23px;
-    height: 7px;
-    background-position: -187px -67px; }
+    width: 12px;
+    height: 12px;
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-left: #dddddd solid 1px;
+    border-top: #dddddd solid 1px;
+    background: white; }
   .yanguangdan .yanTime {
-    color: #999999; }
-    .yanguangdan .yanTime a {
-      background: #dfdfdf;
-      line-height: 25px;
-      padding: 0 5%;
-      color: #000000;
-      margin: 0 5px 0 0; }
+    color: #999999;
+    overflow: hidden; }
+    .yanguangdan .yanTime label {
+      width: 86px;
+      line-height: 25px; }
+    .yanguangdan .yanTime span {
+      width: 70%; }
+      .yanguangdan .yanTime span .aa {
+        background: #dfdfdf;
+        line-height: 25px;
+        padding: 0 2%;
+        color: #000000;
+        margin: 0 5px 0 0; }
 
 .yanBox.yanBox_bdYes {
   border: 1px solid #dddddd;
@@ -1571,9 +1677,10 @@ body {
 .yesnobtn {
   margin: 5% 0 0; }
   .yesnobtn button {
-    line-height: 20px;
+    line-height: 25px;
     padding: 0 5%;
-    border: none; }
+    border: none;
+    max-width: 60px; }
     .yesnobtn button.affirm {
       background: #b81c2b;
       color: white; }
@@ -1628,7 +1735,11 @@ body {
     .userAdress .userAdL .adIcon {
       width: 25px;
       height: 33px;
-      background-position: -165px -46px;
+      background-position: 0 -87px;
+      -webkit-background-size: 38px;
+      -o-background-size: 38px;
+      -moz-background-size: 38px;
+      background-size: 38px;
       vertical-align: middle;
       margin: 8% 4% 0 3%; }
     .userAdress .userAdL .adContent {
@@ -1656,9 +1767,9 @@ body {
       background: #f2f1ef;
       border: 1px solid #dddddd;
       line-height: 30px;
-      padding: 0 5%; }
+      padding: 0 3%; }
       .mr5 {
-        margin-right: 5%; }
+        margin-right: 4%; }
       .payWay .payBtn a:hover {
         color: white;
         background: #b81c2b;
@@ -1666,8 +1777,7 @@ body {
 
 .titleName {
   color: #666666;
-  font-size: 1.3em;
-  padding: 5% 0 5% 8%; }
+  padding: 5% 0 5% 5%; }
 
 .orderDl {
   border-top: #dddddd solid 1px;
@@ -1716,7 +1826,8 @@ body {
       width: 100%; }
 
 .orderD1Tb td {
-  /*  line-height: 30px; */ }
+  /*  line-height: 30px; */
+  color: #989898; }
   .orderD1Tb td.red {
     color: #b81c2b;
     padding: 0 0 0 5px; }
@@ -1764,7 +1875,10 @@ body {
       line-height: 28px; }
     .addressli li .span.tars {
       font-family: "SimSun";
-      cursor: pointer; }
+      cursor: pointer;
+      font-weight: bold; }
+    .addressli li .span .buttonRed {
+      max-width: 120px; }
 
 .cityList li {
   border-top: #cccccc solid 1px; }
@@ -1802,7 +1916,7 @@ body {
   margin-bottom: 5%; }
   .order_state.bdbN {
     border-bottom: none; }
-  .order_state .fl, .order_state .groupInfo li .imgFl, .groupInfo li .order_state .imgFl, .order_state .groupInfo li .groupCont, .groupInfo li .order_state .groupCont, .order_state .moreTaoC ul li, .moreTaoC ul .order_state li, .order_state .proCarList li .radius, .proCarList li .order_state .radius, .order_state .proCarList li .carProImg, .proCarList li .order_state .carProImg, .order_state .proCarList li .carContent, .proCarList li .order_state .carContent, .order_state .proCarList li .carContent .carProTitle a, .proCarList li .carContent .carProTitle .order_state a, .order_state .clearing span, .clearing .order_state span, .order_state .userAdress .userAdL, .userAdress .order_state .userAdL, .order_state .userAdress .userAdL .adIcon, .userAdress .userAdL .order_state .adIcon, .order_state .userAdress .userAdL .adContent, .userAdress .userAdL .order_state .adContent, .order_state .userAdress .adNext, .userAdress .order_state .adNext, .order_state .addressli li .label, .addressli li .order_state .label, .order_state .addressli li .span, .addressli li .order_state .span, .order_state .services li .labels, .services li .order_state .labels, .order_state .services li .spans, .services li .order_state .spans, .order_state .allgoodsst li, .allgoodsst .order_state li, .order_state .serviceList ul li, .serviceList ul .order_state li, .order_state .serviceList ul li .icn_label, .serviceList ul li .order_state .icn_label, .order_state .serviceList ul li .con_span, .serviceList ul li .order_state .con_span, .order_state .otherName ul li, .otherName ul .order_state li, .order_state .listmore_shop li ul li, .listmore_shop li ul .order_state li {
+  .order_state .fl, .order_state .groupInfo li .imgFl, .groupInfo li .order_state .imgFl, .order_state .groupInfo li .groupCont, .groupInfo li .order_state .groupCont, .order_state .moreTaoC ul li, .moreTaoC ul .order_state li, .order_state .proCarList li .radius, .proCarList li .order_state .radius, .order_state .proCarList li .carProImg, .proCarList li .order_state .carProImg, .order_state .proCarList li .carContent, .proCarList li .order_state .carContent, .order_state .proCarList li .carContent .carProTitle a, .proCarList li .carContent .carProTitle .order_state a, .order_state .yanguangdan .yanTime label, .yanguangdan .yanTime .order_state label, .order_state .yanguangdan .yanTime span, .yanguangdan .yanTime .order_state span, .order_state .clearing span, .clearing .order_state span, .order_state .userAdress .userAdL, .userAdress .order_state .userAdL, .order_state .userAdress .userAdL .adIcon, .userAdress .userAdL .order_state .adIcon, .order_state .userAdress .userAdL .adContent, .userAdress .userAdL .order_state .adContent, .order_state .userAdress .adNext, .userAdress .order_state .adNext, .order_state .addressli li .label, .addressli li .order_state .label, .order_state .addressli li .span, .addressli li .order_state .span, .order_state .services li .labels, .services li .order_state .labels, .order_state .services li .spans, .services li .order_state .spans, .order_state .allgoodsst li, .allgoodsst .order_state li, .order_state .serviceList ul li, .serviceList ul .order_state li, .order_state .serviceList ul li .icn_label, .serviceList ul li .order_state .icn_label, .order_state .serviceList ul li .con_span, .serviceList ul li .order_state .con_span, .order_state .otherName ul li, .otherName ul .order_state li, .order_state .listmore_shop li ul li, .listmore_shop li ul .order_state li, .order_state .circular {
     width: 70%; }
   .order_state .fr, .order_state .groupPro li .groupPrice a, .groupPro li .groupPrice .order_state a, .order_state .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .order_state .cpPrice, .order_state .listmore_shop li em, .listmore_shop li .order_state em {
     width: 30%;
@@ -1821,9 +1935,9 @@ body {
   border-left: #b81c2b solid 1px;
   padding: 5% 5% 5% 10%;
   overflow: hidden; }
-  .allPrices .fl, .allPrices .groupInfo li .imgFl, .groupInfo li .allPrices .imgFl, .allPrices .groupInfo li .groupCont, .groupInfo li .allPrices .groupCont, .allPrices .moreTaoC ul li, .moreTaoC ul .allPrices li, .allPrices .proCarList li .radius, .proCarList li .allPrices .radius, .allPrices .proCarList li .carProImg, .proCarList li .allPrices .carProImg, .allPrices .proCarList li .carContent, .proCarList li .allPrices .carContent, .allPrices .proCarList li .carContent .carProTitle a, .proCarList li .carContent .carProTitle .allPrices a, .allPrices .clearing span, .clearing .allPrices span, .allPrices .userAdress .userAdL, .userAdress .allPrices .userAdL, .allPrices .userAdress .userAdL .adIcon, .userAdress .userAdL .allPrices .adIcon, .allPrices .userAdress .userAdL .adContent, .userAdress .userAdL .allPrices .adContent, .allPrices .userAdress .adNext, .userAdress .allPrices .adNext, .allPrices .addressli li .label, .addressli li .allPrices .label, .allPrices .addressli li .span, .addressli li .allPrices .span, .allPrices .services li .labels, .services li .allPrices .labels, .allPrices .services li .spans, .services li .allPrices .spans, .allPrices .allgoodsst li, .allgoodsst .allPrices li, .allPrices .serviceList ul li, .serviceList ul .allPrices li, .allPrices .serviceList ul li .icn_label, .serviceList ul li .allPrices .icn_label, .allPrices .serviceList ul li .con_span, .serviceList ul li .allPrices .con_span, .allPrices .otherName ul li, .otherName ul .allPrices li, .allPrices .listmore_shop li ul li, .listmore_shop li ul .allPrices li {
+  .allPrices .fl, .allPrices .groupInfo li .imgFl, .groupInfo li .allPrices .imgFl, .allPrices .groupInfo li .groupCont, .groupInfo li .allPrices .groupCont, .allPrices .moreTaoC ul li, .moreTaoC ul .allPrices li, .allPrices .proCarList li .radius, .proCarList li .allPrices .radius, .allPrices .proCarList li .carProImg, .proCarList li .allPrices .carProImg, .allPrices .proCarList li .carContent, .proCarList li .allPrices .carContent, .allPrices .proCarList li .carContent .carProTitle a, .proCarList li .carContent .carProTitle .allPrices a, .allPrices .yanguangdan .yanTime label, .yanguangdan .yanTime .allPrices label, .allPrices .yanguangdan .yanTime span, .yanguangdan .yanTime .allPrices span, .allPrices .clearing span, .clearing .allPrices span, .allPrices .userAdress .userAdL, .userAdress .allPrices .userAdL, .allPrices .userAdress .userAdL .adIcon, .userAdress .userAdL .allPrices .adIcon, .allPrices .userAdress .userAdL .adContent, .userAdress .userAdL .allPrices .adContent, .allPrices .userAdress .adNext, .userAdress .allPrices .adNext, .allPrices .addressli li .label, .addressli li .allPrices .label, .allPrices .addressli li .span, .addressli li .allPrices .span, .allPrices .services li .labels, .services li .allPrices .labels, .allPrices .services li .spans, .services li .allPrices .spans, .allPrices .allgoodsst li, .allgoodsst .allPrices li, .allPrices .serviceList ul li, .serviceList ul .allPrices li, .allPrices .serviceList ul li .icn_label, .serviceList ul li .allPrices .icn_label, .allPrices .serviceList ul li .con_span, .serviceList ul li .allPrices .con_span, .allPrices .otherName ul li, .otherName ul .allPrices li, .allPrices .listmore_shop li ul li, .listmore_shop li ul .allPrices li, .allPrices .circular {
     width: 60%; }
-    .allPrices .fl em, .allPrices .groupInfo li .imgFl em, .groupInfo li .allPrices .imgFl em, .allPrices .groupInfo li .groupCont em, .groupInfo li .allPrices .groupCont em, .allPrices .moreTaoC ul li em, .moreTaoC ul .allPrices li em, .allPrices .proCarList li .radius em, .proCarList li .allPrices .radius em, .allPrices .proCarList li .carProImg em, .proCarList li .allPrices .carProImg em, .allPrices .proCarList li .carContent em, .proCarList li .allPrices .carContent em, .proCarList li .carContent .carProTitle .allPrices a em, .allPrices .clearing span em, .clearing .allPrices span em, .allPrices .userAdress .userAdL em, .userAdress .allPrices .userAdL em, .userAdress .userAdL .allPrices .adIcon em, .userAdress .userAdL .allPrices .adContent em, .allPrices .userAdress .adNext em, .userAdress .allPrices .adNext em, .allPrices .addressli li .label em, .addressli li .allPrices .label em, .allPrices .addressli li .span em, .addressli li .allPrices .span em, .allPrices .services li .labels em, .services li .allPrices .labels em, .allPrices .services li .spans em, .services li .allPrices .spans em, .allPrices .allgoodsst li em, .allgoodsst .allPrices li em, .allPrices .serviceList ul li em, .serviceList ul .allPrices li em, .serviceList ul li .allPrices .icn_label em, .serviceList ul li .allPrices .con_span em, .allPrices .otherName ul li em, .otherName ul .allPrices li em, .allPrices .listmore_shop li ul li em, .listmore_shop li ul .allPrices li em {
+    .allPrices .fl em, .allPrices .groupInfo li .imgFl em, .groupInfo li .allPrices .imgFl em, .allPrices .groupInfo li .groupCont em, .groupInfo li .allPrices .groupCont em, .allPrices .moreTaoC ul li em, .moreTaoC ul .allPrices li em, .allPrices .proCarList li .radius em, .proCarList li .allPrices .radius em, .allPrices .proCarList li .carProImg em, .proCarList li .allPrices .carProImg em, .allPrices .proCarList li .carContent em, .proCarList li .allPrices .carContent em, .proCarList li .carContent .carProTitle .allPrices a em, .allPrices .yanguangdan .yanTime label em, .yanguangdan .yanTime .allPrices label em, .allPrices .yanguangdan .yanTime span em, .yanguangdan .yanTime .allPrices span em, .allPrices .clearing span em, .clearing .allPrices span em, .allPrices .userAdress .userAdL em, .userAdress .allPrices .userAdL em, .userAdress .userAdL .allPrices .adIcon em, .userAdress .userAdL .allPrices .adContent em, .allPrices .userAdress .adNext em, .userAdress .allPrices .adNext em, .allPrices .addressli li .label em, .addressli li .allPrices .label em, .allPrices .addressli li .span em, .addressli li .allPrices .span em, .allPrices .services li .labels em, .services li .allPrices .labels em, .allPrices .services li .spans em, .services li .allPrices .spans em, .allPrices .allgoodsst li em, .allgoodsst .allPrices li em, .allPrices .serviceList ul li em, .serviceList ul .allPrices li em, .serviceList ul li .allPrices .icn_label em, .serviceList ul li .allPrices .con_span em, .allPrices .otherName ul li em, .otherName ul .allPrices li em, .allPrices .listmore_shop li ul li em, .listmore_shop li ul .allPrices li em, .allPrices .circular em {
       color: #b81c2b; }
   .allPrices .fr, .allPrices .groupPro li .groupPrice a, .groupPro li .groupPrice .allPrices a, .allPrices .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .allPrices .cpPrice, .allPrices .listmore_shop li em, .listmore_shop li .allPrices em {
     width: 40%; }
@@ -1875,20 +1989,18 @@ body {
   .services li.last {
     border: 0; }
   .services li .labels {
-    width: 35%;
-    padding: 4% 0 0; }
-    .services li .labels em.icn1 {
-      width: 30px;
-      height: 33px;
-      background-position: -135px 0; }
-    .services li .labels em.icn2 {
-      width: 30px;
-      height: 33px;
-      background-position: -174px 0; }
-    .services li .labels em.icn3 {
-      width: 39px;
-      height: 29px;
-      background-position: -121px -36px; }
+    width: 35%; }
+    .services li .labels em {
+      width: 45px;
+      height: 45px;
+      background-size: 55px auto; }
+      .services li .labels em.icn1 {
+        background-position: 3px -248px; }
+      .services li .labels em.icn2 {
+        background-position: 0 -318px; }
+      .services li .labels em.icn3 {
+        background-position: 0 -392px;
+        width: 52px; }
   .services li .spans {
     width: 65%; }
 
@@ -1947,6 +2059,7 @@ body {
     .search label.searchBtn input[type="submit"] {
       height: 30px;
       line-height: 30px;
+      /* @extend .f14; */
       background: #b81c2b;
       -webkit-border-radius: 5px;
       -o-border-radius: 5px;
@@ -1956,7 +2069,7 @@ body {
       border: none;
       padding: 0 15px; }
   .search label.searchInpt {
-    width: 73%; }
+    width: 71%; }
     .search label.searchInpt input[type="text"] {
       height: 28px;
       line-height: 28px;
@@ -2001,30 +2114,32 @@ body {
         width: 24%;
         height: 33px;
         line-height: 33px;
-        background: #b81c2b url(../images/mobileBg.png) no-repeat;
+        background-color: #b81c2b;
+        /* background:$red url(../images/mobileBg.png) no-repeat; */
         -webkit-border-radius: 5px;
         -o-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
+        background-size: 50px auto;
         margin: 4px 0 0;
         vertical-align: middle;
-        color: white; }
+        color: white;
+        /* @include screen(320px, 550px){
+          &.icn_label1{ background-position:4px -615px;}
+          &.icn_label2{background-position:7px -208px;}
+          &.icn_label4{background-position:7px -240px;}
+        } */ }
         .serviceList ul li .icn_label.icn_label1 {
-          background-position: 0 -62px; }
+          background-position: 4px -615px; }
         .serviceList ul li .icn_label.icn_label2 {
-          background-position: 0 -104px; }
+          background-position: 1px -599px;
+          background-size: 45px auto; }
         .serviceList ul li .icn_label.icn_label3 {
           letter-spacing: -1px;
           background-position: -99999px -99999px; }
         .serviceList ul li .icn_label.icn_label4 {
-          background-position: 0 -138px; }
-        @media screen and (min-width: 320px) and (max-width: 550px) {
-          .serviceList ul li .icn_label.icn_label1 {
-            background-position: 7px -171px; }
-          .serviceList ul li .icn_label.icn_label2 {
-            background-position: 7px -208px; }
-          .serviceList ul li .icn_label.icn_label4 {
-            background-position: 7px -240px; } }
+          background-position: 5px -754px;
+          background-size: 52px auto; }
       .serviceList ul li .con_span {
         width: 70%;
         padding: 0 0 0 5px;
@@ -2040,11 +2155,11 @@ body {
   padding: 4%; }
   .updown_go em {
     color: #959595;
-    -ms-text-transform: rotate(90deg);
-    -o-text-transform: rotate(90deg);
-    -moz-text-transform: rotate(90deg);
-    -webkit-text-transform: rotate(90deg);
-    text-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
     padding: 5% 0 0; }
 
 .shitiInfos {
@@ -2112,3 +2227,129 @@ body {
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
+
+.popBox {
+  position: fixed;
+  right: 0;
+  top: 30px;
+  width: 40%;
+  border-left: #ababab solid 1px;
+  border-bottom: #ababab solid 1px;
+  overflow: hidden; }
+  .popBox ul li {
+    border-bottom: #d4d4d4 solid 1px;
+    line-height: 35px; }
+
+/***************************** loading **********************************/
+#loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  color: white;
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  line-height: 100%; }
+
+#fixedBox {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  width: 64px;
+  height: 64px; }
+
+.circular {
+  background-color: #b81c2b;
+  width: 15px;
+  height: 15px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-animation-name: bounce_circular;
+  -o-animation-name: bounce_circular;
+  -moz-animation-name: bounce_circular;
+  animation-name: bounce_circular;
+  -webkit-animation-duration: 0.7s;
+  -o-animation-duration: 0.7s;
+  -moz-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: linear;
+  -o-animation-direction: linear;
+  -moz-animation-direction: linear;
+  animation-direction: linear; }
+
+#circular_1 {
+  margin-top: 25px;
+  -webkit-animation-delay: 0.1s;
+  -o-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  animation-delay: 0.1s; }
+
+#circular_2 {
+  margin-left: -8px;
+  margin-top: 9px;
+  -webkit-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+
+#circular_3 {
+  margin-top: 1px;
+  -webkit-animation-delay: 0.3s;
+  -o-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s; }
+
+#circular_4 {
+  margin-left: 0;
+  margin-top: 9px;
+  -webkit-animation-delay: 0.4s;
+  -o-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s; }
+
+#circular_5 {
+  margin-left: -8px;
+  margin-top: 25px;
+  -webkit-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s; }
+
+#circular_6 {
+  margin-left: -22px;
+  margin-top: 40px;
+  -webkit-animation-delay: 0.6s;
+  -o-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s; }
+
+#circular_7 {
+  margin-left: -37px;
+  margin-top: 48px;
+  -webkit-animation-delay: 0.7s;
+  -o-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s; }
+
+#circular_8 {
+  margin-left: -53px;
+  margin-top: 41px;
+  -webkit-animation-delay: 0.8s;
+  -o-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s; }
+
+@-webkit-keyframes bounce_circular {
+  0% {
+    -webkit-transform: scale(0.8); }
+
+  100% {
+    -webkit-transform: scale(0.2); } }
