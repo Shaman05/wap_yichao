@@ -12,13 +12,7 @@ define(['app/view/baseView', 'app/model/userModel'], function(baseView, model){
   return Backbone.View.extend(
     $.extend(baseView, {
       id: 'user-login',
-      model: new model,
-      events: {
-        'click #loginBtn': 'doLogin'
-      },
-      doLogin: function(){
-        console.log(new Date());
-      }
+      model: new model
     })
   );
 

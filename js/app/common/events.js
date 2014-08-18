@@ -11,34 +11,34 @@ define(function(){
 
   return {
     init: function(){
-      //返回顶部
-      $(document).on('click', '#backTop', function(){
-        $.scrollTo({
-          endY: 0,
-          duration: 300,
-          callback: function() {}
+      $(document)
+        .unbind()
+        //返回顶部
+        .on('click', '#backTop', function(){
+          $.scrollTo({
+            endY: 0,
+            duration: 300,
+            callback: function() {}
+          });
+        })
+        //商品菜单
+        .on('click', '#goodsTypeView', function(){
+          $('#goodsTypeList').toggle();
+        })
+      //实体店
+        .on('click', '#entityList li', function(){
+          $(this).toggleClass('open');
+        })
+        .on('click', '#showEntityInfo', function(){
+          $('#entityInfo').toggle();
         });
-      });
-
-      //商品菜单
-      $(document).on('click', '#goodsTypeView', function(){
-        $('#goodsTypeList').toggle();
-      });
 
       //滚动加载测试
-      $(window).on('scroll', function(){
+      /*$(window).on('scroll', function(){
         if($(window).scrollTop() + $(window).height() >= $(document).height()){
           console.log('end')
         }
-      });
-
-      //实体店
-      $(document).on('click', '#entityList li', function(){
-        $(this).toggleClass('open');//.siblings('.open').removeClass('open');
-      });
-      $(document).on('click', '#showEntityInfo', function(){
-        $('#entityInfo').toggle();
-      });
+      });*/
     }
   };
 
