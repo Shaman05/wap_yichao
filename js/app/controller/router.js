@@ -35,10 +35,18 @@ define(['util'], function(util) {
       var ac = params['ac'] || '404';
       APP.ac = ac;
       ac = ac.replace(/\./g, '/');
-      require(['app/view/' + ac, 'app/events/' + ac, 'text!app/template/' + ac + '.html'], function(view, events, tpl){
-        params._APP_TPL = tpl;
-        events.call(new view(params));
-      });
+      if(ac == '404'){
+        require(['app/view/404', 'text!app/template/404.html'], function(view, tpl){
+          params._APP_TPL = tpl;
+          new view(params);
+        });
+      }else{
+        require(['app/view/' + ac, 'app/events/' + ac, 'text!app/template/' + ac + '.html'], function(view, events, tpl){
+          params._APP_TPL = tpl;
+          var _view = new view(params);
+          events(_view, _view.model);
+        });
+      }
     }
 
   });

@@ -5,7 +5,7 @@
  * Time: 下午4:55
  */
 
-define(['app/view/baseView', 'app/model/userModel'], function(baseView, model){
+define(['app/view/baseView', 'app/service/api'], function(baseView, model){
 
   "use strict";
 

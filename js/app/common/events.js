@@ -24,21 +24,15 @@ define(function(){
         //商品菜单
         .on('click', '#goodsTypeView', function(){
           $('#goodsTypeList').toggle();
-        })
-      //实体店
-        .on('click', '#entityList li', function(){
-          $(this).toggleClass('open');
-        })
-        .on('click', '#showEntityInfo', function(){
-          $('#entityInfo').toggle();
         });
 
-      //滚动加载测试
-      /*$(window).on('scroll', function(){
-        if($(window).scrollTop() + $(window).height() >= $(document).height()){
-          console.log('end')
-        }
-      });*/
+      $(window)
+        .on('scroll', function(){
+          $('#goodsTypeList').hide();
+          /*if($(window).scrollTop() + $(window).height() >= $(document).height()){
+            console.log('end')
+          }*/
+        });
     }
   };
 

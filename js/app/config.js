@@ -15,7 +15,12 @@
     domain: 'wap.yichao.cn',
     apiUrl: '/wap/',
     homeAction: 'ac=home',
+
     needLogin: true,
+    passport: {
+      name: 'test',
+      pwd: '123456'
+    },
 
     //模板碎片配置
     noHeader: [

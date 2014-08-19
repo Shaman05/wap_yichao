@@ -1,0 +1,72 @@
+/**
+ * Created with JetBrains PhpStorm.
+ * User: Chen Chao
+ * Date: 14-8-12
+ * Time: 下午2:02
+ */
+
+define(['util'], function(util){
+
+  "use strict";
+
+  var config = APP.config;
+  var account = config.passport.name;
+  var pwd = config.passport.name;
+
+  return {
+    /**
+     * 接口桥接函数
+     * @param api 接口地址
+     * @param data 传送参数
+     * @param callback 回调
+     */
+    callApi: function(api, data, callback, isShowLoading) {
+      var options = $.extend({
+        isShowLoading: isShowLoading
+      }, {
+        data: data,
+        url: api,
+        success: callback
+      });
+      ajax(options);
+    }
+  };
+
+  function ajax(opt) {
+    var paramType = typeof(opt.data);
+    opt.url = config.apiUrl + opt.url;
+    opt.type = opt.type || 'post';
+    opt.data = opt.data || {};
+    opt.dataType = opt.dataType || 'json';
+    opt.async = opt.async !== false;
+    opt.isShowLoading = opt.isShowLoading !== false;  // 是否显示loading背景
+    opt.callback = opt.success;
+    opt.error = function(xhr, errorType, error){
+      alert(
+        'Service: "' + opt.url + '"\n' +
+        'Error: ' + xhr.status + ' ' + xhr.statusText
+      );
+    };
+    opt.success = function (data) {
+      util.hideLoading();
+      if(data.needLogin){
+        location.hash = '#ac=user.login';
+        return;
+      }
+      if($.isFunction(opt.callback)){
+        opt.callback(data);
+      }
+    };
+    //跳过登录，需根据不同情况修改字段名称
+    if(!config.needLogin){
+      opt.data = paramType == 'object'
+        ? $.extend({uname: account, pwd: pwd}, opt.data)
+        : opt.data + '&uname=' + account + '&pwd=' + pwd;
+    }
+    if(opt.isShowLoading){
+      util.showLoading();
+    }
+    $.ajax(opt);
+  }
+
+});

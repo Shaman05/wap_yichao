@@ -11,12 +11,6 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
-    $(document)
-      .on('click', '#loginBtn', function(){
-        service.login({foo: 'foo', bar: 'bar'}, function(d){
-          console.log(d);
-        });
-      });
   };
 
 });

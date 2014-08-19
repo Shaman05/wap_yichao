@@ -1,8 +1,8 @@
 /**
  * Created with JetBrains PhpStorm.
  * User: Chen Chao
- * Date: 14-8-18
- * Time: 上午9:58
+ * Date: 14-8-19
+ * Time: 下午3:29
  */
 
 define(['events'], function(events){
@@ -11,11 +11,6 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
-    $(document)
-      .on('click', '#test', function(){
-        console.log(view.id);
-        console.log(service);
-      });
   };
 
 });

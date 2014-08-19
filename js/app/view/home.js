@@ -5,14 +5,17 @@
  * Time: 下午3:32
  */
 
-define(['app/view/baseView'], function(baseView){
+define(['app/view/baseView', 'app/service/api'], function(baseView, model){
 
   "use strict";
 
   return Backbone.View.extend(
     $.extend(baseView, {
       id: 'home-page',
-      model: null
+      model: new model,
+      ready: function(){
+        this.model.goodsList();
+      }
     })
   );
 
