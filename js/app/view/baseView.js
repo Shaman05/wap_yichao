@@ -25,7 +25,7 @@ define([
     render: function(data){
       var content = this._render(data);
       this.$el.attr('id', this.id).html(content);
-      this.ready();
+      this.ready(data);
     },
     _render: function(data){
       var tpl = '';
@@ -51,7 +51,7 @@ define([
     data: function(){
       return {};
     },
-    ready: function(){
+    ready: function(params){
       //page ready
     }
   };
