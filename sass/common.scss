@@ -53,20 +53,23 @@ body{font-family:$fontYaHei; color:$black;}
 .fr{
   @include float(right);
 }
-.f075{
+.f12{
   font-size: 0.75em;
 }
-.f1{
+.f14{
+  font-size: 0.875em;
+}
+.f16{
   font-size: 1em;
 }
-.f12{
-  font-size: 1.2em;
+.f18{
+  font-size: 1.125em;
 }
-.f13{
-  font-size: 1.3em;
+.f20{
+  font-size: 1.25em;
 }
-.f14{
- font-size: 1.4em;
+.f25{
+ font-size: 1.5625em;
 }
 
 .f15{
@@ -75,37 +78,43 @@ body{font-family:$fontYaHei; color:$black;}
 .tac{text-align:center;}
 .tar{text-align: right}
 .tal{text-align: left;}
+.red{
+  color:$red;
+}
 .fixclear{clear:both; font-size:0; line-height: 0; }
 .iconsBg{
-    background: url(../images/mobileBg.png) no-repeat;
+    /* background: url(../images/mobileBg.png) no-repeat; */
+    background: url(../images/allIcn.png) no-repeat;
     @include inline-block(false);
     vertical-align: middle;
-}
-.icons{
-	@include width(30px);
-	@include height(true,26px);
+    /* @include prefixer(background-size, 150px auto, webkit o moz); */
 }
 #header{
-	@include height(true,45px);
     background: $red;
     @include ovh(hidden);
     @include width(100%);
+    padding:2% 0;
 }
 .topNav{
     	@include ovh(hidden);
     	li{
-    		@include float(left);
     	&.item1{
+        @include float(left);
     			@include width(60%);
-                padding:0 0 0 4%;
+          padding:0 0 0 4%;
     			@at-root.logoImg{
     				background:url(../images/logo.png) no-repeat left center;
     				display: block;
     				@include height(true,45px);
+             @include prefixer(background-size, 180px 30px , webkit o moz);
+            @include min-screen(720px){
+               @include prefixer(background-size,  contain , webkit o moz);
+            }
     			}
     		}
-    	&.item2{
-    			@include width(36%);
+&.item2{
+          @include width(36%);
+          @include float(right);
                 a{
                     @include inline-block(false);
                     display:-moz-inline-stack;*display:inline;zoom:1;
@@ -114,46 +123,62 @@ body{font-family:$fontYaHei; color:$black;}
                     padding:2px 0 0;
                     vertical-align: middle;
                     @extend .tac;
+                    .icn_top{
+                       @extend .iconsBg;
+                       @include prefixer(background-size,48px auto, webkit o moz);
+                    }
                     &.goods{
                         @include width(30%);
-                        .icons{
-                           @extend .iconsBg;
-                            background-position: -12px 0;
+                        .icn_top{
+                            background-position: 2px -481px;
                             @include width(25px);
-                            @include height(true,18px);
+                            @include height(true,20px);
                         }
                     }
-                    &.shiptCart{
+                    &.shoptCart{
                          /* margin-right:2%;   */
                           @include width(36%);
-                        .icons{
-                            @extend .iconsBg;
-                            background-position: -43px 0;
-                            @include width(24px);
-                            @include height(true,18px);
+                        .icn_top{
+                            background-position:2px -512px;
+                            @include width(25px);
+                            @include height(true,20px);
                         }
 
                     }
                     &.orders{
                         @include width(26%);
-                     .icons{
-                       @extend .iconsBg;
-                        background-position: -73px 0;
+                     .icn_top{
+                        background-position:2px -541px;
                         @include width(20px);
-                        @include height(true,18px);
+                        @include height(true,20px);
                      } 
                     }
-                     .txt{padding:2px 0 0;color:$white; font-size:0.7em}
+                     .txt{padding:2px 0 0;color:$white; font-size:0.7em; display:block;}
                 }
-    		}
+        }
+    	
     	}	
     } 
 
 /* top Nav Bar style */
 .navBar { @include height(true,50px); padding: 0 20px; background: #e6e6e6; @extend .tac;}
-.navBar .backGo{float: left;font-size:2.2em; font-family: $fontCn; color:#313131; /* @include width(20x); */ @include height(false,50px,50px); line-height: 50px; text-align:left;}
-.navBar .home{@include width(32px); @include height(true,31px); @extend .iconsBg; float: right; background-position: -100px 0; margin-top:12px; display: inline;}
-.navBar .txt{/* float: left; width:78%; */  @include height(false,auto,50px); color:#363636; font-size: 1.6em; @extend .tac;}
+.navBar .backGo{
+  float: left;font-size:2.2em; text-indent:-999px; 
+  font-family: $fontCn; color:#313131; @include width(8%);
+   @include height(true,30px); text-align:left;
+   @extend .iconsBg;
+   background-position: 2px -334px;
+   background-size: 37px auto;
+   @include position(0);
+   top:20%;
+}
+.navBar .home{
+  @include width(32px); @include height(true,31px);
+   @extend .iconsBg; float: right; background-position:2px -310px; 
+   margin-top:9px; display: inline;
+    background-size: 38px auto;
+}
+.navBar .txt{ @include height(false,auto,50px); color:#363636; font-size:1.5em; @extend .tac;}
 
 /* product style */
 #proWapper{
@@ -194,6 +219,7 @@ body{font-family:$fontYaHei; color:$black;}
         @include prefixer(border-radius, $smallRadius, o webkit moz);
         @extend .tac;
         @include height(false,30px,30px);
+        max-width: 85px;
         background: $cd; 
         color:$white;
         @at-root a.pageUp{
@@ -238,21 +264,20 @@ body{font-family:$fontYaHei; color:$black;}
 }
 .buttonGray{
     @extend .btn;
-    @extend .f12; background: #d3d3d3; color:#3c3c3c; 
+    background: #d3d3d3; color:#3c3c3c; 
    }
 .buttonRed{
      @extend .btn;
-    @extend .f15; background:$red; color:$white; 
+     background:$red; color:$white; 
 }
 .buttonYellow{
      @extend .btn;
-    @extend .f12; background:#ff6c00; 
+    background:#ff6c00; 
     color:$white;
     @include inline-block(false);
 }
 .buttonGray_01{
   font-family:$fontYaHei;
-  @extend .f12;
   background: #7e7e7e;
   color:$white;
   border:none;
@@ -290,13 +315,14 @@ body{font-family:$fontYaHei; color:$black;}
 .onoff i::after{
   @extend .iconsBg;
     @include position(0);
-    top:-2px;left:3px;
+    top:-2px;left:1px;
     z-index:10;
     @include inline-block(false);
     content: '';
     width: 25px;
      @include height(true,25px); 
-    background-position: -72px -23px;
+    background-position: 3px -474px;
+    @include prefixer(background-size, 31px, o webkit moz);
 }
 /* can delete */
 .onoff-on label{
@@ -323,8 +349,8 @@ body{font-family:$fontYaHei; color:$black;}
 #comments{
     padding:15px 10px 0;
 }
-.commontsTitles{display: block;@extend .f12; padding:0 0 15px; @include position(0);}
-.commontsTitles .ec1{ @include position(1); top:5%;right:5%; font-size:1em;}
+.commontsTitles{display: block;padding:0 0 15px; @include position(0); @extend .f18; line-height: 30px;}
+.commontsTitles .ec1{ @include position(1); top:5%;right:5%;@extend .f20;}
 .commentsList{
     li{
         border-top: 1px solid $cd;
@@ -388,15 +414,17 @@ body{font-family:$fontYaHei; color:$black;}
        @extend .iconsBg;
        @include width(25px);  
        @include height(true,32px); 
-       background-position:0 -19px;
+       background-position:0 -49px;
+       background-size:40px auto;
        @include position(1);
        left:10px; top:5px;
      }
      .inpPwd{
       @extend .iconsBg;
        @include width(21px);  
-       @include height(true,25px); 
-       background-position:-26px -22px;
+       @include height(true,26px); 
+       background-position:0 -133px;
+       background-size:38px auto;
        @include position(1);
        left:10px; top:8px;
      }
@@ -411,6 +439,7 @@ body{font-family:$fontYaHei; color:$black;}
         display: inline-block;
         @include width(99%);
         @include height(true,40px);
+        @extend .f20;
      }
      &.last{
         .lookpwd{
@@ -427,9 +456,10 @@ body{font-family:$fontYaHei; color:$black;}
         font-size: 11px;
         .icons{
            @extend .iconsBg;
-            background-position: -52px -24px;;
-            width:17px;
-            @include height(true,19px);
+            background-position: 0 -3px;
+            @include prefixer(background-size, 27px auto, webkit o moz);
+            width:20px;
+            @include height(true,25px);
         }
      }
     }
@@ -448,12 +478,12 @@ body{font-family:$fontYaHei; color:$black;}
         white-space: nowrap;
         text-overflow: ellipsis;
         @include ovh(hidden);
-         font-size: 1.6em;
+         @extend .f25;
          color:#0a0a0a;
         &.red{color:#e86464; padding:0;}
     }
     .priceOne{
-        em{font-size:2em; color:$red; @include float(left);}
+        em{@extend .f25;color:$red; @include float(left);}
         i{ @include float(left); margin:10px 0 0 5px; } 
     }
     .priced{clear:both; text-decoration: line-through; line-height: 20px;}
@@ -469,6 +499,7 @@ body{font-family:$fontYaHei; color:$black;}
        border-bottom:#cccccc solid 1px;
        p{
         @include inline-block(false);
+        font-size:0.8125em;
         em{color:$red;}
         &.one{width:29%;}
         &.two{width:29%;}
@@ -479,10 +510,11 @@ body{font-family:$fontYaHei; color:$black;}
         @include float(left);
     }
     .name{
-        width:18%;
+        width:22%;
+        max-width: 63px;
     }
     .ctent{
-        width:82%;
+        width:78%;
         a{
             @include inline-block(false);
             height: 25px;
@@ -516,10 +548,11 @@ body{font-family:$fontYaHei; color:$black;}
     }
     .buttonYellow{
         @include height(false, 30px,28px);
+        @include position(0);
+        top:-3px;
     }
 }
-
-.kehuPh{ @include height(false, 45px,45px); background:#e21111; padding:0 0 0 15%; color:$white; @extend .f12;}
+.kehuPh{ @include height(false, 45px,45px); background:#e21111; padding:0 0 0 15%; color:$white; @extend .f16;}
 .imgContent{
     @include height(false, auto,25px);
     text-align:center;
@@ -539,21 +572,23 @@ body{font-family:$fontYaHei; color:$black;}
     width:40%;
     .icons{
       @extend .iconsBg;
-      width:30px;
-      @include height(true, 33px);
-      background-position:-137px 0;
+      width:35px;
+      @include height(true, 36px);
+      background-position:0 -200px;
+      @include prefixer(background-size, 45px auto, webkit o moz);
     }
     .txt{@include height(false, auto, 25px);}
   }
   .ww{
     @extend .qq;
     .icons{
-      background-position:-174px 0;
+      width:39px;
+      background-position:0 -260px;
+       @include prefixer(background-size, 45px auto, webkit o moz);
     }
     .txt{@include height(false, auto, 25px);}
   }
 }
-
 /* banner scrollImgs */
  @include max-screen(320px){
      .scrollImg{
@@ -561,6 +596,9 @@ body{font-family:$fontYaHei; color:$black;}
        @include height(true, 270px);
       @include ovh(hidden);
       @include position(0);
+       &.scrollImg_shiti{
+        @include height(true, 200px);
+      }
       .imgListA{
         width:1200px;
         @include ovh(hidden);
@@ -591,6 +629,9 @@ body{font-family:$fontYaHei; color:$black;}
       @include height(true, 300px);
       @include ovh(hidden);
       @include position(0);
+      &.scrollImg_shiti{
+        @include height(true, 260px);
+      }
       .imgListA{
         width:1500px;
         @include ovh(hidden);
@@ -621,6 +662,9 @@ body{font-family:$fontYaHei; color:$black;}
        @include height(true, 300px);
       @include ovh(hidden);
       @include position(0);
+      &.scrollImg_shiti{
+        @include height(true, 300px);
+      }
       .imgListA{
         width:1600px;
         @include ovh(hidden);
@@ -648,7 +692,6 @@ body{font-family:$fontYaHei; color:$black;}
 .proDetails{
   border-bottom:#ebebeb solid 1px;
   line-height: 40px;
-  @extend .f12;
   padding:0 2%;
   .dian{
     @include inline-block(false);
@@ -702,21 +745,21 @@ body{font-family:$fontYaHei; color:$black;}
         border-bottom: #f4f4f4 solid 1px;
         width:33%;
         @extend .tac;
-        @extend .f12;
         padding:5% 0 3%;
         a{
           display: block;
         }
         @at-root .indImgIcn{
-          @extend .iconsBg;
-          width:39px; 
-          @include height(true, 40px);
-          &.ic_1{background-position: -214px -1px;}
-          &.ic_2{background-position: -260px 2px; width:42px;}
-          &.ic_3{background-position: -306px -1px; width:28px}
-          &.ic_4{background-position: -214px -50px; width:43px;}
-          &.ic_5{background-position: -261px -50px; width:48px}
-          &.ic_6{background-position: -319px -50px; width:34px;}
+          background: url(../images/mobileBg_01.png)no-repeat;
+          @include prefixer(background-size, 55px auto, webkit o moz);
+          @include inline-block;
+          @include height(true, 41px);
+          &.ic_1{background-position: 0 -1px; width:42px}
+          &.ic_2{background-position: 0 -79px; width:42px; @include prefixer(background-size, 46px auto, webkit o moz);}
+          &.ic_3{background-position: 0 -182px; width:28px; @include prefixer(background-size,50px auto, webkit o moz);}
+          &.ic_4{background-position: 6px -46px; width:43px; @include prefixer(background-size, 56px auto, webkit o moz);}
+          &.ic_5{background-position: 0 -151px; width:56px}
+          &.ic_6{background-position: 0 -245px; width:47px;}
         }
         .txt{
           line-height: 38px;
@@ -735,7 +778,7 @@ body{font-family:$fontYaHei; color:$black;}
         font-weight: bold;
       }
       em{
-        font-size:1.1em;
+        @extend .f18;
       }
     }
       
@@ -757,7 +800,7 @@ body{font-family:$fontYaHei; color:$black;}
   width:20px;
   height: 20px;
   background:$white;
-  @include prefixer(transform, rotate(45deg))
+  @include prefixer(transform, rotate(45deg));
 }
 
 /* for product sort style */
@@ -773,20 +816,20 @@ body{font-family:$fontYaHei; color:$black;}
      @include height(false, 40px, 40px);
      @include position(0);
      background: #f4f4f4;
-     @extend .f13;
      padding:0 5%;
+     @extend .f18;
      .downOrUP{
       @include position(1);
       right:8%;
       top:3%;
       color:$c6;
-      @extend .f14;
+      @extend .f25;
      }
     }
     ul{display:none;}
     li{
       @include ovh(hidden);
-       .oneName{background: $white;}
+       .oneName{background: $white; @extend .f16;}
        ul{
         padding:0 5%;
        }
@@ -794,6 +837,7 @@ body{font-family:$fontYaHei; color:$black;}
         @include float(left);
         width:50%;
         border:none;
+        @extend .f14;
        }
     }
 
@@ -816,23 +860,24 @@ body{font-family:$fontYaHei; color:$black;}
     .brandImg{
       display: block;
       @include ovh(hidden);
-      @include max-screen(320px){
+      img{width: 100%;}
+      /* @include max-screen(320px){
         img{height:190px; width:150px;}
       }
-       @include screen(330px, 640px){
+       @include screen(330px, 540px){
         img{height:200px; width:180px;}
       }
       @include screen(650px, 1280px){
         img{height:360px; width:280px;}
-      }
+      } */
     }
     .brandName{
        display: block;
        background:$white;
        padding:8%;
-       .brandName{
+       @extend .f12;
+       .bdName{
         padding:15px 0 0;
-        @extend .f12;
         font-weight: bold;
        }
        @include max-screen(320px){
@@ -870,7 +915,6 @@ body{font-family:$fontYaHei; color:$black;}
       }
       .gtexts{
         line-height: 20px;
-        @extend .f12;
         margin:5px 0 0;
       }
     }
@@ -878,7 +922,6 @@ body{font-family:$fontYaHei; color:$black;}
       background: $c6;
       @include height(false,35px,35px);
       color:$white;
-      @extend .f12;
       @extend .tac;
       margin:5px 0 0;
       i{
@@ -911,7 +954,7 @@ body{font-family:$fontYaHei; color:$black;}
       width:60%;
       @extend .fl;
       padding: 0 0 0 2%;
-      .grupTitle{font-size:1.1em;}
+      .grupTitle{font-weight:normal;}
       .gprice{color:$red; line-height: 28px;}
       .groupStl{
         a{
@@ -931,21 +974,22 @@ body{font-family:$fontYaHei; color:$black;}
 }
 .groupInfoBuy{
   @extend .tac;
-  padding: 5% 0 0;
-  @extend .f13;
+  padding: 5% 0;
+  @extend .f18;
   em{
     text-decoration: line-through;
   }
   .buttonRed{
     background: $red_01;
-    padding:1% 5%;
-    font-size: 1em;
+    padding:2% 5%;
+    @extend .f14;
     margin: 15px 0 0;
+    max-width: 120px;
   }
 }
 
 .selectMore{padding:10px;}
-.sctN{line-height: 40px; font-size:1.4em;}
+.sctN{line-height: 40px; @extend .f20;}
 .sctList{
   a{
     @include inline-block;
@@ -964,10 +1008,12 @@ body{font-family:$fontYaHei; color:$black;}
   @include ovh(hidden);
   ul{
     @include ovh(hidden);
+    width:700px;
     li{
       @extend .fl;
       width:40%;
-      margin:0 20px 0 0;
+      max-width: 145px;
+      margin:0 8px 0 8px;
       display: inline;
       .mImg{
         @include borders;
@@ -976,6 +1022,53 @@ body{font-family:$fontYaHei; color:$black;}
           width:100%;
         }
       }
+      .mpc{
+        @extend .f18;
+        color:$red;
+        font-weight: bold;
+        em{
+          @extend .f12;
+          color:#686868;
+          font-weight: normal;
+        }
+      }
+      .mTitle{
+        line-height: 20px;
+      }
+      .lx{
+        a{
+          @include inline-block;
+          background: #988574;
+          color:$white;
+          line-height: 18px;
+          padding:0 2%;
+          margin-right: 5px;
+        }
+      }
+      .buyBtn{
+        display:block;
+        line-height: 25px;
+        background:$red;
+        color:$white;
+        @extend .tac;
+      }
+    }
+  }
+  .num{
+    /* @include position(1); */
+    display: block;
+    @include height(false,20px,20px);
+    @extend .tac;
+    padding:2% 0;
+    em{
+     @include inline-block;
+     width:12px;
+     height: 12px;
+     background: #d3d3d3;
+     @include prefixer(border-radius, 40px, webkit o moz);
+     &.focus{
+      background: #e03d34;
+     }
     }
   }
 }
@@ -1013,6 +1106,7 @@ body{font-family:$fontYaHei; color:$black;}
       @include borders;
       img{
         width:100%;
+        max-width:640px;
       }
     }
     .carContent{
@@ -1039,24 +1133,27 @@ body{font-family:$fontYaHei; color:$black;}
         @extend .fl;
          width:80%;
          display: block;
-         font-size: 1.1em;
        }
        .cpPrice{
         @extend .fr;
         width:20%;
-        font-size: 0.85em;
+        font-size: 0.75em;
         text-align:right;
        }
       }
-      .sezhi{padding:3% 0; font-size :1em;}
+      .sezhi{padding:3% 0; @extend .f12;}
     }
     @at-root.carBtnBox{
       clear: both;
       padding:5% 0 0 10%;
       a{
-        @include inline-block; color:$white; padding:2% 5%; font-size:1.1em; background:#b81c2b;
+        @include inline-block; color:$white; padding:2%; @extend .f16; background:#b81c2b;
+        max-width: 120px; @extend .tac;
         margin-right: 5%;
         &.gntbg{background:#228811;}
+        &:hover,&:link{
+          color:$white;
+        }
       }
     }
     &.focus{background:#efefef;}
@@ -1110,16 +1207,16 @@ body{font-family:$fontYaHei; color:$black;}
   left: 0;
   top: 0;
   @extend .iconsBg;
-  background-position: -194px -45px;
+  background-position:3px -1218px;
+  @include prefixer(background-size, 75px auto, webkit moz o);
 }
 .yanguangdanBox{ 
   width:95%; margin: 13px auto;
   .buttonRed{
    @include prefixer(border-radius, 0, webkit o moz);
-    @extend .f12;
     width:100%;
     margin:1px 0 0;
-    line-height: 30px;
+    line-height: 36px;
   }
 }
 .yanguangdan{
@@ -1133,23 +1230,31 @@ body{font-family:$fontYaHei; color:$black;}
   }
   .emjiao{
     @include position(1);
-    top:-7px;
+    top:-6px;
     left:15%;
     @include inline-block;
-    width:23px; height:7px;
-    @extend .iconsBg;
-    background-position:-187px -67px;
+    width:12px; height:12px;
+    @include prefixer(transform, rotate(45deg));
+    border-left: $cd solid 1px;
+    border-top: $cd solid 1px;
+    background: $white;
   }
   .yanTime{
     color:$grayDark;
-    a{
-      @include inline-block;
-      background: #dfdfdf;
-      line-height: 25px;
-      padding:0 5%; 
-      color:#000000;
-      margin:0 5px 0 0;
+    @extend .f12;
+    @include ovh(hidden);
+    label{width:86px; @extend .fl; line-height: 25px;}
+    span{width:70%; @extend .fl;
+        .aa{
+              @include inline-block;
+              background: #dfdfdf;
+              line-height: 25px;
+              padding:0 2%; 
+              color:#000000;
+              margin:0 5px 0 0;
+            }
     }
+    
   }
 }
 .yanBox{
@@ -1166,9 +1271,11 @@ body{font-family:$fontYaHei; color:$black;}
   @extend .tac;
   margin: 5% 0 0;
   button{
-    line-height: 20px;
+    line-height: 25px;
     padding:0 5%;
     border:none;
+    max-width: 60px;
+    @extend .f12;
     &.affirm{
       background:$red;
       color:$white;
@@ -1180,7 +1287,7 @@ body{font-family:$fontYaHei; color:$black;}
   }
 }
 .carNote{
-  @extend .tac; @extend .f12; color:#b3b3b3; padding:3% 0;
+  @extend .tac; color:#b3b3b3; padding:3% 0;
 }
 .clearing{
   border-top: $cd 1px solid;
@@ -1195,7 +1302,6 @@ body{font-family:$fontYaHei; color:$black;}
     &.sp_01{
       width:25%;
       @extend .tac;
-      @extend .f13;
       padding:2% 0 0;
     }
     &.sp_02{
@@ -1204,7 +1310,6 @@ body{font-family:$fontYaHei; color:$black;}
       @extend .tar;
       p{
         display: block;
-        @extend .f13;
         color:$red;
         font-weight:bold;
       }
@@ -1217,6 +1322,7 @@ body{font-family:$fontYaHei; color:$black;}
         width:100px;
         line-height: 40px;
         &.disab{background: $grayDark;}
+        @extend .f18;
       }
     }
   }
@@ -1235,7 +1341,8 @@ body{font-family:$fontYaHei; color:$black;}
     width:25px;
     height: 33px;
     @extend .iconsBg;
-    background-position:-165px -46px;
+    background-position:0 -87px;
+    @include prefixer(background-size, 38px, webkit o moz);
     vertical-align: middle;
     margin:8% 4% 0 3%;
   }
@@ -1243,7 +1350,6 @@ body{font-family:$fontYaHei; color:$black;}
     @extend .fl;
     width:80%;
     .nameAndPhone{
-      @extend .f12;
       em{
         padding:0 10% 0 0;
       }
@@ -1257,8 +1363,8 @@ body{font-family:$fontYaHei; color:$black;}
     padding:12% 0 0;
     @extend .tac;
     font-family: $fontCn;
-    @extend .f15;
     font-weight: bold;
+    @extend .f25;
   }
 }
 .payWay{
@@ -1276,8 +1382,8 @@ body{font-family:$fontYaHei; color:$black;}
     @include borders;
     line-height: 30px; 
     @extend .tac;
-    padding:0 5%;
-    @at-root.mr5{margin-right:5%;}
+    padding:0 3%;
+    @at-root.mr5{margin-right:4%;}
     &:hover{
       color:$white;
       background:$red;
@@ -1288,8 +1394,8 @@ body{font-family:$fontYaHei; color:$black;}
 }
 .titleName{
   color:$c6;
-  font-size: 1.3em;
-  padding:5% 0 5% 8%;
+  @extend .f18;
+  padding:5% 0 5% 5%;
 }
 .orderDl{
   border-top:$cd solid 1px;
@@ -1354,6 +1460,8 @@ display:block;
 .orderD1Tb{
   td{
    /*  line-height: 30px; */
+   @extend .f12;
+   color:#989898;
     &.red{
       color:$red;
       padding:0 0 0 5px;
@@ -1369,7 +1477,7 @@ display:block;
     @include inline-block;
   }
   input[type="text"]{
-    width:72%; line-height: 25px; border:0; background:none;
+    width:70%; line-height: 25px; border:0; background:none;
     color:#989898;
   }
 }
@@ -1385,7 +1493,6 @@ display:block;
     border-radius:0;
     line-height: 40px;
     padding:0 5%;
-    @extend .f13;
   }
 }
 .addressli{
@@ -1409,12 +1516,15 @@ display:block;
       }
       &.tars{
         @extend .tar;
-        @extend .f13;
         font-family: $fontCn;
        cursor:pointer;
+       @extend .f20;
+       font-weight: bold;
       }
       .buttonRed{
      @extend .buttonRed_add;
+     max-width: 120px;
+     @extend .tac;
       }
    }
   }
@@ -1426,7 +1536,6 @@ display:block;
       display: block;
       line-height: 50px;
        padding: 0 5%;
-      @extend .f13;
       &:hover{
         background:#cccccc;
       }
@@ -1447,7 +1556,6 @@ display:block;
   border-bottom:#d3d3d3 solid 1px;
   padding: 8%;
   line-height: 24px;
-  @extend .f13;
 }
 .zhifuway{
   @extend .tac;
@@ -1456,12 +1564,11 @@ display:block;
     margin:8% 0 0;
     line-height: 40px;
     padding:0 10%;
-    @extend .f13;
   }
   .phNote{
-    @extend .f15;
     @extend .tal;
     padding:6% 0 2%; 
+    @extend .f18;
   }
   .sf{
     color:$grayDark;
@@ -1479,7 +1586,6 @@ display:block;
   .fl{
     width:70%;
     .p_state{
-      @extend .f12;
     }
   }
   .fr{
@@ -1498,7 +1604,6 @@ display:block;
   }
   .order_user{
     @extend .orderInfos;
-    em{@extend .f13;}
   }
 }
 .moreP{
@@ -1571,27 +1676,25 @@ display:block;
       @extend .fl;
       width:35%;
       @extend .tac;
-      padding:4% 0 0;
       em{
         @extend .iconsBg;
+        width:45px; height:45px;
+        background-size: 55px auto;
        &.icn1{
-         width:30px; height:33px;
-         background-position: -135px 0;
+         background-position:3px -248px;
        }
        &.icn2{
-         width:30px; height:33px;
-         background-position: -174px 0;
+         background-position: 0 -318px;
        }
        &.icn3{
-         width:39px; height:29px;
-         background-position: -121px -36px;
+         background-position: 0 -392px;
+         width:52px;
        }
       }
     }
     .spans{
       @extend .fl;
       width:65%;
-      @extend .f13;
     }
   }
 }
@@ -1604,13 +1707,12 @@ display:block;
       @include ovh(hidden);
       padding:3% 5%;
       line-height: 25px;
-      @extend .f12;
       .fr{font-family:$fontCn; font-weight:bold;}
     }
   }
 }
 .wenTitles{
-  @extend .f14;
+  @extend .f20;
   padding:5%;
   @extend .tac;
 }
@@ -1643,42 +1745,221 @@ display:block;
     }
   }
 }
-
-/*top nav menu*/
-header .popBox{
-    background: #ffffff;
-    top: 60px;
-    display: none;
-    z-index: 999;
+.searchNote{
+  padding:8%;
+  em{color:$grayDark}
+  line-height: 25px;
 }
-
-/*shiti LIST*/
-.listmore_shop > li{
-     @include position(0);
+.search{
+  border-bottom: #d3d3d3 solid 1px;
+  padding:0 10% 10%;
+  label{
+    @include inline-block;
+    &.searchBtn{
+      margin-left:14px;
+      input[type="submit"]{
+      @include height(false, 30px, 30px);
+      @extend .tac;
+      /* @extend .f14; */
+      background:#b81c2b;
+      @include prefixer(border-radius, 5px, webkit o moz);
+      color:$white;
+      border:none;
+      padding:0 15px;
+      }
+    }
+    &.searchInpt{
+      width:71%;
+      input[type="text"]{
+        height: 28px;
+        line-height: 28px;
+        padding-left:5%;
+        width:95%;
+      }
+    }
+  }
 }
-.listmore_shop > li ul,
-.listmore_shop .s_down{
-    display: none;
+.allgoodsst{
+  @include ovh(hidden);
+  padding:5% 0 5% 18%;
+  margin:auto;
+  li{
+    @extend .fl;
+    width:50%;
+    line-height: 30px;
+    &.first{
+      float:none;
+      color:$c6;
+    }
+  }
 }
-.listmore_shop .open ul,
-.listmore_shop .open .s_down{
-    display: block;
+.searchlistBox{padding: 0 0 0 5%;}
+.shitiAddress{padding:7% 5%}
+.shoppName{
+  @include height(false, auto, 30px);
+  padding:0 0 4%;
 }
-.listmore_shop > li:after{
-    content: '+';
-    color: #808080;
-     @include position(0);
-    right: 30px;
-    top: 8px;
+.shoppadd{
+  line-height: 25px;
 }
-.listmore_shop > .open:after{
-    content: '-';
-    right: 33px;
+.serviceList{
+  border-top:$cd solid 1px;
+  border-bottom:$cd solid 1px;
+  padding:4% 0 0 5%;
+  ul{
+    @include ovh(hidden);
+    li{
+      @extend .fl;
+      width:50%; 
+      margin-bottom: 8%; 
+      .icn_label{
+        @extend .fl;
+        width:24%;
+        @include height(false, 33px, 33px);
+        @extend .iconsBg;
+        background-color: $red;
+        /* background:$red url(../images/mobileBg.png) no-repeat; */
+        @include prefixer(border-radius, 5px, webkit o moz);
+        background-size: 50px auto;
+        @extend .tac;
+        margin:4px 0 0;
+        vertical-align: middle;
+        color:$white;
+        &.icn_label1{ background-position:4px -615px;}
+        &.icn_label2{background-position:1px -599px; background-size: 45px auto;}
+        &.icn_label3{letter-spacing:-1px; @extend .f14;background-position:-99999px -99999px;}
+        &.icn_label4{background-position:5px -754px; background-size: 52px auto;}
+        /* @include screen(320px, 550px){
+          &.icn_label1{ background-position:4px -615px;}
+          &.icn_label2{background-position:7px -208px;}
+          &.icn_label4{background-position:7px -240px;}
+        } */
+      }
+      .con_span{
+        @extend .fl;
+        width:70%;
+        padding:0 0 0 5px;
+        color:$black;
+        .txt{
+        }
+        .txt_s{
+          white-space:nowrap; 
+          @extend .f12;
+          @include max-screen(320px){
+            letter-spacing:-1px;
+          }
+        }
+      }
+    }
+  }
 }
-
-/*SHI TI MESSINFO*/
+.updown_go{
+  display:block;
+  @extend .tac;
+  padding:4%;
+  em{
+    color:#959595;
+    @include prefixer(transform, rotate(90deg), ms o moz webkit);
+    @include inline-block;
+    padding:5% 0 0;
+  }
+}
 .shitiInfos{
-    display: none;
+  padding:2%;
+  img{width:100%;}
+  @extend .tac;
+  .imgbox{
+    background:#fcfcfc;
+    padding:3%
+  }
+  img{
+    margin-bottom: 10px;
+  }
+}
+
+.otherName{
+  border-top:$cd solid 1px;
+  background:#f4f4f4;
+  padding:5%;
+   line-height: 25px;
+  .pTitles{
+    font-weight: bold;
+    clear:both;
+    &.pt10{
+      padding-top:10px;
+    }
+  }
+  ul{
+    @include ovh(hidden);
+    li{
+      width:30%;
+      @extend .fl;
+    }
+    &.ul_all{
+      li{
+      width:20%;
+      }
+    }
+  }
+}
+.listmore_shop{
+  li{
+    em{
+      /* @include position(1);
+      top:45%;
+      right:10%; */
+      color:#d3d3d3;
+      @extend .fr;
+      font-size: 1.8em;
+    }
+    a.cityName{
+      @include position(0);
+      display: block;
+      @include height(false, 30px, 30px);
+      background:#f4f4f4;
+      padding:1% 5%;
+      border-bottom:#dddddd solid 1px;
+    }
+    ul{
+      background: $white;
+      padding:5% 10% 2%;
+      @include ovh(hidden);
+      li{
+        @include height(false, 25px, 25px);
+        @extend .fl;
+        border-bottom:0;
+        padding:0 3%;
+      }
+    }
+  }
+}
+.s_down{
+  @include position(1);
+  left:10%;
+  bottom:-6px;
+  @include inline-block;
+  width:10px;
+  height: 10px;
+  background:#f4f4f4;
+  border-right:$cd 1px solid;
+  border-bottom:$cd 1px solid;
+  @include prefixer(transform, rotate(45deg), ms o moz webkit);
+}
+.popBox{
+  @include position(2);
+  right:0; 
+  top:30px;
+  width:40%;
+  border-left: #ababab solid 1px;
+  border-bottom: #ababab solid 1px;
+  @include ovh(hidden);
+  ul{
+    li{
+      border-bottom: #d4d4d4 solid 1px;
+      @extend .tac;
+      line-height: 35px;
+    }
+  }
 }
 
 /***************************** loading **********************************/
@@ -1687,15 +1968,18 @@ header .popBox{
   top: 0;
   left: 0;
   z-index: 1100;
-  color: white;
+  color: $white;
   background-color: #333;
   background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
-  line-height: 100%; }
+  line-height: 100%; 
+  @extend .tac;
+  @extend .f16;
+  }
 
 #fixedBox {
-  position: absolute;
+   @include position(1);
   left: 40%;
   top: 40%;
   width: 64px;
@@ -1705,57 +1989,58 @@ header .popBox{
   background-color: #b81c2b;
   width: 15px;
   height: 15px;
+  @extend .fl;
   @include prefixer(border-radius, 10px, webkit o moz);
   @include prefixer(animation-name, bounce_circular, webkit o moz);
-  @include prefixer(animation-duration, 0.7s, webkit o moz);
+   @include prefixer(animation-duration, 0.7s, webkit o moz);
   @include prefixer(animation-iteration-count, infinite, webkit o moz);
   @include prefixer(animation-direction, linear, webkit o moz);
    }
 
 #circular_1 {
   margin-top: 25px;
-  @include prefixer( animation-delay, 0.1s, webkit o moz);
-}
+@include prefixer(animation-delay, 0.1s, webkit o moz);
+   }
 
 #circular_2 {
   margin-left: -8px;
   margin-top: 9px;
-  @include prefixer( animation-delay, 0.2s, webkit o moz);
-}
+@include prefixer(animation-delay, 0.2s, webkit o moz);
+   }
 
 #circular_3 {
   margin-top: 1px;
-  @include prefixer( animation-delay, 0.3s, webkit o moz);
+  @include prefixer(animation-delay, 0.3s, webkit o moz); 
 }
 
 #circular_4 {
   margin-left: 0;
   margin-top: 9px;
-  @include prefixer( animation-delay, 0.4s, webkit o moz);
+  @include prefixer(animation-delay, 0.4s, webkit o moz);
 }
 
 #circular_5 {
   margin-left: -8px;
   margin-top: 25px;
-  @include prefixer( animation-delay, 0.5s, webkit o moz); 
+  @include prefixer(animation-delay, 0.5s, webkit o moz);
 }
 
 #circular_6 {
   margin-left: -22px;
   margin-top: 40px;
-  @include prefixer( animation-delay, 0.6s, webkit o moz);
-   }
+  @include prefixer(animation-delay, 0.6s, webkit o moz);
+}
 
 #circular_7 {
   margin-left: -37px;
   margin-top: 48px;
-  @include prefixer( animation-delay, 0.7s, webkit o moz);
+  @include prefixer(animation-delay, 0.7s, webkit o moz);
 }
 
 #circular_8 {
   margin-left: -53px;
   margin-top: 41px;
-  @include prefixer( animation-delay, 0.8s, webkit o moz);
+  @include prefixer(animation-delay, 0.8s, webkit o moz);
 }
 
 @-webkit-keyframes bounce_circular {
@@ -1763,6 +2048,4 @@ header .popBox{
     -webkit-transform: scale(0.8); }
 
   100% {
-    -webkit-transform: scale(0.2); } } 
-     /***************************** loading end **********************************/
-
+    -webkit-transform: scale(0.2); } }
