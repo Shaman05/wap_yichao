@@ -12,6 +12,7 @@ define(['util'], function(util){
   var config = APP.config;
   var account = config.passport.name;
   var pwd = config.passport.name;
+  var suffix = '.ashx';
 
   return {
     /**
@@ -20,12 +21,12 @@ define(['util'], function(util){
      * @param data 传送参数
      * @param callback 回调
      */
-    callApi: function(api, data, callback, isShowLoading) {
+    callApi: function(url, data, callback, isShowLoading) {
       var options = $.extend({
         isShowLoading: isShowLoading
       }, {
         data: data,
-        url: api,
+        url: url,
         success: callback
       });
       ajax(options);
@@ -34,9 +35,10 @@ define(['util'], function(util){
 
   function ajax(opt) {
     var paramType = typeof(opt.data);
-    opt.url = config.apiUrl + opt.url;
+    opt.url = config.apiUrl + opt.url + suffix;
     opt.type = opt.type || 'post';
     opt.data = opt.data || {};
+    opt.data.Number = Math.random();
     opt.dataType = opt.dataType || 'json';
     opt.async = opt.async !== false;
     opt.isShowLoading = opt.isShowLoading !== false;  // 是否显示loading背景

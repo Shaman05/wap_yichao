@@ -1643,3 +1643,126 @@ display:block;
     }
   }
 }
+
+/*top nav menu*/
+header .popBox{
+    background: #ffffff;
+    top: 60px;
+    display: none;
+    z-index: 999;
+}
+
+/*shiti LIST*/
+.listmore_shop > li{
+     @include position(0);
+}
+.listmore_shop > li ul,
+.listmore_shop .s_down{
+    display: none;
+}
+.listmore_shop .open ul,
+.listmore_shop .open .s_down{
+    display: block;
+}
+.listmore_shop > li:after{
+    content: '+';
+    color: #808080;
+     @include position(0);
+    right: 30px;
+    top: 8px;
+}
+.listmore_shop > .open:after{
+    content: '-';
+    right: 33px;
+}
+
+/*SHI TI MESSINFO*/
+.shitiInfos{
+    display: none;
+}
+
+/***************************** loading **********************************/
+#loading {
+  @include position(1);
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  color: white;
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  line-height: 100%; }
+
+#fixedBox {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  width: 64px;
+  height: 64px; }
+
+.circular {
+  background-color: #b81c2b;
+  width: 15px;
+  height: 15px;
+  @include prefixer(border-radius, 10px, webkit o moz);
+  @include prefixer(animation-name, bounce_circular, webkit o moz);
+  @include prefixer(animation-duration, 0.7s, webkit o moz);
+  @include prefixer(animation-iteration-count, infinite, webkit o moz);
+  @include prefixer(animation-direction, linear, webkit o moz);
+   }
+
+#circular_1 {
+  margin-top: 25px;
+  @include prefixer( animation-delay, 0.1s, webkit o moz);
+}
+
+#circular_2 {
+  margin-left: -8px;
+  margin-top: 9px;
+  @include prefixer( animation-delay, 0.2s, webkit o moz);
+}
+
+#circular_3 {
+  margin-top: 1px;
+  @include prefixer( animation-delay, 0.3s, webkit o moz);
+}
+
+#circular_4 {
+  margin-left: 0;
+  margin-top: 9px;
+  @include prefixer( animation-delay, 0.4s, webkit o moz);
+}
+
+#circular_5 {
+  margin-left: -8px;
+  margin-top: 25px;
+  @include prefixer( animation-delay, 0.5s, webkit o moz); 
+}
+
+#circular_6 {
+  margin-left: -22px;
+  margin-top: 40px;
+  @include prefixer( animation-delay, 0.6s, webkit o moz);
+   }
+
+#circular_7 {
+  margin-left: -37px;
+  margin-top: 48px;
+  @include prefixer( animation-delay, 0.7s, webkit o moz);
+}
+
+#circular_8 {
+  margin-left: -53px;
+  margin-top: 41px;
+  @include prefixer( animation-delay, 0.8s, webkit o moz);
+}
+
+@-webkit-keyframes bounce_circular {
+  0% {
+    -webkit-transform: scale(0.8); }
+
+  100% {
+    -webkit-transform: scale(0.2); } } 
+     /***************************** loading end **********************************/
+

@@ -12,8 +12,8 @@
   window.APP = {};
 
   window.APP.config = {
-    domain: 'wap.yichao.cn',
-    apiUrl: '/wap/',
+    domain: 'http://www.bluemini.cn',
+    apiUrl: '/Interfaces/',
     homeAction: 'ac=home',
 
     needLogin: true,

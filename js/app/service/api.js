@@ -3,6 +3,12 @@
  * User: Chen Chao
  * Date: 14-8-12
  * Time: 下午2:35
+ *
+ * 商品接口: GoodsHandler
+ * 实体店接口: ShopHandler
+ * 文章: ArticleHandler
+ * 搜索: GoodsSearch
+ * 顾客:
  */
 
 define(['./base'], function (base) {
@@ -10,23 +16,55 @@ define(['./base'], function (base) {
   "use strict";
 
   var callApi = base.callApi;
+  var ArticleHandler = 'ArticleHandler';
+  var GoodsHandler = 'GoodsHandler';
+  var ShopHandler = 'ShopHandler';
+  var GoodsSearch = 'GoodsSearch';
+  var pageSize = 20;
 
   return Backbone.Model.extend(
     $.extend(base, {
-      //article
-      articleList: function(params, callback){
+      //文章分类
+      articleClass: function(pid, callback){
         var data = {
           status: 1,
           message: '',
           data: [
-            {id: 1, title: '眼镜知识 - 01'},
-            {id: 2, title: '眼镜知识 - 02'},
-            {id: 3, title: '眼镜知识 - 03'}
+            {id: 1, title: '文章分类-眼镜知识 - 01'},
+            {id: 2, title: '文章分类-眼镜知识 - 02'},
+            {id: 3, title: '文章分类-眼镜知识 - 03'}
           ]
         };
         callback(data);
+        /*var data = {
+          OP: "ArticleClass",
+          ParentID: pid
+        };
+        callApi.call(this, ArticleHandler, data, callback);*/
       },
-      articleInfo: function(id, callback){
+      //文章列表
+      articleList: function(typeId, classId, p, callback){
+        var data = {
+          status: 1,
+          message: '',
+          data: [
+            {id: 1, title: '文章列表-眼镜知识 - 01'},
+            {id: 2, title: '文章列表-眼镜知识 - 02'},
+            {id: 3, title: '文章列表-眼镜知识 - 03'}
+          ]
+        };
+        callback(data);
+        /*var data = $.extend({
+          OP: "ArticleClass",
+          TypeID: typeId,
+          ClassID: classId,
+          PageIndex: p,
+          PageSize: pageSize
+        });
+        callApi.call(this, ArticleHandler, data, callback);*/
+      },
+      //文章详细信息
+      articleInfo: function(aid, callback){
         var data = {
           status: '1',
           message: '',
@@ -45,13 +83,86 @@ define(['./base'], function (base) {
           }
         };
         callback(data);
+        /*var data = {
+          OP: "ArticleByID",
+          ParentID: aid
+        };
+        callApi.call(this, ArticleHandler, data, callback);*/
       },
 
-      //entity
+      //根据省市查询实体店列表
+      entityList: function(province, city, callback){
+        var data = {
+          OP: "ShopByProvinceList",
+          Province: province,
+          City: city
+        };
+        callApi.call(this, ShopHandler, data, callback);
+      },
+      //店面详细信息
+      entityInfo: function(eid, callback){
+        var data = {
+          OP: "ShopById",
+          ShopID: eid
+        };
+        callApi.call(this, ShopHandler, data, callback);
+      },
 
-      //goods
-      goodsList: function(params, callback){
-        console.log([1,2,3,4,5]);
+      //商品类型
+      goodsType: function(callback){
+        var data = {
+          OP: "GoodsType"
+        };
+        callApi.call(this, GoodsHandler, data, callback);
+      },
+      //商品类型列表
+      goodsList: function(gid, p, callback){
+        var data = {
+          OP: "GoodsByType",
+          GoodsTypeID: gid,
+          PageIndex: p,
+          PageSize: pageSize
+        };
+        callApi.call(this, GoodsHandler, data, callback);
+      },
+      //商品详情
+      goodsInfo: function(gid, callback){
+        var data = {
+          OP: "GoodsById",
+          GoodsTypeID: gid
+        };
+        callApi.call(this, GoodsHandler, data, callback);
+      },
+      //商品评论列表
+      goodsComments: function(gid, p, callback){
+        var data = {
+          OP: "MemberCommentByGoodsID",
+          GoodsTypeID: gid,
+          PageIndex: p,
+          PageSize: pageSize
+        };
+        callApi.call(this, GoodsHandler, data, callback);
+      },
+      //商品品牌信息
+      goodsBrand: function(gid, p, callback){
+        var data = {
+          OP: "GoodsBrand",
+          GoodsTypeID: gid,
+          PageIndex: p,
+          PageSize: pageSize
+        };
+        callApi.call(this, GoodsHandler, data, callback);
+      },
+
+      //搜索
+      goodsSearch: function(keywords, p, callback){
+        var data = $.extend({
+          OP: "GoodsSearch",
+          GoodsName: encodeURI(keywords),
+          PageIndex: p,
+          PageSize: pageSize
+        });
+        callApi.call(this, GoodsSearch, data, callback);
       },
 
       //user
