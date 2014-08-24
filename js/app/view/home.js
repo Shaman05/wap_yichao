@@ -14,7 +14,7 @@ define(['app/view/baseView', 'app/service/api'], function(baseView, model){
       id: 'home-page',
       model: new model,
       ready: function(){
-        this.model.goodsList();
+        //
       }
     })
   );

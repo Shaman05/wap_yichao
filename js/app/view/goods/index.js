@@ -7,7 +7,7 @@ define(['app/view/baseView'], function(baseView){
       id: 'home-page',
       model: null,
       ready: function(){
-        $(".js-slider3").slider({
+        $("#jSlider").slider({
           direction: "left",
           height: 150
         });
