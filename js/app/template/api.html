@@ -1,0 +1,37 @@
+<style type="text/css">
+  dl{margin: 10px;}
+  dt{height: 40px; line-height: 40px; background: #ffc000; padding: 0 10px; font-size: 14px; color: #ffffff; font-weight: bold;}
+  dd{padding: 20px 20px 10px; overflow: hidden;}
+  dd button{margin-bottom: 10px}
+</style>
+<div id="api-page">
+  <dl>
+    <dt>顾客（user）</dt>
+    <dd id="goods">
+
+    </dd>
+    <dt>商品（goods）</dt>
+    <dd>
+      <button data-action="goodsType" data-args="">商品类型</button>
+      <button data-action="goodsList" data-args="1, 1">商品类型列表</button>
+      <button data-action="goodsInfo" data-args="">商品详情</button>
+      <button data-action="goodsComments" data-args="">商品评论列表</button>
+      <button data-action="goodsBrand" data-args="">商品品牌信息</button>
+    </dd>
+    <dt>文章（article）</dt>
+    <dd>
+      <button data-action="articleClass" data-args="1">文章分类</button>
+      <button data-action="articleList" data-args="1, 1, 1">文章列表</button>
+      <button data-action="articleInfo" data-args="1">文章详细信息</button>
+    </dd>
+    <dt>搜索（search）</dt>
+    <dd>
+      <button data-action="goodsSearch" data-args="眼镜, 1">搜索关键词:'眼镜'</button>
+    </dd>
+    <dt>实体店（entity）</dt>
+    <dd>
+      <button data-action="entityList" data-args="浙江, 杭州, 1">根据省市查询实体店列表</button>
+      <button data-action="entityInfo" data-args="1">根据省市查询实体店列表</button>
+    </dd>
+  </dl>
+</div>

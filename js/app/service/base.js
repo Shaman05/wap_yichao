@@ -44,9 +44,14 @@ define(['util'], function(util){
     opt.isShowLoading = opt.isShowLoading !== false;  // 是否显示loading背景
     opt.callback = opt.success;
     opt.error = function(xhr, errorType, error){
+      console.log(xhr);
+      console.log(errorType);
+      console.log(error);
       alert(
-        'Service: "' + opt.url + '"\n' +
-        'Error: ' + xhr.status + ' ' + xhr.statusText
+        'Api url: ' + opt.url + '\n' +
+        'Statue: ' + xhr.status + ' ' + xhr.statusText + '\n' +
+        'Error type: ' + errorType + '\n' +
+        'Error message: ' + (error && error.message) || ''
       );
     };
     opt.success = function (data) {

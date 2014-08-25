@@ -39,6 +39,7 @@
     //页面
     pageName: {
       map: '网站地图',
+      api: '接口测试',
       article: {
         info: '文章详情',
         list: '眼镜知识',
