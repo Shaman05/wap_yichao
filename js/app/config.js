@@ -14,6 +14,7 @@
   window.APP.config = {
     domain: 'http://www.bluemini.cn',
     apiUrl: '/Interfaces/',
+    isDebug: true, //开启后，所有api调用结果将会alert出来
     homeAction: 'ac=home',
 
     needLogin: true,

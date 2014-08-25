@@ -56,6 +56,8 @@ define(['util'], function(util){
     };
     opt.success = function (data) {
       util.hideLoading();
+      config.isDebug && alert(JSON.stringify(data));
+      if(!data)return;
       if(data.needLogin){
         location.hash = '#ac=user.login';
         return;
