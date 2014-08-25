@@ -26,7 +26,7 @@ define(['./base'], function (base) {
     $.extend(base, {
       //文章分类
       articleClass: function(pid, callback){
-        var data = {
+        /*var data = {
           status: 1,
           message: '',
           data: [
@@ -35,16 +35,16 @@ define(['./base'], function (base) {
             {id: 3, title: '文章分类-眼镜知识 - 03'}
           ]
         };
-        callback(data);
-        /*var data = {
+        callback(data);*/
+        var data = {
           OP: "ArticleClass",
           ParentID: pid
         };
-        callApi.call(this, ArticleHandler, data, callback);*/
+        callApi.call(this, ArticleHandler, data, callback);
       },
       //文章列表
       articleList: function(typeId, classId, p, callback){
-        var data = {
+        /*var data = {
           status: 1,
           message: '',
           data: [
@@ -53,19 +53,19 @@ define(['./base'], function (base) {
             {id: 3, title: '文章列表-眼镜知识 - 03'}
           ]
         };
-        callback(data);
-        /*var data = $.extend({
+        callback(data);*/
+        var data = $.extend({
           OP: "ArticleClass",
           TypeID: typeId,
           ClassID: classId,
           PageIndex: p,
           PageSize: pageSize
         });
-        callApi.call(this, ArticleHandler, data, callback);*/
+        callApi.call(this, ArticleHandler, data, callback);
       },
       //文章详细信息
       articleInfo: function(aid, callback){
-        var data = {
+        /*var data = {
           status: '1',
           message: '',
           data: {
@@ -82,12 +82,12 @@ define(['./base'], function (base) {
             }
           }
         };
-        callback(data);
-        /*var data = {
+        callback(data);*/
+        var data = {
           OP: "ArticleByID",
           ParentID: aid
         };
-        callApi.call(this, ArticleHandler, data, callback);*/
+        callApi.call(this, ArticleHandler, data, callback);
       },
 
       //根据省市查询实体店列表
