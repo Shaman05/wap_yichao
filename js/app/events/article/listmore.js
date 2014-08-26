@@ -11,6 +11,13 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
+
+    $(window)
+      .on('scroll', function(){
+        if($(window).scrollTop() + $(window).height() >= $(document).height()){
+          view.getData();
+        }
+      });
   };
 
 });

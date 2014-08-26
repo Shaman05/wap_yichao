@@ -43,8 +43,8 @@
       api: '接口测试',
       article: {
         info: '文章详情',
-        list: '眼镜知识',
-        listmore: '亿超动态'
+        list: '文章分类',
+        listmore: '文章分类列表'
       },
       goods: {
         brand: '品牌',

@@ -11,7 +11,7 @@ define([
       id: 'home-page',
       model: new model,
       ready: function(){
-        this.model.articleList('1', '1', 1, function(d){
+        this.model.articleClass('1', function(d){
           var renderFn = _.artTemplate.compile(tpl);
           $('#list').html(renderFn({
             list: d.data

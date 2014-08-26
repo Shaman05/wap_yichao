@@ -29,9 +29,6 @@ define(function(){
       $(window)
         .on('scroll', function(){
           $('#goodsTypeList').hide();
-          /*if($(window).scrollTop() + $(window).height() >= $(document).height()){
-            console.log('end')
-          }*/
         });
     }
   };

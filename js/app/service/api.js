@@ -26,16 +26,6 @@ define(['./base'], function (base) {
     $.extend(base, {
       //文章分类
       articleClass: function(pid, callback){
-        /*var data = {
-          status: 1,
-          message: '',
-          data: [
-            {id: 1, title: '文章分类-眼镜知识 - 01'},
-            {id: 2, title: '文章分类-眼镜知识 - 02'},
-            {id: 3, title: '文章分类-眼镜知识 - 03'}
-          ]
-        };
-        callback(data);*/
         var data = {
           OP: "ArticleClass",
           ParentID: pid
@@ -44,18 +34,8 @@ define(['./base'], function (base) {
       },
       //文章列表
       articleList: function(typeId, classId, p, callback){
-        /*var data = {
-          status: 1,
-          message: '',
-          data: [
-            {id: 1, title: '文章列表-眼镜知识 - 01'},
-            {id: 2, title: '文章列表-眼镜知识 - 02'},
-            {id: 3, title: '文章列表-眼镜知识 - 03'}
-          ]
-        };
-        callback(data);*/
         var data = $.extend({
-          OP: "ArticleClass",
+          OP: "ArticleList",
           TypeID: typeId,
           ClassID: classId,
           PageIndex: p,
@@ -65,24 +45,6 @@ define(['./base'], function (base) {
       },
       //文章详细信息
       articleInfo: function(aid, callback){
-        /*var data = {
-          status: '1',
-          message: '',
-          data: {
-            id: '2',
-            title: '眼镜知识 - 01',
-            content: '&nbsp;&nbsp;眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识眼镜知识',
-            pre: {
-              id: '1',
-              title: '验光重要性'
-            },
-            next: {
-              id: '3',
-              title: '新塘店开业通告新塘店开业通告新塘店开业通告'
-            }
-          }
-        };
-        callback(data);*/
         var data = {
           OP: "ArticleByID",
           ParentID: aid
