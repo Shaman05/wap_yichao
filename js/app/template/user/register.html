@@ -3,19 +3,28 @@
 </style>
 <section id="loginWapper">
 	<ul class="loginGo regGo">
-		<li><input type="text" value="请输入手机号" class="inputCommon regInp"><em class="verfiy">正在验证</em></li>
-		<li><input type="password" value="请输入密码" class="inputCommon regInp"><em class="verfiy"><i class="icons"></i></em>
-		<li><input type="password" value="再次输入密码" class="inputCommon regInp"><em class="verfiy">请两密码不致</em></li>
+		<li>
+      <input name="telephone" type="text" maxlength="11" placeholder="请输入手机号" class="inputCommon regInp">
+      <em class="verfiy" id="phone-tip"></em>
+    </li>
+		<li>
+      <input name="password" type="password" placeholder="设置密码" class="inputCommon regInp">
+      <em class="verfiy" id="pwd1-tip"><i class="icons"></i></em>
+    </li>
+		<li>
+      <input name="password2" type="password" placeholder="确认密码" class="inputCommon regInp">
+      <em class="verfiy" id="pwd2-tip">请两密码不致</em>
+    </li>
 		<li class="last yesNo">
 			<div class="switch fl">
-			      <input type="radio" class="switch-input" name="view" value="no" id="no" checked>
-			      <label for="no" class="switch-label switch-label-off">no</label>
-			      <input type="radio" class="switch-input" name="view" value="yes" id="yes">
-			      <label for="yes" class="switch-label switch-label-on">yes</label>
-			      <span class="switch-selection"></span>
-			    </div>
-			    <span class="lookpwd pl15">开户显示密码</span>
+        <input type="radio" class="switch-input" name="view" value="no" id="no" checked>
+        <label for="no" class="switch-label switch-label-off">no</label>
+        <input type="radio" class="switch-input" name="view" value="yes" id="yes">
+        <label for="yes" class="switch-label switch-label-on">yes</label>
+        <span class="switch-selection"></span>
+      </div>
+      <span class="lookpwd pl15">开户显示密码</span>
 		</li>
-		<li class="btns"><button type="button" class="buttonRed">注册</button></li>
+		<li class="btns"><button id="registerBtn" type="button" class="buttonRed">注册</button></li>
 	</ul>
 </section>

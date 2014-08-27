@@ -23,13 +23,11 @@ define(function(){
     },
 
     showLoading: function(){
-      //todo
-      console.log('show loading ...');
+      $('#loading').show();
     },
 
     hideLoading: function(){
-      //todo
-      console.log('hide loading ...');
+      $('#loading').hide();
     },
 
     alert: function(){}

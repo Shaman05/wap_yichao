@@ -44,9 +44,8 @@ define(['util'], function(util){
     opt.isShowLoading = opt.isShowLoading !== false;  // 是否显示loading背景
     opt.callback = opt.success;
     opt.error = function(xhr, errorType, error){
+      util.hideLoading();
       console.log(xhr);
-      console.log(errorType);
-      console.log(error);
       alert(
         'Api url: ' + opt.url + '\n' +
         'Statue: ' + xhr.status + ' ' + xhr.statusText + '\n' +

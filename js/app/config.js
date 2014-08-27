@@ -33,7 +33,7 @@
     ],
     noFooter: [
       'user.login',
-      'zhangyaling.user.register',
+      'user.register',
       'goods.brand'
     ],
 

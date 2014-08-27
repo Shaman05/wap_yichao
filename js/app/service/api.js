@@ -20,6 +20,7 @@ define(['./base'], function (base) {
   var GoodsHandler = 'GoodsHandler';
   var ShopHandler = 'ShopHandler';
   var GoodsSearch = 'GoodsSearch';
+  var User = 'User';
   var pageSize = 20;
 
   return Backbone.Model.extend(
@@ -127,9 +128,14 @@ define(['./base'], function (base) {
         callApi.call(this, GoodsSearch, data, callback);
       },
 
-      //user
-      login: function (params, callback) {
-        callApi('user/login', params, callback);
+      //User
+      login: function (name, pwd, callback) {
+        var data = {
+          OP: "Login",
+          name: name,
+          password: pwd
+        };
+        callApi.call(this, User, data, callback);
       }
     })
   );

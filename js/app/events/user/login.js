@@ -11,9 +11,18 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
+
+    var $account = $('[name=account]');
+    var $pwd = $('[name=password]');
     $(document)
       .on('click', '#loginBtn', function(){
-        service.login({foo: 'foo', bar: 'bar'}, function(d){
+        var name = $account.val();
+        var pwd = $pwd.val();
+        if(!name || !pwd){
+          alert('用户名或密码不能为空!');
+          return;
+        }
+        service.login(name, pwd, function(d){
           console.log(d);
         });
       });
