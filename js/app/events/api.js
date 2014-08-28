@@ -15,7 +15,13 @@ define(['events'], function(events){
     $(document).on('click', '#api-page button', function(){
       var $this = $(this);
       var action = $this.attr('data-action');
-      var args = $this.attr('data-args').split(',').concat([callback]);
+      var argsStr = $this.attr('data-args');
+      var args = [];
+      if(argsStr){
+        args = argsStr.split(',').concat([callback]);
+      }else{
+        args = args.concat([callback]);
+      }
       service[action].apply(view, args);
     });
 

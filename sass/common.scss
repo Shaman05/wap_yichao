@@ -94,6 +94,8 @@ body{font-family:$fontYaHei; color:$black;}
     @include ovh(hidden);
     @include width(100%);
     padding:2% 0;
+    height: 60px;
+    @include prefixer(box-sizing, border-box, webkit moz o);
 }
 .topNav{
       @include ovh(hidden);
@@ -116,8 +118,7 @@ body{font-family:$fontYaHei; color:$black;}
           @include width(36%);
           @include float(right);
                 a{
-                    @include inline-block(false);
-                    display:-moz-inline-stack;*display:inline;zoom:1;
+                    @include inline-block;
                     letter-space:-6px;
                     @include height(true,45px);
                     padding:2px 0 0;
@@ -153,7 +154,7 @@ body{font-family:$fontYaHei; color:$black;}
                         @include height(true,20px);
                      } 
                     }
-                     .txt{padding:2px 0 0;color:$white; font-size:0.7em; display:block;}
+                     .txt{padding:2px 0 0;color:$white; @extend .f12; display:block;}
                 }
         }
       
@@ -393,6 +394,7 @@ body{font-family:$fontYaHei; color:$black;}
      &.last{
         .lookpwd{
             @include float(left);
+            &.pl15{padding-left:15px;}
         }
         .account{
             @include float(right);
@@ -1157,11 +1159,11 @@ body{font-family:$fontYaHei; color:$black;}
   left: 0;
   top: 0;
   @extend .iconsBg;
-  background-position:3px -1218px;
+  background-position:2px -1218px;
   @include prefixer(background-size, 75px auto, webkit moz o);
 }
 .yanguangdanBox{ 
-  width:95%; margin: 13px auto;
+  margin: 13px auto;
   .buttonRed{
    @include prefixer(border-radius, 0, webkit o moz);
     width:100%;
@@ -1173,14 +1175,14 @@ body{font-family:$fontYaHei; color:$black;}
   @include borders;
   @include position(0);
   background:$white;
-  padding:2%;
+  padding:5px;
   @include prefixer(box-sizing, border-sizing, webkit o moz);
   &.yanguangdan_noB{
     border:0;
   }
   .emjiao{
     @include position(1);
-    top:-6px;
+    top:-7px;
     left:15%;
     @include inline-block;
     width:12px; height:12px;
@@ -1248,11 +1250,12 @@ body{font-family:$fontYaHei; color:$black;}
   @include prefixer(box-sizing, border-box, webkit o moz);
   @include ovh(hidden);
   span{
-    @extend .fl;
+    @extend .fr;
     &.sp_01{
       width:25%;
       @extend .tac;
       padding:2% 0 0;
+       @extend .fl;
     }
     &.sp_02{
       width:40%;

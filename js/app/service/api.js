@@ -92,7 +92,7 @@ define(['./base'], function (base) {
       goodsInfo: function(gid, callback){
         var data = {
           OP: "GoodsById",
-          GoodsTypeID: gid
+          GoodsID: gid
         };
         callApi.call(this, GoodsHandler, data, callback);
       },
@@ -100,7 +100,7 @@ define(['./base'], function (base) {
       goodsComments: function(gid, p, callback){
         var data = {
           OP: "MemberCommentByGoodsID",
-          GoodsTypeID: gid,
+          GoodsID: gid,
           PageIndex: p,
           PageSize: pageSize
         };

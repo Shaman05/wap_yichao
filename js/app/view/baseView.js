@@ -10,8 +10,10 @@
 define([
   'text!app/template/public/header.html',
   'text!app/template/public/titleBar.html',
-  'text!app/template/public/footer.html'
-], function(header, titleBar, footer){
+  'text!app/template/public/footer.html',
+  'text!app/template/public/ajax_goodsType.html',
+  'app/service/api'
+], function(header, titleBar, footer, goodsTypeTpl, api){
 
   var config = APP.config;
   var pageMap = config.pageName;
@@ -25,6 +27,7 @@ define([
     render: function(data){
       var content = this._render(data);
       this.$el.attr('id', this.id).html(content);
+      this.commonData();
       this.ready(data);
     },
     _render: function(data){
@@ -53,6 +56,15 @@ define([
     },
     ready: function(params){
       //page ready
+    },
+    commonData: function(){
+      var service = new api();
+      service.goodsType(function(d){
+        var renderFn = _.artTemplate.compile(goodsTypeTpl);
+        $('#goodsTypeList').html(renderFn({
+          list: d.data
+        }));
+      });
     }
   };
 

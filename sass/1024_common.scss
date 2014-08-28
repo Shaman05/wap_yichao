@@ -94,7 +94,7 @@ body{font-family:$fontYaHei; color:$black;}
     background: $red;
     @include ovh(hidden);
     @include width(100%);
-    padding:2% 0 1%;
+    padding:15px 0 10px;
 }
 .topNav{
       @include ovh(hidden);
@@ -120,7 +120,6 @@ body{font-family:$fontYaHei; color:$black;}
           @include float(right);
                 a{
                     @include inline-block(false);
-                    display:-moz-inline-stack;*display:inline;zoom:1;
                     letter-space:-6px;
                     @include height(true,54px);
                     padding:2px 0 0;
@@ -1114,14 +1113,14 @@ body{font-family:$fontYaHei; color:$black;}
   @include borders;
   @include position(0);
   background:$white;
-  padding:2%;
+  padding:10px;
   @include prefixer(box-sizing, border-sizing, webkit o moz);
   &.yanguangdan_noB{
     border:0;
   }
   .emjiao{
     @include position(1);
-    top:-6px;
+    top:-7px;
     left:15%;
     @include inline-block;
     width:12px; height:12px;
@@ -1972,7 +1971,7 @@ display:block;
     /*top goods list menu style*/
 header .popBox{
     background: #ffffff;
-    top: 85px;
+    top: 79px;
     display: none;
     z-index: 999;
 }

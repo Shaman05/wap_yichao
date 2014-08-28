@@ -514,7 +514,7 @@ body {
   background: #b81c2b;
   overflow: hidden;
   width: 100%;
-  padding: 2% 0 1%; }
+  padding: 15px 0 10px; }
 
 .topNav {
   overflow: hidden; }
@@ -537,9 +537,6 @@ body {
     float: right; }
     .topNav li.item2 a {
       display: inline-block;
-      display: -moz-inline-stack;
-      *display: inline;
-      zoom: 1;
       letter-space: -6px;
       height: 54px;
       padding: 2px 0 0;
@@ -1499,7 +1496,7 @@ body {
   border: 1px solid #dddddd;
   position: relative;
   background: white;
-  padding: 2%;
+  padding: 10px;
   -webkit-box-sizing: border-sizing;
   -o-box-sizing: border-sizing;
   -moz-box-sizing: border-sizing;
@@ -1508,7 +1505,7 @@ body {
     border: 0; }
   .yanguangdan .emjiao {
     position: absolute;
-    top: -6px;
+    top: -7px;
     left: 15%;
     width: 12px;
     height: 12px;
@@ -2250,7 +2247,7 @@ body {
 /*top goods list menu style*/
 header .popBox {
   background: #ffffff;
-  top: 85px;
+  top: 79px;
   display: none;
   z-index: 999; }
 

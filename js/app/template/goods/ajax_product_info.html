@@ -1,0 +1,43 @@
+<h3 class="h3Title"><%= GoodsName %></h3>
+<h3 class="h3Title red">高端钛板打造明星爆款</h3>
+<p class="priceOne">
+  <em class="bigs">Y<%= SalePrice %></em><i>(镜框+亿超1.60绿膜超薄非球面)</i>
+</p>
+<p class="priced"> 原价：￥<%= MarketPrice %></p>
+<ul class="proOpt">
+  <li class="first">
+    <p class="one">评价<em><%= CommentTimes %></em></p>
+    <p class="two">送<em><%= Point %></em>积分</p>
+    <% if(IsOnSale !== "False"){ %>
+    <p class="last">有现货下单后立即发货</p>
+    <% } %>
+  </li>
+  <li>
+    <label class="name">选择镜框</label>
+    <span class="ctent">
+      <a href="javascript:;">均码枪色C2</a>
+      <a href="javascript:;">均码黑色C7</a>
+      <a href="javascript:;">大码黑色C7</a>
+      <a href="javascript:;">大码枪色C2</a>
+    </span>
+  </li>
+  <li>
+    <label class="name">选择镜片</label>
+    <span class="ctent">
+      <a href="javascript:;">亿超1.600绿膜超薄非球面</a>
+      <a href="javascript:;">亿超1.600绿膜超薄非球面</a>
+      <a href="javascript:;">单买镜框169元</a>
+      <a href="javascript:;" class="lastA">点击选购更多镜片</a>
+    </span>
+  </li>
+</ul>
+<p class="addGou">
+  <em>￥<%= SalePrice %></em>
+  <button type="button" class="buttonYellow">加入购物车</button>
+</p>
+<section id="comments">
+  <h3 class="commontsTitles">产品评价（<%= CommentTimes %>）<em class="ec1">></em></h3>
+  <div id="commentsWrap">
+
+  </div>
+</section>
