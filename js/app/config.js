@@ -52,7 +52,7 @@
         groupbuy: '团购',
         groupbuy_info: '团购套餐',
         product_info: '产品详情',
-        product_list: '产品框架框',
+        product_list: '产品框架',
         sort: '所有商品分类'
       },
       user: {

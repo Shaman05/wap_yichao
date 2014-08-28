@@ -19,7 +19,7 @@ define(['./base'], function (base) {
   var ArticleHandler = 'ArticleHandler';
   var GoodsHandler = 'GoodsHandler';
   var ShopHandler = 'ShopHandler';
-  var GoodsSearch = 'GoodsSearch';
+  var GoodsSearch = 'SearchHandler';
   var User = 'User';
   var pageSize = 20;
 

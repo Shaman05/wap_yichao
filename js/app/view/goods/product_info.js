@@ -11,7 +11,7 @@ define([
 
   return Backbone.View.extend(
     $.extend(baseView, {
-      id: 'home-page',
+      id: 'product_info-page',
       model: new api,
       ready: function(data){
         $("#jSlider").slider({
