@@ -27,7 +27,7 @@ define([
     render: function(data){
       var content = this._render(data);
       this.$el.attr('id', this.id).html(content);
-      this.commonData();
+      this.commonData(data);
       this.ready(data);
     },
     _render: function(data){
@@ -57,13 +57,17 @@ define([
     ready: function(params){
       //page ready
     },
-    commonData: function(){
+    commonData: function(data){
       var service = new api();
       service.goodsType(function(d){
         var renderFn = _.artTemplate.compile(goodsTypeTpl);
-        $('#goodsTypeList').html(renderFn({
-          list: d.data
-        }));
+        var listHtml = renderFn({list: d.data});
+        //顶部商品分类
+        $('#goodsTypeList').html(listHtml);
+        //搜索首页的商品分类
+        if(data.ac === "search.index"){
+          $('#allGoodsst').append(listHtml);
+        }
       });
     }
   };

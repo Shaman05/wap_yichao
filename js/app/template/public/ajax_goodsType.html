@@ -1,9 +1,7 @@
-<ul>
-  <% for(var i = 0; i < list.length; i++){ %>
-  <li class="sort_li">
-    <a href="#ac=goods.product_list&GoodsTypeID=<%= list[i].GoodsTypeID %>">
-      <%= list[i].GoodsTypeName %>
-    </a>
-  </li>
-  <% } %>
-</ul>
+<% for(var i = 0; i < list.length; i++){ %>
+<li class="sort_li">
+  <a href="#ac=goods.product_list&GoodsTypeID=<%= list[i].GoodsTypeID %>">
+    <%= list[i].GoodsTypeName %>
+  </a>
+</li>
+<% } %>

@@ -1,3 +1,15 @@
-<% for(var i = 0; i < list.length; i++){ %>
-<li><a href="#ac=article.info&ArticleID=<%= list[i].ArticleID %>"><label class="fl"><%= list[i].Title %></label></a></li>
+<% if(list.length > 0){ %>
+<ul class="zhilist">
+  <% for(var i = 0; i < list.length; i++){ %>
+  <li>
+    <a href="#ac=article.info&ArticleID=<%= list[i].ArticleID %>">
+      <label class="fl"><%= list[i].Title %></label>
+    </a>
+  </li>
+  <% } %>
+</ul>
+<% }else{ %>
+<div class="no-data">
+  <p>暂无数据</p>
+</div>
 <% } %>

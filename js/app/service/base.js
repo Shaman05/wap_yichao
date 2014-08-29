@@ -45,17 +45,19 @@ define(['util'], function(util){
     opt.callback = opt.success;
     opt.error = function(xhr, errorType, error){
       util.hideLoading();
-      console.log(xhr);
-      alert(
-        'Api url: ' + opt.url + '\n' +
-        'Statue: ' + xhr.status + ' ' + xhr.statusText + '\n' +
-        'Error type: ' + errorType + '\n' +
-        'Error message: ' + (error && error.message) || ''
-      );
+      if(config.isDebug){
+        console.log(xhr);
+        alert(
+          'Api url: ' + opt.url + '\n' +
+          'Statue: ' + xhr.status + ' ' + xhr.statusText + '\n' +
+          'Error type: ' + errorType + '\n' +
+          'Error message: ' + (error && error.message) || ''
+        );
+      }
     };
     opt.success = function (data) {
       util.hideLoading();
-      if(!data){
+      if(!data && config.isDebug){
         alert('No data response!');
         return;
       }

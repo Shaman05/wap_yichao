@@ -1,11 +1,18 @@
 "use strict";
 
-define(['app/view/baseView'], function(baseView){
+define([
+  'app/view/baseView',
+  'app/service/api'
+], function(baseView, api){
 
   return Backbone.View.extend(
     $.extend(baseView, {
-      id: 'home-page',
-      model: null
+      id: 'search-page',
+      model: new api,
+      ready: function(){
+        $('#noResult').hide();
+        $('#searchKeyword').empty();
+      }
     })
   );
 
