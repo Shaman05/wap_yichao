@@ -1,0 +1,11 @@
+<% if(list.length > 0){ %>
+<ul>
+    <% for(var i = 0; i < list.length; i++){ %>
+    <li><a href="#ac=entity.index&ShopID=<%= list[i].ShopID %>"><%= list[i].ShopName %></a></li>
+    <% } %>
+</ul>
+<% }else{ %>
+<div class="no-data">
+    <p>暂无数据</p>
+</div>
+<% } %>

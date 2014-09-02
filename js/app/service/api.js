@@ -54,8 +54,15 @@ define(['./base'], function (base) {
         callApi.call(this, ArticleHandler, data, callback);
       },
 
+      //实体店城市
+      entityCity: function(callback){
+        var data = {
+          OP: "ShopList"
+        };
+        callApi.call(this, ShopHandler, data, callback);
+      },
       //根据省市查询实体店列表
-      entityList: function(province, city, callback){
+      subEntityList: function(province, city, callback){
         var data = {
           OP: "ShopByProvinceList",
           Province: province,

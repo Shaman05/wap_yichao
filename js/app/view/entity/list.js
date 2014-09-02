@@ -1,16 +1,35 @@
 "use strict";
 
-define(['app/view/baseView'], function(baseView){
+define([
+  'app/view/baseView',
+  'text!app/template/entity/ajax_entity_list.html',
+  'text!app/template/entity/ajax_sub_entity_list.html',
+  'app/service/api'
+], function(baseView, listTpl, subListTpl, model){
 
   return Backbone.View.extend(
     $.extend(baseView, {
       id: 'home-page',
-      model: null,
-      setData: function(){
-        return {
-          a: 123,
-          b: 456
-        };
+      model: new model,
+      ready: function(){
+        this.getEntityList();
+      },
+      getEntityList: function(){
+        this.model.entityCity(function(d){
+          var renderFn = _.artTemplate.compile(listTpl);
+          $('#entityListWrap').html(renderFn({
+            list: d.data
+          }));
+        });
+      },
+      getSubEntityList: function(province, city, callback){
+        this.model.subEntityList(province, city, function(d){
+          var renderFn = _.artTemplate.compile(subListTpl);
+          var html = renderFn({
+            list: d.data
+          });
+          callback(html);
+        });
       }
     })
   );
