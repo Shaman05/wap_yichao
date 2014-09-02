@@ -1,0 +1,23 @@
+<% if(list.length > 0){ %>
+<ul class="proList">
+  <% for(var i = 0; i < list.length; i++){ %>
+  <li>
+    <span class="proImg">
+      <a href="javascript:;"><img src="<%= list[i].SmallImage %>" alt=""></a>
+    </span>
+    <p class="proName">
+      <a href="#ac=goods.product_info&GoodsID=<%= list[i].GoodsID %>"><%= list[i].GoodsName %>
+      <em class="red">￥<%= list[i].MarketPrice %></em>（含超薄镜片）</a>
+    </p>
+  </li>
+  <% } %>
+</ul>
+<div class="pagesOn">
+  <a href="javascript:;" class="pageUp">上一页</a>
+  <a class="pageNext" href="javascript:;">下一页</a>
+</div>
+<% }else{ %>
+<div class="no-data">
+  <p>暂无数据</p>
+</div>
+<% } %>

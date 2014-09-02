@@ -23,7 +23,7 @@ define(function(){
         })
         //商品菜单
         .on('click', '#goodsTypeView', function(){
-          $('#goodsTypeList').toggle();
+          $('#goodsTypeListWrap').toggle();
         });
 
       $(window)

@@ -8,10 +8,10 @@ define([
 
   return Backbone.View.extend(
     $.extend(baseView, {
-      id: 'home-page',
+      id: 'article-page',
       model: new model,
       ready: function(){
-        this.model.articleClass('1', function(d){
+        this.model.articleClass(0, function(d){
           var renderFn = _.artTemplate.compile(tpl);
           $('#list').html(renderFn({
             list: d.data

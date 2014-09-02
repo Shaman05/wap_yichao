@@ -10,18 +10,17 @@ define([
 
   return Backbone.View.extend(
     $.extend(baseView, {
-      id: 'home-page',
+      id: 'article-page',
       model: new model,
       page: 1,
-      ready: function(){
-        this.getData();
+      ready: function(data){
+        this.getData(data);
       },
-      getData: function(){
+      getData: function(data){
         var _this = this;
         if(!isLoading){
           isLoading = true;
-          console.log('loading data!');
-          _this.model.articleList('1', '1', _this.page, function(d){
+          _this.model.articleList(data.TypeID, data.ClassID, _this.page, function(d){
             isLoading = false;
             var renderFn = _.artTemplate.compile(tpl);
             $('#listMore').append(renderFn({

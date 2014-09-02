@@ -15,6 +15,7 @@ define(['./base'], function (base) {
 
   "use strict";
 
+  //接口文件名和相关配置
   var callApi = base.callApi;
   var ArticleHandler = 'ArticleHandler';
   var GoodsHandler = 'GoodsHandler';

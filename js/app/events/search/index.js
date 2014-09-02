@@ -11,6 +11,28 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
+
+    $(document)
+      .on('click', '#searchBtn', function(){
+        var keyword = $.trim($('[name=keyword]').val());
+        if(!keyword){
+          alert('请先输入搜索关键字');
+        }else{
+          service.goodsSearch(keyword, 1, function(d){
+            if(d.data && d.data.length > 0){
+              window.localStorage.setItem('lastSearchData', JSON.stringify({
+                keyword: keyword,
+                count: d.nPageCount,
+                list: d.data
+              }));
+              window.location.hash = '#ac=search.list';
+            }else{
+              $('#searchKeyword').text(keyword);
+              $('#noResult').show();
+            }
+          });
+        }
+      });
   };
 
 });
