@@ -22,7 +22,7 @@ define(['./base'], function (base) {
   var ShopHandler = 'ShopHandler';
   var GoodsSearch = 'SearchHandler';
   var User = 'User';
-  var pageSize = 20;
+  var pageSize = APP.config.pageSize;
 
   return Backbone.Model.extend(
     $.extend(base, {

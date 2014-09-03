@@ -13,8 +13,7 @@
   <% } %>
 </ul>
 <div class="pagesOn">
-  <a href="javascript:;" class="pageUp">上一页</a>
-  <a class="pageNext" href="javascript:;">下一页</a>
+  <%== displayPageBtn('#ac=goods.product_list&GoodsTypeID=' + goodsTypeId, pageIndex, total, pageSize) %>
 </div>
 <% }else{ %>
 <div class="no-data">

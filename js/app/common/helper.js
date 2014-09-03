@@ -17,12 +17,13 @@ define(['artTemplate'], function(t){
 
   //分页按钮显示
   t.helper('displayPageBtn', function(url, PageIndex, nPageCount, PageSize){
+    var p = parseInt(PageIndex);
     var prevBtnTpl = '<a class="pageUp {disableClass}" href="{link}">上一页</a>';
     var nextBtnTpl = '<a class="pageNext {disableClass}" href="{link}">下一页</a>';
     var disable = 'javascript:';
     var totalPage = Math.ceil(nPageCount/PageSize);
-    var prevHref = PageIndex < 2 ? disable : url + '&PageIndex' + (PageIndex - 1);
-    var nextHref = PageIndex == totalPage ? disable : url + '&PageIndex' + (PageIndex + 1);
+    var prevHref = p < 2 ? disable : url + '&PageIndex=' + (p - 1);
+    var nextHref = p == totalPage ? disable : url + '&PageIndex=' + (p + 1);
     prevBtnTpl = prevBtnTpl.replace('{link}', prevHref);
     nextBtnTpl = nextBtnTpl.replace('{link}', nextHref);
     if(prevHref == disable){
