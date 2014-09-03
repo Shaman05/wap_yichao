@@ -15,4 +15,23 @@ define(['artTemplate'], function(t){
     return 'test function, data=' + JSON.stringify(data);
   });
 
+  //分页按钮显示
+  t.helper('displayPageBtn', function(url, PageIndex, nPageCount, PageSize){
+    var prevBtnTpl = '<a class="pageUp {disableClass}" href="{link}">上一页</a>';
+    var nextBtnTpl = '<a class="pageNext {disableClass}" href="{link}">下一页</a>';
+    var disable = 'javascript:';
+    var totalPage = Math.ceil(nPageCount/PageSize);
+    var prevHref = PageIndex < 2 ? disable : url + '&PageIndex' + (PageIndex - 1);
+    var nextHref = PageIndex == totalPage ? disable : url + '&PageIndex' + (PageIndex + 1);
+    prevBtnTpl = prevBtnTpl.replace('{link}', prevHref);
+    nextBtnTpl = nextBtnTpl.replace('{link}', nextHref);
+    if(prevHref == disable){
+      prevBtnTpl = prevBtnTpl.replace('{disableClass}', 'disableClass');
+    }
+    if(nextBtnTpl == disable){
+      nextBtnTpl = nextBtnTpl.replace('{disableClass}', 'disableClass');
+    }
+    return prevBtnTpl + ' ' + nextBtnTpl;
+  });
+
 });
