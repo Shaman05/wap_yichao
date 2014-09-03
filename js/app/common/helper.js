@@ -15,7 +15,13 @@ define(['artTemplate'], function(t){
     return 'test function, data=' + JSON.stringify(data);
   });
 
-  //分页按钮显示
+  /**
+   * 分页按钮显示
+   * url: 基础url
+   * PageIndex: 当前页
+   * nPageCount: 总条数
+   * PageSize: 每一页条数
+   */
   t.helper('displayPageBtn', function(url, PageIndex, nPageCount, PageSize){
     var p = parseInt(PageIndex);
     var prevBtnTpl = '<a class="pageUp {disableClass}" href="{link}">上一页</a>';
