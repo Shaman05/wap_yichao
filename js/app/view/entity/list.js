@@ -22,8 +22,8 @@ define([
           }));
         });
       },
-      getSubEntityList: function(province, city, callback){
-        this.model.subEntityList(province, city, function(d){
+      getSubEntityList: function(cityID, callback){
+        this.model.subEntityList(cityID, function(d){
           var renderFn = _.artTemplate.compile(subListTpl);
           var html = renderFn({
             list: d.data

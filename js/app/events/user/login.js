@@ -25,7 +25,7 @@ define(['events'], function(events){
         service.login(name, pwd, function(d){
           if(d.status == '1'){
             window.sessionStorage.setItem('userInfo', JSON.stringify(d.data));
-            util.toPage('user.myorder');
+            util.toPage('home');
           }else{
             alert(d.message);
           }

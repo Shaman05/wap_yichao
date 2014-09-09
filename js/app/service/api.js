@@ -57,16 +57,16 @@ define(['./base'], function (base) {
       //实体店城市
       entityCity: function(callback){
         var data = {
-          OP: "ShopList"
+          OP: "GetByCity"
         };
         callApi.call(this, ShopHandler, data, callback);
       },
       //根据省市查询实体店列表
-      subEntityList: function(province, city, callback){
+      subEntityList: function(cityID, callback){
         var data = {
           OP: "ShopByProvinceList",
-          Province: province,
-          City: city
+          Province: "",
+          City: cityID
         };
         callApi.call(this, ShopHandler, data, callback);
       },

@@ -1,9 +1,9 @@
 <% if(list.length > 0){ %>
 <ul class="listmore_shop" id="entityList">
     <% for(var i = 0; i < list.length; i++){ %>
-    <li class="open">
-        <a href="javascript:" class="cityName" data-city="<%= list[i].City %>" data-province="<%= list[i].Province %>">
-            <%= list[i].City %><em class="s_down"></em>
+    <li data-city="<%= list[i].AreaID %>">
+        <a href="javascript:" class="cityName">
+            <%= list[i].AreaName %><em class="s_down"></em>
         </a>
     </li>
     <% } %>
