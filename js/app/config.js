@@ -23,6 +23,15 @@
       name: 'test',
       pwd: '123456'
     },
+    needLoginPage: [
+      'user.addAddress',
+      'user.address',
+      'user.myorder',
+      'user.myorder_info',
+      'user.ordermess',
+      'user.ordersuccess',
+      'user.shoppingcart',
+    ],
 
     //模板碎片配置
     noHeader: [

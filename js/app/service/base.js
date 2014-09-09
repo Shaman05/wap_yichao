@@ -47,12 +47,15 @@ define(['util'], function(util){
       util.hideLoading();
       if(config.isDebug){
         console.log(xhr);
-        alert(
+        var content =
           'Api url: ' + opt.url + '\n' +
           'Statue: ' + xhr.status + ' ' + xhr.statusText + '\n' +
           'Error type: ' + errorType + '\n' +
-          'Error message: ' + (error && error.message) || ''
-        );
+          'Error message: ' + (error && error.message) || '';
+        util.alert({
+          title: 'Ajax Error :',
+          html: content
+        });
       }
     };
     opt.success = function (data) {

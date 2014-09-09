@@ -30,14 +30,8 @@ define(['artTemplate'], function(t){
     var totalPage = Math.ceil(nPageCount/PageSize);
     var prevHref = p < 2 ? disable : url + '&PageIndex=' + (p - 1);
     var nextHref = p == totalPage ? disable : url + '&PageIndex=' + (p + 1);
-    prevBtnTpl = prevBtnTpl.replace('{link}', prevHref);
-    nextBtnTpl = nextBtnTpl.replace('{link}', nextHref);
-    if(prevHref == disable){
-      prevBtnTpl = prevBtnTpl.replace('{disableClass}', 'disableClass');
-    }
-    if(nextBtnTpl == disable){
-      nextBtnTpl = nextBtnTpl.replace('{disableClass}', 'disableClass');
-    }
+    prevBtnTpl = prevBtnTpl.replace('{link}', prevHref).replace('{disableClass}', prevHref == disable ? 'disableClass' : '');
+    nextBtnTpl = nextBtnTpl.replace('{link}', nextHref).replace('{disableClass}', nextBtnTpl == disable ? 'disableClass' : '');
     return prevBtnTpl + ' ' + nextBtnTpl;
   });
 

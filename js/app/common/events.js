@@ -24,11 +24,16 @@ define(function(){
         //商品菜单
         .on('click', '#goodsTypeView', function(){
           $('#goodsTypeListWrap').toggle();
+        })
+        //alert
+        .on('click', '#alert-apply, #alert-cancel', function(){
+          $('#mask').removeClass('js-show');
+          $('#myAlert-wrap').removeClass('js-show').attr('data-open', '0');
         });
 
       $(window)
         .on('scroll', function(){
-          $('#goodsTypeList').hide();
+          $('#goodsTypeListWrap').hide();
         });
     }
   };

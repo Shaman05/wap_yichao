@@ -34,6 +34,11 @@ define([
       var tpl = '';
       var content = this.tpl || data._APP_TPL || '<p class="no_tpl_assigned">No template assigned!</p>';
       var ac = data.ac;
+      var userInfo = util.getUserInfo();
+      if(_.indexOf(config.needLoginPage, ac) >= 0 && !userInfo){
+        util.toPage('user.login');
+        return false;
+      }
       if(_.indexOf(config.noHeader, ac) < 0){
         tpl += header;
       }
@@ -64,7 +69,7 @@ define([
         var listHtml = renderFn({list: d.data});
         //顶部商品分类
         $('#goodsTypeList').html(listHtml);
-        //搜索首页的商品分类
+        //search.index的商品分类
         if(data.ac === "search.index"){
           $('#allGoodsst').append(listHtml);
         }

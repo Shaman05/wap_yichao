@@ -29,8 +29,22 @@
       </div>
     </div>
     <div class="app_wrap" id="">
-      loading page ...
     </div>
+
+    <!--alert-->
+    <div id="myAlert-wrap" role="alertdialog"  class="ui-dialog" aria-labelledby="myAlertLable" aria-hidden="true">
+      <div id="myAlert" class="js-dialog-content ui-alert">
+        <div class="ui-alert-header"><h3 class="ui-alert-title" id="alert-title">Title</h3></div>
+        <div class="ui-alert-body" role="note" id="alert-content"><p>This is a message.</p></div>
+        <div class="ui-alert-footer">
+          <a id="alert-apply" data-dismiss="dialog" role="button" class="ui-alert-button">确定</a>
+          <a id="alert-cancel" data-dismiss="dialog" role="button" class="ui-alert-button">取消</a>
+        </div>
+      </div>
+    </div>
+    <!--//alert-->
+    <div id="mask" class="js-backdrop"></div>
+
     <script src="./js/lib/require.js"></script>
     <script src="./js/app/app.js?pub_time=1407919484305e"></script>
     <!--<script src="./dist/js/app.min.js?pub_time=1407919484305e"></script>-->

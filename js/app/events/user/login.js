@@ -23,7 +23,12 @@ define(['events'], function(events){
           return;
         }
         service.login(name, pwd, function(d){
-          console.log(d);
+          if(d.status == '1'){
+            window.sessionStorage.setItem('userInfo', JSON.stringify(d.data));
+            util.toPage('user.myorder');
+          }else{
+            alert(d.message);
+          }
         });
       });
   };

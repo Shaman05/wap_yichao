@@ -20,8 +20,8 @@ define(['./base'], function (base) {
   var ArticleHandler = 'ArticleHandler';
   var GoodsHandler = 'GoodsHandler';
   var ShopHandler = 'ShopHandler';
-  var GoodsSearch = 'SearchHandler';
-  var User = 'User';
+  var SearchHandler = 'SearchHandler';
+  var UserHandler = 'UserLoginHandler';
   var pageSize = APP.config.pageSize;
 
   return Backbone.Model.extend(
@@ -133,17 +133,26 @@ define(['./base'], function (base) {
           PageIndex: p,
           PageSize: pageSize
         });
-        callApi.call(this, GoodsSearch, data, callback);
+        callApi.call(this, SearchHandler, data, callback);
       },
 
       //User
       login: function (name, pwd, callback) {
         var data = {
-          OP: "Login",
-          name: name,
-          password: pwd
+          OP: "MemberLogin",
+          UserName: name,
+          UserPwd: pwd
         };
-        callApi.call(this, User, data, callback);
+        callApi.call(this, UserHandler, data, callback);
+      },
+      register: function(name, pwd, extraOpt, callback){
+        var data = {
+          OP: "MemberRegister",
+          UserName: name,
+          UserPwd: pwd
+        };
+        data = $.extend(data, extraOpt);
+        callApi.call(this, UserHandler, data, callback);
       }
     })
   );

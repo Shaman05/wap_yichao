@@ -18,11 +18,35 @@ define(['events'], function(events){
 
     $(document)
       .on('blur', '[name=telephone]', function(){
-        $('#phone-tips').text('正在验证...');
+        $('#phone-tip').text('正在验证...');
+        //todo
       })
       .on('click', '#registerBtn', function(){
-
+        var tel = $telephone.val();
+        var pwd = $password.val();
+        var pwd2 = $password2.val();
+        if(!tel || !pwd || !pwd2){
+          alert('用户名或者密码必填!');
+          return;
+        }
+        service.register(tel, pwd, {
+          Email: '',
+          NickName: '',
+          Sex: '',
+          Mobile: '',
+          BirthDay: ''
+        }, function(d){
+          if(d.status == '1'){
+            alert('注册成功');
+          }else{
+            alert(d.message);
+          }
+        });
       });
   };
+
+  function checkPwd(pwd1, pwd2){
+    return pwd1 === pwd2;
+  }
 
 });

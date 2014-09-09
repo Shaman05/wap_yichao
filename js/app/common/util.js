@@ -9,7 +9,20 @@ define(function(){
 
   "use strict";
 
-  return {
+  var util = {
+    isLogin: function(){
+      return this.getUserInfo();
+    },
+
+    getUserInfo: function(){
+      return JSON.parse(window.sessionStorage.getItem('userInfo'));
+    },
+
+    toPage: function(action){
+      var _action = action || 'home';
+      window.location.hash = '#ac=' + _action;
+    },
+
     getParam: function(url){
       var hash = url || location.hash;
       hash = hash.replace(/&amp;/g, '&');
@@ -30,8 +43,38 @@ define(function(){
       $('#loading').hide();
     },
 
-    alert: function(){}
+    alert: function(options){
+      var $mask = $('#mask');
+      var $wrap = $('#myAlert-wrap');
+      var $box = $('#myAlert');
+      var $title = $box.find('#alert-title');
+      var $content = $box.find('#alert-content');
+      var opt = {
+        title: APP.config.domain,
+        html: '<p>这里是Alert内容</p>'
+      };
+      if(typeof options === 'object'){
+        opt = $.extend(opt, options);
+      }
+      if(typeof options === 'string'){
+        opt.html = options;
+      }
 
-  }
+      if($wrap.attr('data-open') == '1'){
+        $wrap.removeClass('js-show');
+      }
+      $title.text(opt.title);
+      $content.html(opt.html);
+      $mask.addClass('js-show');
+      $wrap.addClass('js-show');
+      $wrap.attr('data-open', '1');
+    }
+
+  };
+
+  window.util = util;
+  window.alert = util.alert;
+
+  return util;
 
 });

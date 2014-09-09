@@ -34,7 +34,7 @@ a,a:link{
         position: fixed;
     }@else if($value == 3){
         position: static;
-    }
+   }
   
 }
 @mixin borders($size:1px, $style:solid, $colors:#dddddd){
@@ -2124,3 +2124,115 @@ header .popBox{
   border:#dddddd solid 1px;
   @include prefixer(transition, left 0.15s ease-out, WebKit o moz);
 }
+
+/* zidingyi alert */
+.ui-dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 10000; /* Larger then the z-index value of .ui-backdrop class */
+    overflow: auto;
+    overflow-y: scroll;
+    font-family: -apple-system-font, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+.ui-dialog.js-show{
+    display: block;
+}
+.js-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-color: #000000;
+    opacity: 0;
+    display: block;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+    z-index: 9999;
+}
+.js-backdrop.js-show {
+    visibility: visible;
+    opacity: .5;
+}
+.ui-alert {
+    border-radius: 10px;
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(0);
+    transform: translate3d(-50%, -50%, 0) scale(0);
+    opacity: 0;
+    backface-visibility: hidden;
+    background-color: #ECECEC;
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
+    line-height: normal;
+}
+.ui-dialog.js-show > .ui-alert{
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(1);
+    transform: translate3d(-50%, -50%, 0) scale(1);
+}
+.ui-alert-header,
+.ui-alert-footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.ui-alert-header {
+    margin-top: 15px;
+}
+.ui-alert-title {
+    position: static;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    line-height: normal;
+}
+.ui-alert-body {
+    margin: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+.ui-alert-footer {
+    width: 100%;
+    padding: 0;
+}
+.ui-alert-button {
+    display: block;
+    max-width: 280px;
+    width: auto;
+    margin: 0;
+    padding: 8px 0px;
+    border: 0;
+    border-top: solid 1px #b5b5b5;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    position: relative;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    color: #167efb;
+    background-color: rgba(255, 255, 255, 0.01);
+    transition: background-color .1s ease-in-out;
+}
+.ui-alert-button + .ui-alert-button {
+    border-left: solid 1px #b5b5b5;
+}
+/* //zidingyi alert */
