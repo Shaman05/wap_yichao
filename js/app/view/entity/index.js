@@ -25,7 +25,9 @@ define([
         });
       },
       getOtherEntity: function(data){
-        //todo
+        this.model.subEntityList(data.cityID, function(d){
+
+        });
       }
     })
   );

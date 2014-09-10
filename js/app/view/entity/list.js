@@ -26,7 +26,8 @@ define([
         this.model.subEntityList(cityID, function(d){
           var renderFn = _.artTemplate.compile(subListTpl);
           var html = renderFn({
-            list: d.data
+            list: d.data,
+            cityID: cityID
           });
           callback(html);
         });

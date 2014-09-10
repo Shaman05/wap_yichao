@@ -1,7 +1,7 @@
 <% if(list.length > 0){ %>
 <ul>
     <% for(var i = 0; i < list.length; i++){ %>
-    <li><a href="#ac=entity.index&ShopID=<%= list[i].ShopID %>"><%= list[i].ShortName %></a></li>
+    <li><a href="#ac=entity.index&ShopID=<%= list[i].ShopID %>&cityID=<%= cityID %>"><%= list[i].ShortName %></a></li>
     <% } %>
 </ul>
 <% }else{ %>
