@@ -51,23 +51,45 @@ define(function(){
       var $content = $box.find('#alert-content');
       var opt = {
         title: APP.config.domain,
-        html: '<p>这里是Alert内容</p>'
+        html: '<p>这里是Alert内容</p>',
+        onApply: 'closeAlert',
+        onCancel: 'closeAlert',
+        autoClose: 0
       };
       if(typeof options === 'object'){
         opt = $.extend(opt, options);
+        $wrap.attr('alert-apply', opt.onApply);
+        $wrap.attr('alert-cancel', opt.onCancel);
       }
-      if(typeof options === 'string'){
+      if(typeof options === 'string' || typeof options === 'number'){
         opt.html = options;
       }
 
       if($wrap.attr('data-open') == '1'){
         $wrap.removeClass('js-show');
       }
+
       $title.text(opt.title);
       $content.html(opt.html);
       $mask.addClass('js-show');
       $wrap.addClass('js-show');
       $wrap.attr('data-open', '1');
+      if(opt.autoClose > 0){
+        setTimeout(function(){
+          util.closeAlert();
+        }, opt.autoClose);
+      }
+    },
+
+    id: 'alert-apply',
+    closeAlert: function(){
+      var $wrap = $('#myAlert-wrap');
+      var fn = $wrap.attr(this.id);
+      $wrap.removeClass('js-show').attr('data-open', '0');
+      $('#mask').removeClass('js-show');
+      if(window[fn] && typeof window[fn] === 'function'){
+        window[fn]();
+      }
     }
 
   };

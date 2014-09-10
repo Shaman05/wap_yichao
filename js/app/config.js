@@ -46,6 +46,11 @@
       'user.register',
       'goods.brand'
     ],
+    //不需要记录lashHash
+    noLastHashPage: [
+      'user.login',
+      'user.register'
+    ],
 
     //页面
     pageName: {

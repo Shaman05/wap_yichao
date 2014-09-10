@@ -12,9 +12,11 @@
   </li>
   <% } %>
 </ul>
+<% if(showPaging){ %>
 <div class="pagesOn">
   <%== displayPageBtn('#ac=goods.product_list&GoodsTypeID=' + goodsTypeId, pageIndex, total, pageSize) %>
 </div>
+<% } %>
 <% }else{ %>
 <div class="no-data">
   <p>暂无数据</p>

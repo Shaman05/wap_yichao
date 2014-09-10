@@ -26,10 +26,7 @@ define(function(){
           $('#goodsTypeListWrap').toggle();
         })
         //alert
-        .on('click', '#alert-apply, #alert-cancel', function(){
-          $('#mask').removeClass('js-show');
-          $('#myAlert-wrap').removeClass('js-show').attr('data-open', '0');
-        });
+        .on('click', '#alert-apply, #alert-cancel', util.closeAlert)
 
       $(window)
         .on('scroll', function(){

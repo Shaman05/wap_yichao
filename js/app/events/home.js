@@ -11,11 +11,6 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
-    $(document)
-      .on('click', '#test', function(){
-        console.log(view.id);
-        console.log(service);
-      });
   };
 
 });

@@ -9,6 +9,11 @@ define(['events'], function(events){
 
   "use strict";
 
+  window.registerSuccess = function(){
+    var lastHash = window.sessionStorage.getItem('lastHash');
+    util.toPage(lastHash);
+  }
+
   return function(view, service){
     events.init();
 
@@ -29,6 +34,10 @@ define(['events'], function(events){
           alert('用户名或者密码必填!');
           return;
         }
+        if(!checkPwd(pwd, pwd2)){
+          alert('两次密码不一致!');
+          return;
+        }
         service.register(tel, pwd, {
           Email: '',
           NickName: '',
@@ -37,7 +46,12 @@ define(['events'], function(events){
           BirthDay: ''
         }, function(d){
           if(d.status == '1'){
-            alert('注册成功');
+            window.sessionStorage.setItem('userInfo', JSON.stringify(d.data[0]));
+            alert({
+              html: '注册成功',
+              onApply: 'registerSuccess',
+              autoClose: 3000
+            });
           }else{
             alert(d.message);
           }

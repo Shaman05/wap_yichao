@@ -39,6 +39,9 @@ define([
         util.toPage('user.login');
         return false;
       }
+      if(_.indexOf(config.noLastHashPage, ac) < 0){
+        window.sessionStorage.setItem('lastHash', ac);
+      }
       if(_.indexOf(config.noHeader, ac) < 0){
         tpl += header;
       }

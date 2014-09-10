@@ -20,6 +20,7 @@ define([
         this.model.goodsList(data.GoodsTypeID, data.PageIndex, function(d){
           var renderFn = _.artTemplate.compile(tpl);
           $('#proWapper').html(renderFn({
+            showPaging: true,
             list: d.data,
             goodsTypeId: data.GoodsTypeID,
             pageIndex: data.PageIndex,
