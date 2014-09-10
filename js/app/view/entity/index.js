@@ -3,9 +3,10 @@
 define([
   'app/view/baseView',
   'text!app/template/entity/ajax_info.html',
+  'text!app/template/entity/ajax_sub_entity_list.html',
   'text!app/template/entity/ajax_otherEntity.html',
   'app/service/api'
-], function(baseView, infoTpl, otherTpl, model){
+], function(baseView, infoTpl, otherSubTpl, otherTpl, model){
 
   return Backbone.View.extend(
     $.extend(baseView, {
@@ -20,13 +21,19 @@ define([
           var info = d.data[0];
           var renderFn1 = _.artTemplate.compile(infoTpl);
           $('#pageName').text(info['ShopName']);
+          $('#cityName').text(info['Province']);
           $('#infoWrap').html(renderFn1(info));
           $('#findShop').html(info['FindShop']);
         });
       },
       getOtherEntity: function(data){
         this.model.subEntityList(data.cityID, function(d){
-
+          var renderFn = _.artTemplate.compile(otherSubTpl);
+          var html = renderFn({
+            list: d.data,
+            cityID: data.cityID
+          });
+          $('#otherSubEntityList').html(html);
         });
       }
     })
