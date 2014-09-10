@@ -35,6 +35,12 @@ define([
           });
           $('#otherSubEntityList').html(html);
         });
+        this.model.entityCity(function(d){
+          var renderFn = _.artTemplate.compile(otherTpl);
+          $('#allEntityPro').html(renderFn({
+            list: d.data
+          }));
+        });
       }
     })
   );

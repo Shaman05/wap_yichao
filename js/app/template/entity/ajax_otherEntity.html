@@ -1,8 +1,13 @@
+<% if(list.length > 0){ %>
 <ul class="ul_all">
-  <li><a href="javascript:;">杭州</a></li>
-  <li><a href="javascript:;">上海</a></li>
-  <li><a href="javascript:;">北京</a></li>
-  <li><a href="javascript:;">深圳</a></li>
-  <li><a href="javascript:;">广州</a></li>
-  <li><a href="javascript:;">湖州</a></li>
+    <% for(var i = 0; i < list.length; i++){ %>
+    <li data-city="<%= list[i].AreaID %>">
+        <a href="javascript:" class="cityName"><%= list[i].AreaName %></a>
+    </li>
+    <% } %>
 </ul>
+<% }else{ %>
+<div class="no-data">
+    <p>暂无数据</p>
+</div>
+<% } %>
