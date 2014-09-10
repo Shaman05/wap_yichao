@@ -190,8 +190,9 @@ body{font-family:$fontYaHei; color:$black;}
     li{
         @include float(left);
         @include width(50%);
-        padding:0 15px 0 0;
+        padding:0 7px;
         margin-bottom: 20px;
+         @extend .f14;
         display: inline;
         @include prefixer(box-sizing, border-box, o webkit moz);
         .proImg{
@@ -202,9 +203,9 @@ body{font-family:$fontYaHei; color:$black;}
         }
         .proName{
             padding-top: 5px;
-             @include height(false,auto,20px);
-            font-size:1em;
+             @include height(false,40px,20px);
             color:#000000;
+            @include ovh(hidden);
             em{color:$red;}
         }
     }
@@ -719,12 +720,12 @@ body{font-family:$fontYaHei; color:$black;}
     }
     .in_jingkuang{
       @include height(false, auto, 40px);
-      padding:0 0 5% ;
+      padding:20px 15px 20px ; ;
       @include position(0);
       a{
         @include position(1);
         right:5%;
-        top:5%;
+        top:24%;
         font-family: $fontCn;
         font-weight: bold;
       }
@@ -1539,6 +1540,9 @@ display:block;
   .fl{
     width:70%;
     .p_state{
+      em{
+        @extend .f14
+      }
     }
   }
   .fr{
@@ -1573,6 +1577,7 @@ display:block;
   .fl{
     width:60%;
     em{color:$red;}
+    @extend .f18;
   }
   .fr{
     width:40%;
@@ -1887,6 +1892,9 @@ display:block;
     }
   }
 }
+
+.listmore_shop .no-data{display:none}
+.listmore_shop .open .no-data{display:block}
 .s_down{
   @include position(1);
   left:10%;
@@ -1955,12 +1963,12 @@ header .popBox{
 .shitiInfos{
     display: none;
 }
-
+.no-data{ @extend .tac; line-height: 50px;}
 /* Carousel */
 .js-slider{overflow:hidden;position:relative}
 .js-slider-img-wrap{overflow:hidden}
 .js-slider-h .js-slider-img{float:left}
-.js-slider-num-wrap{position:absolute;bottom:5px;left:50%;z-index:99}
+.js-slider-num-wrap{position:absolute;bottom:5px;left:45%;z-index:99}
 .js-slider-num{float:left}.js-slider-num-cur{color:#ff0000}
 .slider-pic img{width:100%;height:auto;}
 .slider-num li{margin-left: 4px;width: 12px;height: 12px;border-radius: 6px;text-indent: -9999px;background-color: #b9bbb8;}

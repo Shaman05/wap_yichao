@@ -192,7 +192,7 @@ body{font-family:$fontYaHei; color:$black;}
     li{
         @include float(left);
         @include width(25%);
-        padding:0 15px 0 0;
+        padding:0 7px;
         margin-bottom: 20px;
         display: inline;
         @include prefixer(box-sizing, border-box, o webkit moz);
@@ -204,10 +204,10 @@ body{font-family:$fontYaHei; color:$black;}
         }
         .proName{
             padding-top: 5px;
-             @include height(false,auto,20px);
-            font-size:1em;
+             @include height(false,40px,20px);
             color:#000000;
             em{color:$red;}
+            @include ovh(hidden);
         }
     }
 }
@@ -662,14 +662,15 @@ body{font-family:$fontYaHei; color:$black;}
     }
     .in_jingkuang{
       @include height(false, auto, 40px);
-      padding:0 0 5% ;
+      padding:20px 15px 20px ;
       @include position(0);
       a{
         @include position(1);
         right:5%;
-        top:5%;
+        top:34%;
         font-family: $fontCn;
         font-weight: bold;
+        @extend .f18;
       }
       em{
         @extend .f18;
@@ -679,20 +680,20 @@ body{font-family:$fontYaHei; color:$black;}
 .noteBtn{
   border:none;
   background: #b81c2a;
-  line-height: 20px;
+  line-height: 30px;
   color:$white;
-  font-size: 0.7em;
+  @extend .f14;
   font-weight: normal;
-  padding:0 15px 0 5px;
+  padding:0 30px 0 5px;
   @include position(0); left:5px; bottom:2px;
   @include inline-block (false);
 }
 .noteBtn::after{
   content:"";
   @include position(1);
-  right:-12px; top:0;
-  width:20px;
-  height: 20px;
+  right:-20px; top:0;
+  width:30px;
+  height: 30px;
   background:$white;
   @include prefixer(transform, rotate(45deg));
 }
@@ -996,7 +997,7 @@ body{font-family:$fontYaHei; color:$black;}
     .carContent{
       @extend .fl;
       width:72%;
-      padding:0 0 0 3%;
+      padding:0 0 0 15px;
       &.orderCon{
         width:82%;
         .carProTitle{
@@ -1485,6 +1486,9 @@ display:block;
   .fl{
     width:70%;
     .p_state{
+      em{
+        @extend .f20
+      }
     }
   }
   .fr{
@@ -1494,6 +1498,7 @@ display:block;
     .buttonGray_01{
       padding:4% 10%;
       color:$white;
+       @extend .f20
     }
   }
   .orderInfos{
@@ -1520,6 +1525,7 @@ display:block;
   .fl{
     width:60%;
     em{color:$red;}
+    @extend .f20;
   }
   .fr{
     width:40%;
@@ -1528,9 +1534,11 @@ display:block;
       @extend .buttonYellow;
       @include prefixer(border-radius, 30px, webkit o moz);
       padding:2% 15%;
+      @extend .f20;
     }
     @at-root.buttonGn{
       @extend .buttonYw;
+       @extend .f20;
     }
    }
   }
@@ -1790,7 +1798,7 @@ display:block;
     margin-bottom: 10px;
   }
 }
-
+.no-data{ @extend .tac; line-height: 100px;}
 .otherName{
   border-top:$cd solid 1px;
   background:#f4f4f4;
@@ -1847,6 +1855,8 @@ display:block;
     }
   }
 }
+.listmore_shop .no-data{display:none}
+.listmore_shop .open .no-data{display:block}
 .s_down{
   @include position(1);
   left:10%;

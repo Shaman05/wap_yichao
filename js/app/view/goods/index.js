@@ -9,7 +9,7 @@ define(['app/view/baseView'], function(baseView){
       ready: function(){
         $("#jSlider").slider({
           direction: "left",
-          height: 150
+          height: 300
         });
       }
     })
