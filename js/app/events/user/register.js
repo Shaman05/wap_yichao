@@ -22,6 +22,8 @@ define(['events'], function(events){
     var $password2 = $('[name=password2]');
 
     $(document)
+      .on('click', '#offDisplay', switchPwdDisplay)
+      .on('click', '#onDisplay', switchPwdDisplay)
       .on('blur', '[name=telephone]', function(){
         $('#phone-tip').text('正在验证...');
         //todo
@@ -57,6 +59,12 @@ define(['events'], function(events){
           }
         });
       });
+
+    function switchPwdDisplay(){
+      var type = $(this).attr('for') == 'no' ? 'password' : 'text';
+      $password.attr('type', type);
+      $password2.attr('type', type);
+    }
   };
 
   function checkPwd(pwd1, pwd2){
