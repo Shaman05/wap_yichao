@@ -88,7 +88,7 @@
         list: '搜索'
       },
       entity: {
-        index: '实体店名',
+        index: '',
         list: '实体店'
       }
     },

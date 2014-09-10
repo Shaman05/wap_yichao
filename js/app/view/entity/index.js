@@ -19,6 +19,7 @@ define([
         this.model.entityInfo(data.ShopID, function(d){
           var info = d.data[0];
           var renderFn1 = _.artTemplate.compile(infoTpl);
+          $('#pageName').text(info['ShopName']);
           $('#infoWrap').html(renderFn1(info));
           $('#findShop').html(info['FindShop']);
         });
