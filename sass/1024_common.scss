@@ -250,8 +250,8 @@ body{font-family:$fontYaHei; color:$black;}
    }
    .footerTxt{
     text-align:center; 
-    @include height(false,80px,25px); 
-    color:$c6; padding:5% 0 0;
+    line-height: 30px;
+    color:$c6; padding:5% 0;
     a{
       font-size: 1.1em;
     }
@@ -1614,7 +1614,7 @@ display:block;
     }
   }
 }
-.zhiBox{margin-bottom:20px;}
+.zhiBox{margin-bottom:20px; @extend .shitiBox;}
 .zhilist{
   li{
     border-bottom: #cccccc solid 1px;
@@ -1671,7 +1671,7 @@ display:block;
   line-height: 25px;
 }
 .search{
-  padding:0 0 8%;
+  padding:5% 0 8%;
   label{
     @include inline-block;
     &.searchBtn{
@@ -1789,10 +1789,10 @@ display:block;
 .shitiInfos{
   padding:2%;
   img{width:100%;}
-  @extend .tac;
+  /* @extend .tac; */
   .imgbox{
     background:#fcfcfc;
-    padding:3%
+    padding:1%
   }
   img{
     margin-bottom: 10px;
@@ -1824,6 +1824,7 @@ display:block;
     }
   }
 }
+.shitiBox{min-height:500px;}
 .listmore_shop{
   li{
     em{

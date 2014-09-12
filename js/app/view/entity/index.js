@@ -24,6 +24,10 @@ define([
           $('#cityName').text(info['Province']);
           $('#infoWrap').html(renderFn1(info));
           $('#findShop').html(info['FindShop']);
+          $("#jSlider").slider({
+            direction: "left",
+            height: 150
+          });
         });
       },
       getOtherEntity: function(data){

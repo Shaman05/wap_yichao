@@ -505,7 +505,7 @@ body {
 .f15 {
   font-size: 1.5em; }
 
-.tac, .topNav li.item2 a, .navBar, .navBar .txt, .pagesOn, .pagesOn a.pageUp, .pagesOn a.pageNext, .addGou, .qqAndW, .scrollImg .imgListA li, .indexOrderList li, .groupPro li .groupImg .imgs, .groupPro li .groupPrice, .groupInfoBuy, .moreTaoC ul li .buyBtn, .moreTaoC .num, .proCarList li .radius, .proCarList li .carProImg, .carBtnBox a, .yesnobtn, .carNote, .clearing span.sp_01, .userAdress .adNext, .payWay .payBtn a, .addressli li .span .buttonRed, .zhifuway, .moreP, .services li, .services li .labels, .wenTitles, .search label.searchBtn input[type="submit"], .serviceList ul li .icn_label, .updown_go, .shitiInfos, .no-data, .popBox ul li, #loading {
+.tac, .topNav li.item2 a, .navBar, .navBar .txt, .pagesOn, .pagesOn a.pageUp, .pagesOn a.pageNext, .addGou, .qqAndW, .scrollImg .imgListA li, .indexOrderList li, .groupPro li .groupImg .imgs, .groupPro li .groupPrice, .groupInfoBuy, .moreTaoC ul li .buyBtn, .moreTaoC .num, .proCarList li .radius, .proCarList li .carProImg, .carBtnBox a, .yesnobtn, .carNote, .clearing span.sp_01, .userAdress .adNext, .payWay .payBtn a, .addressli li .span .buttonRed, .zhifuway, .moreP, .services li, .services li .labels, .wenTitles, .search label.searchBtn input[type="submit"], .serviceList ul li .icn_label, .updown_go, .no-data, .popBox ul li, #loading {
   text-align: center; }
 
 .tar, .clearing span.sp_02, .clearing span.sp_03, .addressli li .label, .addressli li .span.tars, .order_state .fr, .order_state .groupPro li .groupPrice a, .groupPro li .groupPrice .order_state a, .order_state .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .order_state .cpPrice, .order_state .clearing span, .clearing .order_state span, .order_state .listmore_shop li em, .listmore_shop li .order_state em, .allPrices .fr, .allPrices .groupPro li .groupPrice a, .groupPro li .groupPrice .allPrices a, .allPrices .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .allPrices .cpPrice, .allPrices .clearing span, .clearing .allPrices span, .allPrices .listmore_shop li em, .listmore_shop li .allPrices em {
@@ -704,10 +704,9 @@ body {
       display: inline; }
 #footer .footerTxt {
   text-align: center;
-  height: 80px;
-  line-height: 25px;
+  line-height: 30px;
   color: #666666;
-  padding: 5% 0 0; }
+  padding: 5% 0; }
   #footer .footerTxt a {
     font-size: 1.1em; }
 
@@ -1974,7 +1973,7 @@ body {
     color: #999999; }
 
 .search {
-  padding: 0 0 8%; }
+  padding: 5% 0 8%; }
   .search label.searchBtn {
     margin-left: 14px; }
     .search label.searchBtn input[type="submit"] {
@@ -2085,12 +2084,13 @@ body {
     margin: 5% 0 0; }
 
 .shitiInfos {
-  padding: 2%; }
+  padding: 2%;
+  /* @extend .tac; */ }
   .shitiInfos img {
     width: 100%; }
   .shitiInfos .imgbox {
     background: #fcfcfc;
-    padding: 3%; }
+    padding: 1%; }
   .shitiInfos img {
     margin-bottom: 10px; }
 
@@ -2113,6 +2113,9 @@ body {
       width: 30%; }
     .otherName ul.ul_all li {
       width: 20%; }
+
+.shitiBox, .zhiBox {
+  min-height: 500px; }
 
 .listmore_shop li em {
   /* @include position(1);

@@ -154,7 +154,7 @@ body{font-family:$fontYaHei; color:$black;}
                         @include height(true,20px);
                      } 
                     }
-                     .txt{padding:2px 0 0;color:$white; @extend .f12; display:block;}
+                     .txt{padding:2px 0 0;color:$white; /* @extend .f12; */ display:block;}
                 }
         }
       
@@ -179,7 +179,7 @@ body{font-family:$fontYaHei; color:$black;}
    margin-top:9px; display: inline;
     background-size: 38px auto;
 }
-.navBar .txt{ @include height(false,auto,50px); color:#363636; font-size:1.5em; @extend .tac;}
+.navBar .txt{ @include height(false,auto,50px); color:#363636; font-size:1.2em; @extend .tac;}
 
 /* product style */
 #proWapper{
@@ -249,8 +249,8 @@ body{font-family:$fontYaHei; color:$black;}
    }
    .footerTxt{
     text-align:center; 
-    @include height(false,80px,25px); 
-    color:$c6; padding:5% 0 0;
+    @include height(false,auto,25px); 
+    color:$c6; padding:5% 0 ;
     a{
       font-size: 1.1em;
     }
@@ -395,14 +395,15 @@ body{font-family:$fontYaHei; color:$black;}
      &.last{
         .lookpwd{
             @include float(left);
-            &.pl15{padding-left:15px;}
+            margin-top:2px;
+            &.pl15{padding-left:12px;}
         }
         .account{
             @include float(right);
         }
      }
      &.btns{margin:7px 0;}
-     &.yesNo{margin-bottom: 0;  @include height(true,28px); }
+     &.yesNo{/* margin-bottom: 0;  */ @include height(true,28px); }
      .verfiy{
         padding:0 0 0 10px;
         font-size: 11px;
@@ -544,7 +545,7 @@ body{font-family:$fontYaHei; color:$black;}
 /* banner scrollImgs */
  @include max-screen(320px){
      .scrollImg{
-      width:320px;
+     /*  width:320px; */
        @include height(true, 270px);
       @include ovh(hidden);
       @include position(0);
@@ -552,11 +553,11 @@ body{font-family:$fontYaHei; color:$black;}
         @include height(true, 200px);
       }
       .imgListA{
-        width:1200px;
+       /*  width:1200px; */
         @include ovh(hidden);
         li{
           @include float(left);
-          img{width:320px;}
+          img{width:100px;}
         }
       }
       .pointersGo{
@@ -575,7 +576,7 @@ body{font-family:$fontYaHei; color:$black;}
       }
      }
     }
-@include screen(330px, 640px){
+@include screen(321px, 640px){
   .scrollImg{
       width:640px;
       @include height(true, 300px);
@@ -585,11 +586,11 @@ body{font-family:$fontYaHei; color:$black;}
         @include height(true, 260px);
       }
       .imgListA{
-        width:1500px;
+        /* width:1500px; */
         @include ovh(hidden);
         li{
           @include float(left);
-          img{width:640px;}
+          img{width:100%;}
         }
       }
       .pointersGo{
@@ -610,7 +611,7 @@ body{font-family:$fontYaHei; color:$black;}
 }
 @include screen(650px, 1024px){
   .scrollImg{
-      width:800px;
+     /*  width:800px; */
        @include height(true, 300px);
       @include ovh(hidden);
       @include position(0);
@@ -1656,7 +1657,7 @@ display:block;
     }
   }
 }
-.zhiBox{margin-bottom:20px;}
+.zhiBox{margin-bottom:20px; @extend .shitiBox;}
 .zhilist{
   li{
     border-bottom: #cccccc solid 1px;
@@ -1704,13 +1705,13 @@ display:block;
   }
 }
 .searchNote{
-  padding:8%;
+  padding:5% 8% 0;
   em{color:$grayDark}
   line-height: 25px;
 }
 .search{
   border-bottom: #d3d3d3 solid 1px;
-  padding:0 10% 10%;
+  padding:8% 8% 10%;
   label{
     @include inline-block;
     &.searchBtn{
@@ -1747,7 +1748,6 @@ display:block;
     line-height: 30px;
     &.first{
       width:100%;
-      float:none;
       color:$c6;
     }
   }
@@ -1757,6 +1757,7 @@ display:block;
 .shoppName{
   @include height(false, auto, 30px);
   padding:0 0 4%;
+  @extend .f20;
 }
 .shoppadd{
   line-height: 25px;
@@ -1826,10 +1827,10 @@ display:block;
 .shitiInfos{
   padding:2%;
   img{width:100%;}
-  @extend .tac;
+  /* @extend .tac; */
   .imgbox{
     background:#fcfcfc;
-    padding:3%
+    padding:1%
   }
   img{
     margin-bottom: 10px;
@@ -1851,16 +1852,19 @@ display:block;
   ul{
     @include ovh(hidden);
     li{
-      width:30%;
+      /* width:30%; */
+      padding:0 25px 0 0;
       @extend .fl;
     }
     &.ul_all{
       li{
       width:20%;
+      padding:0;
       }
     }
   }
 }
+.shitiBox{min-height:348px;}
 .listmore_shop{
   li{
     em{
@@ -1947,16 +1951,17 @@ header .popBox{
 }
 .listmore_shop > li:after{
     content: '+';
-    color: #808080;
     position: absolute;
     right: 30px;
     top: 3px;
-    @extend .f18;
+    color:#d3d3d3;
+    font-size: 1.3em;
 }
 .listmore_shop > .open:after{
     content: '-';
-    right: 33px;
-     @extend .f18;
+    right: 31px;
+    top:0px;
+     font-size: 1.8em;
 }
 
 /*shiti info*/
