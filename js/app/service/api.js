@@ -173,6 +173,16 @@ define(['./base'], function (base) {
           PageSize: pageSize
         };
         callApi.call(this, OrderHandler, data, callback);
+      },
+      cartList: function(goodsName, goodsId, p, callback){
+        var data = {
+          OP: "OrderCartList",
+          GoodsName: "",
+          GoodsTypeID: "",
+          PageIndex: p,
+          PageSize: pageSize
+        };
+        callApi.call(this, OrderHandler, data, callback);
       }
     })
   );

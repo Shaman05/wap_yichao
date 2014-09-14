@@ -1,11 +1,29 @@
 "use strict";
 
-define(['app/view/baseView'], function(baseView){
+define([
+  'app/view/baseView',
+  'text!app/template/user/ajax_cartList.html',
+  'text!app/template/user/yanGuangDan.html',
+  'app/service/api'
+], function(baseView, tpl, yanGDTpl, model){
 
   return Backbone.View.extend(
     $.extend(baseView, {
-      id: 'home-page',
-      model: null
+      id: 'cart-page',
+      model: new model,
+      ready: function(data){
+        this.getCartList(data);
+      },
+      getCartList: function(data){
+        this.model.cartList(data.goodsName, data.goodsId, data.PageIndex, function(d){
+          var renderFn = _.artTemplate.compile(tpl);
+          $('#cartWrap').html(renderFn({
+            list: d.data,
+            goodsName: data.goodsName,
+            goodsId: data.goodsId
+          }));
+        });
+      }
     })
   );
 
