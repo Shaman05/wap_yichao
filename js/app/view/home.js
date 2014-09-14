@@ -23,7 +23,7 @@ define([
         this.getGoodsList();
         $("#jSlider").slider({
           direction: "left",
-          height: 150
+          height: 250
         });
       },
       getGoodsList: function(){

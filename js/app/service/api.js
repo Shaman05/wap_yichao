@@ -153,6 +153,13 @@ define(['./base'], function (base) {
         };
         data = $.extend(data, extraOpt);
         callApi.call(this, UserHandler, data, callback);
+      },
+      checkName: function(name, callback){
+        var data = {
+          OP: "MemberIsUserName",
+          UserName: name
+        };
+        callApi.call(this, UserHandler, data, callback);
       }
     })
   );

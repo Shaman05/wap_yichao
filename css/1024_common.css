@@ -493,10 +493,10 @@ body {
 .f16, .kehuPh, .sortList li li li, .carBtnBox a, .clearing span.sp_02 span, .serviceList ul li .icn_label.icn_label3, #loading {
   font-size: 1em; }
 
-.f18, .topNav li.item2 a .txt, .commontsTitles, .in_jingkuang a, .in_jingkuang em, .sortList li .oneName, .sortList li li .oneName, .groupPro li .groupPrice, .groupInfoBuy .buttonRed, .moreTaoC ul li .mpc, .clearing span.sp_03 .buttonRed, .titleName, .zhifuway .phNote, .order_state .order_user em, .serviceList ul li .con_span .txt {
+.f18, .topNav li.item2 a .txt, .commontsTitles, .in_jingkuang a, .in_jingkuang em, .sortList li .oneName, .sortList li li .oneName, .groupPro li .groupPrice, .groupInfoBuy .buttonRed, .moreTaoC ul li .mpc, .carNote, .clearing span.sp_03 .buttonRed, .titleName, .zhifuway .phNote, .order_state .order_user em, .serviceList ul li .con_span .txt {
   font-size: 1.125em; }
 
-.f20, .commontsTitles .ec1, .loginGo li .buttonRed, .groupPro li .groupPrice a, .groupInfoBuy, .sctN, .clearing span, .addressli li .span.tars, .order_state .fl .p_state em, .order_state .groupInfo li .imgFl .p_state em, .groupInfo li .order_state .imgFl .p_state em, .order_state .groupInfo li .groupCont .p_state em, .groupInfo li .order_state .groupCont .p_state em, .order_state .moreTaoC ul li .p_state em, .moreTaoC ul .order_state li .p_state em, .order_state .proCarList li .radius .p_state em, .proCarList li .order_state .radius .p_state em, .order_state .proCarList li .carProImg .p_state em, .proCarList li .order_state .carProImg .p_state em, .order_state .proCarList li .carContent .p_state em, .proCarList li .order_state .carContent .p_state em, .proCarList li .carContent .carProTitle .order_state a .p_state em, .order_state .yanguangdan .yanTime label .p_state em, .yanguangdan .yanTime .order_state label .p_state em, .order_state .yanguangdan .yanTime span .p_state em, .yanguangdan .yanTime .order_state span .p_state em, .order_state .clearing span.sp_01 .p_state em, .clearing .order_state span.sp_01 .p_state em, .order_state .userAdress .userAdL .p_state em, .userAdress .order_state .userAdL .p_state em, .userAdress .userAdL .order_state .adIcon .p_state em, .userAdress .userAdL .order_state .adContent .p_state em, .order_state .userAdress .adNext .p_state em, .userAdress .order_state .adNext .p_state em, .order_state .addressli li .label .p_state em, .addressli li .order_state .label .p_state em, .order_state .addressli li .span .p_state em, .addressli li .order_state .span .p_state em, .order_state .allgoodsst li .p_state em, .allgoodsst .order_state li .p_state em, .order_state .serviceList ul li .p_state em, .serviceList ul .order_state li .p_state em, .serviceList ul li .order_state .icn_label .p_state em, .serviceList ul li .order_state .con_span .p_state em, .order_state .otherName ul li .p_state em, .otherName ul .order_state li .p_state em, .order_state .listmore_shop li ul li .p_state em, .listmore_shop li ul .order_state li .p_state em, .order_state .circular .p_state em, .order_state .fr .buttonGray_01, .order_state .groupPro li .groupPrice a .buttonGray_01, .groupPro li .groupPrice .order_state a .buttonGray_01, .order_state .proCarList li .carContent .carProTitle .cpPrice .buttonGray_01, .proCarList li .carContent .carProTitle .order_state .cpPrice .buttonGray_01, .order_state .clearing span .buttonGray_01, .clearing .order_state span .buttonGray_01, .order_state .listmore_shop li em .buttonGray_01, .listmore_shop li .order_state em .buttonGray_01, .order_state .fr .buttonGreen, .order_state .groupPro li .groupPrice a .buttonGreen, .groupPro li .groupPrice .order_state a .buttonGreen, .order_state .proCarList li .carContent .carProTitle .cpPrice .buttonGreen, .proCarList li .carContent .carProTitle .order_state .cpPrice .buttonGreen, .order_state .clearing span .buttonGreen, .clearing .order_state span .buttonGreen, .order_state .listmore_shop li em .buttonGreen, .listmore_shop li .order_state em .buttonGreen, .allPrices .fl, .allPrices .groupInfo li .imgFl, .groupInfo li .allPrices .imgFl, .allPrices .groupInfo li .groupCont, .groupInfo li .allPrices .groupCont, .allPrices .moreTaoC ul li, .moreTaoC ul .allPrices li, .allPrices .proCarList li .radius, .proCarList li .allPrices .radius, .allPrices .proCarList li .carProImg, .proCarList li .allPrices .carProImg, .allPrices .proCarList li .carContent, .proCarList li .allPrices .carContent, .allPrices .proCarList li .carContent .carProTitle a, .proCarList li .carContent .carProTitle .allPrices a, .allPrices .yanguangdan .yanTime label, .yanguangdan .yanTime .allPrices label, .allPrices .yanguangdan .yanTime span, .yanguangdan .yanTime .allPrices span, .allPrices .clearing span.sp_01, .clearing .allPrices span.sp_01, .allPrices .userAdress .userAdL, .userAdress .allPrices .userAdL, .allPrices .userAdress .userAdL .adIcon, .userAdress .userAdL .allPrices .adIcon, .allPrices .userAdress .userAdL .adContent, .userAdress .userAdL .allPrices .adContent, .allPrices .userAdress .adNext, .userAdress .allPrices .adNext, .allPrices .addressli li .label, .addressli li .allPrices .label, .allPrices .addressli li .span, .addressli li .allPrices .span, .allPrices .allgoodsst li, .allgoodsst .allPrices li, .allPrices .serviceList ul li, .serviceList ul .allPrices li, .allPrices .serviceList ul li .icn_label, .serviceList ul li .allPrices .icn_label, .allPrices .serviceList ul li .con_span, .serviceList ul li .allPrices .con_span, .allPrices .otherName ul li, .otherName ul .allPrices li, .allPrices .listmore_shop li ul li, .listmore_shop li ul .allPrices li, .allPrices .circular, .buttonYw, .buttonGn, .wenTitles {
+.f20, .commontsTitles .ec1, .loginGo li .buttonRed, .groupPro li .groupPrice a, .groupInfoBuy, .sctN, .clearing span, .addressli li .span.tars, .order_state .fl .p_state em, .order_state .groupInfo li .imgFl .p_state em, .groupInfo li .order_state .imgFl .p_state em, .order_state .groupInfo li .groupCont .p_state em, .groupInfo li .order_state .groupCont .p_state em, .order_state .moreTaoC ul li .p_state em, .moreTaoC ul .order_state li .p_state em, .order_state .proCarList li .radius .p_state em, .proCarList li .order_state .radius .p_state em, .order_state .proCarList li .carProImg .p_state em, .proCarList li .order_state .carProImg .p_state em, .order_state .proCarList li .carContent .p_state em, .proCarList li .order_state .carContent .p_state em, .proCarList li .carContent .carProTitle .order_state a .p_state em, .order_state .yanguangdan .yanTime label .p_state em, .yanguangdan .yanTime .order_state label .p_state em, .order_state .yanguangdan .yanTime span .p_state em, .yanguangdan .yanTime .order_state span .p_state em, .order_state .clearing span.sp_01 .p_state em, .clearing .order_state span.sp_01 .p_state em, .order_state .userAdress .userAdL .p_state em, .userAdress .order_state .userAdL .p_state em, .userAdress .userAdL .order_state .adIcon .p_state em, .userAdress .userAdL .order_state .adContent .p_state em, .order_state .userAdress .adNext .p_state em, .userAdress .order_state .adNext .p_state em, .order_state .addressli li .label .p_state em, .addressli li .order_state .label .p_state em, .order_state .addressli li .span .p_state em, .addressli li .order_state .span .p_state em, .order_state .allgoodsst li .p_state em, .allgoodsst .order_state li .p_state em, .order_state .serviceList ul li .p_state em, .serviceList ul .order_state li .p_state em, .serviceList ul li .order_state .icn_label .p_state em, .serviceList ul li .order_state .con_span .p_state em, .order_state .otherName ul li .p_state em, .otherName ul .order_state li .p_state em, .order_state .listmore_shop li ul li .p_state em, .listmore_shop li ul .order_state li .p_state em, .order_state .circular .p_state em, .order_state .fr .buttonGray_01, .order_state .groupPro li .groupPrice a .buttonGray_01, .groupPro li .groupPrice .order_state a .buttonGray_01, .order_state .proCarList li .carContent .carProTitle .cpPrice .buttonGray_01, .proCarList li .carContent .carProTitle .order_state .cpPrice .buttonGray_01, .order_state .clearing span .buttonGray_01, .clearing .order_state span .buttonGray_01, .order_state .listmore_shop li em .buttonGray_01, .listmore_shop li .order_state em .buttonGray_01, .order_state .fr .buttonGreen, .order_state .groupPro li .groupPrice a .buttonGreen, .groupPro li .groupPrice .order_state a .buttonGreen, .order_state .proCarList li .carContent .carProTitle .cpPrice .buttonGreen, .proCarList li .carContent .carProTitle .order_state .cpPrice .buttonGreen, .order_state .clearing span .buttonGreen, .clearing .order_state span .buttonGreen, .order_state .listmore_shop li em .buttonGreen, .listmore_shop li .order_state em .buttonGreen, .allPrices .fl, .allPrices .groupInfo li .imgFl, .groupInfo li .allPrices .imgFl, .allPrices .groupInfo li .groupCont, .groupInfo li .allPrices .groupCont, .allPrices .moreTaoC ul li, .moreTaoC ul .allPrices li, .allPrices .proCarList li .radius, .proCarList li .allPrices .radius, .allPrices .proCarList li .carProImg, .proCarList li .allPrices .carProImg, .allPrices .proCarList li .carContent, .proCarList li .allPrices .carContent, .allPrices .proCarList li .carContent .carProTitle a, .proCarList li .carContent .carProTitle .allPrices a, .allPrices .yanguangdan .yanTime label, .yanguangdan .yanTime .allPrices label, .allPrices .yanguangdan .yanTime span, .yanguangdan .yanTime .allPrices span, .allPrices .clearing span.sp_01, .clearing .allPrices span.sp_01, .allPrices .userAdress .userAdL, .userAdress .allPrices .userAdL, .allPrices .userAdress .userAdL .adIcon, .userAdress .userAdL .allPrices .adIcon, .allPrices .userAdress .userAdL .adContent, .userAdress .userAdL .allPrices .adContent, .allPrices .userAdress .adNext, .userAdress .allPrices .adNext, .allPrices .addressli li .label, .addressli li .allPrices .label, .allPrices .addressli li .span, .addressli li .allPrices .span, .allPrices .allgoodsst li, .allgoodsst .allPrices li, .allPrices .serviceList ul li, .serviceList ul .allPrices li, .allPrices .serviceList ul li .icn_label, .serviceList ul li .allPrices .icn_label, .allPrices .serviceList ul li .con_span, .serviceList ul li .allPrices .con_span, .allPrices .otherName ul li, .otherName ul .allPrices li, .allPrices .listmore_shop li ul li, .listmore_shop li ul .allPrices li, .allPrices .circular, .buttonYw, .buttonGn, .wenTitles, .shoppName {
   font-size: 1.25em; }
 
 .f25, .h3Title, .priceOne em, .sortList li .oneName .downOrUP, .userAdress .adNext, .order_state .buttonGn, .order_state .buttonYw, .services li .spans, .listmore_shop > li:after, .listmore_shop > .open:after {
@@ -505,7 +505,7 @@ body {
 .f15 {
   font-size: 1.5em; }
 
-.tac, .topNav li.item2 a, .navBar, .navBar .txt, .pagesOn, .pagesOn a.pageUp, .pagesOn a.pageNext, .addGou, .qqAndW, .scrollImg .imgListA li, .indexOrderList li, .groupPro li .groupImg .imgs, .groupPro li .groupPrice, .groupInfoBuy, .moreTaoC ul li .buyBtn, .moreTaoC .num, .proCarList li .radius, .proCarList li .carProImg, .carBtnBox a, .yesnobtn, .carNote, .clearing span.sp_01, .userAdress .adNext, .payWay .payBtn a, .addressli li .span .buttonRed, .zhifuway, .moreP, .services li, .services li .labels, .wenTitles, .search label.searchBtn input[type="submit"], .serviceList ul li .icn_label, .updown_go, .no-data, .popBox ul li, #loading {
+.tac, .topNav li.item2 a, .navBar, .navBar .txt, .pagesOn, .pagesOn a.pageUp, .pagesOn a.pageNext, .addGou, .qqAndW, .scrollImg .imgListA li, .indexOrderList li, .groupPro li .groupImg .imgs, .groupPro li .groupPrice, .groupInfoBuy, .moreTaoC ul li .buyBtn, .moreTaoC .num, .proCarList li .radius, .proCarList li .carProImg, .carBtnBox a, .yesnobtn, .carNote, .userAdress .adNext, .payWay .payBtn a, .addressli li .span .buttonRed, .zhifuway, .moreP, .services li, .services li .labels, .wenTitles, .search label.searchBtn input[type="submit"], .serviceList ul li .icn_label, .updown_go, .no-data, .popBox ul li, #loading {
   text-align: center; }
 
 .tar, .clearing span.sp_02, .clearing span.sp_03, .addressli li .label, .addressli li .span.tars, .order_state .fr, .order_state .groupPro li .groupPrice a, .groupPro li .groupPrice .order_state a, .order_state .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .order_state .cpPrice, .order_state .clearing span, .clearing .order_state span, .order_state .listmore_shop li em, .listmore_shop li .order_state em, .allPrices .fr, .allPrices .groupPro li .groupPrice a, .groupPro li .groupPrice .allPrices a, .allPrices .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .allPrices .cpPrice, .allPrices .clearing span, .clearing .allPrices span, .allPrices .listmore_shop li em, .listmore_shop li .allPrices em {
@@ -815,19 +815,18 @@ body {
 
 .loginGo li {
   margin-bottom: 17px;
-  height: 42px;
+  /* @include height(true,42px); */
   position: relative;
   text-align: center; }
   .loginGo li .inputCommon {
     width: 98%;
     padding: 0 28px 0 30px;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    /* 2 */
+    -moz-box-sizing: border-box;
     box-sizing: border-box; }
     .loginGo li .inputCommon.regInp {
       padding: 0 0 0 10px;
-      width: 86%; }
+      width: 100%; }
   .loginGo li .inpIcons {
     width: 25px;
     height: 32px;
@@ -872,8 +871,10 @@ body {
     height: 28px;
     line-height: 28px; }
   .loginGo li .verfiy {
-    padding: 0 0 0 10px;
-    font-size: 11px; }
+    /* padding:0 0 0 10px; */
+    padding: 5px 0 0;
+    font-size: 11px;
+    display: block; }
     .loginGo li .verfiy .icons {
       background-position: 0 -3px;
       -webkit-background-size: 27px auto;
@@ -1467,7 +1468,7 @@ body {
         padding: 1% 2%;
         background: #b81c2b;
         max-width: 120px;
-        margin-right: 5%; }
+        margin-right: 2%; }
         .carBtnBox a.gntbg {
           background: #228811; }
         .carBtnBox a:hover, .carBtnBox a:link {
@@ -1611,7 +1612,8 @@ body {
   overflow: hidden; }
   .clearing span.sp_01 {
     width: 25%;
-    padding: 2% 0 0; }
+    /* @extend .tac; */
+    padding: 2% 0 0 3%; }
   .clearing span.sp_02 {
     width: 40%;
     padding: 0 2% 0 0; }
@@ -2011,7 +2013,12 @@ body {
   padding: 0 0 0 2%; }
 
 .shitiAddress {
-  padding: 7% 5%; }
+  padding: 7% 5%;
+  width: 960px;
+  margin: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 
 .shoppName {
   height: auto;
@@ -2104,13 +2111,16 @@ body {
   line-height: 25px; }
   .otherName .pTitles {
     font-weight: bold;
-    clear: both; }
+    clear: both;
+    color: #777777; }
     .otherName .pTitles.pt10 {
       padding-top: 10px; }
   .otherName ul {
     overflow: hidden; }
     .otherName ul li {
       width: 30%; }
+      .otherName ul li a {
+        color: #777777; }
     .otherName ul.ul_all li {
       width: 20%; }
 

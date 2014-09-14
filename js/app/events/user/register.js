@@ -20,13 +20,24 @@ define(['events'], function(events){
     var $telephone = $('[name=telephone]');
     var $password = $('[name=password]');
     var $password2 = $('[name=password2]');
+    var $nameTip = $('#phone-tip');
 
     $(document)
       .on('click', '#offDisplay', switchPwdDisplay)
       .on('click', '#onDisplay', switchPwdDisplay)
+      .on('focus', '[name=telephone]', function(){
+        $nameTip.text('').hide();
+      })
       .on('blur', '[name=telephone]', function(){
-        $('#phone-tip').text('正在验证...');
-        //todo
+        $nameTip.text('正在验证...').css('color', '').show();
+        var name = $telephone.val();
+        service.checkName(name, function(d){
+          if(d.status == '1'){
+            $nameTip.text('').hide();
+          }else{
+            $nameTip.text(d.message).css('color', 'red');
+          }
+        });
       })
       .on('click', '#registerBtn', function(){
         var tel = $telephone.val();

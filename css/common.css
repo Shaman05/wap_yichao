@@ -635,7 +635,7 @@ body {
 
 /* product style */
 #proWapper {
-  padding: 20px 0 0 15px; }
+  padding: 20px 0 0; }
 
 .proList {
   overflow: hidden; }
@@ -814,19 +814,18 @@ body {
 
 .loginGo li {
   margin-bottom: 17px;
-  height: 42px;
+  /* @include height(true,42px); */
   position: relative;
   text-align: center; }
   .loginGo li .inputCommon {
     width: 98%;
     padding: 0 28px 0 30px;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    /* 2 */
+    -moz-box-sizing: border-box;
     box-sizing: border-box; }
     .loginGo li .inputCommon.regInp {
       padding: 0 0 0 10px;
-      width: 72%; }
+      width: 100%; }
   .loginGo li .inpIcons {
     width: 25px;
     height: 32px;
@@ -872,8 +871,10 @@ body {
     /* margin-bottom: 0;  */
     height: 28px; }
   .loginGo li .verfiy {
-    padding: 0 0 0 10px;
-    font-size: 11px; }
+    /* padding:0 0 0 10px; */
+    padding: 5px 0 0;
+    font-size: 11px;
+    display: block; }
     .loginGo li .verfiy .icons {
       background-position: 0 -3px;
       -webkit-background-size: 27px auto;
@@ -2142,7 +2143,7 @@ body {
   padding: 2%;
   /* @extend .tac; */ }
   .shitiInfos img {
-    width: 100%; }
+    max-width: 100%; }
   .shitiInfos .imgbox {
     background: #fcfcfc;
     padding: 1%; }
@@ -2156,7 +2157,8 @@ body {
   line-height: 25px; }
   .otherName .pTitles {
     font-weight: bold;
-    clear: both; }
+    clear: both;
+    color: #777777; }
     .otherName .pTitles.pt10 {
       padding-top: 10px; }
   .otherName ul {
@@ -2164,6 +2166,8 @@ body {
     .otherName ul li {
       /* width:30%; */
       padding: 0 25px 0 0; }
+      .otherName ul li a {
+        color: #777777; }
     .otherName ul.ul_all li {
       width: 20%;
       padding: 0; }
@@ -2293,7 +2297,7 @@ header .popBox {
   color: #ff0000; }
 
 .slider-pic img {
-  width: 100%;
+  max-width: 100%;
   height: auto; }
 
 .slider-num li {

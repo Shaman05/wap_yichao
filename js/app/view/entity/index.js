@@ -26,7 +26,7 @@ define([
           $('#findShop').html(info['FindShop']);
           $("#jSlider").slider({
             direction: "left",
-            height: 150
+            height: 220
           });
         });
       },
