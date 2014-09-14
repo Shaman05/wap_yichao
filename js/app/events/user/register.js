@@ -29,8 +29,9 @@ define(['events'], function(events){
         $nameTip.text('').hide();
       })
       .on('blur', '[name=telephone]', function(){
-        $nameTip.text('正在验证...').css('color', '').show();
         var name = $telephone.val();
+        if(!name)return;
+        $nameTip.text('正在验证...').css('color', '').show();
         service.checkName(name, function(d){
           if(d.status == '1'){
             $nameTip.text('').hide();
