@@ -22,6 +22,7 @@ define(['./base'], function (base) {
   var ShopHandler = 'ShopHandler';
   var SearchHandler = 'SearchHandler';
   var UserHandler = 'UserLoginHandler';
+  var OrderHandler = 'OrderHandler';
   var pageSize = APP.config.pageSize;
 
   return Backbone.Model.extend(
@@ -160,6 +161,18 @@ define(['./base'], function (base) {
           UserName: name
         };
         callApi.call(this, UserHandler, data, callback);
+      },
+
+      //订单
+      orderList: function(goodsName, goodsId, p, callback){
+        var data = {
+          OP: "OrderCartList",
+          GoodsName: "",
+          GoodsTypeID: "",
+          PageIndex: p,
+          PageSize: pageSize
+        };
+        callApi.call(this, OrderHandler, data, callback);
       }
     })
   );
