@@ -10,7 +10,7 @@
  * 0. sassCore's style
  */
 html {
-  font-family: sans-serif;
+  font-family: "Microsoft Yahei";
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -32,7 +32,7 @@ body {
   /* 0 */
   line-height: 1.5;
   /* 0 */
-  color: #333333;
+  color: black;
   /* 0 */
   background-color: white;
   /* 0 */ }
@@ -416,7 +416,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif; }
+  font-family: "Microsoft Yahei"; }
 
 h1, h2, h3, h4, h5, h6, p, figure, form, blockquote {
   margin: 0; }
@@ -472,9 +472,10 @@ a, a:link {
   a:hover, a:link:hover {
     color: black; }
 
-body {
-  font-family: "Microsoft Yahei";
-  color: black; }
+input, textarea, button {
+  resize: none;
+  /* -webkit-appearance:none; */
+  -webkit-tap-highlight-color: transparent; }
 
 .fl, .groupInfo li .imgFl, .groupInfo li .groupCont, .moreTaoC ul li, .proCarList li .radius, .proCarList li .carProImg, .proCarList li .carContent, .proCarList li .carContent .carProTitle a, .yanguangdan .yanTime label, .yanguangdan .yanTime span, .clearing span.sp_01, .userAdress .userAdL, .userAdress .userAdL .adIcon, .userAdress .userAdL .adContent, .userAdress .adNext, .addressli li .label, .addressli li .span, .services li .labels, .services li .spans, .allgoodsst li, .serviceList ul li, .serviceList ul li .icn_label, .serviceList ul li .con_span, .otherName ul li, .listmore_shop li ul li, .circular {
   float: left;
@@ -490,7 +491,7 @@ body {
 .f14, .proList li, .sortList li li li, .groupInfoBuy .buttonRed, .order_state .fl .p_state em, .order_state .groupInfo li .imgFl .p_state em, .groupInfo li .order_state .imgFl .p_state em, .order_state .groupInfo li .groupCont .p_state em, .groupInfo li .order_state .groupCont .p_state em, .order_state .moreTaoC ul li .p_state em, .moreTaoC ul .order_state li .p_state em, .order_state .proCarList li .radius .p_state em, .proCarList li .order_state .radius .p_state em, .order_state .proCarList li .carProImg .p_state em, .proCarList li .order_state .carProImg .p_state em, .order_state .proCarList li .carContent .p_state em, .proCarList li .order_state .carContent .p_state em, .proCarList li .carContent .carProTitle .order_state a .p_state em, .order_state .yanguangdan .yanTime label .p_state em, .yanguangdan .yanTime .order_state label .p_state em, .order_state .yanguangdan .yanTime span .p_state em, .yanguangdan .yanTime .order_state span .p_state em, .order_state .clearing span.sp_01 .p_state em, .clearing .order_state span.sp_01 .p_state em, .order_state .userAdress .userAdL .p_state em, .userAdress .order_state .userAdL .p_state em, .userAdress .userAdL .order_state .adIcon .p_state em, .userAdress .userAdL .order_state .adContent .p_state em, .order_state .userAdress .adNext .p_state em, .userAdress .order_state .adNext .p_state em, .order_state .addressli li .label .p_state em, .addressli li .order_state .label .p_state em, .order_state .addressli li .span .p_state em, .addressli li .order_state .span .p_state em, .order_state .services li .labels .p_state em, .services li .order_state .labels .p_state em, .order_state .services li .spans .p_state em, .services li .order_state .spans .p_state em, .order_state .allgoodsst li .p_state em, .allgoodsst .order_state li .p_state em, .order_state .serviceList ul li .p_state em, .serviceList ul .order_state li .p_state em, .serviceList ul li .order_state .icn_label .p_state em, .serviceList ul li .order_state .con_span .p_state em, .order_state .otherName ul li .p_state em, .otherName ul .order_state li .p_state em, .order_state .listmore_shop li ul li .p_state em, .listmore_shop li ul .order_state li .p_state em, .order_state .circular .p_state em, .serviceList ul li .icn_label.icn_label3 {
   font-size: 0.875em; }
 
-.f16, .kehuPh, .sortList li li .oneName, .carBtnBox a, #loading {
+.f16, .proOpt li.first p, .kehuPh, .sortList li li .oneName, .carBtnBox a, #loading {
   font-size: 1em; }
 
 .f18, .commontsTitles, .in_jingkuang em, .sortList li .oneName, .groupInfoBuy, .moreTaoC ul li .mpc, .clearing span.sp_03 .buttonRed, .titleName, .zhifuway .phNote, .allPrices .fl, .allPrices .groupInfo li .imgFl, .groupInfo li .allPrices .imgFl, .allPrices .groupInfo li .groupCont, .groupInfo li .allPrices .groupCont, .allPrices .moreTaoC ul li, .moreTaoC ul .allPrices li, .allPrices .proCarList li .radius, .proCarList li .allPrices .radius, .allPrices .proCarList li .carProImg, .proCarList li .allPrices .carProImg, .allPrices .proCarList li .carContent, .proCarList li .allPrices .carContent, .allPrices .proCarList li .carContent .carProTitle a, .proCarList li .carContent .carProTitle .allPrices a, .allPrices .yanguangdan .yanTime label, .yanguangdan .yanTime .allPrices label, .allPrices .yanguangdan .yanTime span, .yanguangdan .yanTime .allPrices span, .allPrices .clearing span.sp_01, .clearing .allPrices span.sp_01, .allPrices .userAdress .userAdL, .userAdress .allPrices .userAdL, .allPrices .userAdress .userAdL .adIcon, .userAdress .userAdL .allPrices .adIcon, .allPrices .userAdress .userAdL .adContent, .userAdress .userAdL .allPrices .adContent, .allPrices .userAdress .adNext, .userAdress .allPrices .adNext, .allPrices .addressli li .label, .addressli li .allPrices .label, .allPrices .addressli li .span, .addressli li .allPrices .span, .allPrices .services li .labels, .services li .allPrices .labels, .allPrices .services li .spans, .services li .allPrices .spans, .allPrices .allgoodsst li, .allgoodsst .allPrices li, .allPrices .serviceList ul li, .serviceList ul .allPrices li, .allPrices .serviceList ul li .icn_label, .serviceList ul li .allPrices .icn_label, .allPrices .serviceList ul li .con_span, .serviceList ul li .allPrices .con_span, .allPrices .otherName ul li, .otherName ul .allPrices li, .allPrices .listmore_shop li ul li, .listmore_shop li ul .allPrices li, .allPrices .circular {
@@ -606,6 +607,7 @@ body {
 
 .navBar .backGo {
   float: left;
+  display: inline;
   font-size: 2.2em;
   text-indent: -999px;
   font-family: "SimSun";
@@ -635,7 +637,8 @@ body {
 
 /* product style */
 #proWapper {
-  padding: 20px 0 0; }
+  padding: 20px 0 0;
+  min-height: 300px; }
 
 .proList {
   overflow: hidden; }
@@ -747,7 +750,7 @@ body {
   background: #009c07; }
 
 /* ! for all Input styles */
-.inputCommon {
+input.inputCommon {
   border: 1px solid #cd;
   background: white;
   height: 40px;
@@ -921,7 +924,7 @@ body {
 .proOpt li {
   overflow: hidden;
   color: #999999;
-  padding: 2%;
+  padding: 2% 0;
   height: auto;
   line-height: 26px; }
   .proOpt li.first {
@@ -930,14 +933,13 @@ body {
     .proOpt li.first p {
       display: inline-block;
       *display: inline;
-      *zoom: 1;
-      font-size: 0.8125em; }
+      *zoom: 1; }
       .proOpt li.first p em {
         color: #b81c2b; }
       .proOpt li.first p.one {
-        width: 29%; }
+        width: 25%; }
       .proOpt li.first p.two {
-        width: 29%; }
+        width: 25%; }
       .proOpt li.first p.last {
         padding: 0; }
   .proOpt li .name, .proOpt li .ctent {
@@ -957,7 +959,7 @@ body {
       border: #cccccc solid 1px;
       margin: 0 2% 2% 0;
       color: black; }
-      .proOpt li .ctent a:hover {
+      .proOpt li .ctent a:hover, .proOpt li .ctent a.focus {
         border: #b81c2b solid 4px;
         height: 19px;
         line-height: 19px; }
@@ -989,6 +991,9 @@ body {
   background: #e21111;
   padding: 0 0 0 15%;
   color: white; }
+  .kehuPh a {
+    color: white;
+    display: block; }
 
 .imgContent {
   height: auto;
@@ -1456,7 +1461,8 @@ body {
         border: 1px solid #dddddd;
         overflow: hidden; }
         .moreTaoC ul li .mImg img {
-          width: 100%; }
+          width: 100%;
+          max-width: 100%; }
       .moreTaoC ul li .mpc {
         color: #b81c2b;
         font-weight: bold; }
@@ -1519,7 +1525,7 @@ body {
       border: 1px solid #dddddd; }
       .proCarList li .carProImg img {
         width: 100%;
-        max-width: 640px; }
+        max-width: 100%; }
     .proCarList li .carContent {
       width: 55%;
       padding: 0 0 0 3%; }
@@ -1753,7 +1759,7 @@ body {
       padding: 0 3%; }
       .mr5 {
         margin-right: 4%; }
-      .payWay .payBtn a:hover {
+      .payWay .payBtn a:hover, .payWay .payBtn a.focus {
         color: white;
         background: #b81c2b;
         border: 1px solid #b81c2b; }
@@ -2143,6 +2149,7 @@ body {
   padding: 2%;
   /* @extend .tac; */ }
   .shitiInfos img {
+    width: 100%;
     max-width: 100%; }
   .shitiInfos .imgbox {
     background: #fcfcfc;
@@ -2297,6 +2304,7 @@ header .popBox {
   color: #ff0000; }
 
 .slider-pic img {
+  width: 100%;
   max-width: 100%;
   height: auto; }
 

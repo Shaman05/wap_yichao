@@ -1,4 +1,7 @@
-$fontYaHei: "Microsoft Yahei" !default; 
+$fontYaHei:"Microsoft Yahei" !default;
+$baseFontFamily:  $fontYaHei !default; 
+$black: #000 !default;
+$textColor: $black !default;
 $red : #b81c2b !default;
 $red_01:#d00000;
 @import 'D:\sassData\sassCore\base';
@@ -10,6 +13,7 @@ a,a:link{
     }
 
 }
+input,textarea,button{resize:none; /* -webkit-appearance:none; */  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
 @mixin ovh($value : hidden){
   overflow: $value;
 }
@@ -46,7 +50,6 @@ $c6:#666666;
 $cd:#dddddd;
 $cc:#cccccc;
 $c98:#989898;
-body{font-family:$fontYaHei; color:$black;}
 .fl{
   @include float;
 }
@@ -164,7 +167,7 @@ body{font-family:$fontYaHei; color:$black;}
 /* top Nav Bar style */
 .navBar { @include height(true,50px); padding: 0 20px; background: #e6e6e6; @extend .tac;}
 .navBar .backGo{
-  float: left;font-size:2.2em; text-indent:-999px; 
+  @include float; font-size:2.2em; text-indent:-999px; 
   font-family: $fontCn; color:#313131; @include width(8%);
    @include height(true,30px); text-align:left;
    @extend .iconsBg;
@@ -184,6 +187,7 @@ body{font-family:$fontYaHei; color:$black;}
 /* product style */
 #proWapper{
     padding:20px 0 0 ;
+    min-height: 300px;
 }
 .proList{
     @include ovh(hidden);
@@ -290,11 +294,10 @@ body{font-family:$fontYaHei; color:$black;}
 }
 
 /* ! for all Input styles */
-.inputCommon{
+input.inputCommon{
     border:1px solid #cd;
     background: $white;
      @include height(false,40px,40px); 
-
 }
 /* !for comments style All */
 #comments{
@@ -436,7 +439,7 @@ body{font-family:$fontYaHei; color:$black;}
         &.red{color:#e86464; padding:0;}
     }
     .priceOne{
-        em{@extend .f25;color:$red; @include float(left);}
+        em{@extend .f25; color:$red; @include float(left);}
         i{ @include float(left); margin:10px 0 0 5px; } 
     }
     .priced{clear:both; text-decoration: line-through; line-height: 20px;}
@@ -445,17 +448,17 @@ body{font-family:$fontYaHei; color:$black;}
   li{
      @include ovh(hidden);
      color:$grayDark;
-     padding: 2%;
+     padding: 2% 0;
      @include height(false,auto,26px);
     &.first{
        border-top:#cccccc solid 1px;
        border-bottom:#cccccc solid 1px;
        p{
         @include inline-block(false);
-        font-size:0.8125em;
+        @extend .f16;
         em{color:$red;}
-        &.one{width:29%;}
-        &.two{width:29%;}
+        &.one{width:25%;}
+        &.two{width:25%;}
         &.last{padding:0;}
        }
     }
@@ -475,7 +478,7 @@ body{font-family:$fontYaHei; color:$black;}
             border:#cccccc solid 1px;
             margin:0 2% 2% 0;
             color:$black;
-            &:hover{
+            &:hover,&.focus{
                 border:#b81c2b solid 4px;
                @include height(false,19px,19px);
             }
@@ -505,7 +508,13 @@ body{font-family:$fontYaHei; color:$black;}
         top:-3px;
     }
 }
-.kehuPh{ @include height(false, 45px,45px); background:#e21111; padding:0 0 0 15%; color:$white; @extend .f16;}
+.kehuPh{
+ @include height(false, 45px,45px); background:#e21111; padding:0 0 0 15%; color:$white; @extend .f16;
+ a{
+  color:$white;
+  display: block;
+ }
+}
 .imgContent{
     @include height(false, auto,25px);
     text-align:center;
@@ -974,6 +983,7 @@ body{font-family:$fontYaHei; color:$black;}
         @include ovh(hidden);
         img{
           width:100%;
+        max-width: 100%;
         }
       }
       .mpc{
@@ -1060,7 +1070,7 @@ body{font-family:$fontYaHei; color:$black;}
       @include borders;
       img{
         width:100%;
-        max-width:640px;
+        max-width:100%;
       }
     }
     .carContent{
@@ -1339,7 +1349,7 @@ body{font-family:$fontYaHei; color:$black;}
     @extend .tac;
     padding:0 3%;
     @at-root.mr5{margin-right:4%;}
-    &:hover{
+    &:hover,&.focus{
       color:$white;
       background:$red;
        @include borders(1px, solid, $red);
@@ -1826,7 +1836,7 @@ display:block;
 }
 .shitiInfos{
   padding:2%;
-  img{max-width:100%;}
+  img{width:100%; max-width:100%;}
   /* @extend .tac; */
   .imgbox{
     background:#fcfcfc;
@@ -1979,7 +1989,7 @@ header .popBox{
 .js-slider-h .js-slider-img{float:left}
 .js-slider-num-wrap{position:absolute;bottom:5px;left:45%;z-index:99}
 .js-slider-num{float:left}.js-slider-num-cur{color:#ff0000}
-.slider-pic img{max-width:100%;height:auto;}
+.slider-pic img{width:100%;max-width:100%;height:auto;}
 .slider-num li{margin-left: 4px;width: 12px;height: 12px;border-radius: 6px;text-indent: -9999px;background-color: #b9bbb8;}
 .slider-num .js-slider-num-cur{background-color:#f00;}
 /* Carousel */

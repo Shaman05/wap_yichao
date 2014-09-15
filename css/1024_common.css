@@ -10,7 +10,7 @@
  * 0. sassCore's style
  */
 html {
-  font-family: sans-serif;
+  font-family: "Microsoft Yahei";
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -416,7 +416,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif; }
+  font-family: "Microsoft Yahei"; }
 
 h1, h2, h3, h4, h5, h6, p, figure, form, blockquote {
   margin: 0; }
@@ -472,9 +472,10 @@ a, a:link {
   a:hover, a:link:hover {
     color: black; }
 
-body {
-  font-family: "Microsoft Yahei";
-  color: black; }
+input, textarea, button {
+  resize: none;
+  /* -webkit-appearance:none;  */
+  -webkit-tap-highlight-color: transparent; }
 
 .fl, .groupInfo li .imgFl, .groupInfo li .groupCont, .moreTaoC ul li, .proCarList li .radius, .proCarList li .carProImg, .proCarList li .carContent, .proCarList li .carContent .carProTitle a, .yanguangdan .yanTime label, .yanguangdan .yanTime span, .clearing span.sp_01, .userAdress .userAdL, .userAdress .userAdL .adIcon, .userAdress .userAdL .adContent, .userAdress .adNext, .addressli li .label, .addressli li .span, .allgoodsst li, .serviceList ul li, .serviceList ul li .icn_label, .serviceList ul li .con_span, .otherName ul li, .listmore_shop li ul li, .circular {
   float: left;
@@ -632,8 +633,11 @@ body {
   font-size: 1.5em; }
 
 /* product style */
+#myOrderList, #proWapper {
+  min-height: 300px; }
+
 #proWapper {
-  padding: 20px 0 0 15px; }
+  padding: 20px 0 0; }
 
 .proList {
   overflow: hidden; }
@@ -957,7 +961,7 @@ body {
       border: #cccccc solid 1px;
       margin: 0 2% 2% 0;
       color: black; }
-      .proOpt li .ctent a:hover {
+      .proOpt li .ctent a:hover, .proOpt li .ctent a.focus {
         border: #b81c2b solid 4px;
         height: 19px;
         line-height: 19px; }
@@ -989,6 +993,9 @@ body {
   background: #e21111;
   padding: 0 0 0 15%;
   color: white; }
+  .kehuPh a {
+    color: white;
+    display: block; }
 
 .imgContent {
   height: auto;
@@ -1280,7 +1287,7 @@ body {
       overflow: hidden; }
       .groupPro li .groupImg .imgs img {
         width: 100%;
-        max-width: 640px; }
+        max-width: 100%; }
     .groupPro li .groupImg .gtexts {
       line-height: 20px;
       margin: 5px 0 0; }
@@ -1311,7 +1318,8 @@ body {
       max-width: 200px; }
       .groupInfo li .imgFl img {
         height: 100%;
-        width: 100%; }
+        width: 100%;
+        max-width: 100%; }
     .groupInfo li .groupCont {
       width: 60%;
       padding: 0 0 0 2%; }
@@ -1373,7 +1381,8 @@ body {
         border: 1px solid #dddddd;
         overflow: hidden; }
         .moreTaoC ul li .mImg img {
-          width: 100%; }
+          width: 100%;
+          max-width: 100%; }
       .moreTaoC ul li .mpc {
         color: #b81c2b;
         font-weight: bold; }
@@ -1437,7 +1446,8 @@ body {
       max-height: 140px;
       border: 1px solid #dddddd; }
       .proCarList li .carProImg img {
-        width: 100%; }
+        width: 100%;
+        max-width: 100%; }
     .proCarList li .carContent {
       width: 72%;
       padding: 0 0 0 15px; }
@@ -1678,7 +1688,7 @@ body {
       padding: 0 3%; }
       .mr5 {
         margin-right: 4%; }
-      .payWay .payBtn a:hover {
+      .payWay .payBtn a:hover, .payWay .payBtn a.focus {
         color: white;
         background: #b81c2b;
         border: 1px solid #b81c2b; }

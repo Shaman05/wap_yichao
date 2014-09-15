@@ -11,12 +11,6 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
-    $(document)
-      //加入购物车
-      .on('click', '#addToCartBtn', function(){
-        //todo
-      });
-
   };
 
 });
