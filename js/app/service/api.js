@@ -164,16 +164,16 @@ define(['./base'], function (base) {
       },
 
       //订单
-      orderList: function(goodsName, goodsId, p, callback){
+      orderList: function(StatusID, p, callback){
         var data = {
-          OP: "OrderCartList",
-          GoodsName: "",
-          GoodsTypeID: "",
+          OP: "GetOrderList",
+          StatusID: "",
           PageIndex: p,
           PageSize: pageSize
         };
         callApi.call(this, OrderHandler, data, callback);
       },
+      //购物车列表
       cartList: function(goodsName, goodsId, p, callback){
         var data = {
           OP: "OrderCartList",
@@ -209,6 +209,25 @@ define(['./base'], function (base) {
           GoodsID: GoodsID
         };
         callApi.call(this, GoodsHandler, data, callback);
+      },
+
+      //历史验光单, 只获取最新的3条
+      prescriptionsList: function(callback){
+        var data = {
+          OP: "MemberPrescriptionsList",
+          PageIndex: 1,
+          PageSize: 3
+        };
+        callApi.call(this, OrderHandler, data, callback);
+      },
+
+      //验光单详情
+      prescriptionsInfo: function(PrescriptionsID, callback){
+        var data = {
+          OP: "MemberPrescriptionsList",
+          PrescriptionsID: PrescriptionsID
+        };
+        callApi.call(this, OrderHandler, data, callback);
       }
     })
   );
