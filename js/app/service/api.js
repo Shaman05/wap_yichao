@@ -191,6 +191,24 @@ define(['./base'], function (base) {
           OP: "WebSpaceAdvertising"
         };
         callApi.call(this, GoodsHandler, data, callback);
+      },
+
+      //获取实体店轮播图
+      entitySlider: function(ShopID, callback){
+        var data = {
+          OP: "ShopImg",
+          ShopID: ShopID
+        };
+        callApi.call(this, GoodsHandler, data, callback);
+      },
+
+      //获取产品详情轮播图
+      goodsInfoSlider: function(GoodsID, callback){
+        var data = {
+          OP: "GoodsByImage",
+          GoodsID: GoodsID
+        };
+        callApi.call(this, GoodsHandler, data, callback);
       }
     })
   );

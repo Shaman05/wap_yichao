@@ -5,14 +5,16 @@ define([
   'text!app/template/entity/ajax_info.html',
   'text!app/template/entity/ajax_sub_entity_list.html',
   'text!app/template/entity/ajax_otherEntity.html',
+  'text!app/template/public/imgSlider.html',
   'app/service/api'
-], function(baseView, infoTpl, otherSubTpl, otherTpl, model){
+], function(baseView, infoTpl, otherSubTpl, otherTpl, sliderTpl, model){
 
   return Backbone.View.extend(
     $.extend(baseView, {
       id: 'home-page',
       model: new model,
       ready: function(data){
+        this.imgSlider(data);
         this.getInfo(data);
         this.getOtherEntity(data);
       },
@@ -44,6 +46,19 @@ define([
           $('#allEntityPro').html(renderFn({
             list: d.data
           }));
+        });
+      },
+      imgSlider: function(data){
+        this.model.entitySlider(data.ShopID, function(d){
+          var renderFn = _.artTemplate.compile(sliderTpl);
+          $('#jSlider')
+            .html(renderFn({
+              list: d.data
+            }))
+            .slider({
+              direction: "left",
+              height: 250
+            });
         });
       }
     })
