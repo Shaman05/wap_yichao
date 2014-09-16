@@ -183,6 +183,14 @@ define(['./base'], function (base) {
           PageSize: pageSize
         };
         callApi.call(this, OrderHandler, data, callback);
+      },
+
+      //获取首页轮播图
+      homeSlider: function(callback){
+        var data = {
+          OP: "WebSpaceAdvertising"
+        };
+        callApi.call(this, GoodsHandler, data, callback);
       }
     })
   );

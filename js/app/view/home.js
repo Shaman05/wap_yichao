@@ -8,8 +8,9 @@
 define([
   'app/view/baseView',
   'text!app/template/goods/ajax_product_list.html',
+  'text!app/template/public/imgSlider.html',
   'app/service/api'
-], function(baseView, goodsListTpl, model){
+], function(baseView, goodsListTpl, sliderTpl, model){
 
   "use strict";
 
@@ -21,10 +22,7 @@ define([
       model: new model,
       ready: function(){
         this.getGoodsList();
-        $("#jSlider").slider({
-          direction: "left",
-          height: 250
-        });
+        this.imgSlider();
       },
       getGoodsList: function(){
         //框架配镜 GoodsTypeID: 101
@@ -40,6 +38,19 @@ define([
           $('#proWapper_2').html(renderFn({
             list: d.data
           }));
+        });
+      },
+      imgSlider: function(){
+        this.model.homeSlider(function(d){
+          var renderFn = _.artTemplate.compile(sliderTpl);
+          $('#jSlider')
+          .html(renderFn({
+            list: d.data
+          }))
+          .slider({
+            direction: "left",
+            height: 250
+          });
         });
       }
     })

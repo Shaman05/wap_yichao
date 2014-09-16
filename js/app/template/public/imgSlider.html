@@ -1,0 +1,16 @@
+<% if(list.length > 0){ %>
+<ul class="slider-pic js-slider-img-wrap">
+    <% for(var i = 0; i < list.length; i++){ %>
+    <li><a title="" href="#"><img src="<%= list[i].ImgName %>" alt=""></a></li>
+    <% } %>
+</ul>
+<ul class="slider-num js-slider-num-wrap">
+    <% for(var i = 0; i < list.length; i++){ %>
+    <li <% if(i == 0){ %>class="cur"<% } %>><%= i %></li>
+    <% } %>
+</ul>
+<% }else{ %>
+<div class="no-data">
+    <p>暂无数据</p>
+</div>
+<% } %>
