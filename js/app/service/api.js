@@ -4,11 +4,6 @@
  * Date: 14-8-12
  * Time: 下午2:35
  *
- * 商品接口: GoodsHandler
- * 实体店接口: ShopHandler
- * 文章: ArticleHandler
- * 搜索: GoodsSearch
- * 顾客:
  */
 
 define(['./base'], function (base) {
@@ -23,6 +18,7 @@ define(['./base'], function (base) {
   var SearchHandler = 'SearchHandler';
   var UserHandler = 'UserLoginHandler';
   var OrderHandler = 'OrderHandler';
+  var OrderCartHandler = 'OrderCartHandler';
   var pageSize = APP.config.pageSize;
 
   return Backbone.Model.extend(
@@ -228,6 +224,15 @@ define(['./base'], function (base) {
           PrescriptionsID: PrescriptionsID
         };
         callApi.call(this, OrderHandler, data, callback);
+      },
+
+      //添加至购物车
+      addToCart: function(cartOption, callback){
+        var data = {
+          OP: "OrderCartAdd"
+        };
+        data = $.extend(data, cartOption);
+        callApi.call(this, OrderCartHandler, data, callback);
       }
     })
   );

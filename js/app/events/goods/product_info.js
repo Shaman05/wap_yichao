@@ -15,6 +15,34 @@ define(['events'], function(events){
       //加入购物车
       .on('click', '#addToCartBtn', function(){
         //todo
+        service.addToCart({
+          UserTicket:"23232",
+          GoodsID:"23",
+          GoodsName:"34334343",
+          GoodsTypeID:"23",
+          SkuName:"23",
+          SkuCode:"23",
+          Qty:"23",
+          IsChangeQty:"23",
+          SalePrice:"23",
+          OriginalPrice:"23",
+          LevelDiscount:"23",
+          PromotionID:"23",
+          Point:"23",
+          Weight:"23",
+          ParentID:"23",
+          IsChild:"23",
+          Expired:"23",
+          PrescriptionsID:"23",
+          LensesID:"23",
+          IsOnlyFrames:"23",
+          IsCustomzied:"23",
+          GoodsBrandID:"23",
+          IsOnlyDeposit:"23",
+          IsBuy:"23"
+        }, function(d){
+          //todo
+        });
       });
 
   };
