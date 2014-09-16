@@ -1,7 +1,7 @@
 <% if(list.length > 0){ %>
 <ul class="slider-pic js-slider-img-wrap">
     <% for(var i = 0; i < list.length; i++){ %>
-    <li><a title="" href="#"><img src="<%= list[i].ImgName %>" alt=""></a></li>
+    <li><a href="#"><img src="<%= list[i].ImgName %>" alt="<%= list[i].ImgTitle %>"></a></li>
     <% } %>
 </ul>
 <ul class="slider-num js-slider-num-wrap">
