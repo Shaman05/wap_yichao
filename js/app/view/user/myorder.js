@@ -17,13 +17,13 @@ define([
         this.getOrderList(data);
       },
       getOrderList: function(data){
-        this.model.orderList(data.goodsName, data.goodsId, data.PageIndex, function(d){
+        var StatusID = ''; //订单状态, 传空值查询用户所有订单
+        this.model.orderList(StatusID, data.PageIndex, function(d){
           var renderFn = _.artTemplate.compile(tpl);
           $('#myOrderList').html(renderFn({
             showPaging: true,
             list: d.data,
-            goodsName: data.goodsName,
-            goodsId: data.goodsId,
+            StatusID: StatusID,
             pageIndex: data.PageIndex,
             total: d.nPageCount,
             pageSize: APP.config.pageSize

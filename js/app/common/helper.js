@@ -32,7 +32,7 @@ define(['artTemplate'], function(t){
     var nextHref = p == totalPage ? disable : url + '&PageIndex=' + (p + 1);
     prevBtnTpl = prevBtnTpl.replace('{link}', prevHref).replace('{disableClass}', prevHref == disable ? 'disableClass' : '');
     nextBtnTpl = nextBtnTpl.replace('{link}', nextHref).replace('{disableClass}', nextBtnTpl == disable ? 'disableClass' : '');
-    return prevBtnTpl + ' ' + nextBtnTpl;
+    return nPageCount > PageSize ? prevBtnTpl + ' ' + nextBtnTpl : '';
   });
 
 });
