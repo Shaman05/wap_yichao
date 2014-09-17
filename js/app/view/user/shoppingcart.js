@@ -12,6 +12,9 @@ define([
       id: 'cart-page',
       model: new model,
       ready: function(data){
+        if(!data.PageIndex){
+          data.PageIndex = 1;
+        }
         this.getCartList(data);
       },
       getCartList: function(data){

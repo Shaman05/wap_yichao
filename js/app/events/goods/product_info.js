@@ -42,6 +42,11 @@ define(['events'], function(events){
           IsBuy:"23"
         }, function(d){
           //todo
+          if(d.status == '1'){
+            alert('添加成功！');
+          }else{
+            alert(d.message);
+          }
         });
       });
 

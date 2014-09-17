@@ -178,7 +178,7 @@ define(['./base'], function (base) {
           PageIndex: p,
           PageSize: pageSize
         };
-        callApi.call(this, OrderHandler, data, callback);
+        callApi.call(this, OrderCartHandler, data, callback);
       },
 
       //获取首页轮播图
