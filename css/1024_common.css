@@ -1,5 +1,7 @@
 .indImgIcn, .groupInfo li .groupCont .groupStl a, .sctList a, .moreTaoC ul li .lx a, .moreTaoC .num em, .carBtnBox a, .regular-radio + label, .yanguangdan .emjiao, .yanguangdan .yanTime span .aa, .payWay .payBtn a, .orderDl p em, .orderDl p a, .leaveMess em, .services li .labels, .services li .spans, .search label, .updown_go em, .s_down {
-  display: inline-block; }
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
 
 /**
  * 1. Set default font family to sans-serif.
@@ -68,7 +70,11 @@ video {
   display: inline-block;
   /* 1 */
   vertical-align: baseline;
-  /* 2 */ }
+  /* 2 */
+  *display: inline;
+  /* 3 */
+  *zoom: 1;
+  /* 3 */ }
 
 /**
  * Prevent modern browsers from displaying `audio` without controls.
@@ -166,7 +172,9 @@ img {
   border: 0;
   /* 1 */
   vertical-align: middle;
-  /* 0 */ }
+  /* 0 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */ }
 
 /**
  * Correct overflow not hidden in IE 9/10/11.
@@ -207,6 +215,8 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
+  /* 1 */
+  _font-family: 'courier new', monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */ }
@@ -267,7 +277,9 @@ input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
-  /* 3 */ }
+  /* 3 */
+  *overflow: visible;
+  /* 4 */ }
 
 /**
  * Re-set default cursor for disabled elements.
@@ -305,7 +317,11 @@ input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */ }
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */ }
 
 /**
  * Fix the cursor style for Chrome's increment/decrement buttons. For certain
@@ -355,7 +371,9 @@ legend {
   border: 0;
   /* 1 */
   padding: 0;
-  /* 2 */ }
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */ }
 
 /**
  * 1. Remove default vertical scrollbar in IE 8/9/10/11.
@@ -390,6 +408,9 @@ th {
 /**
  * Address CSS quotes not supported in IE 6/7.
  */
+q {
+  quotes: none; }
+
 html,
 button,
 input,
@@ -411,37 +432,37 @@ h1, h2, h3 {
   line-height: 2;
   font-weight: normal; }
 
-/* h1 {
-  font-size:$baseFontSize * 1.5;
-}
+h1 {
+  font-size: 1.3125em; }
+
 h2 {
-  font-size:$baseFontSize * 1.3;
-}
+  font-size: 1.1375em; }
+
 h3 {
-  font-size:$baseFontSize * 1.17;
-}
-h4 { 
-  font-size:$baseFontSize;
-}
-h5,h6 {
-  font-size:$baseFontSize * 0.85;
-  text-transform:uppercase;
-} */
+  font-size: 1.02375em; }
+
+h4 {
+  font-size: 0.875em; }
+
+h5, h6 {
+  font-size: 0.74375em;
+  text-transform: uppercase; }
+
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #8e8e8e; }
+  color: #cccccc; }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #8e8e8e; }
+  color: #cccccc; }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #8e8e8e; }
+  color: #cccccc; }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #8e8e8e; }
+  color: #cccccc; }
 
 em, i {
   font-style: normal; }
@@ -457,10 +478,12 @@ input, textarea, button {
   -webkit-tap-highlight-color: transparent; }
 
 .fl, .groupInfo li .imgFl, .groupInfo li .groupCont, .moreTaoC ul li, .proCarList li .radius, .proCarList li .carProImg, .proCarList li .carContent, .proCarList li .carContent .carProTitle a, .yanguangdan .yanTime label, .yanguangdan .yanTime span, .clearing span.sp_01, .userAdress .userAdL, .userAdress .userAdL .adIcon, .userAdress .userAdL .adContent, .userAdress .adNext, .addressli li .label, .addressli li .span, .allgoodsst li, .serviceList ul li, .serviceList ul li .icn_label, .serviceList ul li .con_span, .otherName ul li, .listmore_shop li ul li, .circular {
-  float: left; }
+  float: left;
+  display: inline; }
 
 .fr, .groupPro li .groupPrice a, .proCarList li .carContent .carProTitle .cpPrice, .clearing span, .listmore_shop li em {
-  float: right; }
+  float: right;
+  display: inline; }
 
 .f12, .brandList li .brandName, .moreTaoC ul li .mpc em, .proCarList li .carContent .sezhi, .yanguangdan .yanTime, .yesnobtn button, .orderD1Tb td, .serviceList ul li .con_span .txt_s {
   font-size: 0.75em; }
@@ -508,6 +531,8 @@ input, textarea, button {
   /* background: url(../images/mobileBg.png) no-repeat; */
   background: url(../images/allIcn.png) no-repeat;
   display: inline-block;
+  *display: inline;
+  *zoom: 1;
   vertical-align: middle;
   /* @include prefixer(background-size, 150px auto, webkit o moz); */ }
 
@@ -521,6 +546,7 @@ input, textarea, button {
   overflow: hidden; }
   .topNav li.item1 {
     float: left;
+    display: inline;
     width: 60%;
     padding: 0 0 0 4%; }
     .logoImg {
@@ -535,9 +561,12 @@ input, textarea, button {
     width: 36%;
     max-width: 200px;
     height: 54px;
-    float: right; }
+    float: right;
+    display: inline; }
     .topNav li.item2 a {
       display: inline-block;
+      *display: inline;
+      *zoom: 1;
       letter-space: -6px;
       height: 54px;
       padding: 2px 0 0;
@@ -614,11 +643,11 @@ input, textarea, button {
   overflow: hidden; }
   .proList li {
     float: left;
+    display: inline;
     width: 25%;
     padding: 0 7px;
     margin-bottom: 20px;
     display: inline;
-    -o-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
@@ -643,8 +672,9 @@ input, textarea, button {
   height: 40px; }
   .pagesOn a.pageUp, .pagesOn a.pageNext {
     display: inline-block;
+    *display: inline;
+    *zoom: 1;
     width: 21%;
-    -o-border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -665,6 +695,7 @@ input, textarea, button {
   height: 25px; }
   #footer .footerNav .footerNavList li {
     float: left;
+    display: inline;
     overflow: hidden;
     height: auto;
     line-height: 25px;
@@ -673,7 +704,8 @@ input, textarea, button {
       font-size: 1.1em;
       color: #01488a; }
     #footer .footerNav .footerNavList li.backTop {
-      float: right; }
+      float: right;
+      display: inline; }
 #footer .footerTxt {
   text-align: center;
   line-height: 30px;
@@ -684,7 +716,6 @@ input, textarea, button {
 
 /* ! button style all */
 .btn, .buttonGray, .buttonRed, .buttonYellow, .buttonYw, .buttonGn {
-  -o-border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -703,7 +734,9 @@ input, textarea, button {
 .buttonYellow, .buttonYw, .buttonGn {
   background: #ff6c00;
   color: white;
-  display: inline-block; }
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
 
 .buttonGray_01, .buttonGreen {
   font-family: "Microsoft Yahei";
@@ -746,7 +779,9 @@ input, textarea, button {
     height: auto;
     line-height: 22px; }
     .commentsList li p.userName em {
-      display: inline-block; }
+      display: inline-block;
+      *display: inline;
+      *zoom: 1; }
       .commentsList li p.userName em.names {
         padding: 0 15px 0 0; }
   .commentsList li p.times {
@@ -792,7 +827,6 @@ input, textarea, button {
     padding: 0 28px 0 30px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    -o-box-sizing: border-box;
     box-sizing: border-box; }
     .loginGo li .inputCommon.regInp {
       padding: 0 0 0 10px;
@@ -815,7 +849,6 @@ input, textarea, button {
     top: 8px; }
   .loginGo li .updown {
     -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -830,9 +863,11 @@ input, textarea, button {
     height: 40px; }
   .loginGo li.last .lookpwd {
     float: left;
+    display: inline;
     padding: 0 0 0 15px; }
   .loginGo li.last .account {
-    float: right; }
+    float: right;
+    display: inline; }
   .loginGo li.btns {
     margin: 7px 0; }
   .loginGo li.yesNo {
@@ -847,7 +882,6 @@ input, textarea, button {
     .loginGo li .verfiy .icons {
       background-position: 0 -3px;
       -webkit-background-size: 27px auto;
-      -o-background-size: 27px auto;
       -moz-background-size: 27px auto;
       background-size: 27px auto;
       width: 20px;
@@ -873,9 +907,11 @@ input, textarea, button {
 
 .priceOne em {
   color: #b81c2b;
-  float: left; }
+  float: left;
+  display: inline; }
 .priceOne i {
   float: left;
+  display: inline;
   margin: 10px 0 0 5px; }
 
 .priced {
@@ -897,6 +933,8 @@ input, textarea, button {
     border-bottom: #cccccc solid 1px; }
     .proOpt li.first p {
       display: inline-block;
+      *display: inline;
+      *zoom: 1;
       /* @extend .f14; */ }
       .proOpt li.first p em {
         color: #b81c2b; }
@@ -907,7 +945,8 @@ input, textarea, button {
       .proOpt li.first p.last {
         padding: 0; }
   .proOpt li .name, .proOpt li .ctent {
-    float: left; }
+    float: left;
+    display: inline; }
   .proOpt li .name {
     width: 22%;
     max-width: 63px; }
@@ -915,6 +954,8 @@ input, textarea, button {
     width: 78%; }
     .proOpt li .ctent a {
       display: inline-block;
+      *display: inline;
+      *zoom: 1;
       height: 25px;
       padding: 0 5%;
       border: #cccccc solid 1px;
@@ -950,8 +991,9 @@ input, textarea, button {
   height: 45px;
   line-height: 45px;
   background: #e21111;
-  padding: 0 0 0 15%;
-  color: white; }
+  /* padding:0 0 0 15%;  */
+  color: white;
+  text-align: center; }
   .kehuPh a {
     color: white;
     display: block; }
@@ -960,18 +1002,17 @@ input, textarea, button {
   height: auto;
   line-height: 25px;
   text-align: center; }
-  @media screen and (max-width: 320px) {
-    .imgContent img {
-      width: 320px; } }
-  @media screen and (min-width: 330px) and (max-width: 1280px) {
-    .imgContent img {
-      width: auto; } }
+  .imgContent img {
+    width: 100%;
+    max-width: 100%; }
 
 .qqAndW {
   border-top: #d3d3d3 solid 10px;
   padding: 5% 24%; }
   .qqAndW .qq, .qqAndW .ww {
     display: inline-block;
+    *display: inline;
+    *zoom: 1;
     width: 40%; }
     .qqAndW .qq .icons, .qqAndW .ww .icons {
       width: 46px;
@@ -1002,6 +1043,7 @@ input, textarea, button {
     overflow: hidden; }
     .scrollImg .imgListA li {
       float: left;
+      display: inline;
       width: 960px; }
       .scrollImg .imgListA li img {
         width: 100%;
@@ -1012,11 +1054,12 @@ input, textarea, button {
     left: 50%; }
     .scrollImg .pointersGo a {
       display: inline-block;
+      *display: inline;
+      *zoom: 1;
       width: 8px;
       height: 8px;
       background: #ffffff;
       -webkit-border-radius: 30px;
-      -o-border-radius: 30px;
       -moz-border-radius: 30px;
       border-radius: 30px; }
       .scrollImg .pointersGo a.focus {
@@ -1028,12 +1071,13 @@ input, textarea, button {
   padding: 0 2%; }
   .proDetails .dian {
     display: inline-block;
+    *display: inline;
+    *zoom: 1;
     width: 5px;
     height: 5px;
     margin: 0 8px 3px 0;
     background: #797979;
     -webkit-border-radius: 50px;
-    -o-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
     vertical-align: middle; }
@@ -1050,7 +1094,8 @@ input, textarea, button {
       width: 1200px;
       overflow: hidden; }
       .indexScroll .indImgListA li {
-        float: left; }
+        float: left;
+        display: inline; }
         .indexScroll .indImgListA li img {
           width: 320px; }
     .indexScroll .indexPt {
@@ -1059,11 +1104,12 @@ input, textarea, button {
       left: 45%; }
       .indexScroll .indexPt a {
         display: inline-block;
+        *display: inline;
+        *zoom: 1;
         width: 8px;
         height: 8px;
         background: #bababa;
         -webkit-border-radius: 30px;
-        -o-border-radius: 30px;
         -moz-border-radius: 30px;
         border-radius: 30px; }
         .indexScroll .indexPt a.focus {
@@ -1073,6 +1119,7 @@ input, textarea, button {
   overflow: hidden; }
   .indexOrderList li {
     float: left;
+    display: inline;
     border-right: #f4f4f4 solid 1px;
     border-bottom: #f4f4f4 solid 1px;
     width: 33%;
@@ -1082,7 +1129,6 @@ input, textarea, button {
     .indImgIcn {
       background: url(../images/mobileBg_01.png) no-repeat;
       -webkit-background-size: 55px auto;
-      -o-background-size: 55px auto;
       -moz-background-size: 55px auto;
       background-size: 55px auto;
       height: 41px; }
@@ -1093,21 +1139,18 @@ input, textarea, button {
         background-position: 0 -79px;
         width: 42px;
         -webkit-background-size: 46px auto;
-        -o-background-size: 46px auto;
         -moz-background-size: 46px auto;
         background-size: 46px auto; }
       .indImgIcn.ic_3 {
         background-position: 0 -182px;
         width: 28px;
         -webkit-background-size: 50px auto;
-        -o-background-size: 50px auto;
         -moz-background-size: 50px auto;
         background-size: 50px auto; }
       .indImgIcn.ic_4 {
         background-position: 6px -46px;
         width: 43px;
         -webkit-background-size: 56px auto;
-        -o-background-size: 56px auto;
         -moz-background-size: 56px auto;
         background-size: 56px auto; }
       .indImgIcn.ic_5 {
@@ -1141,7 +1184,9 @@ input, textarea, button {
   position: relative;
   left: 5px;
   bottom: 2px;
-  display: inline-block; }
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
 
 .noteBtn::after {
   content: "";
@@ -1151,7 +1196,6 @@ input, textarea, button {
   width: 30px;
   height: 30px;
   background: white;
-  -o-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
 
@@ -1184,6 +1228,7 @@ input, textarea, button {
       padding: 0 5%; }
     .sortList li li li {
       float: left;
+      display: inline;
       width: 50%;
       border: none; }
 
@@ -1194,10 +1239,10 @@ input, textarea, button {
   overflow: hidden; }
   .brandList li {
     float: left;
+    display: inline;
     width: 50%;
     padding: 0 10px 20px 0;
     -webkit-box-sizing: border-box;
-    -o-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-align: center; }
@@ -1366,7 +1411,6 @@ input, textarea, button {
       height: 12px;
       background: #d3d3d3;
       -webkit-border-radius: 40px;
-      -o-border-radius: 40px;
       -moz-border-radius: 40px;
       border-radius: 40px; }
       .moreTaoC .num em.focus {
@@ -1460,7 +1504,6 @@ input, textarea, button {
   width: 30px;
   height: 30px;
   -webkit-border-radius: 50px;
-  -o-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;
   position: absolute;
@@ -1493,7 +1536,6 @@ input, textarea, button {
   max-width: 600px; }
   .yanguangdanBox .buttonRed {
     -webkit-border-radius: 0;
-    -o-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
     width: 100%;
@@ -1508,7 +1550,6 @@ input, textarea, button {
   background: white;
   padding: 10px;
   -webkit-box-sizing: border-sizing;
-  -o-box-sizing: border-sizing;
   -moz-box-sizing: border-sizing;
   box-sizing: border-sizing; }
   .yanguangdan.yanguangdan_noB {
@@ -1519,7 +1560,6 @@ input, textarea, button {
     left: 15%;
     width: 12px;
     height: 12px;
-    -o-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     border-left: #dddddd solid 1px;
@@ -1575,7 +1615,6 @@ input, textarea, button {
   padding: 5% 2%;
   margin: 0 0 5%;
   -webkit-box-sizing: border-box;
-  -o-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   overflow: hidden; }
@@ -1615,7 +1654,6 @@ input, textarea, button {
       height: 33px;
       background-position: 0 -87px;
       -webkit-background-size: 38px;
-      -o-background-size: 38px;
       -moz-background-size: 38px;
       background-size: 38px;
       vertical-align: middle;
@@ -1713,7 +1751,6 @@ input, textarea, button {
 .leaveMess {
   background: #f4f4f4;
   -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   padding: 2%;
@@ -1827,7 +1864,6 @@ input, textarea, button {
     width: 40%; }
     .buttonYw, .buttonGn {
       -webkit-border-radius: 30px;
-      -o-border-radius: 30px;
       -moz-border-radius: 30px;
       border-radius: 30px;
       padding: 2% 15%; }
@@ -1849,7 +1885,6 @@ input, textarea, button {
     background: #cccccc;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
-    -o-border-radius: 50px;
     border-radius: 50px;
     width: 24px;
     height: 24px; }
@@ -1957,7 +1992,6 @@ input, textarea, button {
       /* @extend .f14; */
       background: #b81c2b;
       -webkit-border-radius: 5px;
-      -o-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
       color: white;
@@ -1983,15 +2017,11 @@ input, textarea, button {
       width: 100%;
       color: #666666; }
 
-.searchlistBox {
-  padding: 0 0 0 2%; }
-
 .shitiAddress {
   padding: 7% 5%;
   width: 960px;
   margin: auto;
   -webkit-box-sizing: border-box;
-  -o-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -2023,7 +2053,6 @@ input, textarea, button {
         background-color: #b81c2b;
         /* background:$red url(../images/mobileBg.png) no-repeat; */
         -webkit-border-radius: 5px;
-        -o-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
         /* background-size: 50px auto; */
@@ -2061,7 +2090,6 @@ input, textarea, button {
   .updown_go em {
     color: #959595;
     -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -2144,7 +2172,6 @@ input, textarea, button {
   border-right: #dddddd 1px solid;
   border-bottom: #dddddd 1px solid;
   -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
@@ -2189,30 +2216,24 @@ input, textarea, button {
   width: 15px;
   height: 15px;
   -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   -webkit-animation-name: bounce_circular;
-  -o-animation-name: bounce_circular;
   -moz-animation-name: bounce_circular;
   animation-name: bounce_circular;
   -webkit-animation-duration: 0.7s;
-  -o-animation-duration: 0.7s;
   -moz-animation-duration: 0.7s;
   animation-duration: 0.7s;
   -webkit-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   -webkit-animation-direction: linear;
-  -o-animation-direction: linear;
   -moz-animation-direction: linear;
   animation-direction: linear; }
 
 #circular_1 {
   margin-top: 25px;
   -webkit-animation-delay: 0.1s;
-  -o-animation-delay: 0.1s;
   -moz-animation-delay: 0.1s;
   animation-delay: 0.1s; }
 
@@ -2220,14 +2241,12 @@ input, textarea, button {
   margin-left: -8px;
   margin-top: 9px;
   -webkit-animation-delay: 0.2s;
-  -o-animation-delay: 0.2s;
   -moz-animation-delay: 0.2s;
   animation-delay: 0.2s; }
 
 #circular_3 {
   margin-top: 1px;
   -webkit-animation-delay: 0.3s;
-  -o-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
   animation-delay: 0.3s; }
 
@@ -2235,7 +2254,6 @@ input, textarea, button {
   margin-left: 0;
   margin-top: 9px;
   -webkit-animation-delay: 0.4s;
-  -o-animation-delay: 0.4s;
   -moz-animation-delay: 0.4s;
   animation-delay: 0.4s; }
 
@@ -2243,7 +2261,6 @@ input, textarea, button {
   margin-left: -8px;
   margin-top: 25px;
   -webkit-animation-delay: 0.5s;
-  -o-animation-delay: 0.5s;
   -moz-animation-delay: 0.5s;
   animation-delay: 0.5s; }
 
@@ -2251,7 +2268,6 @@ input, textarea, button {
   margin-left: -22px;
   margin-top: 40px;
   -webkit-animation-delay: 0.6s;
-  -o-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
   animation-delay: 0.6s; }
 
@@ -2259,7 +2275,6 @@ input, textarea, button {
   margin-left: -37px;
   margin-top: 48px;
   -webkit-animation-delay: 0.7s;
-  -o-animation-delay: 0.7s;
   -moz-animation-delay: 0.7s;
   animation-delay: 0.7s; }
 
@@ -2267,7 +2282,6 @@ input, textarea, button {
   margin-left: -53px;
   margin-top: 41px;
   -webkit-animation-delay: 0.8s;
-  -o-animation-delay: 0.8s;
   -moz-animation-delay: 0.8s;
   animation-delay: 0.8s; }
 
@@ -2326,7 +2340,8 @@ header .popBox {
   position: absolute;
   bottom: 5px;
   left: 50%;
-  z-index: 99; }
+  z-index: 99;
+  margin-left: -39px; }
 
 .js-slider-num {
   float: left; }
@@ -2336,7 +2351,9 @@ header .popBox {
 
 .slider-pic img {
   width: 100%;
-  height: auto; }
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%; }
 
 .slider-num li {
   margin-left: 4px;
@@ -2356,7 +2373,6 @@ header .popBox {
   width: 45px;
   background: #f4f4f4;
   -moz-border-radius: 20px;
-  -o-border-radius: 20px;
   border-radius: 20px;
   border: #dddddd solid 1px; }
 
@@ -2396,7 +2412,6 @@ header .popBox {
 .switch-input:checked + .switch-label {
   -webkit-transition: 0.15s ease-out;
   -moz-transition: 0.15s ease-out;
-  -o-transition: 0.15s ease-out;
   transition: 0.15s ease-out;
   background: #f4f4f4; }
 
@@ -2414,15 +2429,12 @@ header .popBox {
   height: 25px;
   background: white;
   -webkit-border-radius: 25px;
-  -o-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
   -webkit-box-shadow: 0 4px 5px #848183;
-  -o-box-shadow: 0 4px 5px #848183;
   -moz-box-shadow: 0 4px 5px #848183;
   box-shadow: 0 4px 5px #848183;
   border: #dddddd solid 1px;
-  -o-transition: left 0.15s ease-out;
   -moz-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out; }
 

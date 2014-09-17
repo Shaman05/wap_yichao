@@ -509,7 +509,8 @@ input.inputCommon{
     }
 }
 .kehuPh{
- @include height(false, 45px,45px); background:#e21111; padding:0 0 0 15%; color:$white; @extend .f16;
+ @include height(false, 45px,45px); background:#e21111; /* padding:0 0 0 15%; */ color:$white; @extend .f16;
+ text-align:center;
  a{
   color:$white;
   display: block;
@@ -518,11 +519,9 @@ input.inputCommon{
 .imgContent{
     @include height(false, auto,25px);
     text-align:center;
-    @include max-screen(320px){
-      img{width:320px;}
-    }
-    @include screen(330px, 1280px){
-      img{width:auto;}
+    img{
+      width:100%;
+      max-width: 100%;
     }
 }
 .qqAndW{
@@ -1716,6 +1715,9 @@ display:block;
 }
 .searchNote{
   padding:5% 8% 0;
+  &.padTwo{
+    padding:5% 2% 2%;
+  }
   em{color:$grayDark}
   line-height: 25px;
 }
@@ -1762,7 +1764,6 @@ display:block;
     }
   }
 }
-.searchlistBox{padding: 0 0 0 5%;}
 .shitiAddress{padding:7% 5%}
 .shoppName{
   @include height(false, auto, 30px);
@@ -1879,6 +1880,9 @@ display:block;
   }
 }
 .shitiBox{min-height:348px;}
+.shoppingCarBox{
+  @extend .shitiBox;
+}
 .listmore_shop{
   li{
     em{
@@ -1987,9 +1991,9 @@ header .popBox{
 .js-slider{overflow:hidden;position:relative}
 .js-slider-img-wrap{overflow:hidden}
 .js-slider-h .js-slider-img{float:left}
-.js-slider-num-wrap{position:absolute;bottom:5px;left:45%;z-index:99}
+.js-slider-num-wrap{position:absolute;bottom:5px;left:50%;z-index:99; margin-left:-35px;}
 .js-slider-num{float:left}.js-slider-num-cur{color:#ff0000}
-.slider-pic img{width:100%;max-width:100%;height:auto;}
+.slider-pic img{/* width:100%; */max-width:100%;height:100%;max-height:100%;}
 .slider-num li{margin-left: 4px;width: 12px;height: 12px;border-radius: 6px;text-indent: -9999px;background-color: #b9bbb8;}
 .slider-num .js-slider-num-cur{background-color:#f00;}
 /* Carousel */
