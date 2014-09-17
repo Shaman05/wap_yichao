@@ -8,6 +8,9 @@
   </li>
   <% } %>
 </ul>
+<div class="pagesOn">
+    <%== displayPageBtn('#ac=goods.comments&GoodsID=<%= GoodsID %>', pageIndex, total, pageSize) %>
+</div>
 <% }else{ %>
 <div class="no-data">
     <p>暂无评论</p>
