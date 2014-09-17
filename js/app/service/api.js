@@ -169,6 +169,13 @@ define(['./base'], function (base) {
         };
         callApi.call(this, OrderHandler, data, callback);
       },
+      orderAdd: function(orderOption, callback){
+        var data = {
+          OP: "OrderAdd"
+        };
+        data = $.extend(data, orderOption);
+        callApi.call(this, OrderHandler, data, callback);
+      },
       //购物车列表
       cartList: function(goodsName, goodsId, p, callback){
         var data = {

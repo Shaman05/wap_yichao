@@ -95,7 +95,7 @@ define(function(){
   };
 
   window.util = util;
-  window.alert = util.alert;
+  //window.alert = util.alert;
 
   return util;
 

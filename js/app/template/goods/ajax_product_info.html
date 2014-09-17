@@ -1,7 +1,7 @@
 <h3 class="h3Title"><%= GoodsName %></h3>
 <h3 class="h3Title red">高端钛板打造明星爆款</h3>
 <p class="priceOne">
-  <em class="bigs">Y<%= SalePrice %></em><i>(镜框+亿超1.60绿膜超薄非球面)</i>
+  <em class="bigs">￥<%= SalePrice %></em><i>(镜框+亿超1.60绿膜超薄非球面)</i>
 </p>
 <p class="priced"> 原价：￥<%= MarketPrice %></p>
 <ul class="proOpt">
@@ -35,3 +35,5 @@
   <em>￥<%= SalePrice %></em>
   <button type="button" class="buttonYellow" id="addToCartBtn">加入购物车</button>
 </p>
+<input type="hidden" id="GoodsName" value="<%= GoodsName %>"/>
+<input type="hidden" id="SalePrice" value="<%= SalePrice %>"/>
