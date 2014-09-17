@@ -23,20 +23,26 @@ define(['events'], function(events){
           }
         });
         $('#totalPay').text(totalPayPrice);
+        metaApplyPayBtn(totalPayPrice > 0);
+      })
+      //全选
+      .on('click', '#selectAll', function(){
+        $('input[type=checkbox]').trigger('click');
       })
       //结算
       .on('click', '#applyPayBtn', function(){
-        util.toPage('user.ordermess&TotalAmount=' + parseFloat($('#totalPay').text()));
-        /*service.orderAdd({
-          TotalAmount: totalPayPrice
-        }, function(d){
-          if(d.status == '1'){
-            alert('添加成功！');
-          }else{
-            alert(d.message);
-          }
-        })*/
+        if(!$(this).hasClass('disab')){
+          util.toPage('user.ordermess&TotalAmount=' + parseFloat($('#totalPay').text()));
+        }
       });
   };
+
+  function metaApplyPayBtn(enable){
+    if(enable){
+      $('#applyPayBtn').removeClass('disab');
+    }else{
+      $('#applyPayBtn').addClass('disab');
+    }
+  }
 
 });
