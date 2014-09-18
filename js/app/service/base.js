@@ -64,9 +64,11 @@ define(['util'], function(util){
         alert('No data response!');
         return;
       }
-      if(data.needLogin === true || data.needLogin === 'true' || data.needLogin === 1 || data.needLogin === '1'){
-        location.hash = '#ac=user.login';
-        return;
+      if(data.status && data.status == '0'){
+        if(data.needLogin === true || data.needLogin === 'true' || data.needLogin === 'True' || data.needLogin === 1 || data.needLogin === '1'){
+          location.hash = '#ac=user.login';
+          return;
+        }
       }
       if($.isFunction(opt.callback)){
         opt.callback(data);
