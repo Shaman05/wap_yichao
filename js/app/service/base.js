@@ -66,6 +66,7 @@ define(['util'], function(util){
       }
       if(data.status && data.status == '0'){
         if(data.needLogin === true || data.needLogin === 'true' || data.needLogin === 'True' || data.needLogin === 1 || data.needLogin === '1'){
+          window.sessionStorage.removeItem('userInfo');
           location.hash = '#ac=user.login';
           return;
         }
