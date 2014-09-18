@@ -176,6 +176,14 @@ define(['./base'], function (base) {
         data = $.extend(data, orderOption);
         callApi.call(this, OrderHandler, data, callback);
       },
+      //支付接口
+      payOrder: function(OrderID, callback){
+        var data = {
+          OP: "PayOrder",
+          OrderID: OrderID
+        };
+        callApi.call(this, OrderHandler, data, callback);
+      },
       //购物车列表
       cartList: function(goodsName, goodsId, p, callback){
         var data = {

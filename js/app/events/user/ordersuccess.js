@@ -11,6 +11,17 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
+
+    $(document)
+      .on('click', '#toPay', function(){
+        var orderId = $('#orderId').text();
+        service.payOrder(orderId, function(d){
+          alert(d.message);
+          if(d.status == '1'){
+            util.toPage('home');
+          }
+        });
+      });
   };
 
 });

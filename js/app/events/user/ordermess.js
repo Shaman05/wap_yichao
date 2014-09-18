@@ -51,7 +51,7 @@ define(['events'], function(events){
           }, function(d){
             alert(d.message);
             if(d.status == '1'){
-              util.toPage('user.myorder');
+              util.toPage('user.ordersuccess&paymentType=' + user.paymentType + '&OrderID=' + d.OrderID);
             }
           });
         }
