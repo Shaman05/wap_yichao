@@ -17,7 +17,7 @@ define(['events'], function(events){
         $(this).addClass('focus').siblings().removeClass('focus');
       })
       .on('click', '#submitOrderBtn', function(){
-        var userInput = userInput();
+        var userInput = getUserInput();
         if(userInput.status){
           service.orderAdd({
               TotalAmount: userInput.totalPay
@@ -60,7 +60,7 @@ define(['events'], function(events){
       });
   };
 
-  function userInput(){
+  function getUserInput(){
     var userInput = {
       status: true,
       totalPay: parseFloat($('#totalPay').text())
