@@ -54,8 +54,6 @@ define(['events'], function(events){
               util.toPage('user.myorder');
             }
           });
-        }else{
-          alert('请先完善订单信息！');
         }
       });
   };
