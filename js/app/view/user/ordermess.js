@@ -1,11 +1,14 @@
 "use strict";
 
-define(['app/view/baseView'], function(baseView){
+define([
+  'app/view/baseView',
+  'app/service/api'
+], function(baseView, model){
 
   return Backbone.View.extend(
     $.extend(baseView, {
       id: 'home-page',
-      model: null,
+      model: new model,
       ready: function(data){
         if(data.TotalAmount){
           $('#totalPay').text(data.TotalAmount);
