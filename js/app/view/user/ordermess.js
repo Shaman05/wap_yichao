@@ -7,7 +7,9 @@ define(['app/view/baseView'], function(baseView){
       id: 'home-page',
       model: null,
       ready: function(data){
-        console.log(data.TotalAmount)
+        if(data.TotalAmount){
+          $('#totalPay').text(data.TotalAmount);
+        }
       }
     })
   );
