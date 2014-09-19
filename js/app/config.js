@@ -74,7 +74,7 @@
         addAddress: '填写订单信息',
         address: '填写订单信息',
         city: '选择城市',
-        login: '用户登陆',
+        login: '用户登录',
         myorder: '我的订单',
         myorder_info: '订单详情',
         ordermess: '填写订单信息',

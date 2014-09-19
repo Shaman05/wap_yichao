@@ -141,7 +141,7 @@ $c98:#989898;
                     }
                     &.shoptCart{
                          /* margin-right:2%;   */
-                          @include width(36%);
+                          @include width(37%);
                         .icn_top{
                             background-position:2px -512px;
                             @include width(25px);
@@ -1333,7 +1333,7 @@ input.inputCommon{
 }
 .payWay{
   border:$cd solid 1px;
-  padding:5% 6%;
+  padding:5% 4%;
    p{
       color:$c6;
     }
@@ -1363,7 +1363,7 @@ input.inputCommon{
 }
 .orderDl{
   border-top:$cd solid 1px;
-  padding:5% 4%;
+  padding:5% 1%;
   @at-root.lh40{
      line-height: 40px;
   }
@@ -1447,7 +1447,7 @@ display:block;
 }
 .diyongj{
   @include ovh(hidden);
-  padding:5% 0 0;
+  padding:5% 0 2%;
  color:#989898;
 }
 .addBtnbox{
@@ -1518,7 +1518,7 @@ display:block;
 }
 .succNote{
   border-bottom:#d3d3d3 solid 1px;
-  padding: 8%;
+  padding: 8% 0 8% 3%;
   line-height: 24px;
 }
 .zhifuway{
@@ -1881,6 +1881,9 @@ display:block;
 }
 .shitiBox{min-height:348px;}
 .shoppingCarBox{
+  @extend .shitiBox;
+}
+#myOrderList{
   @extend .shitiBox;
 }
 .listmore_shop{
