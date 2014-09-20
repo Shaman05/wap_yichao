@@ -14,6 +14,9 @@ define([
         if(!data.PageIndex){
           data.PageIndex = 1;
         }
+        if(!data.GoodsTypeID){
+          data.GoodsTypeID = "";
+        }
         this.getBrandList(data);
       },
       getBrandList: function(data){
