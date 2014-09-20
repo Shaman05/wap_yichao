@@ -1,0 +1,23 @@
+<% if(list.length > 0){ %>
+<ul class="groupPro">
+    <li>
+        <div class="groupImg">
+            <span class="imgs"><img src="../images/img07.png" alt=""></span>
+            <p class="gtexts">【全国开团】强生舒日日抛30片装*2送润眼液5ml+
+                护理液</p>
+        </div>
+        <div class="groupPrice">
+            <em>套餐价：￥333.00 </em>
+            <em>原价：￥<i>675.00</i></em>
+            <a href="javasript:;">立即购买</a>
+        </div>
+    </li>
+</ul>
+<div class="pagesOn">
+    <%== displayPageBtn('#ac=goods.groupbuy&GoodsID=<%= GoodsID %>', pageIndex, total, pageSize) %>
+</div>
+<% }else{ %>
+<div class="no-data">
+    <p>暂无评论</p>
+</div>
+<% } %>

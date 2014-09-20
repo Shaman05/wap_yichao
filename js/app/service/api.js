@@ -19,6 +19,7 @@ define(['./base'], function (base) {
   var UserHandler = 'UserLoginHandler';
   var OrderHandler = 'OrderHandler';
   var OrderCartHandler = 'OrderCartHandler';
+  var PromotionHandler = 'PromotionHandler';
   var pageSize = APP.config.pageSize;
 
   return Backbone.Model.extend(
@@ -120,6 +121,17 @@ define(['./base'], function (base) {
           PageSize: pageSize
         };
         callApi.call(this, GoodsHandler, data, callback);
+      },
+      //团购
+      groupBuyList: function(gid, name, p, callback){
+        var data = {
+          OP: "PromotionList",
+          GoodsTypeID: gid,
+          SetName: name,
+          PageIndex: p,
+          PageSize: pageSize
+        };
+        callApi.call(this, PromotionHandler, data, callback);
       },
 
       //搜索
