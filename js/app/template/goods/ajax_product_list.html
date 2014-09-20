@@ -3,12 +3,12 @@
   <% for(var i = 0; i < list.length; i++){ %>
   <li>
     <span class="proImg">
-      <a href="javascript:;"><img src="<%= list[i].SmallImage %>" alt=""></a>
+      <a href="javascript:;"><img src="<%= list[i].SmallImage %>" alt="<%= list[i].GoodsName %>"></a>
     </span>
     <p class="proName">
       <a href="#ac=goods.product_info&GoodsID=<%= list[i].GoodsID %>"><%= list[i].GoodsName %></a>
     </p>
-    <p><em class="red">￥<%= list[i].MarketPrice %></em>（含超薄镜片）</p>
+    <p><em class="red">￥<%= list[i].MarketPrice %></em><% if(list[i].Model){ %>（<%= list[i].Model %>）<% } %></p>
   </li>
   <% } %>
 </ul>
