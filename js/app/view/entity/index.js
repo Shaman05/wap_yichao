@@ -14,6 +14,12 @@ define([
       id: 'home-page',
       model: new model,
       ready: function(data){
+        if(!data.ShopID){
+          data.ShopID = "";
+        }
+        if(!data.cityID){
+          data.cityID = "";
+        }
         this.imgSlider(data);
         this.getInfo(data);
         this.getOtherEntity(data);

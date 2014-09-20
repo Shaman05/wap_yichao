@@ -26,9 +26,11 @@ define([
     },
     render: function(data){
       var content = this._render(data);
-      this.$el.attr('id', this.id).html(content);
-      this.commonData(data);
-      this.ready(data);
+      if(content !== false){
+        this.$el.attr('id', this.id).html(content);
+        this.commonData(data);
+        this.ready(data);
+      }
     },
     _render: function(data){
       var tpl = '';
@@ -86,7 +88,7 @@ define([
     var base = path[0];
     var newMap = map[base];
     if(!newMap){
-      return 'No title';
+      return '';
     }
     if(typeof newMap == 'string'){
       return newMap;

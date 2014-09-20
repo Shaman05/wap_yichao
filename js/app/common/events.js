@@ -11,6 +11,7 @@ define(function(){
 
   return {
     init: function(){
+      $(window).unbind('scroll');
       $(document)
         .unbind()
         //返回顶部
