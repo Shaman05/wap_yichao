@@ -1,24 +1,22 @@
 <% if(list.length > 0){ %>
-<div style="background: #000000;">
-    <ul class="brandList">
-      <% for(var i = 0; i < list.length; i++){ %>
-      <li>
-        <a href="">
-          <span class="brandImg"><img src="<%= list[i].ListImg %>" alt=""></span><span class="brandName">
-            <p><img src="<%= list[i].Logo %>" alt=""></p>
-            <p class="brandName"><%= list[i].BrandName %></p>
-            <p><%= list[i].Alias %></p>
-            <p><%= list[i].GoodsTypeID %></p>
-          </span>
-        </a>
-      </li>
-      <% } %>
-    </ul>
-    <div class="pagesOn">
-      <%== displayPageBtn('#ac=goods.brand', pageIndex, total, pageSize) %>
-    </div>
-    <% }else{ %>
+<ul class="brandList">
+  <% for(var i = 0; i < list.length; i++){ %>
+  <li>
+    <a href="javascript:">
+      <span class="brandImg"><img src="<%= list[i].ListImg %>" alt=""></span><span class="brandName">
+        <p><img src="<%= list[i].Logo %>" alt=""></p>
+        <p class="brandName"><%= list[i].BrandName %></p>
+        <p><%= list[i].Alias %></p>
+        <p><%= list[i].GoodsTypeID %></p>
+      </span>
+    </a>
+  </li>
+  <% } %>
+</ul>
+<div class="pagesOn">
+  <%== displayPageBtn('#ac=goods.brand', pageIndex, total, pageSize) %>
 </div>
+<% }else{ %>
 <div class="no-data">
   <p>暂无数据</p>
 </div>
