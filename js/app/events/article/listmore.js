@@ -15,7 +15,14 @@ define(['events'], function(events){
     $(window)
       .on('scroll', function(){
         if($(window).scrollTop() + $(window).height() >= $(document).height()){
-          view.getData();
+          var data = util.getParam(window.location.hash);
+          if(!data.TypeID){
+            data.TypeID = "";
+          }
+          if(!data.ClassID){
+            data.ClassID = "";
+          }
+          view.getData(data);
         }
       });
   };

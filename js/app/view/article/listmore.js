@@ -14,6 +14,15 @@ define([
       model: new model,
       page: 1,
       ready: function(data){
+        if(!data.PageIndex){
+          data.PageIndex = 1;
+        }
+        if(!data.TypeID){
+          data.TypeID = "";
+        }
+        if(!data.ClassID){
+          data.ClassID = "";
+        }
         this.getData(data);
       },
       getData: function(data){
