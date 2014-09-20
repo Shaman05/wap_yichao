@@ -1,7 +1,7 @@
 <h3 class="h3Title"><%= GoodsName %></h3>
 <h3 class="h3Title red">高端钛板打造明星爆款</h3>
 <p class="priceOne">
-  <em class="bigs">￥<%= SalePrice %></em><i>(镜框+亿超1.60绿膜超薄非球面)</i>
+  <em class="bigs">￥<%= SalePrice %></em><i><%= Model %></i>
 </p>
 <p class="priced"> 原价：￥<%= MarketPrice %></p>
 <ul class="proOpt">
@@ -9,12 +9,12 @@
     <p class="one">评价<em><%= CommentTimes %></em></p>
     <p class="two">送<em><%= Point %></em>积分</p>
     <% if(IsOnSale !== "False"){ %>
-    <p class="last">有现货下单后立即发货</p>
+    <p class="last"><%= Stock %></p>
     <% } %>
   </li>
   <li>
     <label class="name">选择镜框</label>
-    <span class="ctent">
+    <span class="ctent" data-glassFrame>
       <a href="javascript:;">均码枪色C2</a>
       <a href="javascript:;">均码黑色C7</a>
       <a href="javascript:;">大码黑色C7</a>
@@ -23,14 +23,63 @@
   </li>
   <li>
     <label class="name">选择镜片</label>
-    <span class="ctent">
+    <span class="ctent" data-glassLens>
       <a href="javascript:;">亿超1.600绿膜超薄非球面</a>
       <a href="javascript:;">亿超1.600绿膜超薄非球面</a>
       <a href="javascript:;">单买镜框169元</a>
-      <a href="javascript:;" class="lastA">点击选购更多镜片</a>
+      <a href="javascript:;" class="lastA" id="selectMore">点击选购更多镜片</a>
     </span>
   </li>
 </ul>
+<div id="moreSelectWrap" style="display: none">
+    <div class="selectMore">
+        <p class="sctN">选择更多镜片：</p>
+        <div class="sctList" data-moreLens>
+            <a href="javascript:;">近视透明片</a>
+            <a href="javascript:;">变色片</a>
+            <a href="javascript:;">防辐射</a>
+            <a href="javascript:;">抗疲劳</a>
+            <a href="javascript:;">染色片</a>
+            <a href="javascript:;">偏光片</a>
+        </div>
+    </div>
+    <!--<div class="moreTaoC">
+        <ul>
+            <li>
+                <span class="mImg"><img src="../images/img09.png" alt=""></span>
+                <p class="mpc">￥977.00 <em>整幅眼睛</em></p>
+                <p class="mTitle">强生 舒日日抛30片 近视隐形眼镜 天天抛 持久水润舒</p>
+                <p class="lx">
+                    <a href="javascript:;">加硬耐磨</a><a href="javascript:;">防辐射</a>
+                </p>
+                <a href="javascript:;">购买此套餐</a>
+            </li>
+            <li>
+                <span class="mImg"><img src="../images/img09.png" alt=""></span>
+                <p class="mpc">￥977.00 <em>整幅眼睛</em></p>
+                <p class="mTitle">强生 舒日日抛30片 近视隐形眼镜 天天抛 持久水润舒</p>
+                <p class="lx">
+                    <a href="javascript:;">加硬耐磨</a><a href="javascript:;">防辐射</a>
+                </p>
+                <a href="javascript:;">购买此套餐</a>
+            </li>
+            <li>
+                <span class="mImg"><img src="../images/img09.png" alt=""></span>
+                <p class="mpc">￥977.00 <em>整幅眼睛</em></p>
+                <p class="mTitle">强生 舒日日抛30片 近视隐形眼镜 天天抛 持久水润舒</p>
+                <p class="lx">
+                    <a href="javascript:;">加硬耐磨</a><a href="javascript:;">防辐射</a>
+                </p>
+                <a href="javascript:;">购买此套餐</a>
+            </li>
+        </ul>
+	<span class="num">
+		<em></em>
+		<em></em>
+		<em></em>
+	</span>
+    </div>-->
+</div>
 <p class="addGou">
   <em>￥<%= SalePrice %></em>
  <!--  <button type="button" class="buttonYellow" id="addToCartBtn">加入购物车</button> -->
