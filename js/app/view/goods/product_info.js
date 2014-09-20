@@ -15,21 +15,24 @@ define([
       id: 'product_info-page',
       model: new api,
       ready: function(data){
-        this.imgSlider(data);
+        var _this = this;
+        _this.imgSlider(data);
         //商品信息
-        this.model.goodsInfo(data.GoodsID, function(d){
+        _this.model.goodsInfo(data.GoodsID, function(d){
           var renderFn = _.artTemplate.compile(infoTpl);
           $('#proInfoBox').html(renderFn(d.data[0]));
-          $('#CommentTimes').text(d.data[0]['CommentTimes']);
+          data.commentsTimes = d.data[0]['CommentTimes'];
+          _this.getComments(data);
         });
-        this.getComments(data);
       },
       getComments: function(data){
         //评论
         this.model.goodsComments(data.GoodsID, page, function(d){
           var renderFn = _.artTemplate.compile(commentsTpl);
-          $('#commentsWrap').html(renderFn({
-            list: d.data
+          $('#comments').html(renderFn({
+            list: d.data,
+            GoodsID: data.GoodsID,
+            commentsTimes: data.commentsTimes
           }));
         });
       },

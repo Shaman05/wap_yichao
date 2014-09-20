@@ -1,15 +1,20 @@
-<% if(list.length > 0){ %>
-<ul class="commentsList">
-  <% for(var i = 0; i < list.length; i++){ %>
-  <li>
-    <p class="userName"><em class="names">k***l</em><em class="comXin xin_1"></em></p>
-    <p class="contents">感觉那是种低调的奢华，不张扬，但是很有个性，我喜欢的，是正品吧</p>
-    <p class="times">2014-8-6 9:05:24</p>
-  </li>
-  <% } %>
-</ul>
-<% }else{ %>
-<div class="no-data">
-    <p>暂无评论</p>
+<h3 class="commontsTitles">
+    <a href="#ac=goods.comments&GoodsID=<%= GoodsID %>">产品评价（<span id="CommentTimes"><%= commentsTimes %></span>）<em class="ec1">></em></a>
+</h3>
+<div id="commentsWrap">
+    <% if(list.length > 0){ %>
+    <ul class="commentsList">
+      <% for(var i = 0; i < list.length; i++){ %>
+      <li>
+        <p class="userName"><em class="names">k***l</em><em class="comXin xin_1"></em></p>
+        <p class="contents">感觉那是种低调的奢华，不张扬，但是很有个性，我喜欢的，是正品吧</p>
+        <p class="times">2014-8-6 9:05:24</p>
+      </li>
+      <% } %>
+    </ul>
+    <% }else{ %>
+    <div class="no-data">
+        <p>暂无评论</p>
+    </div>
+    <% } %>
 </div>
-<% } %>
