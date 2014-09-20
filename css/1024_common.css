@@ -562,7 +562,8 @@ input, textarea, button {
     max-width: 200px;
     height: 54px;
     float: right;
-    display: inline; }
+    display: inline;
+    text-align: right; }
     .topNav li.item2 a {
       display: inline-block;
       *display: inline;
@@ -892,6 +893,8 @@ input, textarea, button {
 /* for product  style */
 .proInfoBox {
   padding: 0 10px; }
+  .proInfoBox.nopad {
+    padding: 0; }
 
 .h3Title {
   height: 25px;

@@ -564,7 +564,8 @@ input, textarea, button {
   .topNav li.item2 {
     width: 36%;
     float: right;
-    display: inline; }
+    display: inline;
+    text-align: right; }
     .topNav li.item2 a {
       letter-space: -6px;
       height: 45px;
@@ -891,11 +892,13 @@ input.inputCommon {
 /* for product  style */
 .proInfoBox {
   padding: 0 10px; }
+  .proInfoBox.nopad {
+    padding: 0; }
 
 .h3Title {
   height: 25px;
   line-height: 25px;
-  padding: 15px 0 0;
+  padding: 2% 2% 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -904,19 +907,22 @@ input.inputCommon {
     color: #e86464;
     padding: 0; }
 
-.priceOne em {
-  color: #b81c2b;
-  float: left;
-  display: inline; }
-.priceOne i {
-  float: left;
-  display: inline;
-  margin: 10px 0 0 5px; }
+.priceOne {
+  padding: 0 10px; }
+  .priceOne em {
+    color: #b81c2b;
+    float: left;
+    display: inline; }
+  .priceOne i {
+    float: left;
+    display: inline;
+    margin: 10px 0 0 5px; }
 
 .priced {
   clear: both;
   text-decoration: line-through;
-  line-height: 20px; }
+  line-height: 20px;
+  padding: 0 10px; }
 
 .priceOne, .priced {
   color: #989898; }
@@ -1881,7 +1887,7 @@ input.inputCommon {
 
 .succNote {
   border-bottom: #d3d3d3 solid 1px;
-  padding: 8% 0 8% 2%;
+  padding: 8% 0 8% 3%;
   line-height: 24px; }
 
 .zhifuway {
