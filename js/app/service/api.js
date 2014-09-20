@@ -46,7 +46,7 @@ define(['./base'], function (base) {
       articleInfo: function(aid, callback){
         var data = {
           OP: "ArticleByID",
-          ParentID: aid
+          ArticleID: aid
         };
         callApi.call(this, ArticleHandler, data, callback);
       },

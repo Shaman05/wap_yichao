@@ -10,10 +10,12 @@ define([
     $.extend(baseView, {
       id: 'home-page',
       model: new model,
-      ready: function(params){
-        this.model.articleInfo(params.id, function(d){
+      ready: function(data){
+        //#ac=article.info&ArticleID=16383
+        this.model.articleInfo(data.ArticleID, function(d){
           var renderFn = _.artTemplate.compile(tpl);
-          $('#info').html(renderFn(d.data));
+          $('#pageName').text(d.data[0]['Title']);
+          $('#info').html(renderFn(d.data[0]));
         });
       }
     })
