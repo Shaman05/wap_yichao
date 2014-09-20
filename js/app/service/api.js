@@ -133,6 +133,14 @@ define(['./base'], function (base) {
         };
         callApi.call(this, PromotionHandler, data, callback);
       },
+      //团购详情
+      groupBuyInfo: function(gid, callback){
+        var data = {
+          OP: "PromotionByID",
+          PromotionID: gid
+        };
+        callApi.call(this, PromotionHandler, data, callback);
+      },
 
       //搜索
       goodsSearch: function(keywords, p, callback){

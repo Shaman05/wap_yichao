@@ -25,7 +25,7 @@ define([
           $('#groupBox').html(renderFn({
             showPaging: false,
             list: d.data,
-            goodsTypeId: data.GoodsTypeID,
+            GoodsTypeID: data.GoodsTypeID,
             SetName: data.SetName,
             pageIndex: data.PageIndex,
             total: d.nPageCount,

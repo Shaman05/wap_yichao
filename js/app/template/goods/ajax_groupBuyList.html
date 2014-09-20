@@ -1,21 +1,24 @@
 <% if(list.length > 0){ %>
 <ul class="groupPro">
+    <% for(var i = 0; i < list.length; i++){ %>
     <li>
         <div class="groupImg">
-            <span class="imgs"><img src="../images/img07.png" alt=""></span>
-            <p class="gtexts">【全国开团】强生舒日日抛30片装*2送润眼液5ml+
-                护理液</p>
+            <span class="imgs"><img src="<%= list[i].imgsrc %>" alt=""></span>
+            <p class="gtexts"><%= list[i].SetName %></p>
         </div>
         <div class="groupPrice">
-            <em>套餐价：￥333.00 </em>
-            <em>原价：￥<i>675.00</i></em>
-            <a href="javasript:;">立即购买</a>
+            <em>套餐价：￥<%= list[i].Price %></em>
+            <em>原价：￥<i><%= list[i].PriceOriginal %></i></em>
+            <a href="#ac=goods.groupbuy_info&PromotionID=<%= PromotionID %>">查看详情</a>
         </div>
     </li>
+    <% } %>
 </ul>
+<% if(showPaging){ %>
 <div class="pagesOn">
-    <%== displayPageBtn('#ac=goods.groupbuy&GoodsID=<%= GoodsID %>', pageIndex, total, pageSize) %>
+    <%== displayPageBtn('#ac=goods.groupbuy&GoodsTypeID=' + GoodsTypeID + '&SetName=' + SetName, pageIndex, total, pageSize) %>
 </div>
+<% } %>
 <% }else{ %>
 <div class="no-data">
     <p>暂无评论</p>
