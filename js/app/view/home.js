@@ -26,14 +26,14 @@ define([
       },
       getGoodsList: function(){
         //框架配镜 GoodsTypeID: 101
-        this.model.goodsList(101, page, function(d){
+        this.model.goodsList(101, "", "", page, function(d){
           var renderFn = _.artTemplate.compile(goodsListTpl);
           $('#proWapper_1').html(renderFn({
             list: d.data
           }));
         });
         //隐形眼瞳 GoodsTypeID: 102
-        this.model.goodsList(102, page, function(d){
+        this.model.goodsList(102, "", "", page, function(d){
           var renderFn = _.artTemplate.compile(goodsListTpl);
           $('#proWapper_2').html(renderFn({
             list: d.data

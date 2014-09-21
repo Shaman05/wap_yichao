@@ -14,15 +14,23 @@ define([
         if(!data.PageIndex){
           data.PageIndex = 1;
         }
+        if(!data.PropertyID){
+          data.PropertyID = "";
+        }
+        if(!data.ValueID){
+          data.ValueID = "";
+        }
         this.getGoodsList(data);
       },
       getGoodsList: function(data){
-        this.model.goodsList(data.GoodsTypeID, data.PageIndex, function(d){
+        this.model.goodsList(data.GoodsTypeID, data.PropertyID, data.ValueID, data.PageIndex, function(d){
           var renderFn = _.artTemplate.compile(tpl);
           $('#proWapper').html(renderFn({
             showPaging: true,
             list: d.data,
             goodsTypeId: data.GoodsTypeID,
+            PropertyID: data.PropertyID,
+            ValueID: data.ValueID,
             pageIndex: data.PageIndex,
             total: d.nPageCount,
             pageSize: APP.config.pageSize

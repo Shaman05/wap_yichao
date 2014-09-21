@@ -85,10 +85,12 @@ define(['./base'], function (base) {
         callApi.call(this, GoodsHandler, data, callback);
       },
       //商品类型列表
-      goodsList: function(gid, p, callback){
+      goodsList: function(gid, pid, vid, p, callback){
         var data = {
           OP: "GoodsByType",
           GoodsTypeID: gid,
+          PropertyID: pid,
+          ValueID: vid,
           PageIndex: p,
           PageSize: pageSize
         };
