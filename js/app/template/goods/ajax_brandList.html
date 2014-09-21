@@ -2,7 +2,7 @@
 <ul class="brandList">
   <% for(var i = 0; i < list.length; i++){ %>
   <li>
-    <a href="javascript:">
+    <a href="#ac=goods.product_list&BrandID=<%= list[i].BrandID %>">
       <span class="brandImg"><img src="<%= list[i].ListImg %>" alt=""></span><span class="brandName">
         <p><img src="<%= list[i].Logo %>" alt=""></p>
         <p class="bdName"><%= list[i].BrandName %></p>
