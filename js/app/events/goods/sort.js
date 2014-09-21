@@ -43,7 +43,7 @@ define(['events'], function(events){
         var $this = $(this);
         var GoodsTypeID = $this.parents('[data-GoodsTypeID]').attr('data-GoodsTypeID');
         var PropertyID = $this.parents('[data-PropertyID]').attr('data-PropertyID');
-        var ValueID = $this.attr('data-ValueID');
+        var ValueID = $this.parents('[data-ValueID]').attr('data-ValueID');
         util.toPage('goods.product_list&GoodsTypeID=' + GoodsTypeID +'&PropertyID=' + PropertyID + '&ValueID=' + ValueID);
       });
   };
