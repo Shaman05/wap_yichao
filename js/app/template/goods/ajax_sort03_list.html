@@ -1,7 +1,7 @@
 <% if(list.length > 0){ %>
-<ul id="sortList02">
+<ul id="sortList03">
     <% for(var i = 0; i < list.length; i++){ %>
-    <li data-PropertyID="<%= list[i].PropertyID %>"><a class="oneName twoName" href="javascript:"><%= list[i].PropertyName %></a></li>
+    <li data-ValueID="<%= list[i].ValueID %>"><a href="javascript:"><%= list[i].ValueName %></a></li>
     <% } %>
 </ul>
 <% }else{ %>
