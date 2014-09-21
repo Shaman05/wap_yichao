@@ -33,7 +33,7 @@ define([
         });
       },
       goodsPropertyByValueList: function(PropertyID, callback){
-        this.model.goodsPropertyList(PropertyID, function(d){
+        this.model.goodsPropertyByValueList(PropertyID, function(d){
           var renderFn = _.artTemplate.compile(tpl03);
           var html = renderFn({
             list: d.data,
