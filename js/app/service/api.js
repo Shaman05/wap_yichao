@@ -122,6 +122,23 @@ define(['./base'], function (base) {
         };
         callApi.call(this, GoodsHandler, data, callback);
       },
+      //全部属性分类
+      goodsPropertyList: function(gid, callback){
+        var data = {
+          OP: "GoodsPropertyByTypeID",
+          GoodsTypeID: gid
+        };
+        callApi.call(this, GoodsHandler, data, callback);
+      },
+      //属性值分类
+      goodsPropertyByValueList: function(pid, callback){
+        var data = {
+          OP: "GoodsPropertyValueByPropertyID",
+          PropertyID: pid
+        };
+        callApi.call(this, GoodsHandler, data, callback);
+      },
+
       //团购
       groupBuyList: function(gid, name, p, callback){
         var data = {

@@ -1,0 +1,11 @@
+<% if(list.length > 0){ %>
+<ul>
+    <% for(var i = 0; i < list.length; i++){ %>
+    <li data-PropertyID="<%= list[i].PropertyID %>"><a class="oneName twoName" href="javascript:"><%= list[i].PropertyName %></a></li>
+    <% } %>
+</ul>
+<% }else{ %>
+<div class="no-data">
+    <p>暂无数据</p>
+</div>
+<% } %>

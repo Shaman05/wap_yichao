@@ -485,13 +485,13 @@ input, textarea, button {
   float: right;
   display: inline; }
 
-.f12, .brandList li .brandName, .moreTaoC ul li .mpc em, .proCarList li .carContent .sezhi, .yanguangdan .yanTime, .yesnobtn button, .orderD1Tb td, .serviceList ul li .con_span .txt_s {
+.f12, .moreTaoC ul li .mpc em, .proCarList li .carContent .sezhi, .yanguangdan .yanTime, .yesnobtn button, .orderD1Tb td, .serviceList ul li .con_span .txt_s {
   font-size: 0.75em; }
 
 .f14, .noteBtn {
   font-size: 0.875em; }
 
-.f16, .kehuPh, .sortList li li li, .carBtnBox a, .clearing span.sp_02 span, .serviceList ul li .icn_label.icn_label3, #loading {
+.f16, .kehuPh, .sortList li li li, .brandList li .brandName, .carBtnBox a, .clearing span.sp_02 span, .serviceList ul li .icn_label.icn_label3, #loading {
   font-size: 1em; }
 
 .f18, .topNav li.item2 a .txt, .commontsTitles, .in_jingkuang a, .in_jingkuang em, .sortList li .oneName, .sortList li li .oneName, .groupPro li .groupPrice, .groupInfoBuy .buttonRed, .moreTaoC ul li .mpc, .carNote, .clearing span.sp_03 .buttonRed, .titleName, .zhifuway .phNote, .order_state .order_user em, .serviceList ul li .con_span .txt {
@@ -686,6 +686,8 @@ input, textarea, button {
     color: white; }
     a.pageUp {
       margin-right: 20px; }
+    .pagesOn a.pageUp:hover, .pagesOn a.pageNext:hover {
+      background: #b81c2b; }
 
 /*! footer style  */
 #footer .footerNav {
@@ -894,33 +896,37 @@ input, textarea, button {
 .proInfoBox {
   padding: 0 10px; }
   .proInfoBox.nopad {
-    padding: 0; }
+    padding: 0;
+    max-width: 100%; }
 
 .h3Title {
   height: 25px;
   line-height: 25px;
-  padding: 15px 0 0;
+  padding: 2% 2% 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   color: #0a0a0a; }
   .h3Title.red {
     color: #e86464;
-    padding: 0; }
+    padding: 0 2%; }
 
-.priceOne em {
-  color: #b81c2b;
-  float: left;
-  display: inline; }
-.priceOne i {
-  float: left;
-  display: inline;
-  margin: 10px 0 0 5px; }
+.priceOne {
+  padding: 0 0 0 2%; }
+  .priceOne em {
+    color: #b81c2b;
+    float: left;
+    display: inline; }
+  .priceOne i {
+    float: left;
+    display: inline;
+    margin: 10px 0 0 5px; }
 
 .priced {
   clear: both;
   text-decoration: line-through;
-  line-height: 20px; }
+  line-height: 20px;
+  padding: 0 0 0 2%; }
 
 .priceOne, .priced {
   color: #989898; }
@@ -1236,43 +1242,40 @@ input, textarea, button {
       border: none; }
 
 .brandBox {
-  padding: 10px 0 10px 10px; }
+  padding: 10px 0; }
 
 .brandList {
   overflow: hidden; }
   .brandList li {
     float: left;
     display: inline;
-    width: 50%;
-    padding: 0 10px 20px 0;
+    width: 24%;
+    height: 430px;
+    margin: 0 5px 20px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    text-align: center; }
-    @media screen and (min-width: 650px) and (max-width: 1280px) {
-      .brandList li {
-        width: 25%; } }
+    text-align: center;
+    display: inline;
+    background: white; }
     .brandList li .brandImg {
       display: block;
       overflow: hidden; }
       .brandList li .brandImg img {
-        width: 100%; }
+        width: 100%;
+        max-width: 100%; }
     .brandList li .brandName {
       display: block;
-      background: white;
       padding: 8%; }
-      .brandList li .brandName .bdName {
-        padding: 15px 0 0;
-        font-weight: bold; }
-      @media screen and (max-width: 320px) {
-        .brandList li .brandName img {
-          height: 15px; } }
-      @media screen and (min-width: 330px) and (max-width: 640px) {
-        .brandList li .brandName img {
-          height: 20px; } }
-      @media screen and (min-width: 650px) and (max-width: 1280px) {
-        .brandList li .brandName img {
-          height: auto; } }
+      .brandList li .brandName p {
+        line-height: 25px; }
+        .brandList li .brandName p.bdName {
+          padding: 15px 0 0;
+          font-weight: bold; }
+        .brandList li .brandName p.dbTxt {
+          /* height: auto; */ }
+        .brandList li .brandName p img {
+          height: auto; }
 
 .groupBox {
   padding: 10px 0 0; }
@@ -2031,7 +2034,7 @@ input, textarea, button {
 .shoppName {
   height: auto;
   line-height: 30px;
-  padding: 0 0 4%; }
+  padding: 0 0 2%; }
 
 .shoppadd {
   line-height: 25px; }
@@ -2080,12 +2083,10 @@ input, textarea, button {
       .serviceList ul li .con_span {
         width: 70%;
         padding: 0 0 0 5px;
-        color: black; }
+        color: black;
+        line-height: 32px; }
         .serviceList ul li .con_span .txt_s {
           white-space: nowrap; }
-          @media screen and (max-width: 320px) {
-            .serviceList ul li .con_span .txt_s {
-              letter-spacing: -1px; } }
 
 .updown_go {
   display: block;
@@ -2100,14 +2101,15 @@ input, textarea, button {
 
 .shitiInfos {
   padding: 2%;
-  /* @extend .tac; */ }
+  /* @extend .tac; */
+  /* img{
+    margin-bottom: 10px;
+  } */ }
   .shitiInfos img {
     width: 100%; }
   .shitiInfos .imgbox {
     background: #fcfcfc;
     padding: 1%; }
-  .shitiInfos img {
-    margin-bottom: 10px; }
 
 .no-data {
   line-height: 100px; }

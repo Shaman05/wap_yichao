@@ -119,6 +119,7 @@ $c98:#989898;
           max-width: 200px;
           @include height(true,54px);
           @include float(right);
+          text-align: right;
                 a{
                     @include inline-block(false);
                     letter-space:-6px;
@@ -231,6 +232,9 @@ $c98:#989898;
         color:$white;
         @at-root a.pageUp{
             margin-right:20px;
+        }
+        &:hover{
+          background:$red;
         }
     }
 }
@@ -428,23 +432,28 @@ $c98:#989898;
 
 /* for product  style */
 .proInfoBox{
-    padding:0 10px;   
+    padding:0 10px; 
+    &.nopad{
+      padding:0;
+      max-width:100%;
+    }  
 }
 .h3Title{
 @include height(false,25px,25px);
-         padding:15px 0 0;
+         padding:2% 2% 0;
         white-space: nowrap;
         text-overflow: ellipsis;
         @include ovh(hidden);
          @extend .f25;
          color:#0a0a0a;
-        &.red{color:#e86464; padding:0;}
+        &.red{color:#e86464; padding:0 2%;}
     }
     .priceOne{
+      padding: 0 0 0 2%;
         em{@extend .f25;color:$red; @include float(left);}
         i{ @include float(left); margin:10px 0 0 5px; } 
     }
-    .priced{clear:both; text-decoration: line-through; line-height: 20px;}
+    .priced{clear:both; text-decoration: line-through; line-height: 20px; padding: 0 0 0 2%;}
     .priceOne,.priced{color:$c98;}
 .proOpt{
   li{

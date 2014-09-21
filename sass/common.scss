@@ -120,6 +120,7 @@ $c98:#989898;
 &.item2{
           @include width(36%);
           @include float(right);
+          text-align: right;
                 a{
                     @include inline-block;
                     letter-space:-6px;
@@ -230,6 +231,9 @@ $c98:#989898;
         color:$white;
         @at-root a.pageUp{
             margin-right:20px;
+        }
+        &:hover{
+          background:$red;
         }
     }
 }
@@ -427,28 +431,33 @@ input.inputCommon{
 /* for product  style */
 .proInfoBox{
     padding:0 10px;   
+    &.nopad{
+      padding:0;
+      max-width:100%;
+    }
 }
 .h3Title{
-@include height(false,25px,25px);
-         padding:15px 0 0;
+        @include height(false,25px,25px);
+         padding:2% 2% 0;
         white-space: nowrap;
         text-overflow: ellipsis;
         @include ovh(hidden);
          @extend .f25;
          color:#0a0a0a;
-        &.red{color:#e86464; padding:0;}
+        &.red{color:#e86464; padding:0 2%;}
     }
     .priceOne{
+      padding:0 10px;
         em{@extend .f25; color:$red; @include float(left);}
         i{ @include float(left); margin:10px 0 0 5px; } 
     }
-    .priced{clear:both; text-decoration: line-through; line-height: 20px;}
+    .priced{clear:both; text-decoration: line-through; line-height: 20px; padding:0 10px;}
     .priceOne,.priced{color:$c98;}
 .proOpt{
   li{
      @include ovh(hidden);
      color:$grayDark;
-     padding: 2% 0;
+     padding: 2% 0 0 2%;
      @include height(false,auto,26px);
     &.first{
        border-top:#cccccc solid 1px;
