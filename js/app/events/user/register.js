@@ -59,15 +59,10 @@ define(['events'], function(events){
           Mobile: '',
           BirthDay: ''
         }, function(d){
+          alert(d.message);
           if(d.status == '1'){
             window.sessionStorage.setItem('userInfo', JSON.stringify(d.data[0]));
-            alert({
-              html: '注册成功',
-              onApply: 'registerSuccess',
-              autoClose: 3000
-            });
-          }else{
-            alert(d.message);
+            util.toPage(window.sessionStorage.getItem('lastHash') || 'home');
           }
         });
       });
