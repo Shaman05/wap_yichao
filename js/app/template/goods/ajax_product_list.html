@@ -14,7 +14,7 @@
 </ul>
 <% if(showPaging){ %>
 <div class="pagesOn">
-  <%== displayPageBtn('#ac=goods.product_list&GoodsTypeID=' + goodsTypeId, pageIndex, total, pageSize) %>
+  <%== displayPageBtn('#ac=goods.product_list&GoodsTypeID=' + goodsTypeId + '&PropertyID=' + PropertyID + '&ValueID=' + ValueID, pageIndex, total, pageSize) %>
 </div>
 <% } %>
 <% }else{ %>
