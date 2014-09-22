@@ -3,7 +3,7 @@
   <% for(var i = 0; i < list.length; i++){ %>
   <li>
     <span class="proImg">
-      <a href="javascript:;"><img src="<%= list[i].SmallImage %>" alt="<%= list[i].GoodsName %>"></a>
+      <a href="#ac=goods.product_info&GoodsID=<%= list[i].GoodsID %>"><img src="<%= list[i].SmallImage %>" alt="<%= list[i].GoodsName %>"></a>
     </span>
     <p class="proName">
       <a href="#ac=goods.product_info&GoodsID=<%= list[i].GoodsID %>"><%= list[i].GoodsName %></a>
