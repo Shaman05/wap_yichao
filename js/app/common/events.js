@@ -13,7 +13,7 @@ define(function(){
     init: function(){
       $(window).unbind('scroll');
       $(document)
-        .unbind()
+        .unbind('click')
         //返回顶部
         .on('click', '#backTop', function(){
           $.scrollTo({
