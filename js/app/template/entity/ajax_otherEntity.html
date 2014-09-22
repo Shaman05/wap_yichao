@@ -2,7 +2,7 @@
 <ul class="ul_all">
     <% for(var i = 0; i < list.length; i++){ %>
     <li data-city="<%= list[i].AreaID %>">
-        <a href="javascript:" class="cityName"><%= list[i].AreaName %></a>
+        <a href="#ac=entity.list&AreaId=<%= list[i].AreaID %>" class="cityName"><%= list[i].AreaName %></a>
     </li>
     <% } %>
 </ul>

@@ -11,15 +11,18 @@ define([
     $.extend(baseView, {
       id: 'home-page',
       model: new model,
-      ready: function(){
-        this.getEntityList();
+      ready: function(data){
+        this.getEntityList(data);
       },
-      getEntityList: function(){
+      getEntityList: function(data){
         this.model.entityCity(function(d){
           var renderFn = _.artTemplate.compile(listTpl);
           $('#entityListWrap').html(renderFn({
             list: d.data
           }));
+          if(data.AreaId){
+            $('[data-city="' + data.AreaId + '"]').trigger('click');
+          }
         });
       },
       getSubEntityList: function(cityID, callback){
