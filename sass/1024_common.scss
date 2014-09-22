@@ -221,14 +221,14 @@ $c98:#989898;
     padding:20px 0;
      @include height(true,40px);
     @extend .tac;
-    a.pageUp,a.pageNext{
+    a.pageUp{
         @include inline-block(false);
         @include width(21%);
         @include prefixer(border-radius, $smallRadius, o webkit moz);
         @extend .tac;
         @include height(false,30px,30px);
         max-width: 85px;
-        background: $cd; 
+        background: $red; 
         color:$white;
         @at-root a.pageUp{
             margin-right:20px;
@@ -236,6 +236,12 @@ $c98:#989898;
         &:hover{
           background:$red;
         }
+        &.disabPage{
+          background:$cd;
+        }
+    }
+    a.pageNext{
+      @extend .pageUp;
     }
 }
 /*! footer style  */
@@ -716,7 +722,7 @@ $c98:#989898;
 .sortList{
   li{
     @include height(false, auto, 40px);
-    border-bottom:#d4d4d4 solid 1px;
+   /*  border-bottom:#d4d4d4 solid 1px; */
     &.lst{
       border-bottom:none;
     }
@@ -727,6 +733,7 @@ $c98:#989898;
      background: #f4f4f4;
      padding:0 5%;
      @extend .f18;
+     border-bottom: #dddddd solid 1px;
      .downOrUP{
       @include position(1);
       right:8%;
@@ -753,42 +760,39 @@ $c98:#989898;
   }
 }
 .brandBox{
-  padding:10px 0 10px 10px; 
+  padding:10px 0; 
 }
 .brandList{
   @include ovh(hidden);
   li{
     @include float(left);
-    @include screen(650px, 1280px){
-        width:25%;
-      }
-    width:50%;
-    padding:0 10px 20px 0;
+    width:24%;
+    height: 430px;
+    margin:0 5px 20px;
     @include prefixer(box-sizing, border-box, webkit o moz);
     text-align:center;
+    display:inline;
+    background:$white;
     .brandImg{
       display: block;
       @include ovh(hidden);
-      img{width: 100%;}
+      img{width: 100%; max-width: 100%;}
     }
     .brandName{
        display: block;
-       background:$white;
        padding:8%;
-       @extend .f12;
-       .bdName{
+       @extend .f16;
+       p{
+        line-height: 25px;
+        &.bdName{
         padding:15px 0 0;
         font-weight: bold;
        }
-       @include max-screen(320px){
-        img{height:15px;}
-      }
-       @include screen(330px, 640px){
-        img{height:20px;}
-      }
-       @include screen(650px, 1280px){
+       &.dbTxt{
+        /* height: auto; */
+       }
         img{height:auto;}
-      }
+       }
     }
   }
 }
@@ -1651,8 +1655,8 @@ display:block;
 .wenText{
   padding:0 5%;
   line-height: 25px;
-  text-indent: 24px;
-   padding:0 0 20px;
+   padding:0 0 5px;
+   text-align: justify;
   p{
     text-indent: 24px;
     padding:0 0 20px;
@@ -1732,7 +1736,7 @@ display:block;
 .shitiAddress{padding:7% 5%; width:960px; margin:auto; @include prefixer(box-sizing, border-box, webkit o moz);}
 .shoppName{
   @include height(false, auto, 30px);
-  padding:0 0 4%;
+  padding:0 0 2%;
   @extend .f20;
 }
 .shoppadd{
@@ -1779,13 +1783,11 @@ display:block;
         width:70%;
         padding:0 0 0 5px;
         color:$black;
+        line-height: 32px;
         .txt{@extend .f18;}
         .txt_s{
           white-space:nowrap; 
           @extend .f12;
-          @include max-screen(320px){
-            letter-spacing:-1px;
-          }
         }
       }
     }
@@ -1810,9 +1812,9 @@ display:block;
     background:#fcfcfc;
     padding:1%
   }
-  img{
+  /* img{
     margin-bottom: 10px;
-  }
+  } */
 }
 .no-data{ @extend .tac; line-height: 100px;}
 .otherName{
@@ -1875,6 +1877,46 @@ display:block;
       }
     }
   }
+    /* for product sort style */
+&.sortList{
+  li{
+    @include height(false, auto, 40px);
+    .oneName{
+     display: block;
+     @include height(false, 40px, 40px);
+     @include position(0);
+     background: #f4f4f4;
+     padding:0 5%;
+     @extend .f18;
+     border-bottom:#dddddd solid 1px;
+    }
+    ul{
+      padding:0;
+    }
+    li{
+      @include ovh(hidden);
+      padding:0;
+      float:none;
+       .oneName{background: $white; @extend .f16;}
+       ul{
+        padding:0 5%;
+        display: none;
+       }
+       li{
+        @include float(left);
+        width:50%;
+        @extend .f14;
+        a{
+          border:none;
+        }
+       }
+       &.open{
+        ul{display:block;}
+       }
+    }
+  }
+}
+
 }
 .listmore_shop .no-data{display:none}
 .listmore_shop .open .no-data{display:block}
@@ -1889,6 +1931,7 @@ display:block;
   border-right:$cd 1px solid;
   border-bottom:$cd 1px solid;
   @include prefixer(transform, rotate(45deg), ms o moz webkit);
+  z-index:2;
 }
 .popBox{
   @include position(2);
