@@ -12,15 +12,26 @@ define(['events'], function(events){
   return function(view, service){
     events.init();
     $(document)
-      .on('click', '[data-glassFrame] a, [data-glassLens] a, [data-moreLens] a', function(){
+      .on('click', '[data-glassFrame] a, [data-glassLens] a', function(){
         var $this = $(this);
         if(!$this.hasClass('lastA')){
           $this.addClass('focus').siblings().removeClass('focus');
         }
       })
+      .on('click', '[data-moreLens] a', function(){
+        var $this = $(this);
+        if($this.hasClass('focus')){
+          $this.removeClass('focus');
+        }else{
+          $this.addClass('focus').siblings().removeClass('focus');
+          $('#maskLayer').hide();
+          $('#moreSelectWrap').hide();
+        }
+      })
       //更多镜片
       .on('click', '#selectMore', function(){
         var $e = $('#moreSelectWrap');
+        $('#maskLayer').show();
         $e.toggle($e[0].style.display == "none");
       })
       //加入购物车
