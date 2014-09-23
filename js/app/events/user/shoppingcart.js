@@ -27,7 +27,14 @@ define(['events'], function(events){
       })
       //全选
       .on('click', '#selectAll', function(){
-        $('input[type=checkbox]').trigger('click');
+        var totalPayPrice = 0;
+        $.each($('.proCarList li'), function(){
+          var $this = $(this);
+          $(this).find('input[type=checkbox]')[0].checked = true;
+          totalPayPrice += (parseFloat($this.attr('data-price')) * parseInt($this.attr('data-count'), 10));
+          $('#totalPay').text(totalPayPrice);
+          metaApplyPayBtn(totalPayPrice > 0);
+        });
       })
       //结算
       .on('click', '#applyPayBtn', function(){
