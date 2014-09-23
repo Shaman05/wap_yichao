@@ -22,7 +22,9 @@ define(['events'], function(events){
             if(d.data && d.data.length > 0){
               window.localStorage.setItem('lastSearchData', JSON.stringify({
                 keyword: keyword,
-                count: d.nPageCount,
+                total: d.nPageCount,
+                pageIndex: 1,
+                pageSize: APP.config.pageSize,
                 list: d.data
               }));
               window.location.hash = '#ac=search.list';

@@ -12,13 +12,17 @@ define([
       model: new api,
       ready: function(data){
         var keyword = data.keyword;
-        var p = data.PageIndex || 1;
+        if(!data.PageIndex){
+          data.PageIndex = 1;
+        }
         if(keyword){
-          service.goodsSearch(keyword, p, function(d){
+          service.goodsSearch(keyword, data.PageIndex, function(d){
             if(d.data && d.data.length > 0){
               window.localStorage.setItem('lastSearchData', JSON.stringify({
                 keyword: keyword,
-                count: d.nPageCount,
+                total: d.nPageCount,
+                pageIndex: data.PageIndex,
+                pageSize: APP.config.pageSize,
                 list: d.data
               }));
             }
@@ -33,6 +37,10 @@ define([
           lastData = JSON.parse(lastData);
           $('#searchKeyword').text(lastData.keyword);
           $('#searchResult').html(renderFn({
+            keyword: lastData.keyword,
+            total: lastData.total,
+            pageIndex: lastData.pageIndex,
+            pageSize: lastData.pageSize,
             list: lastData.list
           }));
         }
