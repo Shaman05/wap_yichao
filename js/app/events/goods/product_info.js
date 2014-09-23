@@ -37,7 +37,7 @@ define(['events'], function(events){
       //加入购物车
       .on('click', '#addToCartBtn', function(){
         service.addToCart({
-            UserTicket:"23232"  //未登录用户票据 待确认
+            UserTicket: "23232"  //未登录用户票据 待确认
           , GoodsID: $('#GoodsID').val()  //商品ID
           , GoodsName: $('#GoodsName').val()  //商品名称
           , GoodsTypeID: $('#GoodsTypeID').val()  //商品类型
