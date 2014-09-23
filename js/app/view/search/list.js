@@ -11,12 +11,13 @@ define([
       id: 'home-page',
       model: new api,
       ready: function(data){
+        var _this = this;
         var keyword = data.keyword;
         if(!data.PageIndex){
           data.PageIndex = 1;
         }
-        if(keyword && data.PageIndex > 1){
-          this.model.goodsSearch(keyword, data.PageIndex, function(d){
+        if(!!keyword){
+          _this.model.goodsSearch(keyword, data.PageIndex, function(d){
             if(d.data && d.data.length > 0){
               window.localStorage.setItem('lastSearchData', JSON.stringify({
                 keyword: keyword,
@@ -25,10 +26,12 @@ define([
                 pageSize: APP.config.pageSize,
                 list: d.data
               }));
+              _this.loadSessionData();
             }
           });
+        }else{
+          _this.loadSessionData();
         }
-        this.loadSessionData();
       },
       loadSessionData: function(){
         var lastData = window.localStorage.getItem('lastSearchData');
