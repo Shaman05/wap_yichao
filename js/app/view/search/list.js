@@ -11,6 +11,7 @@ define([
       id: 'home-page',
       model: new api,
       ready: function(data){
+        $('#searchNote').hide();
         var _this = this;
         var keyword = data.keyword;
         if(!data.PageIndex){
@@ -38,7 +39,6 @@ define([
         if(lastData){
           var renderFn = _.artTemplate.compile(tpl);
           lastData = JSON.parse(lastData);
-          $('#searchKeyword').text(lastData.keyword);
           $('#searchResult').html(renderFn({
             keyword: lastData.keyword,
             total: lastData.total,
@@ -46,6 +46,8 @@ define([
             pageSize: lastData.pageSize,
             list: lastData.list
           }));
+          $('#searchKeyword').text(lastData.keyword);
+          $('#searchNote').show();
         }
       }
     })
