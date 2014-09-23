@@ -27,7 +27,7 @@ define(['events'], function(events){
                 pageSize: APP.config.pageSize,
                 list: d.data
               }));
-              window.location.hash = '#ac=search.list';
+              window.location.hash = '#ac=search.list&keyword=' + keyword + '&PageIndex=' + 1;
             }else{
               $('#searchKeyword').text(keyword);
               $('#noResult').show();

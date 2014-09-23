@@ -15,8 +15,8 @@ define([
         if(!data.PageIndex){
           data.PageIndex = 1;
         }
-        if(keyword){
-          service.goodsSearch(keyword, data.PageIndex, function(d){
+        if(keyword && data.PageIndex > 1){
+          this.model.goodsSearch(keyword, data.PageIndex, function(d){
             if(d.data && d.data.length > 0){
               window.localStorage.setItem('lastSearchData', JSON.stringify({
                 keyword: keyword,
