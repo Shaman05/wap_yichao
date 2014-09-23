@@ -56,6 +56,9 @@
     pageName: {
       map: '网站地图',
       api: '接口测试',
+      join: {
+        join: '实体店加盟'
+      },
       article: {
         info: '',
         list: '文章分类',

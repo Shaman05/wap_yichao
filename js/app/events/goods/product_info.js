@@ -38,20 +38,20 @@ define(['events'], function(events){
       .on('click', '#addToCartBtn', function(){
         service.addToCart({
             UserTicket:"23232"
-          , GoodsID:"23"
+          , GoodsID: $('#goodsId').val()
           , GoodsName: $('#GoodsName').val()
-          , GoodsTypeID:"23"
-          , SkuName:"23"
-          , SkuCode:"23"
-          , Qty:"23"
-          , IsChangeQty:"23"
+          , GoodsTypeID: $('#goodsTypeId').val()
+          , SkuName: "23"
+          , SkuCode: "23"
+          , Qty: "23"
+          , IsChangeQty: "23"
           , SalePrice: parseFloat($('#SalePrice').val())
-          , OriginalPrice:"23"
-          , LevelDiscount:"23"
-          , PromotionID:"23"
-          , Point:"23"
-          , Weight:"23"
-          , ParentID:"23"
+          , OriginalPrice: "23"
+          , LevelDiscount: "23"
+          , PromotionID: "23"
+          , Point: "23"
+          , Weight: "23"
+          , ParentID: "23"
           , IsChild:"23"
           , Expired:"23"
           , PrescriptionsID:"23"
