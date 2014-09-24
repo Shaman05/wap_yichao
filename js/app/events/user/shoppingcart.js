@@ -51,28 +51,46 @@ define(['events'], function(events){
       .on('click', '.affirm', function(){
         var $this = $(this);
         var $wrap = $this.parents('.ygdWrap');
-        var userInfo = window.sessionStorage.getItem('userInfo');
-        var options = {
-            RightSph: $wrap.find('[name=RightSph]').val()  //右眼度数
-          , RightCyl: $wrap.find('[name=RightCyl]').val()  //右眼散光
-          , RightAxis: $wrap.find('[name=RightAxis]').val()  //右眼轴位
-          , LeftSph: $wrap.find('[name=LeftSph]').val()  //左眼度数
-          , LeftCyl: $wrap.find('[name=LeftCyl]').val()  //左眼散光
-          , LeftAxis: $wrap.find('[name=LeftAxis]').val()  //左眼轴位
-          , PD: $wrap.find('[name=PD]').val()  //瞳距
-          , RealName: userInfo ? JSON.parse(window.sessionStorage.getItem('userInfo'))[0]['UserName'] : ''  //验光单姓名
-        };
-        service.prescriptionsAdd(options, function(d){
-          alert(d.message);
-          if(d.status == '1'){
-            $('#maskLayer').hide();
-            $wrap.hide();
-          }
-        });
+        var leftData = checkLeftInput();
+        var rightData = checkRightInput();
+        if(leftData.status && rightData.status){
+          var userInfo = window.sessionStorage.getItem('userInfo');
+          var options = {
+              RightSph: $wrap.find('[name=RightSph]').val()  //右眼度数
+            , RightCyl: rightData.RightCyl  //右眼散光
+            , RightAxis: rightData.RightAxis  //右眼轴位
+            , LeftSph: $wrap.find('[name=LeftSph]').val()  //左眼度数
+            , LeftCyl: leftData.LeftCyl  //左眼散光
+            , LeftAxis: leftData.LeftAxis  //左眼轴位
+            , PD: $wrap.find('[name=PD]').val()  //瞳距
+            , RealName: userInfo ? JSON.parse(window.sessionStorage.getItem('userInfo'))[0]['UserName'] : ''  //验光单姓名
+          };
+          service.prescriptionsAdd(options, function(d){
+            alert(d.message);
+            if(d.status == '1'){
+              $('#maskLayer').hide();
+              $wrap.hide();
+            }
+          });
+        }
       })
       .on('click', '.cancel', function(){
         $('#maskLayer').hide();
         $(this).parents('.ygdWrap').empty().hide();
+      })
+      .on('change', '[name=RightCyl]', function(){
+        var $RightAxis = $('[name=RightAxis]')[0];
+        $RightAxis.disabled = $(this).val() == "0.00";
+        if($(this).val() == "0.00"){
+          $RightAxis.selectedIndex = 0;
+        }
+      })
+      .on('change', '[name=LeftCyl], [name=RightCyl]', function(){
+        var $LeftAxis = $('[name=LeftAxis]')[0];
+        $LeftAxis.disabled = $(this).val() == "0.00";
+        if($(this).val() == "0.00"){
+          $LeftAxis.selectedIndex = 0;
+        }
       });
   };
 
@@ -82,6 +100,54 @@ define(['events'], function(events){
     }else{
       $('#applyPayBtn').addClass('disab');
     }
+  }
+
+  //检测左眼的输入
+  function checkLeftInput(){
+    var result = {
+      status: false,
+      LeftCyl: '0.00',
+      LeftAxis: 0
+    };
+    var LeftCyl = $('[name=LeftCyl]').val();
+    var LeftAxis = $('[name=LeftAxis]').val();
+    if(LeftCyl == '0.00'){
+      result.status = true;
+    }else{
+      if(LeftAxis == '0'){
+        result.status = false;
+        alert('请选择左眼轴位');
+      }else{
+        result.status = true;
+        result.LeftCyl = LeftCyl;
+        result.LeftAxis = LeftAxis;
+      }
+    }
+    return result;
+  }
+
+  //检测右眼的输入
+  function checkRightInput(){
+    var result = {
+      status: false,
+      RightCyl: '0.00',
+      RightAxis: 0
+    };
+    var RightCyl = $('[name=RightCyl]').val();
+    var RightAxis = $('[name=RightAxis]').val();
+    if(RightCyl == '0.00'){
+      result.status = true;
+    }else{
+      if(RightAxis == '0'){
+        result.status = false;
+        alert('请选择右眼轴位');
+      }else{
+        result.status = true;
+        result.RightCyl = RightCyl;
+        result.RightAxis = RightAxis;
+      }
+    }
+    return result;
   }
 
 });
