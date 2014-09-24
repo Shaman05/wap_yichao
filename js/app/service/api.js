@@ -261,6 +261,15 @@ define(['./base'], function (base) {
         callApi.call(this, GoodsHandler, data, callback);
       },
 
+      //新增验光单
+      prescriptionsAdd: function(options, callback){
+        var data = {
+          OP: "MemberPrescriptionsAdd"
+        };
+        data = $.extend(data, options);
+        callApi.call(this, GoodsHandler, data, callback);
+      },
+
       //历史验光单, 只获取最新的3条
       prescriptionsList: function(callback){
         var data = {

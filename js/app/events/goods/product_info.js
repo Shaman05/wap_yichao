@@ -66,6 +66,12 @@ define(['events'], function(events){
         });
       });
 
+    function checkSelect(){
+      return {
+
+      };
+    }
+
   };
 
 });

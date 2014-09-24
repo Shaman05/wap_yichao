@@ -6,14 +6,14 @@
             <input value="<%= list[i].CartID %>" type="checkbox" id="radio-<%= i %>" name="radio-<%= i %>-set" class="regular-radio big-radio" />
             <label for="radio-<%= i %>"></label>
         </span>
-        <span class="carProImg"><a href="javascript:;"><img src="<%= list[i].SmallImage %>" alt=""></a></span>
+        <span class="carProImg"><a href="#ac=goods.product_info&GoodsID=<%= list[i].GoodsID %>"><img src="<%= list[i].SmallImage %>" alt=""></a></span>
         <div class="carContent">
-			<span class="carProTitle"><a href="javascript:;"><%= list[i].GoodsName %>
+			<span class="carProTitle"><a href="#ac=goods.product_info&GoodsID=<%= list[i].GoodsID %>"><%= list[i].GoodsName %>
             </a><em class="cpPrice"><%= list[i].SalePrice %><br/>X<%= list[i].Qty %></em></span>
             <p class="sezhi">规格：<%= list[i].SkuName %></p>
         </div>
         <p class="carBtnBox">
-            <a href="javascript:;">有验光单输入</a><a href="javascript:;" class="gntbg">没验光单点我</a>
+            <a href="javascript:" data-selectYGD>有验光单输入</a><a href="javascript:" class="gntbg" data-editYGD>没验光单点我</a>
         </p>
         <div class="ygdWrap"></div>
     </li>

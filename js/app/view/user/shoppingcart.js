@@ -3,9 +3,10 @@
 define([
   'app/view/baseView',
   'text!app/template/user/ajax_cartList.html',
-  'text!app/template/user/yanGuangDan.html',
+  'text!app/template/user/yanGuangDan_edit.html',
+  'text!app/template/user/yanGuangDan_show.html',
   'app/service/api'
-], function(baseView, tpl, yanGDTpl, model){
+], function(baseView, tpl, yanEditTpl, yanShowTpl, model){
 
   return Backbone.View.extend(
     $.extend(baseView, {
@@ -26,6 +27,9 @@ define([
             goodsId: data.goodsId
           }));
         });
+      },
+      toEditYGD: function($wrap){
+        $wrap.html(yanEditTpl).show();
       }
     })
   );
