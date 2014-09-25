@@ -72,7 +72,9 @@ $c98:#989898;
 .f25{
  font-size: 1.5625em;
 }
-
+.f30{
+  font-size:1.875em;
+}
 .f15{
   font-size: 1.5em;
 }
@@ -176,13 +178,16 @@ $c98:#989898;
    @include position(0);
    top:20%;
 }
-.navBar .home{
-  @include width(32px); @include height(true,31px);
-   @extend .iconsBg; float: right; background-position:2px -310px; 
+.home{
+  @include width(32px); 
+  @include height(true,31px);
+   @extend .iconsBg; 
+   float: right; 
+   background-position:2px -310px; 
    margin-top:9px; display: inline;
     background-size: 38px auto;
 }
-.navBar .txt{ @include height(false,auto,50px); color:#363636; font-size:1.5em; @extend .tac;}
+.navBar .txt{ @include height(false,auto,50px); color:#363636; @extend .f25; @extend .tac;}
 
 /* product style */
 #myOrderList,#proWapper{
@@ -201,6 +206,9 @@ $c98:#989898;
         margin-bottom: 20px;
         display: inline;
         @include prefixer(box-sizing, border-box, o webkit moz);
+        p{
+          @include height(false,40px,20px);
+        }
         .proImg{
            display:block;
            @include ovh(hidden);
@@ -209,10 +217,12 @@ $c98:#989898;
         }
         .proName{
             padding-top: 5px;
-             @include height(false,40px,20px);
             color:#000000;
             em{color:$red;}
             @include ovh(hidden);
+            a{
+              display: block;
+            }
         }
     }
 }
@@ -247,11 +257,14 @@ $c98:#989898;
 /*! footer style  */
 #footer{
    .footerNav{
-    border-top:#d3d3d3 solid 1px; border-bottom:#d3d3d3 solid 1px; /* margin-top:30px; */ padding:15px 12px; @include height(true,25px);
+    border-top:#d3d3d3 solid 1px; 
+    border-bottom:#d3d3d3 solid 1px; /* margin-top:30px; */ 
+    padding:15px 20px; 
+    @include height(true,32px, auto);
     .footerNavList li{
         @include float(left);
         @include ovh(hidden);
-        @include height(false,auto,25px);
+        @include height(false,auto,32px);
         padding:0 10px 0 5px;
         a{
             font-size:1.1em;
@@ -259,6 +272,21 @@ $c98:#989898;
         }
         &.backTop{
             @include float(right);
+            .buttonGray{
+             @include height(false, 32px, 30px);
+             padding:0 15px;
+            }
+        }
+         &.lastHome{
+           @include float(right);
+           padding:0;
+           .home{
+            float:none;
+            display:inline-block;
+            margin:0;
+            background-size: 37px auto;
+            background-position: 2px -304px;
+           }
         }
     }
    }
@@ -297,6 +325,7 @@ $c98:#989898;
   font-family:$fontYaHei;
   background: #7e7e7e;
   color:$white;
+  display:inline-block;
   border:none;
 }
 .buttonGreen{
@@ -747,7 +776,7 @@ $c98:#989898;
       @include ovh(hidden);
        .oneName{background: $white; @extend .f18;}
        ul{
-        padding:0 5%;
+        padding:1% 5%;
        }
        li{
         @include float(left);
@@ -823,6 +852,9 @@ $c98:#989898;
       @extend .tac;
       margin:5px 0 0;
       @extend .f18;
+      em{
+        padding:0 20px;
+      }
       i{
         text-decoration: line-through;
       }
@@ -900,7 +932,7 @@ $c98:#989898;
     color:#3d3d3d;
     padding: 0 3%;
     line-height: 30px;
-    &:hover{
+    &.focus{
       background:#b81c2a;
       color:$white;
     }
@@ -979,7 +1011,7 @@ $c98:#989898;
 .proCarList{
   &.proCarList_ord{
     li{
-      padding:0 2% 3% ;
+      padding:0 4% 2% ;
       border:none;
     }
   }
@@ -1019,7 +1051,7 @@ $c98:#989898;
       width:72%;
       padding:0 0 0 15px;
       &.orderCon{
-        width:82%;
+        width:83%;
         .carProTitle{
            a{
           width:70%;
@@ -1496,8 +1528,8 @@ display:block;
 .order_state{
   @include ovh(hidden);
   border-bottom:#cccccc solid 1px;
-  padding:5%;
-  margin-bottom: 5%;
+  padding:3% 2%;
+  margin: 0 2% 3%;
   &.mrbn{margin-bottom:0;}
   .buttonGn,.buttonYw{@extend .f25; padding:1% 10%;}
   &.bdbN{
@@ -1514,9 +1546,10 @@ display:block;
   .fr{
     width:30%;
     /* padding:3% 0 0; */
+    height: 40px;
     @extend .tar;
     .buttonGray_01{
-      padding:4% 10%;
+      padding:2% 10%;
       color:$white;
        @extend .f20
     }
@@ -1540,7 +1573,7 @@ display:block;
 
 .allPrices{
   border-left:$red solid 1px;
-  padding: 5% 5% 5% 10%;
+  padding: 2% 4%;
   @include ovh(hidden);
   .fl{
     width:60%;
@@ -1641,7 +1674,7 @@ display:block;
     a{
       display: block;
       @include ovh(hidden);
-      padding:3% 5%;
+      padding:2% 3% 2% 2%;
       line-height: 25px;
       .fr{font-family:$fontCn; font-weight:bold;}
     }
@@ -1662,7 +1695,7 @@ display:block;
     padding:0 0 20px;
   }
   img{
-    width:100%;
+    max-width:80%;
     margin:10px 0;
   }
 }
@@ -1684,14 +1717,18 @@ display:block;
     }
   }
 }
-.searchNote,.search{width:80%;  margin:auto;}
+.search{width:80%; margin:auto;}
 .searchNote{
   padding:4% 0;
   em{color:$grayDark}
   line-height: 25px;
+  &.padTwo{
+    padding:15px 7px;
+  }
 }
 .search{
   padding:5% 0 8%;
+  text-align: center;
   label{
     @include inline-block;
     &.searchBtn{
@@ -1712,8 +1749,8 @@ display:block;
       input[type="text"]{
         height: 28px;
         line-height: 28px;
-        padding-left:5%;
-        width:95%;
+        padding-left:2%;
+        width:98%;
       }
     }
   }
@@ -1733,7 +1770,7 @@ display:block;
     }
   }
 }
-.shitiAddress{padding:7% 5%; width:960px; margin:auto; @include prefixer(box-sizing, border-box, webkit o moz);}
+.shitiAddress{padding:2%; width:960px; margin:auto; @include prefixer(box-sizing, border-box, webkit o moz);}
 .shoppName{
   @include height(false, auto, 30px);
   padding:0 0 2%;
@@ -1796,12 +1833,12 @@ display:block;
 .updown_go{
   display:block;
   @extend .tac;
-  padding:4%;
+  padding:2%;
   em{
     color:#959595;
     @include prefixer(transform, rotate(90deg), ms o moz webkit);
     @include inline-block;
-    margin:5% 0 0;
+    margin:3% 0 0;
   }
 }
 .shitiInfos{
@@ -1867,7 +1904,7 @@ display:block;
     }
     ul{
       background: $white;
-      padding:3% 10% 2%;
+      padding:1% 5%;
       @include ovh(hidden);
       li{
         @include height(false, 25px, 25px);
@@ -1955,24 +1992,23 @@ display:block;
 }
 
 /***************************** loading **********************************/
-#loading {
-  @include position(1);
+.loading {
+  @include position(2);
   top: 0;
   left: 0;
-  z-index: 1100;
+  z-index: 400;
   color: $white;
   background-color: #333;
   background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
-  line-height: 100%; 
   @extend .tac;
   @extend .f16;
   }
 
 #fixedBox {
    @include position(1);
-  left: 40%;
+  left: 48%;
   top: 40%;
   width: 64px;
   height: 64px; }
@@ -2084,14 +2120,21 @@ header .popBox{
 /* Carousel */
 .js-slider{overflow:hidden;position:relative}
 .js-slider-img-wrap{overflow:hidden}
-.js-slider-h .js-slider-img{float:left}
+.js-slider-h .js-slider-img{float:left ; text-align:center;}
 .js-slider-num-wrap{position:absolute;bottom:5px;left:50%;z-index:99; margin-left:-39px}
 .js-slider-num{float:left}.js-slider-num-cur{color:#ff0000}
-.slider-pic img{width:100%;height:100%;max-width:100%;max-height:100%;}
 .slider-num li{margin-left: 4px;width: 12px;height: 12px;border-radius: 6px;text-indent: -9999px;background-color: #b9bbb8;}
 .slider-num .js-slider-num-cur{background-color:#f00;}
 /* Carousel */
-
+.indexIMGS .slider-pic img{
+  max-width:960px; max-height:100%;
+}
+.proInfoImg .slider-pic img{
+  max-width:600px; max-height:100%;
+}
+.entityImgs .slider-pic img{
+  max-width:960px; max-height:100%;
+}
 
 
 
@@ -2276,3 +2319,131 @@ header .popBox{
     border-left: solid 1px #b5b5b5;
 }
 /* //zidingyi alert */
+/* join style */
+.bannerFont{
+  height: 270px;
+  background: url(/images/jmdb01.jpg) no-repeat;
+  background-size:100% auto;
+}
+.joinIntroduce{
+  @include height(false, auto ,28px);
+  padding:4%;
+  text-align: justify;
+}
+.joinNames{
+  @include height(false,30px, 30px);
+  text-align: center;
+  color:$white;
+  background: $red;
+  display: block;
+}
+.brandContrast{
+  padding:2%;
+}
+.tbl
+{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+}
+.tbl thead td
+{ 
+   @extend .f30;
+    border: none;
+    font-weight: bold;
+    line-height: 65px;
+}
+
+.tbl tbody td
+{
+  @include borders(1px, solid, #dbdbdb);
+    min-height: 35px;
+    padding: 5px 0px;
+}
+.tbl tbody td{
+  img{
+    max-width: 100%;
+  }
+}
+.tbl tfoot td
+{
+    text-align: left;
+    padding-top: 20px;
+}
+
+.tbl td.yc
+{
+    color: $red;
+    font-weight: bold;
+}
+.contrastSource{
+  height: 375px;
+  background:#f9f9f9 url(/images/jmdb02.jpg) no-repeat center center;
+}
+.trafficSources{
+  @include ovh;
+   @include height(true, 80px, auto);
+   padding:20px 0;
+  width:50%;
+  margin:auto;
+  .right{
+     @extend .fl;
+    width:40%;
+    text-align: center;
+    @include height(false, 40px , 40px);
+    @extend .f30;
+    font-weight: bold;
+  }
+  .compart_content{
+    @extend .fl;
+    width:60%;
+    @include height(true, atuo, 24px);
+  }
+}
+.joinContainer{
+  padding:2%;
+}
+.joinImgs{
+  padding:2% 2% 5%;
+  text-align: center;
+  img{
+    max-width:100%;
+  }
+}
+.lxfs
+{
+   @include ovh;
+   padding:2% 10%;
+   @include prefixer(box-sizing, border-box, webkit o moz);
+}
+
+.lxfs .info
+{
+    color: #333;
+}
+
+.lxfs .info ul
+{
+  @include ovh;
+}
+.lxfs .info ul li
+{
+    @include float;
+    width: 35%;
+    padding:6% 0 0 5%;
+    @include prefixer(box-sizing, border-box, webkit o moz);
+    &.mx{
+      width: 35%;
+    }
+    &.wx
+      {
+          width:30%;
+          @include float(right);
+          padding:0;
+          img{
+            max-width: 100%;
+          }
+      }
+}

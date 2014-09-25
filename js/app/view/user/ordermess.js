@@ -10,9 +10,17 @@ define([
       id: 'home-page',
       model: new model,
       ready: function(data){
-        if(data.TotalAmount){
-          $('#totalPay').text(data.TotalAmount);
-        }
+        var _this = this;
+        _this.model.getMemberAddress('', '', function(d){
+          if(d.data && d.data.length > 0){
+
+            if(data.TotalAmount){
+              $('#totalPay').text(data.TotalAmount);
+            }
+          }else{
+            util.toPage('user.address');
+          }
+        });
       }
     })
   );

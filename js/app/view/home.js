@@ -49,7 +49,7 @@ define([
           }))
           .slider({
             direction: "left",
-            height: 250
+            height: 200
           });
         });
       }
