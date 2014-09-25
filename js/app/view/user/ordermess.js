@@ -15,7 +15,7 @@ define([
           if(d.data && d.data.length > 0){
 
             if(data.TotalAmount){
-              $('#totalPay').text(data.TotalAmount);
+              $('#totalPay').text(window.sessionStorage.getItem('TotalAmount') || '0.00');
             }
           }else{
             util.toPage('user.address');

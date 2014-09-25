@@ -39,7 +39,8 @@ define(['events'], function(events){
       //结算
       .on('click', '#applyPayBtn', function(){
         if(!$(this).hasClass('disab')){
-          util.toPage('user.ordermess&TotalAmount=' + parseFloat($('#totalPay').text()));
+          window.sessionStorage.setItem('TotalAmount', parseFloat($('#totalPay').text()));
+          util.toPage('user.ordermess');
         }
       })
       .on('click', '[data-editYGD]', function(){

@@ -11,6 +11,17 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
+
+    $(document).on('click', '#applyAddAddress', function(){
+      //todo
+      var options = {};
+      service.memberAddressAdd(options, function(d){
+        alert(d);
+        if(d.status == '1'){
+          util.toPage('user.ordermess');
+        }
+      });
+    });
   };
 
 });
