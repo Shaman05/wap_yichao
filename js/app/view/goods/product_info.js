@@ -20,8 +20,10 @@ define([
         //商品信息
         _this.model.goodsInfo(data.GoodsID, function(d){
           var renderFn = _.artTemplate.compile(infoTpl);
-          $('#proInfoBox').html(renderFn(d.data[0]));
-          data.commentsTimes = d.data[0]['CommentTimes'];
+          var info = d.data[0];
+          $('#proInfoBox').html(renderFn(info));
+          data.commentsTimes = info['CommentTimes'];
+          $('#details_img').html(info['Description']);
           _this.getComments(data);
         });
       },
