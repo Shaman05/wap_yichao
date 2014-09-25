@@ -296,6 +296,34 @@ define(['./base'], function (base) {
         };
         data = $.extend(data, cartOption);
         callApi.call(this, OrderCartHandler, data, callback);
+      },
+
+      //新增收货地址
+      memberAddressAdd: function(addressOption, callback){
+        var data = {
+          OP: "MemberAddressAdd"
+        };
+        data = $.extend(data, addressOption);
+        callApi.call(this, OrderHandler, data, callback);
+      },
+      //获取收货地址
+      getMemberAddress: function(Province, City, callback){
+        var data = {
+          OP: "MemberAddressList",
+          Province: Province,
+          City: City,
+          PageIndex: 1,
+          PageSize: pageSize
+        };
+        callApi.call(this, OrderHandler, data, callback);
+      },
+      //获取收货地址详细信息
+      getMemberAddressInfo: function(AddID, callback){
+        var data = {
+          OP: "MemberAddressByID",
+          AddID: AddID
+        };
+        callApi.call(this, OrderHandler, data, callback);
       }
     })
   );
