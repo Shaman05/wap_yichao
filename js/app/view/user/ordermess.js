@@ -13,10 +13,11 @@ define([
         var _this = this;
         _this.model.getMemberAddress('', '', function(d){
           if(d.data && d.data.length > 0){
-
-            if(data.TotalAmount){
-              $('#totalPay').text(window.sessionStorage.getItem('TotalAmount') || '0.00');
-            }
+            $('#totalPay').text(window.sessionStorage.getItem('TotalAmount') || '0.00');
+            var address = d.data[0];
+            $('#fullName').text(address['FullName']);
+            $('#mobile').text(address['Mobile']);
+            $('#detailAddress').text(address['Street']);
           }else{
             $('.addBtnbox').show();
           }

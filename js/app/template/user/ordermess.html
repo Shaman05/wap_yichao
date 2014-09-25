@@ -2,16 +2,14 @@
 	<div class="userAdress">
 		<div class="userAdL">
 			<span class="adIcon"></span>
-            <span class="adContent">
-                <% if(userName){ %>
-                <h3 class="nameAndPhone"><em><%= userName %></em><%= userTel %></h3>
-                <p class="adText">收货地址：<%= detailAddress %></p>
-                <% } %>
+            <span class="adContent" id="defualtAddressBlock">
+                <h3 class="nameAndPhone"><em id="fullName"></em><span id="mobile"></span></h3>
+                <p class="adText">收货地址：<span id="detailAddress"></span></p>
             </span>
 		</div>
 		<span class="adNext"><a href="#ac=user.address">></a></span>
 	</div>
-    <div class="addBtnbox"><button id="toAddAddress" type="button" class="buttonRed buttonRed_add">新增收货地址</button></div>
+    <div class="addBtnbox" style="display: none"><button id="toAddAddress" type="button" class="buttonRed buttonRed_add">新增收货地址</button></div>
 	<div class="payWay">
 		<p>支付配送方式</p>
 		<p class="payBtn" id="paymentType">
