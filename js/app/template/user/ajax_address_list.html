@@ -1,0 +1,18 @@
+<% if(list.length > 0){ %>
+    <% for(var i = 0; i < list.length; i++){ %>
+    <div class="userAdress">
+        <div class="userAdL">
+            <span class="adIcon"></span>
+                <span class="adContent">
+                    <h3 class="nameAndPhone"><em><%= list[i].FullName %></em><%= list[i].Mobile %></h3>
+                    <p class="adText">收货地址：<%= list[i].Province %><%= list[i].City %><%= list[i].Area %><%= list[i].Street %></p>
+                </span>
+        </div>
+        <span class="adNext"><input type="radio" name="address" value="<%= list[i].AddID %>"/></span>
+    </div>
+    <% } %>
+<% }else{ %>
+<div class="no-data">
+    <p>暂无收货地址</p>
+</div>
+<% } %>
