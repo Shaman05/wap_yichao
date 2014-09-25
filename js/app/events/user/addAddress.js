@@ -28,7 +28,7 @@ define(['events'], function(events){
         , Mobile: Mobile || ''
         , Email: ""
         , AreaID: ""
-        , IsDefault: 1
+        , IsDefault: 0
       };
       checkInput() && service.memberAddressAdd(options, function(d){
         alert(d.message);

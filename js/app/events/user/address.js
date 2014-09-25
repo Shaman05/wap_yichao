@@ -12,9 +12,13 @@ define(['events'], function(events){
   return function(view, service){
     events.init();
 
-    $(document).on('click', '#toAddAddress', function(){
-      util.toPage('user.addAddress');
-    });
+    $(document)
+      .on('click', '#toAddAddress', function(){
+        util.toPage('user.addAddress');
+      })
+      .on('click', '[nam=address]', function(){
+        var $this = $(this);
+      });
   };
 
 });
