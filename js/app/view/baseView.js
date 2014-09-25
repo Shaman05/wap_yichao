@@ -42,7 +42,12 @@ define([
         return false;
       }
       if(_.indexOf(config.noLastHashPage, ac) < 0){
-        window.sessionStorage.setItem('lastHash', ac);
+        var params = util.getParam();
+        var tempArr = [ac];
+        for(var p in params){
+          p != '#ac' && tempArr.push(p + '=' + params[p]);
+        }
+        window.sessionStorage.setItem('lastHash', tempArr.join('&'));
       }
       if(_.indexOf(config.noHeader, ac) < 0){
         tpl += header;
