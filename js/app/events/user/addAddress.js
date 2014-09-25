@@ -13,15 +13,34 @@ define(['events'], function(events){
     events.init();
 
     $(document).on('click', '#applyAddAddress', function(){
-      //todo
-      var options = {};
-      service.memberAddressAdd(options, function(d){
-        alert(d);
+      var Street = $('[name=Street]').val();
+      var Zip = $('[name=Zip]').val();
+      var FullName = $('[name=FullName]').val();
+      var Mobile = $('[name=Mobile]').val();
+      var options = {
+          Province: ""
+        , City: ""
+        , Area: ""
+        , Street: Street || ''
+        , Zip: Zip || ''
+        , FullName: FullName || ''
+        , Tel: ""
+        , Mobile: Mobile || ''
+        , Email: ""
+        , AreaID: ""
+        , IsDefault: 1
+      };
+      checkInput() && service.memberAddressAdd(options, function(d){
+        alert(d.message);
         if(d.status == '1'){
           util.toPage('user.ordermess');
         }
       });
     });
   };
+
+  function checkInput(){
+    return true;
+  }
 
 });

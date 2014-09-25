@@ -74,8 +74,8 @@
         sort: '所有商品分类'
       },
       user: {
-        addAddress: '填写订单信息',
-        address: '填写订单信息',
+        addAddress: '新增收货地址',
+        address: '现有收货地址',
         city: '选择城市',
         login: '用户登录',
         myorder: '我的订单',
