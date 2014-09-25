@@ -13,6 +13,9 @@ define(['events'], function(events){
     events.init();
 
     $(document)
+      .on('click', '#toAddAddress', function(){
+        util.toPage('user.addAddress');
+      })
       .on('click', '[data-PaymentID]', function(){
         $(this).addClass('focus').siblings().removeClass('focus');
       })

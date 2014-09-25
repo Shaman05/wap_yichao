@@ -18,7 +18,7 @@ define([
               $('#totalPay').text(window.sessionStorage.getItem('TotalAmount') || '0.00');
             }
           }else{
-            util.toPage('user.address');
+            $('.addBtnbox').show();
           }
         });
       }
