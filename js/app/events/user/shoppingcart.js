@@ -85,7 +85,29 @@ define(['events'], function(events){
         var $this = $(this);
         var $mask = $('#maskLayer');
         $mask.show();
-        view.toSelectYGD($this.parents('li').find('.ygdWrap'));
+        view.toSelectYGD($this.parents('li').find('.ygdWrap'), function(d){
+          if(d.status == 1){
+            var data = d.data;
+            var html = '';
+            if(data && data.length > 0){
+              for(var i = 0; i < data.length; i++){
+                html += '<a href="javascript:" class="aa" data-id="' + data[i]['PrescriptionsID'] + '">' + data[i]['CreateDate']  + '</a>';
+              }
+              $('#historyYGD').html(html);
+              $('#ygd_info').show();
+            }else{
+              alert('没有验光单数据！');
+            }
+          }else{
+            alert(d.message);
+          }
+        });
+      })
+      .on('click', '#historyYGD a', function(){
+        var id = $(this).attr('data-id');
+        service.prescriptionsInfo(id, function(d){
+
+        });
       })
       //验光单编辑操作
       .on('change', '[name=RightCyl]', function(){

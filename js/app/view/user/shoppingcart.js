@@ -31,8 +31,11 @@ define([
       toEditYGD: function($wrap){
         $wrap.html(yanEditTpl).show();
       },
-      toSelectYGD: function($wrap){
+      toSelectYGD: function($wrap, callback){
         $wrap.html(yanSelectTpl).show();
+        this.model.prescriptionsList(function(d){
+          callback(d);
+        });
       }
     })
   );
