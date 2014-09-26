@@ -36,11 +36,6 @@ define([
       var tpl = '';
       var content = this.tpl || data._APP_TPL || '<p class="no_tpl_assigned">No template assigned!</p>';
       var ac = data.ac;
-      var userInfo = util.getUserInfo();
-      if(_.indexOf(config.needLoginPage, ac) >= 0 && !userInfo){
-        util.toPage('user.login');
-        return false;
-      }
       if(_.indexOf(config.noLastHashPage, ac) < 0){
         var params = util.getParam();
         var tempArr = [ac];
@@ -48,6 +43,11 @@ define([
           p != '#ac' && tempArr.push(p + '=' + params[p]);
         }
         window.sessionStorage.setItem('lastHash', tempArr.join('&'));
+      }
+      var userInfo = util.getUserInfo();
+      if(_.indexOf(config.needLoginPage, ac) >= 0 && !userInfo){
+        util.toPage('user.login');
+        return false;
       }
       if(_.indexOf(config.noHeader, ac) < 0){
         tpl += header;
