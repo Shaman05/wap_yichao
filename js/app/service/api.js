@@ -216,10 +216,11 @@ define(['./base'], function (base) {
         callApi.call(this, OrderHandler, data, callback);
       },
       //支付接口
-      payOrder: function(OrderID, callback){
+      payOrder: function(OrderID, pid, callback){
         var data = {
           OP: "PayOrder",
-          OrderID: OrderID
+          OrderID: OrderID,
+          PaymentID: pid
         };
         callApi.call(this, OrderHandler, data, callback);
       },

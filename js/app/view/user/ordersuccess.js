@@ -8,7 +8,7 @@ define([
 
   return Backbone.View.extend(
     $.extend(baseView, {
-      id: 'home-page',
+      id: 'payOrder-page',
       model: new model,
       ready: function(data){
         var renderFn = _.artTemplate.compile(tpl);
@@ -16,6 +16,15 @@ define([
           OrderID: data.OrderID,
           paymentType: data.paymentType
         }));
+      },
+      payOrder: function(orderId){
+        var pid = util.getParam()['paymentType'];
+        this.model.payOrder(orderId, pid, function(d){
+          alert(d.message);
+          if(d.status == '1'){
+            util.toPage('home');
+          }
+        });
       }
     })
   );

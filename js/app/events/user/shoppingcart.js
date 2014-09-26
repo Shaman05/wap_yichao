@@ -91,7 +91,8 @@ define(['events'], function(events){
             var html = '';
             if(data && data.length > 0){
               for(var i = 0; i < data.length; i++){
-                html += '<a href="javascript:" class="aa" data-id="' + data[i]['PrescriptionsID'] + '">' + data[i]['CreateDate']  + '</a>';
+                var time = data[i]['CreateTime'];
+                html += '<a href="javascript:" class="aa" data-id="' + data[i]['PrescriptionsID'] + '">' + time.split(' ')[0]  + '</a>';
               }
               $ygdWrap.find('.historyYGD').html(html);
               $ygdWrap.find('.ygd_info').show();
