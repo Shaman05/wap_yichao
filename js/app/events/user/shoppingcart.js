@@ -43,6 +43,7 @@ define(['events'], function(events){
           util.toPage('user.ordermess');
         }
       })
+      //没验光单
       .on('click', '[data-editYGD]', function(){
         var $this = $(this);
         var $mask = $('#maskLayer');
@@ -79,6 +80,14 @@ define(['events'], function(events){
         $('#maskLayer').hide();
         $(this).parents('.ygdWrap').empty().hide();
       })
+      //有验光单
+      .on('click', '[data-selectYGD]', function(){
+        var $this = $(this);
+        var $mask = $('#maskLayer');
+        $mask.show();
+        view.toSelectYGD($this.parents('li').find('.ygdWrap'));
+      })
+      //验光单编辑操作
       .on('change', '[name=RightCyl]', function(){
         var $RightAxis = $('[name=RightAxis]')[0];
         $RightAxis.disabled = $(this).val() == "0.00";

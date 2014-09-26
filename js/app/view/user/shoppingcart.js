@@ -4,9 +4,9 @@ define([
   'app/view/baseView',
   'text!app/template/user/ajax_cartList.html',
   'text!app/template/user/yanGuangDan_edit.html',
-  'text!app/template/user/yanGuangDan_show.html',
+  'text!app/template/user/yanGuangDan_select.html',
   'app/service/api'
-], function(baseView, tpl, yanEditTpl, yanShowTpl, model){
+], function(baseView, tpl, yanEditTpl, yanSelectTpl, model){
 
   return Backbone.View.extend(
     $.extend(baseView, {
@@ -30,6 +30,9 @@ define([
       },
       toEditYGD: function($wrap){
         $wrap.html(yanEditTpl).show();
+      },
+      toSelectYGD: function($wrap){
+        $wrap.html(yanSelectTpl).show();
       }
     })
   );
