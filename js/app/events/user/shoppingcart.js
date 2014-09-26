@@ -77,15 +77,15 @@ define(['events'], function(events){
         }
       })
       .on('click', '.cancel', function(){
-        $('#maskLayer').hide();
-        $(this).parents('.ygdWrap').empty().hide();
+        hideYgd($(this).parents('li').find('.ygdWrap'));
       })
       //有验光单
       .on('click', '[data-selectYGD]', function(){
         var $this = $(this);
         var $mask = $('#maskLayer');
+        var $ygdWrap = $this.parents('li').find('.ygdWrap');
         $mask.show();
-        view.toSelectYGD($this.parents('li').find('.ygdWrap'), function(d){
+        view.toSelectYGD($ygdWrap, function(d){
           if(d.status == 1){
             var data = d.data;
             var html = '';
@@ -93,13 +93,15 @@ define(['events'], function(events){
               for(var i = 0; i < data.length; i++){
                 html += '<a href="javascript:" class="aa" data-id="' + data[i]['PrescriptionsID'] + '">' + data[i]['CreateDate']  + '</a>';
               }
-              $('#historyYGD').html(html);
-              $('#ygd_info').show();
+              $ygdWrap.find('.historyYGD').html(html);
+              $ygdWrap.find('.ygd_info').show();
             }else{
               alert('没有验光单数据！');
+              hideYgd($ygdWrap);
             }
           }else{
             alert(d.message);
+            hideYgd($ygdWrap);
           }
         });
       })
@@ -125,6 +127,11 @@ define(['events'], function(events){
         }
       });
   };
+
+  function hideYgd($obj){
+    $('#maskLayer').hide();
+    $obj.empty().hide();
+  }
 
   function metaApplyPayBtn(enable){
     if(enable){
