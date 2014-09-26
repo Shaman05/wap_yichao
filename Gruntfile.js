@@ -47,7 +47,18 @@ module.exports = function(grunt) {
         src: [
           './css/common.css'
         ],
-        dest: './.build/css/app.css'
+        dest: './.build/css/common.css'
+      },
+      js: {
+        src: [
+          './js/lib/zepto.js',
+          './js/lib/underscore.js',
+          './js/lib/backbone.js',
+          './js/lib/template.js',
+          './js/app/config.js',
+          './js/app/app.js'
+        ],
+        dest: './.build/js/app.js'
       }
     },
 
@@ -55,9 +66,9 @@ module.exports = function(grunt) {
       options: {
         banner: '<%= banner %>'
       },
-      app: {
+      common: {
         files: {
-          './dist/app.min.css': './.build/css/app.css'
+          './dist/common.min.css': './.build/css/common.css'
         }
       }
     },
@@ -68,17 +79,69 @@ module.exports = function(grunt) {
       },
       appjs: {
         files: {
-          './dist/js/app.min.js': [
-            './js/lib/zepto.js',
-            './js/lib/underscore.js',
-            './js/lib/backbone.js',
-            './js/lib/template.js',
-            './js/plugin/text.js',
-            './js/app/config',
-            './js/app/common/util',
-            './js/app/common/helper',
-            './js/app/controller/router'
+          './dist/app.min.js': [
+            './.build/js/app.js'
           ]
+        }
+      }
+    },
+
+    requirejs: {
+      main: {
+        options: {
+          baseUrl: "dist/js",
+          paths: {
+            //Core Libraries
+            'zepto': 'lib/zepto',
+            'underscore': 'lib/underscore',
+            'gmu': 'lib/gmu',
+            'backbone': 'lib/backbone',
+            'fastClick': 'lib/fastclick',
+            //base
+            'config': 'app/base/config',
+            'common': 'app/base/common',
+            'pageTitle': 'app/base/title',
+            //plugin
+            'text': 'plugin/text', //require插件，用于加载html
+            'page': 'app/base/page', //提供转场等功能
+
+            'iKeyboardScroll': 'plugin/iKeyboardScroll4',
+            'artTemplate': 'lib/template',
+            'helper': 'app/base/helper',
+
+            'countDown': 'plugin/countdown',
+            'validator': 'plugin/validator', //验证插件
+
+            /******************************app*****************************/
+            'router': 'app/router/router'
+          },
+          shim: {
+            'zepto': {
+              'exports': '$'
+            },
+            'artTemplate': {
+              'exports': 'artTemplate'
+            },
+            'helper': {
+              'deps': ['artTemplate']
+            },
+            'gmu': {
+              'deps': ['zepto']
+            },
+            'underscore': {
+              'exports': '_'
+            },
+            'backbone': {
+              'deps': ['zepto', 'underscore'],
+              'exports': 'Backbone'
+            }
+          },
+          include: [
+            'app.min',
+            'iKeyboardScroll',
+            'fastClick'
+          ],
+          out:"dist/js/app.min.js"
         }
       }
     }
@@ -90,6 +153,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   //grunt.loadNpmTasks('grunt-contrib-copy');
   /*grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-update-submodules'); // 负责初始化和更新submodule
@@ -108,6 +172,7 @@ module.exports = function(grunt) {
     'concat',
     'cssmin',
     'uglify',
+    'requirejs',
     //'copy',
     'clean:build'
   ]);

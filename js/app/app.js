@@ -7,7 +7,7 @@
 
 require.config({
   baseUrl: './js',
-  urlArgs: 't=1407919484305',
+  urlArgs: 't=1411724388324',
   waitSeconds: 200,
   paths: {
     /*****Core*****/
