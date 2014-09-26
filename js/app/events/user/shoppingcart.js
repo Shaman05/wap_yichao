@@ -105,10 +105,26 @@ define(['events'], function(events){
           }
         });
       })
-      .on('click', '#historyYGD a', function(){
-        var id = $(this).attr('data-id');
+      .on('click', '.historyYGD a', function(){
+        var $this = $(this);
+        var id = $this.attr('data-id');
+        var $ygdWrap = $this.parents('li').find('.ygdWrap');
         service.prescriptionsInfo(id, function(d){
-
+          if(d.status == '1'){
+            var data = d.data;
+            $ygdWrap.find('[name=RightSph]').val(data['RightSph']);
+            $ygdWrap.find('[name=LeftSph]').val(data['LeftSph']);
+            $ygdWrap.find('[name=PD]').val(data['PD']);
+            $ygdWrap.find('[name=RightCyl]').val(data['RightCyl']);
+            $ygdWrap.find('[name=RightAxis]').val(data['RightAxis']);
+            $ygdWrap.find('[name=LeftCyl]').val(data['LeftCyl']);
+            $ygdWrap.find('[name=LeftAxis]').val(data['LeftAxis']);
+            //重置状态
+            $ygdWrap.find('[name=LeftAxis]')[0].disabled = data['LeftCyl'] == '0.00';
+            $ygdWrap.find('[name=RightAxis]')[0].disabled = data['RightCyl'] == '0.00';
+          }else{
+            alert(d.message);
+          }
         });
       })
       //验光单编辑操作
