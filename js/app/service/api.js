@@ -284,7 +284,7 @@ define(['./base'], function (base) {
       //验光单详情
       prescriptionsInfo: function(PrescriptionsID, callback){
         var data = {
-          OP: "MemberPrescriptionsList",
+          OP: "MemberPrescriptionsGetID",
           PrescriptionsID: PrescriptionsID
         };
         callApi.call(this, OrderHandler, data, callback);
