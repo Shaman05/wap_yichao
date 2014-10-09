@@ -2,13 +2,13 @@
 <ul class="proCarList">
     <% for(var i = 0; i < list.length; i++){ %>
     <li data-price="<%= list[i].SalePrice %>" data-count="<%= list[i].Qty %>" <% if(i % 2){ %>class="focus"<% } %>>
-      	<span class="radius">
+        <span class="radius">
             <input value="<%= list[i].CartID %>" type="checkbox" id="radio-<%= i %>" name="radio-<%= i %>-set" class="regular-radio big-radio" />
             <label for="radio-<%= i %>"></label>
         </span>
         <span class="carProImg"><a href="#ac=goods.product_info&GoodsID=<%= list[i].GoodsID %>"><img src="<%= list[i].SmallImage %>" alt=""></a></span>
         <div class="carContent">
-			<span class="carProTitle"><a href="#ac=goods.product_info&GoodsID=<%= list[i].GoodsID %>"><%= list[i].GoodsName %>
+            <span class="carProTitle"><a href="#ac=goods.product_info&GoodsID=<%= list[i].GoodsID %>"><%= list[i].GoodsName %>
             </a><em class="cpPrice"><%= list[i].SalePrice %><br/>X<%= list[i].Qty %></em></span>
             <p class="sezhi">规格：<%= list[i].SkuName %></p>
         </div>

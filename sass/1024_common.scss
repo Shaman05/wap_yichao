@@ -451,6 +451,11 @@ $c98:#989898;
         padding:5px 0 0;
         font-size: 11px;
         display: block;
+        &.verfiyIcn{
+          position: absolute;
+          top:5px;
+          right:5px;
+        }
         .icons{
            @extend .iconsBg;
             background-position: 0 -3px;
@@ -1168,13 +1173,14 @@ $c98:#989898;
   background:$white;
   padding:10px;
   @include prefixer(box-sizing, border-sizing, webkit o moz);
+  z-index:450;
   &.yanguangdan_noB{
     border:0;
   }
   .emjiao{
     @include position(1);
     top:-7px;
-    left:15%;
+    left:25%;
     @include inline-block;
     width:12px; height:12px;
     @include prefixer(transform, rotate(45deg));
@@ -1197,7 +1203,11 @@ $c98:#989898;
               margin:0 5px 0 0;
             }
     }
-    
+  }
+  &.noYGDBox{
+    .emjiao{
+      left:48%;
+    }
   }
 }
 .yanBox{
@@ -2447,3 +2457,39 @@ header .popBox{
           }
       }
 }
+
+/* goods info mess */
+.detailsInfMess{
+  table{
+    width:100%;
+    td{
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+}
+.det-des-title{
+background: url(/images/icon-detail-description.gif) no-repeat 4px center;
+@extend .f18;
+padding-left: 15px;
+@include height(false, 40px, 40px);
+background-size:8px;
+border-bottom:#dddddd solid 1px;
+}
+.framefeatures{
+   padding:0 2%;
+  line-height: 22px;
+  text-align: center;
+  img{
+    max-width: 100%;
+  }
+}
+/* end */
+/* note style */
+.popNote{
+  padding:5%;
+  line-height: 25px;
+  text-align: center;
+}
+/* end */

@@ -913,6 +913,10 @@ input.inputCommon {
     padding: 5px 0 0;
     font-size: 11px;
     display: block; }
+    .loginGo li .verfiy.verfiyIcn {
+      position: absolute;
+      top: 5px;
+      right: 5px; }
     .loginGo li .verfiy .icons {
       background-position: 0 -3px;
       -webkit-background-size: 27px auto;
@@ -978,7 +982,7 @@ input.inputCommon {
       .proOpt li.first p em {
         color: #b81c2b; }
       .proOpt li.first p.one {
-        width: 24%; }
+        width: 22%; }
       .proOpt li.first p.two {
         width: 24%; }
       .proOpt li.first p.last {
@@ -1636,7 +1640,8 @@ input.inputCommon {
   padding: 5px;
   -webkit-box-sizing: border-sizing;
   -moz-box-sizing: border-sizing;
-  box-sizing: border-sizing; }
+  box-sizing: border-sizing;
+  z-index: 450; }
   .yanguangdan.yanguangdan_noB {
     border: 0; }
   .yanguangdan .emjiao {
@@ -1664,6 +1669,8 @@ input.inputCommon {
         padding: 0 2%;
         color: #000000;
         margin: 0 5px 0 0; }
+  .yanguangdan.noYGDBox .emjiao {
+    left: 58%; }
 
 .yanBox.yanBox_bdYes {
   border: 1px solid #dddddd;
@@ -2387,7 +2394,8 @@ header .popBox {
   left: 40%;
   top: 40%;
   width: 64px;
-  height: 64px; }
+  height: 64px;
+  z-index: 5; }
 
 .circular {
   background-color: #b81c2b;
@@ -2797,14 +2805,24 @@ header .popBox {
     max-width: 100%; }
 
 .det-des-title {
-  background: url(/images/icon-detail-description.gif) no-repeat 5px center;
-  padding-left: 6px;
+  background: url(/images/icon-detail-description.gif) no-repeat 4px center;
+  padding-left: 15px;
   height: 40px;
-  line-height: 40px; }
+  line-height: 40px;
+  background-size: 8px;
+  border-bottom: #dddddd solid 1px; }
 
 .framefeatures {
+  padding: 0 2%;
   line-height: 22px; }
   .framefeatures img {
     max-width: 100%; }
+
+/* end */
+/* note style */
+.popNote {
+  padding: 5%;
+  line-height: 25px;
+  text-align: center; }
 
 /* end */

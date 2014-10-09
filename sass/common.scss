@@ -113,7 +113,7 @@ $c98:#989898;
           @at-root.logoImg{
             background:url(../images/logo.png) no-repeat left center;
             display: block;
-            @include height(true,45px);
+            @include height(true,45px, auto);
              @include prefixer(background-size, 180px 30px , webkit o moz);
             @include min-screen(720px){
                @include prefixer(background-size,  contain , webkit o moz);
@@ -127,7 +127,7 @@ $c98:#989898;
                 a{
                     @include inline-block;
                     letter-space:-6px;
-                    @include height(true,45px);
+                    @include height(true,45px,auto);
                     padding:2px 0 0;
                     vertical-align: middle;
                     @extend .tac;
@@ -140,7 +140,7 @@ $c98:#989898;
                         .icn_top{
                             background-position: 2px -481px;
                             @include width(25px);
-                            @include height(true,20px);
+                            @include height(true,20px,auto);
                         }
                     }
                     &.shoptCart{
@@ -149,7 +149,7 @@ $c98:#989898;
                         .icn_top{
                             background-position:2px -512px;
                             @include width(25px);
-                            @include height(true,20px);
+                            @include height(true,20px,auto);
                         }
 
                     }
@@ -158,7 +158,7 @@ $c98:#989898;
                      .icn_top{
                         background-position:2px -541px;
                         @include width(20px);
-                        @include height(true,20px);
+                        @include height(true,20px,auto);
                      } 
                     }
                      .txt{padding:2px 0 0;color:$white; /* @extend .f12; */ display:block;}
@@ -222,7 +222,7 @@ $c98:#989898;
            display:block;
            @include ovh(hidden);
             @include borders;
-            img{width:100%;}
+            img{width:100%; max-width:100%;}
         }
         .proName{
             padding-top: 5px;
@@ -346,15 +346,22 @@ input.inputCommon{
 }
 /* !for comments style All */
 #comments{
-    padding:15px 10px 0;
+    padding:15px 0 0;
 }
-#commentsWrap{
+.commentMinH{
   @extend #comments;
-  min-height: 100px;
+  min-height: 150px;
 }
-.commontsTitles{display: block;padding:0 0 15px; @include position(0); @extend .f18; line-height: 30px;}
+.commontsTitles{
+  display: block;
+  padding:0 10px 15px; 
+  @include position(0);
+   @extend .f18; 
+   line-height: 30px;
+ }
 .commontsTitles .ec1{ @include position(1); top:5%;right:5%;@extend .f20;}
 .commentsList{
+  padding:0 10px;
     li{
         border-top: 1px solid $cd;
         padding:15px 0 ;
@@ -459,6 +466,11 @@ input.inputCommon{
         padding:5px 0 0;
         font-size: 11px;
         display: block;
+        &.verfiyIcn{
+          position: absolute;
+          top:5px;
+          right:5px;
+        }
         .icons{
            @extend .iconsBg;
             background-position: 0 -3px;
@@ -511,7 +523,7 @@ input.inputCommon{
         @include inline-block(false);
         @extend .f16;
         em{color:$red;}
-        &.one{width:24%;}
+        &.one{width:22%;}
         &.two{width:24%;}
         &.last{padding:0;}
        }
@@ -783,11 +795,14 @@ input.inputCommon{
     }
     .in_jingkuang{
       @include height(false, auto, 40px);
-      padding:20px 15px 20px ; ;
+      padding:10px 8px;
       @include position(0);
+      &.meitong{
+        padding:0 8px 10px;
+      }
       a{
         @include position(1);
-        right:5%;
+        right:3%;
         top:24%;
         font-family: $fontCn;
         font-weight: bold;
@@ -1207,6 +1222,7 @@ input.inputCommon{
   background:$white;
   padding:5px;
   @include prefixer(box-sizing, border-sizing, webkit o moz);
+  z-index:450;
   &.yanguangdan_noB{
     border:0;
   }
@@ -1236,7 +1252,11 @@ input.inputCommon{
               margin:0 5px 0 0;
             }
     }
-    
+  }
+  &.noYGDBox{
+    .emjiao{
+      left:58%;
+    }
   }
 }
 .yanBox{
@@ -1944,7 +1964,7 @@ display:block;
     }
   }
   /* for product sort style */
-&.sortList{
+  &.sortList{
   li{
     @include height(false, auto, 40px);
     .oneName{
@@ -1984,7 +2004,6 @@ display:block;
     }
   }
 }
-
 }
 
 .listmore_shop .no-data{display:none}
@@ -2091,7 +2110,9 @@ header .popBox{
   left: 40%;
   top: 40%;
   width: 64px;
-  height: 64px; }
+  height: 64px; 
+  z-index: 5;
+}
 
 .circular {
   background-color: #b81c2b;
@@ -2510,4 +2531,37 @@ header .popBox{
   width:96%;
   z-index: 500;
 }
-
+/* goods info mess */
+.detailsInfMess{
+  table{
+    width:100%;
+    td{
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+}
+.det-des-title{
+background: url(/images/icon-detail-description.gif) no-repeat 4px center;
+@extend .f18;
+padding-left: 15px;
+@include height(false, 40px, 40px);
+background-size:8px;
+border-bottom:#dddddd solid 1px;
+}
+.framefeatures{
+   padding:0 2%;
+  line-height: 22px;
+  img{
+    max-width: 100%;
+  }
+}
+/* end */
+/* note style */
+.popNote{
+  padding:5%;
+  line-height: 25px;
+  text-align: center;
+}
+/* end */
