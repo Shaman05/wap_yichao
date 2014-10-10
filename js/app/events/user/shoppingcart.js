@@ -40,6 +40,19 @@ define(['events'], function(events){
       .on('click', '#applyPayBtn', function(){
         if(!$(this).hasClass('disab')){
           window.sessionStorage.setItem('TotalAmount', parseFloat($('#totalPay').text()));
+          //保存临时选取商品
+          var $checked = $('.proCarList input[type=checkbox]:checked');
+          var tempCartList = JSON.parse(window.sessionStorage.getItem('tempCartList'));
+          var selectedTempCartList = [];
+          $.each($checked, function(){
+            var id = $(this).val();
+            for(var i = 0; i < tempCartList.length; i++){
+              if(id == tempCartList[i]['CartID']){
+                selectedTempCartList.push(tempCartList[i]);
+              }
+            }
+          });
+          window.sessionStorage.setItem('selectedTempCartList', JSON.stringify(selectedTempCartList));
           util.toPage('user.ordermess');
         }
       })

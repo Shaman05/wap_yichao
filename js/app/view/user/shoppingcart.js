@@ -21,6 +21,7 @@ define([
       getCartList: function(data){
         this.model.cartList(data.goodsName, data.goodsId, data.PageIndex, function(d){
           var renderFn = _.artTemplate.compile(tpl);
+          window.sessionStorage.setItem('tempCartList', JSON.stringify(d.data));
           $('#cartWrap').html(renderFn({
             list: d.data,
             goodsName: data.goodsName,
