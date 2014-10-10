@@ -1,7 +1,5 @@
 .indImgIcn, .groupInfo li .groupCont .groupStl a, .sctList a, .moreTaoC ul li .lx a, .moreTaoC .num em, .carBtnBox a, .regular-radio + label, .yanguangdan .emjiao, .yanguangdan .yanTime span .aa, .payWay .payBtn a, .orderDl p em, .orderDl p a, .leaveMess em, .services li .labels, .services li .spans, .search label, .updown_go em, .s_down {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1; }
+  display: inline-block; }
 
 /**
  * 1. Set default font family to sans-serif.
@@ -70,11 +68,7 @@ video {
   display: inline-block;
   /* 1 */
   vertical-align: baseline;
-  /* 2 */
-  *display: inline;
-  /* 3 */
-  *zoom: 1;
-  /* 3 */ }
+  /* 2 */ }
 
 /**
  * Prevent modern browsers from displaying `audio` without controls.
@@ -172,9 +166,7 @@ img {
   border: 0;
   /* 1 */
   vertical-align: middle;
-  /* 0 */
-  -ms-interpolation-mode: bicubic;
-  /* 2 */ }
+  /* 0 */ }
 
 /**
  * Correct overflow not hidden in IE 9/10/11.
@@ -215,8 +207,6 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  /* 1 */
-  _font-family: 'courier new', monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */ }
@@ -277,9 +267,7 @@ input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
-  /* 3 */
-  *overflow: visible;
-  /* 4 */ }
+  /* 3 */ }
 
 /**
  * Re-set default cursor for disabled elements.
@@ -317,11 +305,7 @@ input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */
-  *height: 13px;
-  /* 3 */
-  *width: 13px;
-  /* 3 */ }
+  /* 2 */ }
 
 /**
  * Fix the cursor style for Chrome's increment/decrement buttons. For certain
@@ -371,9 +355,7 @@ legend {
   border: 0;
   /* 1 */
   padding: 0;
-  /* 2 */
-  *margin-left: -7px;
-  /* 3 */ }
+  /* 2 */ }
 
 /**
  * 1. Remove default vertical scrollbar in IE 8/9/10/11.
@@ -408,9 +390,6 @@ th {
 /**
  * Address CSS quotes not supported in IE 6/7.
  */
-q {
-  quotes: none; }
-
 html,
 button,
 input,
@@ -432,37 +411,37 @@ h1, h2, h3 {
   line-height: 2;
   font-weight: normal; }
 
-h1 {
-  font-size: 1.3125em; }
-
+/* h1 {
+  font-size:$baseFontSize * 1.5;
+}
 h2 {
-  font-size: 1.1375em; }
-
+  font-size:$baseFontSize * 1.3;
+}
 h3 {
-  font-size: 1.02375em; }
-
-h4 {
-  font-size: 0.875em; }
-
-h5, h6 {
-  font-size: 0.74375em;
-  text-transform: uppercase; }
-
+  font-size:$baseFontSize * 1.17;
+}
+h4 { 
+  font-size:$baseFontSize;
+}
+h5,h6 {
+  font-size:$baseFontSize * 0.85;
+  text-transform:uppercase;
+} */
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #cccccc; }
+  color: #8e8e8e; }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #cccccc; }
+  color: #8e8e8e; }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #cccccc; }
+  color: #8e8e8e; }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #cccccc; }
+  color: #8e8e8e; }
 
 em, i {
   font-style: normal; }
@@ -478,12 +457,10 @@ input, textarea, button {
   -webkit-tap-highlight-color: transparent; }
 
 .fl, .groupInfo li .imgFl, .groupInfo li .groupCont, .moreTaoC ul li, .proCarList li .radius, .proCarList li .carProImg, .proCarList li .carContent, .proCarList li .carContent .carProTitle a, .yanguangdan .yanTime label, .yanguangdan .yanTime span, .clearing span.sp_01, .userAdress .userAdL, .userAdress .userAdL .adIcon, .userAdress .userAdL .adContent, .userAdress .adNext, .addressli li .label, .addressli li .span, .allgoodsst li, .serviceList ul li, .serviceList ul li .icn_label, .serviceList ul li .con_span, .otherName ul li, .listmore_shop li ul li, .circular, .trafficSources .right, .trafficSources .compart_content {
-  float: left;
-  display: inline; }
+  float: left; }
 
 .fr, .groupPro li .groupPrice a, .proCarList li .carContent .carProTitle .cpPrice, .clearing span, .listmore_shop li em {
-  float: right;
-  display: inline; }
+  float: right; }
 
 .f12, .moreTaoC ul li .mpc em, .proCarList li .carContent .sezhi, .yanguangdan .yanTime, .yesnobtn button, .orderD1Tb td, .serviceList ul li .con_span .txt_s {
   font-size: 0.75em; }
@@ -491,10 +468,10 @@ input, textarea, button {
 .f14, .noteBtn, .listmore_shop.sortList li li li {
   font-size: 0.875em; }
 
-.f16, .kehuPh, .sortList li li li, .brandList li .brandName, .carBtnBox a, .clearing span.sp_02 span, .serviceList ul li .icn_label.icn_label3, .listmore_shop.sortList li li .oneName, .loading {
+.f16, .kehuPh, .sortList li li li, .brandList li .brandName, .carBtnBox a, .clearing span.sp_02 span, .serviceList ul li .icn_label.icn_label3, .listmore_shop.sortList li li .oneName, .loading, .subApp {
   font-size: 1em; }
 
-.f18, .topNav li.item2 a .txt, .commontsTitles, .in_jingkuang a, .in_jingkuang em, .sortList li .oneName, .sortList li li .oneName, .groupPro li .groupPrice, .groupInfoBuy .buttonRed, .moreTaoC ul li .mpc, .carNote, .clearing span.sp_03 .buttonRed, .titleName, .zhifuway .phNote, .order_state .order_user em, .serviceList ul li .con_span .txt, .listmore_shop.sortList li .oneName, .det-des-title {
+.f18, .topNav li.item2 a .txt, .commontsTitles, .in_jingkuang a, .in_jingkuang em, .sortList li .oneName, .sortList li li .oneName, .groupPro li .groupPrice, .groupInfoBuy .buttonRed, .moreTaoC ul li .mpc, .carNote, .clearing span.sp_03 .buttonRed, .titleName, .zhifuway .phNote, .order_state .order_user em, .serviceList ul li .con_span .txt, .listmore_shop.sortList li .oneName, .det-des-title, .appoBtns, .appoinContent.appPD .appoinTxt.red, .redPhoneBox {
   font-size: 1.125em; }
 
 .f20, .commontsTitles .ec1, .loginGo li .buttonRed, .groupPro li .groupPrice a, .groupInfoBuy, .sctN, .clearing span, .addressli li .span.tars, .order_state .fl .p_state em, .order_state .groupInfo li .imgFl .p_state em, .groupInfo li .order_state .imgFl .p_state em, .order_state .groupInfo li .groupCont .p_state em, .groupInfo li .order_state .groupCont .p_state em, .order_state .moreTaoC ul li .p_state em, .moreTaoC ul .order_state li .p_state em, .order_state .proCarList li .radius .p_state em, .proCarList li .order_state .radius .p_state em, .order_state .proCarList li .carProImg .p_state em, .proCarList li .order_state .carProImg .p_state em, .order_state .proCarList li .carContent .p_state em, .proCarList li .order_state .carContent .p_state em, .proCarList li .carContent .carProTitle .order_state a .p_state em, .order_state .yanguangdan .yanTime label .p_state em, .yanguangdan .yanTime .order_state label .p_state em, .order_state .yanguangdan .yanTime span .p_state em, .yanguangdan .yanTime .order_state span .p_state em, .order_state .clearing span.sp_01 .p_state em, .clearing .order_state span.sp_01 .p_state em, .order_state .userAdress .userAdL .p_state em, .userAdress .order_state .userAdL .p_state em, .userAdress .userAdL .order_state .adIcon .p_state em, .userAdress .userAdL .order_state .adContent .p_state em, .order_state .userAdress .adNext .p_state em, .userAdress .order_state .adNext .p_state em, .order_state .addressli li .label .p_state em, .addressli li .order_state .label .p_state em, .order_state .addressli li .span .p_state em, .addressli li .order_state .span .p_state em, .order_state .allgoodsst li .p_state em, .allgoodsst .order_state li .p_state em, .order_state .serviceList ul li .p_state em, .serviceList ul .order_state li .p_state em, .serviceList ul li .order_state .icn_label .p_state em, .serviceList ul li .order_state .con_span .p_state em, .order_state .otherName ul li .p_state em, .otherName ul .order_state li .p_state em, .order_state .listmore_shop li ul li .p_state em, .listmore_shop li ul .order_state li .p_state em, .order_state .circular .p_state em, .order_state .trafficSources .right .p_state em, .trafficSources .order_state .right .p_state em, .order_state .trafficSources .compart_content .p_state em, .trafficSources .order_state .compart_content .p_state em, .order_state .fr .buttonGray_01, .order_state .groupPro li .groupPrice a .buttonGray_01, .groupPro li .groupPrice .order_state a .buttonGray_01, .order_state .proCarList li .carContent .carProTitle .cpPrice .buttonGray_01, .proCarList li .carContent .carProTitle .order_state .cpPrice .buttonGray_01, .order_state .clearing span .buttonGray_01, .clearing .order_state span .buttonGray_01, .order_state .listmore_shop li em .buttonGray_01, .listmore_shop li .order_state em .buttonGray_01, .order_state .fr .buttonGreen, .order_state .groupPro li .groupPrice a .buttonGreen, .groupPro li .groupPrice .order_state a .buttonGreen, .order_state .proCarList li .carContent .carProTitle .cpPrice .buttonGreen, .proCarList li .carContent .carProTitle .order_state .cpPrice .buttonGreen, .order_state .clearing span .buttonGreen, .clearing .order_state span .buttonGreen, .order_state .listmore_shop li em .buttonGreen, .listmore_shop li .order_state em .buttonGreen, .allPrices .fl, .allPrices .groupInfo li .imgFl, .groupInfo li .allPrices .imgFl, .allPrices .groupInfo li .groupCont, .groupInfo li .allPrices .groupCont, .allPrices .moreTaoC ul li, .moreTaoC ul .allPrices li, .allPrices .proCarList li .radius, .proCarList li .allPrices .radius, .allPrices .proCarList li .carProImg, .proCarList li .allPrices .carProImg, .allPrices .proCarList li .carContent, .proCarList li .allPrices .carContent, .allPrices .proCarList li .carContent .carProTitle a, .proCarList li .carContent .carProTitle .allPrices a, .allPrices .yanguangdan .yanTime label, .yanguangdan .yanTime .allPrices label, .allPrices .yanguangdan .yanTime span, .yanguangdan .yanTime .allPrices span, .allPrices .clearing span.sp_01, .clearing .allPrices span.sp_01, .allPrices .userAdress .userAdL, .userAdress .allPrices .userAdL, .allPrices .userAdress .userAdL .adIcon, .userAdress .userAdL .allPrices .adIcon, .allPrices .userAdress .userAdL .adContent, .userAdress .userAdL .allPrices .adContent, .allPrices .userAdress .adNext, .userAdress .allPrices .adNext, .allPrices .addressli li .label, .addressli li .allPrices .label, .allPrices .addressli li .span, .addressli li .allPrices .span, .allPrices .allgoodsst li, .allgoodsst .allPrices li, .allPrices .serviceList ul li, .serviceList ul .allPrices li, .allPrices .serviceList ul li .icn_label, .serviceList ul li .allPrices .icn_label, .allPrices .serviceList ul li .con_span, .serviceList ul li .allPrices .con_span, .allPrices .otherName ul li, .otherName ul .allPrices li, .allPrices .listmore_shop li ul li, .listmore_shop li ul .allPrices li, .allPrices .circular, .allPrices .trafficSources .right, .trafficSources .allPrices .right, .allPrices .trafficSources .compart_content, .trafficSources .allPrices .compart_content, .buttonYw, .buttonGn, .wenTitles, .shoppName {
@@ -509,7 +486,7 @@ input, textarea, button {
 .f15 {
   font-size: 1.5em; }
 
-.tac, .topNav li.item2 a, .navBar, .navBar .txt, .pagesOn, .pagesOn a.pageUp, .pagesOn a.pageNext, .addGou, .qqAndW, .scrollImg .imgListA li, .indexOrderList li, .groupPro li .groupImg .imgs, .groupPro li .groupPrice, .groupInfoBuy, .moreTaoC ul li .buyBtn, .moreTaoC .num, .proCarList li .radius, .proCarList li .carProImg, .carBtnBox a, .yesnobtn, .carNote, .userAdress .adNext, .payWay .payBtn a, .addressli li .span .buttonRed, .zhifuway, .moreP, .services li, .services li .labels, .wenTitles, .search label.searchBtn input[type="submit"], .serviceList ul li .icn_label, .updown_go, .no-data, .popBox ul li, .loading {
+.tac, .topNav li.item2 a, .navBar, .navBar .txt, .pagesOn, .pagesOn a.pageUp, .pagesOn a.pageNext, .addGou, .qqAndW, .scrollImg .imgListA li, .indexOrderList li, .groupPro li .groupImg .imgs, .groupPro li .groupPrice, .groupInfoBuy, .moreTaoC ul li .buyBtn, .moreTaoC .num, .proCarList li .radius, .proCarList li .carProImg, .carBtnBox a, .yesnobtn, .carNote, .userAdress .adNext, .payWay .payBtn a, .addressli li .span .buttonRed, .zhifuway, .moreP, .services li, .services li .labels, .wenTitles, .search label.searchBtn input[type="submit"], .serviceList ul li .icn_label, .updown_go, .no-data, .popBox ul li, .loading, .appoBtns, .appoinContent.appPD, .subApp, .redPhoneBox, .phoneNumBox {
   text-align: center; }
 
 .tar, .clearing span.sp_02, .clearing span.sp_03, .addressli li .label, .addressli li .span.tars, .order_state .fr, .order_state .groupPro li .groupPrice a, .groupPro li .groupPrice .order_state a, .order_state .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .order_state .cpPrice, .order_state .clearing span, .clearing .order_state span, .order_state .listmore_shop li em, .listmore_shop li .order_state em, .allPrices .fr, .allPrices .groupPro li .groupPrice a, .groupPro li .groupPrice .allPrices a, .allPrices .proCarList li .carContent .carProTitle .cpPrice, .proCarList li .carContent .carProTitle .allPrices .cpPrice, .allPrices .clearing span, .clearing .allPrices span, .allPrices .listmore_shop li em, .listmore_shop li .allPrices em {
@@ -534,8 +511,6 @@ input, textarea, button {
   /* background: url(../images/mobileBg.png) no-repeat; */
   background: url(../images/allIcn.png) no-repeat;
   display: inline-block;
-  *display: inline;
-  *zoom: 1;
   vertical-align: middle;
   /* @include prefixer(background-size, 150px auto, webkit o moz); */ }
 
@@ -549,7 +524,6 @@ input, textarea, button {
   overflow: hidden; }
   .topNav li.item1 {
     float: left;
-    display: inline;
     width: 60%;
     padding: 0 0 0 4%; }
     .logoImg {
@@ -565,12 +539,9 @@ input, textarea, button {
     max-width: 200px;
     height: 54px;
     float: right;
-    display: inline;
     text-align: right; }
     .topNav li.item2 a {
       display: inline-block;
-      *display: inline;
-      *zoom: 1;
       letter-space: -6px;
       height: 54px;
       padding: 2px 0 0;
@@ -646,11 +617,11 @@ input, textarea, button {
   overflow: hidden; }
   .proList li {
     float: left;
-    display: inline;
     width: 25%;
     padding: 0 7px;
     margin-bottom: 20px;
     display: inline;
+    -o-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
@@ -678,9 +649,8 @@ input, textarea, button {
   height: 40px; }
   .pagesOn a.pageUp, .pagesOn a.pageNext {
     display: inline-block;
-    *display: inline;
-    *zoom: 1;
     width: 21%;
+    -o-border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -705,7 +675,6 @@ input, textarea, button {
   height: 32px; }
   #footer .footerNav .footerNavList li {
     float: left;
-    display: inline;
     overflow: hidden;
     height: auto;
     line-height: 32px;
@@ -714,15 +683,13 @@ input, textarea, button {
       font-size: 1.1em;
       color: #01488a; }
     #footer .footerNav .footerNavList li.backTop {
-      float: right;
-      display: inline; }
+      float: right; }
       #footer .footerNav .footerNavList li.backTop .buttonGray {
         height: 32px;
         line-height: 30px;
         padding: 0 15px; }
     #footer .footerNav .footerNavList li.lastHome {
       float: right;
-      display: inline;
       padding: 0; }
       #footer .footerNav .footerNavList li.lastHome .home {
         float: none;
@@ -740,6 +707,7 @@ input, textarea, button {
 
 /* ! button style all */
 .btn, .buttonGray, .buttonRed, .buttonYellow, .buttonYw, .buttonGn {
+  -o-border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -758,9 +726,7 @@ input, textarea, button {
 .buttonYellow, .buttonYw, .buttonGn {
   background: #ff6c00;
   color: white;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1; }
+  display: inline-block; }
 
 .buttonGray_01, .buttonGreen {
   font-family: "Microsoft Yahei";
@@ -804,9 +770,7 @@ input, textarea, button {
     height: auto;
     line-height: 22px; }
     .commentsList li p.userName em {
-      display: inline-block;
-      *display: inline;
-      *zoom: 1; }
+      display: inline-block; }
       .commentsList li p.userName em.names {
         padding: 0 15px 0 0; }
   .commentsList li p.times {
@@ -852,6 +816,7 @@ input, textarea, button {
     padding: 0 28px 0 30px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
     box-sizing: border-box; }
     .loginGo li .inputCommon.regInp {
       padding: 0 0 0 10px;
@@ -874,6 +839,7 @@ input, textarea, button {
     top: 8px; }
   .loginGo li .updown {
     -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -888,11 +854,9 @@ input, textarea, button {
     height: 40px; }
   .loginGo li.last .lookpwd {
     float: left;
-    display: inline;
     padding: 0 0 0 15px; }
   .loginGo li.last .account {
-    float: right;
-    display: inline; }
+    float: right; }
   .loginGo li.btns {
     margin: 7px 0; }
   .loginGo li.yesNo {
@@ -911,6 +875,7 @@ input, textarea, button {
     .loginGo li .verfiy .icons {
       background-position: 0 -3px;
       -webkit-background-size: 27px auto;
+      -o-background-size: 27px auto;
       -moz-background-size: 27px auto;
       background-size: 27px auto;
       width: 20px;
@@ -941,11 +906,9 @@ input, textarea, button {
   padding: 0 0 0 2%; }
   .priceOne em {
     color: #b81c2b;
-    float: left;
-    display: inline; }
+    float: left; }
   .priceOne i {
     float: left;
-    display: inline;
     margin: 10px 0 0 5px; }
 
 .priced {
@@ -968,8 +931,6 @@ input, textarea, button {
     border-bottom: #cccccc solid 1px; }
     .proOpt li.first p {
       display: inline-block;
-      *display: inline;
-      *zoom: 1;
       /* @extend .f14; */ }
       .proOpt li.first p em {
         color: #b81c2b; }
@@ -980,8 +941,7 @@ input, textarea, button {
       .proOpt li.first p.last {
         padding: 0; }
   .proOpt li .name, .proOpt li .ctent {
-    float: left;
-    display: inline; }
+    float: left; }
   .proOpt li .name {
     width: 22%;
     max-width: 63px; }
@@ -989,8 +949,6 @@ input, textarea, button {
     width: 78%; }
     .proOpt li .ctent a {
       display: inline-block;
-      *display: inline;
-      *zoom: 1;
       height: 25px;
       padding: 0 5%;
       border: #cccccc solid 1px;
@@ -1046,8 +1004,6 @@ input, textarea, button {
   padding: 5% 24%; }
   .qqAndW .qq, .qqAndW .ww {
     display: inline-block;
-    *display: inline;
-    *zoom: 1;
     width: 40%; }
     .qqAndW .qq .icons, .qqAndW .ww .icons {
       width: 46px;
@@ -1078,7 +1034,6 @@ input, textarea, button {
     overflow: hidden; }
     .scrollImg .imgListA li {
       float: left;
-      display: inline;
       width: 960px; }
       .scrollImg .imgListA li img {
         width: 100%;
@@ -1089,12 +1044,11 @@ input, textarea, button {
     left: 50%; }
     .scrollImg .pointersGo a {
       display: inline-block;
-      *display: inline;
-      *zoom: 1;
       width: 8px;
       height: 8px;
       background: #ffffff;
       -webkit-border-radius: 30px;
+      -o-border-radius: 30px;
       -moz-border-radius: 30px;
       border-radius: 30px; }
       .scrollImg .pointersGo a.focus {
@@ -1106,13 +1060,12 @@ input, textarea, button {
   padding: 0 2%; }
   .proDetails .dian {
     display: inline-block;
-    *display: inline;
-    *zoom: 1;
     width: 5px;
     height: 5px;
     margin: 0 8px 3px 0;
     background: #797979;
     -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
     vertical-align: middle; }
@@ -1129,8 +1082,7 @@ input, textarea, button {
       width: 1200px;
       overflow: hidden; }
       .indexScroll .indImgListA li {
-        float: left;
-        display: inline; }
+        float: left; }
         .indexScroll .indImgListA li img {
           width: 320px; }
     .indexScroll .indexPt {
@@ -1139,12 +1091,11 @@ input, textarea, button {
       left: 45%; }
       .indexScroll .indexPt a {
         display: inline-block;
-        *display: inline;
-        *zoom: 1;
         width: 8px;
         height: 8px;
         background: #bababa;
         -webkit-border-radius: 30px;
+        -o-border-radius: 30px;
         -moz-border-radius: 30px;
         border-radius: 30px; }
         .indexScroll .indexPt a.focus {
@@ -1154,7 +1105,6 @@ input, textarea, button {
   overflow: hidden; }
   .indexOrderList li {
     float: left;
-    display: inline;
     border-right: #f4f4f4 solid 1px;
     border-bottom: #f4f4f4 solid 1px;
     width: 33%;
@@ -1164,6 +1114,7 @@ input, textarea, button {
     .indImgIcn {
       background: url(../images/mobileBg_01.png) no-repeat;
       -webkit-background-size: 55px auto;
+      -o-background-size: 55px auto;
       -moz-background-size: 55px auto;
       background-size: 55px auto;
       height: 41px; }
@@ -1174,18 +1125,21 @@ input, textarea, button {
         background-position: 0 -79px;
         width: 42px;
         -webkit-background-size: 46px auto;
+        -o-background-size: 46px auto;
         -moz-background-size: 46px auto;
         background-size: 46px auto; }
       .indImgIcn.ic_3 {
         background-position: 0 -182px;
         width: 28px;
         -webkit-background-size: 50px auto;
+        -o-background-size: 50px auto;
         -moz-background-size: 50px auto;
         background-size: 50px auto; }
       .indImgIcn.ic_4 {
         background-position: 6px -46px;
         width: 43px;
         -webkit-background-size: 56px auto;
+        -o-background-size: 56px auto;
         -moz-background-size: 56px auto;
         background-size: 56px auto; }
       .indImgIcn.ic_5 {
@@ -1219,9 +1173,7 @@ input, textarea, button {
   position: relative;
   left: 5px;
   bottom: 2px;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1; }
+  display: inline-block; }
 
 .noteBtn::after {
   content: "";
@@ -1231,6 +1183,7 @@ input, textarea, button {
   width: 30px;
   height: 30px;
   background: white;
+  -o-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
 
@@ -1264,7 +1217,6 @@ input, textarea, button {
       padding: 1% 5%; }
     .sortList li li li {
       float: left;
-      display: inline;
       width: 50%;
       border: none; }
 
@@ -1275,11 +1227,11 @@ input, textarea, button {
   overflow: hidden; }
   .brandList li {
     float: left;
-    display: inline;
     width: 24%;
     height: 430px;
     margin: 0 5px 20px;
     -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-align: center;
@@ -1446,6 +1398,7 @@ input, textarea, button {
       height: 12px;
       background: #d3d3d3;
       -webkit-border-radius: 40px;
+      -o-border-radius: 40px;
       -moz-border-radius: 40px;
       border-radius: 40px; }
       .moreTaoC .num em.focus {
@@ -1539,6 +1492,7 @@ input, textarea, button {
   width: 30px;
   height: 30px;
   -webkit-border-radius: 50px;
+  -o-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;
   position: absolute;
@@ -1571,6 +1525,7 @@ input, textarea, button {
   max-width: 600px; }
   .yanguangdanBox .buttonRed {
     -webkit-border-radius: 0;
+    -o-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
     width: 100%;
@@ -1585,6 +1540,7 @@ input, textarea, button {
   background: white;
   padding: 10px;
   -webkit-box-sizing: border-sizing;
+  -o-box-sizing: border-sizing;
   -moz-box-sizing: border-sizing;
   box-sizing: border-sizing;
   z-index: 450; }
@@ -1596,6 +1552,7 @@ input, textarea, button {
     left: 25%;
     width: 12px;
     height: 12px;
+    -o-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     border-left: #dddddd solid 1px;
@@ -1653,6 +1610,7 @@ input, textarea, button {
   padding: 5% 2%;
   margin: 0 0 5%;
   -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   overflow: hidden; }
@@ -1692,6 +1650,7 @@ input, textarea, button {
       height: 33px;
       background-position: 0 -87px;
       -webkit-background-size: 38px;
+      -o-background-size: 38px;
       -moz-background-size: 38px;
       background-size: 38px;
       vertical-align: middle;
@@ -1789,6 +1748,7 @@ input, textarea, button {
 .leaveMess {
   background: #f4f4f4;
   -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   padding: 2%;
@@ -1903,6 +1863,7 @@ input, textarea, button {
     width: 40%; }
     .buttonYw, .buttonGn {
       -webkit-border-radius: 30px;
+      -o-border-radius: 30px;
       -moz-border-radius: 30px;
       border-radius: 30px;
       padding: 2% 15%; }
@@ -1924,6 +1885,7 @@ input, textarea, button {
     background: #cccccc;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
+    -o-border-radius: 50px;
     border-radius: 50px;
     width: 24px;
     height: 24px; }
@@ -2034,6 +1996,7 @@ input, textarea, button {
       /* @extend .f14; */
       background: #b81c2b;
       -webkit-border-radius: 5px;
+      -o-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
       color: white;
@@ -2064,6 +2027,7 @@ input, textarea, button {
   width: 960px;
   margin: auto;
   -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -2095,6 +2059,7 @@ input, textarea, button {
         background-color: #b81c2b;
         /* background:$red url(../images/mobileBg.png) no-repeat; */
         -webkit-border-radius: 5px;
+        -o-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
         /* background-size: 50px auto; */
@@ -2130,6 +2095,7 @@ input, textarea, button {
   .updown_go em {
     color: #959595;
     -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -2222,7 +2188,6 @@ input, textarea, button {
         display: none; }
       .listmore_shop.sortList li li li {
         float: left;
-        display: inline;
         width: 50%; }
         .listmore_shop.sortList li li li a {
           border: none; }
@@ -2245,6 +2210,7 @@ input, textarea, button {
   border-right: #dddddd 1px solid;
   border-bottom: #dddddd 1px solid;
   -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -2289,24 +2255,30 @@ input, textarea, button {
   width: 15px;
   height: 15px;
   -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   -webkit-animation-name: bounce_circular;
+  -o-animation-name: bounce_circular;
   -moz-animation-name: bounce_circular;
   animation-name: bounce_circular;
   -webkit-animation-duration: 0.7s;
+  -o-animation-duration: 0.7s;
   -moz-animation-duration: 0.7s;
   animation-duration: 0.7s;
   -webkit-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   -webkit-animation-direction: linear;
+  -o-animation-direction: linear;
   -moz-animation-direction: linear;
   animation-direction: linear; }
 
 #circular_1 {
   margin-top: 25px;
   -webkit-animation-delay: 0.1s;
+  -o-animation-delay: 0.1s;
   -moz-animation-delay: 0.1s;
   animation-delay: 0.1s; }
 
@@ -2314,12 +2286,14 @@ input, textarea, button {
   margin-left: -8px;
   margin-top: 9px;
   -webkit-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
   -moz-animation-delay: 0.2s;
   animation-delay: 0.2s; }
 
 #circular_3 {
   margin-top: 1px;
   -webkit-animation-delay: 0.3s;
+  -o-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
   animation-delay: 0.3s; }
 
@@ -2327,6 +2301,7 @@ input, textarea, button {
   margin-left: 0;
   margin-top: 9px;
   -webkit-animation-delay: 0.4s;
+  -o-animation-delay: 0.4s;
   -moz-animation-delay: 0.4s;
   animation-delay: 0.4s; }
 
@@ -2334,6 +2309,7 @@ input, textarea, button {
   margin-left: -8px;
   margin-top: 25px;
   -webkit-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
   -moz-animation-delay: 0.5s;
   animation-delay: 0.5s; }
 
@@ -2341,6 +2317,7 @@ input, textarea, button {
   margin-left: -22px;
   margin-top: 40px;
   -webkit-animation-delay: 0.6s;
+  -o-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
   animation-delay: 0.6s; }
 
@@ -2348,6 +2325,7 @@ input, textarea, button {
   margin-left: -37px;
   margin-top: 48px;
   -webkit-animation-delay: 0.7s;
+  -o-animation-delay: 0.7s;
   -moz-animation-delay: 0.7s;
   animation-delay: 0.7s; }
 
@@ -2355,6 +2333,7 @@ input, textarea, button {
   margin-left: -53px;
   margin-top: 41px;
   -webkit-animation-delay: 0.8s;
+  -o-animation-delay: 0.8s;
   -moz-animation-delay: 0.8s;
   animation-delay: 0.8s; }
 
@@ -2453,6 +2432,7 @@ header .popBox {
   width: 45px;
   background: #f4f4f4;
   -moz-border-radius: 20px;
+  -o-border-radius: 20px;
   border-radius: 20px;
   border: #dddddd solid 1px; }
 
@@ -2492,6 +2472,7 @@ header .popBox {
 .switch-input:checked + .switch-label {
   -webkit-transition: 0.15s ease-out;
   -moz-transition: 0.15s ease-out;
+  -o-transition: 0.15s ease-out;
   transition: 0.15s ease-out;
   background: #f4f4f4; }
 
@@ -2509,12 +2490,15 @@ header .popBox {
   height: 25px;
   background: white;
   -webkit-border-radius: 25px;
+  -o-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
   -webkit-box-shadow: 0 4px 5px #848183;
+  -o-box-shadow: 0 4px 5px #848183;
   -moz-box-shadow: 0 4px 5px #848183;
   box-shadow: 0 4px 5px #848183;
   border: #dddddd solid 1px;
+  -o-transition: left 0.15s ease-out;
   -moz-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out; }
 
@@ -2714,6 +2698,7 @@ header .popBox {
   overflow: hidden;
   padding: 2% 10%;
   -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -2725,10 +2710,10 @@ header .popBox {
 
 .lxfs .info ul li {
   float: left;
-  display: inline;
   width: 35%;
   padding: 6% 0 0 5%;
   -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
   .lxfs .info ul li.mx {
@@ -2736,7 +2721,6 @@ header .popBox {
   .lxfs .info ul li.wx {
     width: 30%;
     float: right;
-    display: inline;
     padding: 0; }
     .lxfs .info ul li.wx img {
       max-width: 100%; }
@@ -2770,3 +2754,67 @@ header .popBox {
   text-align: center; }
 
 /* end */
+.appoBtns {
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  color: white;
+  background: #ff5a00;
+  margin: 0 0 5% 5%;
+  border: none; }
+
+.appoinContent {
+  border-top: #dddddd 1px solid;
+  border-bottom: #dddddd 1px solid;
+  background: #f7f7f7;
+  padding: 5% 0; }
+  .appoinContent.appPD .appoinTxt {
+    height: auto;
+    line-height: 38px; }
+  .appoinContent.appPD .backGos {
+    display: block;
+    line-height: 38px;
+    padding: 20px; }
+
+.subApp {
+  width: 80px;
+  background: #b81c2b;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  color: white; }
+
+.appoinTab td {
+  height: auto;
+  line-height: 30px;
+  padding: 5px; }
+  .appoinTab td.tdlast {
+    color: #a7a7a7; }
+  .appoinTab td .inputCommon {
+    height: 30px;
+    line-height: 30px;
+    width: 90%; }
+
+.redPhoneBox {
+  height: 30px;
+  line-height: 30px;
+  background: #b81c2b;
+  color: white; }
+
+.phoneNumBox {
+  padding: 20px 0; }
+  .phoneNumBox .inputCommon {
+    width: 200px;
+    height: 30px;
+    line-height: 30px; }
+  .phoneNumBox .suButsP {
+    border: none;
+    background: none;
+    width: 80px; }
+
+.sendPh {
+  background: none;
+  border: none;
+  height: 30px;
+  line-height: 30px; }

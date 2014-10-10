@@ -4,7 +4,7 @@ $black: #000 !default;
 $textColor: $black !default;
 $red : #b81c2b !default;
 $red_01:#d00000;
-@import 'D:\sassData\sassCore\base';
+@import 'D:/sassData/sassCore/base';
 em,i{ font-style: normal;}
 a,a:link{
     color:$black;
@@ -13,6 +13,7 @@ a,a:link{
     }
 
 }
+.pr5{padding:0 5px 0 0;}
 input,textarea,button{resize:none; /* -webkit-appearance:none; */  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
 @mixin ovh($value : hidden){
   overflow: $value;
@@ -2565,3 +2566,83 @@ border-bottom:#dddddd solid 1px;
   text-align: center;
 }
 /* end */
+
+// Appointment
+.appoBtns{
+  width:150px;
+  @include height(false, 30px, 30px);
+  display: block;
+  color:$white;
+  @extend .tac;
+  @extend .f18;
+  background:#ff5a00;
+  margin:0 0 5% 5%;
+  border:none;
+}
+.appoinContent{
+  border-top:#dddddd 1px solid;
+  border-bottom:#dddddd 1px solid;
+  background:#f7f7f7;
+  padding:5% 0;
+  &.appPD{
+    @extend .tac;
+    .appoinTxt{
+      @include height(false, auto, 38px);
+      &.red{
+        @extend .f18;
+      }
+    }
+    .backGos{
+      display: block;
+      line-height: 38px;
+      padding:20px;
+    }
+  }
+}
+.subApp{
+  width:80px;
+  background:$red;
+  @include height(false, 30px, 30px);
+  @extend .tac;
+  @extend .f16;
+  border:none;
+  color:$white;
+}
+.appoinTab{
+  td{
+    @include height(false, auto, 30px);
+    padding:5px;
+    &.tdlast{
+      color:#a7a7a7;
+    }
+    .inputCommon{
+      @include height(false, 30px, 30px);
+      width:90%;
+    }
+  }
+}
+.redPhoneBox{
+  @include height(false, 30px, 30px);
+  background: $red;
+  @extend .tac;
+  @extend .f18;
+  color:$white;
+}
+.phoneNumBox{
+  padding:20px 0;
+  @extend .tac;
+  .inputCommon{
+    width:200px;
+    @include height(false, 30px, 30px);
+  }
+  .suButsP{
+    border:none;
+    background:none;
+    width:80px;
+  }
+}
+.sendPh{
+  background: none;
+  border:none;
+  @include height(false, 30px, 30px);
+}
