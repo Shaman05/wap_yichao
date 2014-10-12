@@ -129,33 +129,6 @@ define(['events'], function(events){
       .on('click', '.cancel', function(){
         hideYgd($(this).parents('li').find('.ygdWrap'));
       })
-      //有验光单
-      .on('click', '[data-selectYGD]', function(){
-        var $this = $(this);
-        var $mask = $('#maskLayer');
-        var $ygdWrap = $this.parents('li').find('.ygdWrap');
-        $mask.show();
-        view.toSelectYGD($ygdWrap, function(d){
-          if(d.status == 1){
-            var data = d.data;
-            var html = '';
-            if(data && data.length > 0){
-              for(var i = 0; i < data.length; i++){
-                var time = data[i]['CreateTime'];
-                html += '<a href="javascript:" class="aa" data-id="' + data[i]['PrescriptionsID'] + '">' + time.split(' ')[0]  + '</a>';
-              }
-              $ygdWrap.find('.historyYGD').html(html);
-              $ygdWrap.find('.ygd_info').show();
-            }else{
-              alert('没有验光单数据！');
-              hideYgd($ygdWrap);
-            }
-          }else{
-            alert(d.message);
-            hideYgd($ygdWrap);
-          }
-        });
-      })
       .on('click', '.historyYGD a', function(){
         var $this = $(this);
         var id = $this.attr('data-id');
@@ -176,6 +149,33 @@ define(['events'], function(events){
             $ygdWrap.find('[name=RightAxis]')[0].disabled = data['RightCyl'] == '0.00';
           }else{
             alert(d.message);
+          }
+        });
+      })
+      //有验光单
+      .on('click', '[data-selectYGD]', function(){
+        var $this = $(this);
+        var $mask = $('#maskLayer');
+        var $ygdWrap = $this.parents('li').find('.ygdWrap');
+        $mask.show();
+        view.toSelectYGD($ygdWrap, function(d){
+          if(d.status == 1){
+            var data = d.data;
+            var html = '';
+            if(data && data.length > 0){
+              for(var i = 0; i < data.length; i++){
+                var time = data[i]['CreateTime'];
+                html += '<a href="javascript:" class="aa" data-id="' + data[i]['PrescriptionsID'] + '">' + time.split(' ')[0]  + '</a>';
+              }
+              $ygdWrap.find('.historyYGD').html(html).find('a').eq(0).trigger('click');
+              $ygdWrap.find('.ygd_info').show();
+            }else{
+              alert('没有验光单数据！');
+              hideYgd($ygdWrap);
+            }
+          }else{
+            alert(d.message);
+            hideYgd($ygdWrap);
           }
         });
       })
