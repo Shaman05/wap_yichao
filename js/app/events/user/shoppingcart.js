@@ -45,9 +45,13 @@ define(['events'], function(events){
           var tempCartList = JSON.parse(window.sessionStorage.getItem('tempCartList'));
           var selectedTempCartList = [];
           $.each($checked, function(){
-            var id = $(this).val();
+            var $this = $(this);
+            var $item = $this.parents('.cart-item');
+            var id = $this.val();
             for(var i = 0; i < tempCartList.length; i++){
               if(id == tempCartList[i]['CartID']){
+                tempCartList[i]['PrescriptionID'] = $item.find('.selected-ygd-id').val();
+                tempCartList[i]['PrescriptionInfo'] = $item.data('ygd');
                 selectedTempCartList.push(tempCartList[i]);
               }
             }
@@ -91,8 +95,9 @@ define(['events'], function(events){
       })*/
       .on('click', '.affirm', function(){
         var $this = $(this);
-        var $wrap = $this.parents('.cart-item').find('.ygdWrap');
-        var $selectedShow = $this.parents('.cart-item').find('.yanguangdan');
+        var $item = $this.parents('.cart-item');
+        var $wrap = $item.find('.ygdWrap');
+        var $selectedShow = $item.find('.yanguangdan');
         var $RightSph = $wrap.find('[name=RightSph]')[0];
         var $RightCyl = $wrap.find('[name=RightCyl]')[0];
         var $RightAxis = $wrap.find('[name=RightAxis]')[0];
@@ -109,6 +114,7 @@ define(['events'], function(events){
           , LeftAxis: $LeftAxis.options[$LeftAxis.selectedIndex].text  //左眼轴位
           , PD: $PD.options[$PD.selectedIndex].text  //瞳距
         };
+        $item.data('ygd', opt);
         $selectedShow.find('.rsph').text(opt.RightSph);
         $selectedShow.find('.lsph').text(opt.LeftSph);
         $selectedShow.find('.rcyl').text(opt.RightCyl);
@@ -116,6 +122,8 @@ define(['events'], function(events){
         $selectedShow.find('.raxis').text(opt.RightAxis);
         $selectedShow.find('.laxis').text(opt.LeftAxis);
         $selectedShow.find('.pd').text(opt.PD);
+        $('#maskLayer').hide();
+        $wrap.hide();
         $selectedShow.show();
       })
       .on('click', '.cancel', function(){
@@ -151,7 +159,8 @@ define(['events'], function(events){
       .on('click', '.historyYGD a', function(){
         var $this = $(this);
         var id = $this.attr('data-id');
-        var $ygdWrap = $this.parents('li').find('.ygdWrap');
+        var $ygdWrap = $this.parents('.cart-item').find('.ygdWrap');
+        $this.parents('.cart-item').find('selected-ygd-id').val($(this).attr('data-id'));
         service.prescriptionsInfo(id, function(d){
           if(d.status == '1'){
             var data = d.data[0];
