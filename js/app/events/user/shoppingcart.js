@@ -50,7 +50,7 @@ define(['events'], function(events){
             var id = $this.val();
             for(var i = 0; i < tempCartList.length; i++){
               if(id == tempCartList[i]['CartID']){
-                tempCartList[i]['PrescriptionID'] = $item.find('.selected-ygd-id').val();
+                tempCartList[i]['SelectedPrescriptionID'] = $item.data('ygdId');
                 tempCartList[i]['PrescriptionInfo'] = $item.data('ygd');
                 selectedTempCartList.push(tempCartList[i]);
               }
@@ -160,7 +160,7 @@ define(['events'], function(events){
         var $this = $(this);
         var id = $this.attr('data-id');
         var $ygdWrap = $this.parents('.cart-item').find('.ygdWrap');
-        $this.parents('.cart-item').find('selected-ygd-id').val($(this).attr('data-id'));
+        $this.parents('.cart-item').data('ygdId', id);
         service.prescriptionsInfo(id, function(d){
           if(d.status == '1'){
             var data = d.data[0];
