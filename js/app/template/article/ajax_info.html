@@ -2,7 +2,15 @@
 <div class="wenText">
     <%== Content %>
 </div>
-<!-- <div class="wenpage">
+<div class="wenpage">
+    <% if(ArID1){ %>
     <p><em class="fl">上一篇：</em><a href="#ac=article.info&id=<%= ArID1 %>" class="fl"><%= Title1 %></a></p>
+    <% }else{ %>
+    <p><em class="fl">上一篇：无</em></p>
+    <% } %>
+    <% if(ArID2){ %>
     <p><em class="fl">下一篇：</em><a href="#ac=article.info&id=<%= ArID2 %>" class="fl"><%= Title2 %></a></p>
-</div> -->
+    <% }else{ %>
+    <p><em class="fl">下一篇：无</em></p>
+    <% } %>
+</div>
