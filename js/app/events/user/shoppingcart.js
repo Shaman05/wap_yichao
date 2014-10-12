@@ -93,7 +93,7 @@ define(['events'], function(events){
           });
         }
       })*/
-      .on('click', '.affirm', function(){
+      .on('click', '.applySelectYgd', function(){
         var $this = $(this);
         var $item = $this.parents('.cart-item');
         var $wrap = $item.find('.ygdWrap');
