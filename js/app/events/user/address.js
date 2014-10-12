@@ -16,8 +16,11 @@ define(['events'], function(events){
       .on('click', '#toAddAddress', function(){
         util.toPage('user.addAddress');
       })
-      .on('click', '[nam=address]', function(){
+      .on('click', '[name=address]', function(){
         var $this = $(this);
+        service.setDefaultAddress($this.val(), function(d){
+
+        });
       });
   };
 

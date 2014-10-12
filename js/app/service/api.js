@@ -307,6 +307,15 @@ define(['./base'], function (base) {
         data = $.extend(data, addressOption);
         callApi.call(this, OrderHandler, data, callback);
       },
+      //设置默认收货地址
+      setDefaultAddress: function(aid, callback){
+        var data = {
+          OP: "tblMemberAddress_update_IsDefault",
+          AddID: aid,
+          IsDefault: "1"
+        };
+        callApi.call(this, OrderHandler, data, callback);
+      },
       //获取收货地址
       getMemberAddress: function(Province, City, callback){
         var data = {
