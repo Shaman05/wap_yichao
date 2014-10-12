@@ -3,15 +3,17 @@
     <% for(var i = 0; i < list.length; i++){ %>
     <li>
         <span for="" class="radius">&nbsp;</span>
-        <span class="carProImg"><a href="javascript:;"><img src="../images/img10.png" alt=""></a></span>
+        <span class="carProImg"><a href="javascript:;"><img src="<%= list[i].SmallImage %>" alt=""></a></span>
         <div class="carContent">
-			<span class="carProTitle"><a href="javascript:;">Levi's李维斯LS06148Z 正品 板材近视男款眼镜
-            </a><em class="cpPrice">￥199.00<br/>X1</em></span>
-            <p class="sezhi">规格：深蓝色C02；</p>
+			<span class="carProTitle"><a href="#ac=goods.product_info&GoodsID=<%= list[i].GoodsID %>"><%= list[i].GoodsName %>
+            </a><em class="cpPrice">￥<%= list[i].SalePrice %><br/>X<%= list[i].Qty %></em></span>
+            <p class="sezhi">规格：<%= list[i].SkuName %></p>
         </div>
+        <% if(list[i].PrescriptionInfo){ %>
         <p class="fixclear"></p>
         <div class="yanguangdanBox">
             <!-- 有验光单数据 -->
+            <input type="hidden" name="SelectedPrescriptionID" value="<%= list[i].SelectedPrescriptionID %>"/>
             <div class="yanguangdan">
                 <em class="emjiao"></em>
                 <div class="yanBox">
@@ -26,22 +28,22 @@
                         <tbody>
                         <tr>
                             <td>度数(SPH)</td>
-                            <td>500度</td>
-                            <td>340度</td>
+                            <td><%= list[i].PrescriptionInfo.RightSph %></td>
+                            <td><%= list[i].PrescriptionInfo.LeftSph %></td>
                         </tr>
                         <tr>
                             <td>瞳距(PD)</td>
-                            <td colspan="2">59</td>
+                            <td colspan="2"><%= list[i].PrescriptionInfo.PD %></td>
                         </tr>
                         <tr>
                             <td>散光(CYL)</td>
-                            <td>100度</td>
-                            <td>100度</td>
+                            <td><%= list[i].PrescriptionInfo.RightCyl %></td>
+                            <td><%= list[i].PrescriptionInfo.LeftCyl %></td>
                         </tr>
                         <tr>
                             <td>轴位(AXIS)</td>
-                            <td>179</td>
-                            <td>2</td>
+                            <td><%= list[i].PrescriptionInfo.RightAxis %></td>
+                            <td><%= list[i].PrescriptionInfo.LeftAxis %></td>
                         </tr>
                         </tbody>
                     </table>
@@ -49,6 +51,7 @@
             </div>
             <!-- 有验光单数据 end -->
         </div>
+        <% } %>
     </li>
     <% } %>
 </ul>
