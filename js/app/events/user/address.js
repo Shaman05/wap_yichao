@@ -19,7 +19,11 @@ define(['events'], function(events){
       .on('click', '[name=address]', function(){
         var $this = $(this);
         service.setDefaultAddress($this.val(), function(d){
-
+          if(d.status == '1'){
+            util.toPage('user.ordermess');
+          }else{
+            alert(d.message);
+          }
         });
       });
   };
