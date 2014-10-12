@@ -12,6 +12,7 @@ define(['events'], function(events){
   return function(view, service){
     events.init();
 
+    var hasYgdData = true;
     $(document)
       //加入购物车
       .on('click', 'input[type=checkbox]', function(){
@@ -67,64 +68,61 @@ define(['events'], function(events){
         $mask.show();
         view.toEditYGD($this.parents('li').find('.ygdWrap'));
       })
-      /*.on('click', '.affirm', function(){
-        var $this = $(this);
-        var $wrap = $this.parents('.ygdWrap');
-        var leftData = checkLeftInput();
-        var rightData = checkRightInput();
-        if(leftData.status && rightData.status){
-          var userInfo = window.sessionStorage.getItem('userInfo');
-          var options = {
-              RightSph: $wrap.find('[name=RightSph]').val()  //右眼度数
-            , RightCyl: rightData.RightCyl  //右眼散光
-            , RightAxis: rightData.RightAxis  //右眼轴位
-            , LeftSph: $wrap.find('[name=LeftSph]').val()  //左眼度数
-            , LeftCyl: leftData.LeftCyl  //左眼散光
-            , LeftAxis: leftData.LeftAxis  //左眼轴位
-            , PD: $wrap.find('[name=PD]').val()  //瞳距
-            , RealName: userInfo ? JSON.parse(window.sessionStorage.getItem('userInfo'))[0]['UserName'] : ''  //验光单姓名
-          };
-          service.prescriptionsAdd(options, function(d){
-            alert(d.message);
-            if(d.status == '1'){
-              $('#maskLayer').hide();
-              $wrap.hide();
-            }
-          });
-        }
-      })*/
       .on('click', '.applySelectYgd', function(){
         var $this = $(this);
         var $item = $this.parents('.cart-item');
         var $wrap = $item.find('.ygdWrap');
-        var $selectedShow = $item.find('.yanguangdan');
-        var $RightSph = $wrap.find('[name=RightSph]')[0];
-        var $RightCyl = $wrap.find('[name=RightCyl]')[0];
-        var $RightAxis = $wrap.find('[name=RightAxis]')[0];
-        var $LeftSph = $wrap.find('[name=LeftSph]')[0];
-        var $LeftCyl = $wrap.find('[name=LeftCyl]')[0];
-        var $LeftAxis = $wrap.find('[name=LeftAxis]')[0];
-        var $PD = $wrap.find('[name=PD]')[0];
-        var opt = {
-          RightSph: $RightSph.options[$RightSph.selectedIndex].text  //右眼度数
-          , RightCyl: $RightCyl.options[$RightCyl.selectedIndex].text  //右眼散光
-          , RightAxis: $RightAxis.options[$RightAxis.selectedIndex].text  //右眼轴位
-          , LeftSph: $LeftSph.options[$LeftSph.selectedIndex].text  //左眼度数
-          , LeftCyl: $LeftCyl.options[$LeftCyl.selectedIndex].text  //左眼散光
-          , LeftAxis: $LeftAxis.options[$LeftAxis.selectedIndex].text  //左眼轴位
-          , PD: $PD.options[$PD.selectedIndex].text  //瞳距
-        };
-        $item.data('ygd', opt);
-        $selectedShow.find('.rsph').text(opt.RightSph);
-        $selectedShow.find('.lsph').text(opt.LeftSph);
-        $selectedShow.find('.rcyl').text(opt.RightCyl);
-        $selectedShow.find('.lcyl').text(opt.LeftCyl);
-        $selectedShow.find('.raxis').text(opt.RightAxis);
-        $selectedShow.find('.laxis').text(opt.LeftAxis);
-        $selectedShow.find('.pd').text(opt.PD);
-        $('#maskLayer').hide();
-        $wrap.hide();
-        $selectedShow.show();
+        //如果没有历史验光单，则将该次设定为历史验光单
+        if(!hasYgdData){
+          var leftData = checkLeftInput();
+          var rightData = checkRightInput();
+          if(leftData.status && rightData.status){
+            var userInfo = window.sessionStorage.getItem('userInfo');
+            var options = {
+              RightSph: $wrap.find('[name=RightSph]').val()  //右眼度数
+              , RightCyl: rightData.RightCyl  //右眼散光
+              , RightAxis: rightData.RightAxis  //右眼轴位
+              , LeftSph: $wrap.find('[name=LeftSph]').val()  //左眼度数
+              , LeftCyl: leftData.LeftCyl  //左眼散光
+              , LeftAxis: leftData.LeftAxis  //左眼轴位
+              , PD: $wrap.find('[name=PD]').val()  //瞳距
+              , RealName: userInfo ? JSON.parse(window.sessionStorage.getItem('userInfo'))[0]['UserName'] : ''  //验光单姓名
+            };
+            service.prescriptionsAdd(options, function(d){
+              alert(d.message);
+              if(d.status == '1'){
+                var $selectedShow = $item.find('.yanguangdan');
+                var $RightSph = $wrap.find('[name=RightSph]')[0];
+                var $RightCyl = $wrap.find('[name=RightCyl]')[0];
+                var $RightAxis = $wrap.find('[name=RightAxis]')[0];
+                var $LeftSph = $wrap.find('[name=LeftSph]')[0];
+                var $LeftCyl = $wrap.find('[name=LeftCyl]')[0];
+                var $LeftAxis = $wrap.find('[name=LeftAxis]')[0];
+                var $PD = $wrap.find('[name=PD]')[0];
+                var opt = {
+                  RightSph: $RightSph.options[$RightSph.selectedIndex].text  //右眼度数
+                  , RightCyl: $RightCyl.options[$RightCyl.selectedIndex].text  //右眼散光
+                  , RightAxis: $RightAxis.options[$RightAxis.selectedIndex].text  //右眼轴位
+                  , LeftSph: $LeftSph.options[$LeftSph.selectedIndex].text  //左眼度数
+                  , LeftCyl: $LeftCyl.options[$LeftCyl.selectedIndex].text  //左眼散光
+                  , LeftAxis: $LeftAxis.options[$LeftAxis.selectedIndex].text  //左眼轴位
+                  , PD: $PD.options[$PD.selectedIndex].text  //瞳距
+                };
+                $item.data('ygd', opt);
+                $selectedShow.find('.rsph').text(opt.RightSph);
+                $selectedShow.find('.lsph').text(opt.LeftSph);
+                $selectedShow.find('.rcyl').text(opt.RightCyl);
+                $selectedShow.find('.lcyl').text(opt.LeftCyl);
+                $selectedShow.find('.raxis').text(opt.RightAxis);
+                $selectedShow.find('.laxis').text(opt.LeftAxis);
+                $selectedShow.find('.pd').text(opt.PD);
+                $('#maskLayer').hide();
+                $wrap.hide();
+                $selectedShow.show();
+              }
+            });
+          }
+        }
       })
       .on('click', '.cancel', function(){
         hideYgd($(this).parents('li').find('.ygdWrap'));
@@ -170,8 +168,10 @@ define(['events'], function(events){
               $ygdWrap.find('.historyYGD').html(html).find('a').eq(0).trigger('click');
               $ygdWrap.find('.ygd_info').show();
             }else{
-              alert('没有验光单数据！');
-              hideYgd($ygdWrap);
+              hasYgdData = false;
+              $ygdWrap.find('.historyYGD').find('span').text('没有添加过历史验光单数据！');
+              $ygdWrap.find('.ygd_info').show();
+              //hideYgd($ygdWrap);
             }
           }else{
             alert(d.message);
