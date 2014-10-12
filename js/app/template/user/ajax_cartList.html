@@ -1,7 +1,7 @@
 <% if(list.length > 0){ %>
 <ul class="proCarList">
     <% for(var i = 0; i < list.length; i++){ %>
-    <li data-price="<%= list[i].SalePrice %>" data-count="<%= list[i].Qty %>" <% if(i % 2){ %>class="focus"<% } %>>
+    <li class="cart-item" data-price="<%= list[i].SalePrice %>" data-count="<%= list[i].Qty %>" <% if(i % 2){ %>class="focus"<% } %>>
         <span class="radius">
             <input value="<%= list[i].CartID %>" type="checkbox" id="radio-<%= i %>" name="radio-<%= i %>-set" class="regular-radio big-radio" />
             <label for="radio-<%= i %>"></label>
@@ -17,7 +17,7 @@
         </p>
         <div class="ygdWrap"></div>
         <!-- 选择的验光单数据 -->
-        <div class="yanguangdan">
+        <div class="yanguangdan" style="display: none">
             <em class="emjiao"></em>
             <div class="yanBox">
                 <table>
@@ -31,22 +31,22 @@
                     <tbody>
                     <tr>
                         <td>度数(SPH)</td>
-                        <td>500度</td>
-                        <td>340度</td>
+                        <td class="rsph"></td>
+                        <td class="lsph"></td>
                     </tr>
                     <tr>
                         <td>瞳距(PD)</td>
-                        <td colspan="2">59</td>
+                        <td colspan="2" class="pd"></td>
                     </tr>
                     <tr>
                         <td>散光(CYL)</td>
-                        <td>100度</td>
-                        <td>100度</td>
+                        <td class="rcyl"></td>
+                        <td class="lcyl"></td>
                     </tr>
                     <tr>
                         <td>轴位(AXIS)</td>
-                        <td>179</td>
-                        <td>2</td>
+                        <td class="raxis"></td>
+                        <td class="laxis"></td>
                     </tr>
                     </tbody>
                 </table>

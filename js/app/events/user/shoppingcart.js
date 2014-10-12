@@ -91,7 +91,8 @@ define(['events'], function(events){
       })*/
       .on('click', '.affirm', function(){
         var $this = $(this);
-        var $wrap = $this.parents('.ygdWrap');
+        var $wrap = $this.parents('.cart-item').find('.ygdWrap');
+        var $selectedShow = $this.parents('.cart-item').find('.yanguangdan');
         var $RightSph = $wrap.find('[name=RightSph]')[0];
         var $RightCyl = $wrap.find('[name=RightCyl]')[0];
         var $RightAxis = $wrap.find('[name=RightAxis]')[0];
@@ -108,7 +109,14 @@ define(['events'], function(events){
           , LeftAxis: $LeftAxis.options[$LeftAxis.selectedIndex].text  //左眼轴位
           , PD: $PD.options[$PD.selectedIndex].text  //瞳距
         };
-        console.log(opt);
+        $selectedShow.find('.rsph').text(opt.RightSph);
+        $selectedShow.find('.lsph').text(opt.LeftSph);
+        $selectedShow.find('.rcyl').text(opt.RightCyl);
+        $selectedShow.find('.lcyl').text(opt.LeftCyl);
+        $selectedShow.find('.raxis').text(opt.RightAxis);
+        $selectedShow.find('.laxis').text(opt.LeftAxis);
+        $selectedShow.find('.pd').text(opt.PD);
+        $selectedShow.show();
       })
       .on('click', '.cancel', function(){
         hideYgd($(this).parents('li').find('.ygdWrap'));
