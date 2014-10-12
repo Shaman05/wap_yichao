@@ -100,6 +100,9 @@ define(['events'], function(events){
             util.toPage(window.sessionStorage.getItem('lastHash') || 'home');
             $pwd1tip.hide();
             $pwd2tip.hide();
+          }else{
+            //防止后端status返回错误，做的处理
+            window.sessionStorage.removeItem('userInfo');
           }
         });
       });
