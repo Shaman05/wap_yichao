@@ -3,13 +3,13 @@
     <%== Content %>
 </div>
 <div class="wenpage">
-    <% if(ArID1){ %>
-    <p><em class="fl">上一篇：</em><a href="#ac=article.info&ArticleID=<%= ArID1 %>" class="fl"><%= Title1 %></a></p>
+    <% if(UpArticleID){ %>
+    <p><em class="fl">上一篇：</em><a href="#ac=article.info&ArticleID=<%= UpArticleID %>" class="fl"><%= UpTitle %></a></p>
     <% }else{ %>
     <p><em class="fl">上一篇：</em><a href="javascript:">无</a></p>
     <% } %>
-    <% if(ArID2){ %>
-    <p><em class="fl">下一篇：</em><a href="#ac=article.info&ArticleID=<%= ArID2 %>" class="fl"><%= Title2 %></a></p>
+    <% if(NextArticleID){ %>
+    <p><em class="fl">下一篇：</em><a href="#ac=article.info&ArticleID=<%= NextArticleID %>" class="fl"><%= NextTitle %></a></p>
     <% }else{ %>
     <p><em class="fl">下一篇：</em><a href="javascript:">无</a></p>
     <% } %>
