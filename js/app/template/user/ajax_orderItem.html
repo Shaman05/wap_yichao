@@ -4,7 +4,7 @@
     <div class="order_state">
         <div class="fl">
             <p class="p_state">订单：<%= list[i].OrderID %> 已下单待支付<br/><%= list[i].CreateTime %></p></div>
-        <p class="fr"><a href="javascript:;" class="buttonGray_01">订单详情</a></p>
+        <p class="fr"><a href="#ac=user.myorder_info&OrderID=<%= list[i].OrderID %>" class="buttonGray_01">订单详情</a></p>
     </div>
     <ul class="proCarList proCarList_ord">
         <li>
@@ -21,10 +21,16 @@
     <div class="allPrices">
         <p class="fl">总价：<em>￥<%= list[i].TotalAmount %></em></p>
         <p class="fr">
+            <% if(list[i].StatusID == 10){ %>
             <button type="button" class="buttonYellow buttonYw">我要付款</button>
-            <!--<button type="button" class="buttonGreen buttonGn">我要评价</button>
+            <% } %>
+            <% if(list[i].StatusID == 100){ %>
+            <button type="button" class="buttonGreen buttonGn">我要评价</button>
+            <% } %>
+            <% if(list[i].StatusID == 80){ %>
             <button type="button" class="buttonYellow buttonYw">确认收货</button>
-            <button type="button" class="buttonGreen buttonGn">查看评价</button>-->
+            <% } %>
+            <!--<button type="button" class="buttonGreen buttonGn">查看评价</button>-->
         </p>
     </div>
 </div>
