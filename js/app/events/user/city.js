@@ -17,7 +17,7 @@ define(['events'], function(events){
         if(hasSub.size() > 0){
           $(this).next().toggle();
         }else{
-          window.sessionStorage.setItem('selectedCity', '{"foo": "foo"}');
+          window.sessionStorage.setItem('selectedCity', '{"text": "杭州市西湖区火车站", "provinceID": "1", "cityID": "2", "areaID": "3"}');
           util.toPage('user.addAddress');
         }
       });
