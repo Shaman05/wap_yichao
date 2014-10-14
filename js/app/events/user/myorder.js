@@ -11,6 +11,13 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
+
+    $(document)
+      .on('click', '.moreP', function(){
+        $(this).hide().parents('.myAllOrder').find('.proCarList_ord').find('li').each(function(){
+          $(this).show();
+        });
+      });
   };
 
 });

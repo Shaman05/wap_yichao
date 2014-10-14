@@ -3,21 +3,33 @@
 <div class="myAllOrder">
     <div class="order_state">
         <div class="fl">
-            <p class="p_state">订单：<%= list[i].OrderID %> 已下单待支付<br/><%= list[i].CreateTime %></p></div>
-        <p class="fr"><a href="#ac=user.myorder_info&OrderID=<%= list[i].OrderID %>" class="buttonGray_01">订单详情</a></p>
+          <p class="p_state">订单：<%= list[i].OrderID %> 已下单待支付<br/><%= list[i].CreateTime %></p>
+        </div>
+        <p class="fr">
+          <a href="#ac=user.myorder_info&OrderID=<%= list[i].OrderID %>" class="buttonGray_01">订单详情</a>
+        </p>
     </div>
     <ul class="proCarList proCarList_ord">
-        <li>
-            <span class="carProImg"><a href="javascript:;"><img src="../images/img10.png" alt=""></a></span>
-
-            <div class="carContent orderCon">
-			<span class="carProTitle"><a href="javascript:;">Levi's李维斯LS06148Z 正品 板材近视男款眼镜
-            </a><em class="cpPrice">￥199.00<br/>X1</em></span>
-                <p class="sezhi">规格：深蓝色C02；</p>
-            </div>
-        </li>
+      <%
+        var goods = list[i].goods;
+        var count = goods.length;
+      %>
+      <% for(var i = 0; i < count; i++){ %>
+      <li <% if(i > 0)style="display: none;"{ %><% } %>>
+          <span class="carProImg"><a href="javascript:;"><img src="../images/img10.png" alt=""></a></span>
+          <div class="carContent orderCon">
+            <span class="carProTitle">
+              <a href="javascript:;">Levi's李维斯LS06148Z 正品 板材近视男款眼镜</a>
+              <em class="cpPrice">￥199.00<br/>X1</em>
+            </span>
+            <p class="sezhi">规格：深蓝色C02；</p>
+          </div>
+      </li>
+      <% } %>
     </ul>
-    <p class="moreP"><a href="javascript:;">显示其余3件</a></p>
+    <% if(count > 1){ %>
+    <p class="moreP"><a href="javascript:;">显示其余<%= count - 1 %>件</a></p>
+    <% } %>
     <div class="allPrices">
         <p class="fl">总价：<em>￥<%= list[i].TotalAmount %></em></p>
         <p class="fr">
@@ -25,12 +37,13 @@
             <button type="button" class="buttonYellow buttonYw">我要付款</button>
             <% } %>
             <% if(list[i].StatusID == 100){ %>
-            <button type="button" class="buttonGreen buttonGn">我要评价</button>
+            <!--<button type="button" class="buttonGreen buttonGn">我要评价</button>-->
+            <button type="button" class="buttonGreen buttonGn">查看评价</button>
             <% } %>
             <% if(list[i].StatusID == 80){ %>
             <button type="button" class="buttonYellow buttonYw">确认收货</button>
             <% } %>
-            <!--<button type="button" class="buttonGreen buttonGn">查看评价</button>-->
+
         </p>
     </div>
 </div>
