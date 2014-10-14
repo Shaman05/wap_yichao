@@ -11,6 +11,10 @@ define(['events'], function(events){
 
   return function(view, service){
     events.init();
+    $(document)
+      .on('click', '.data-province, .data-city', function(){
+        $(this).next().toggle();
+      });
   };
 
 });

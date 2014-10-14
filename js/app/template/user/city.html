@@ -1,44 +1,29 @@
 <style>
 	body{background: #f4f4f4;}
 </style>
-<ul class="cityList">
-	<li>
-		<a href="javascript:;">上海</a>
-		<ul>
-			<li><a href="javascript:;">松江区</a></li>
-			<li><a href="javascript:;">浦东新区</a></li>
-			<li><a href="javascript:;">徐汇区</a></li>
-		</ul>
-	</li>
-	<li>
-		<a href="javascript:;">浙江省</a>
-		<ul>
-			<li>
-				<a href="javascript:;">杭州市</a>
-				<ul>
-					<li><a href="javascript:;">西湖区</a></li>
-					<li><a href="javascript:;">栱墅区</a></li>
-					<li><a href="javascript:;">余杭区</a></li>
-					<li><a href="javascript:;">西湖区</a></li>
-
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:;">温州市</a>
-				<ul>
-					<li><a href="javascript:;">龙弯工业区</a></li>
-					<li><a href="javascript:;">火车站</a></li>
-					<li><a href="javascript:;">大</a></li>
-					<li><a href="javascript:;">西湖区</a></li>
-
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li><a href="javascript:;">上海</a></li>
-	<li><a href="javascript:;">上海</a></li>
-	<li><a href="javascript:;">上海</a></li>
-	<li><a href="javascript:;">上海</a></li>
-	<li><a href="javascript:;">上海</a></li>
-</ul>
-
+<div id="cityListWrap">
+    <ul class="cityList">
+        <li>
+            <a class="data-province" href="javascript:;" data-province="">浙江省</a>
+            <ul style="display: none">
+                <li>
+                    <a class="data-city" href="javascript:;" data-city="">杭州市</a>
+                    <ul style="display: none">
+                        <li><a class="data-area" href="javascript:;" data-area="">西湖区</a></li>
+                        <li><a class="data-area" href="javascript:;" data-area="">栱墅区</a></li>
+                        <li><a class="data-area" href="javascript:;" data-area="">余杭区</a></li>
+                        <li><a class="data-area" href="javascript:;" data-area="">西湖区</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="data-city" href="javascript:;" data-city="">温州市</a>
+                    <ul style="display: none">
+                        <li><a class="data-area" href="javascript:;" data-area="">龙弯工业区</a></li>
+                        <li><a class="data-area" href="javascript:;" data-area="">火车站</a></li>
+                        <li><a class="data-area" href="javascript:;" data-area="">西湖区</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
