@@ -7,7 +7,13 @@
 		<li><label class="label">手机号码</label><span class="span"><input name="Mobile" type="text" class="inputCommon"></span></li>
 		<li><label class="label">邮政编码</label><span class="span"><input name="Zip" type="text" class="inputCommon"></span></li>
 		<li>
-            <div style="overflow: hidden"><label id="cityLabel" class="label">省市区(县)</label><a href="#ac=user.city" class="span tars">></a></div>
+            <div style="overflow: hidden">
+                <label class="label">省市区(县)</label>
+                <span class="span" >
+                    <a href="#ac=user.city" id="cityLabel" style="float: left; width: 90%"></a>
+                    <i class="tars" style="float: right; width: 10%">></i>
+                </span>
+            </div>
             <input type="hidden" name="provinceID"/>
             <input type="hidden" name="areaID"/>
             <input type="hidden" name="cityID"/>

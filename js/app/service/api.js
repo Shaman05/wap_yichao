@@ -334,6 +334,15 @@ define(['./base'], function (base) {
           AddID: AddID
         };
         callApi.call(this, OrderHandler, data, callback);
+      },
+      //获取省市区
+      getArea: function(AreaLevel, ParentID, callback){
+        var data = {
+          OP: "GetTblArea",
+          AreaLevel: AreaLevel,
+          ParentID: ParentID || ""
+        };
+        callApi.call(this, ShopHandler, data, callback);
       }
     })
   );
