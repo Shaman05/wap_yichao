@@ -29,7 +29,7 @@ define([
         if(data && len > 0){
           for(var i = 0; i < len; i++){
             var item = data[i];
-            html +=  '<li><a class="data-province" href="javascript:" data-level="' + item['AreaLevel'] +
+            html +=  '<li data-text="' + item['AreaName'] + '"><a class="data-province" href="javascript:" data-level="' + item['AreaLevel'] +
               '" data-ParentID="' + item['AreaID'] + '">' + item['AreaName'] + '</a><ul></ul></li>';
           }
           if(realLevel == 3){

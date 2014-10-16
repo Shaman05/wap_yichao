@@ -30,22 +30,18 @@ define(['events'], function(events){
                 $nextUl.html(html);
               });
             }else{
-              window.sessionStorage.setItem('selectedCity', '{"text": "杭州市西湖区火车站", "provinceID": "1", "cityID": "2", "areaID": "3"}');
+              var lis = $this.parents('li').toArray().reverse();
+              var text = '';
+              for(var i = 0; i < lis.length; i++){
+                text += $(lis[i]).attr('data-text');
+              }
+              window.sessionStorage.setItem('selectedCity', '{"text": "' + text + '"}');
               util.toPage('user.addAddress');
             }
           });
         }else{
           $nextUl.toggle();
         }
-        /*view.getArea(level, pid, function(){
-          var hasSub = $this.next('ul');
-          if(hasSub.size() > 0){
-            $this.next().toggle();
-          }else{
-            window.sessionStorage.setItem('selectedCity', '{"text": "杭州市西湖区火车站", "provinceID": "1", "cityID": "2", "areaID": "3"}');
-            util.toPage('user.addAddress');
-          }
-        });*/
       });
   };
 
