@@ -31,6 +31,9 @@ define([
           isLoading = true;
           _this.model.articleList(data.TypeID, data.ClassID, _this.page, function(d){
             isLoading = false;
+            if((d.data && d.data.length == 0) || !d.data){
+              $('#listMore').data('noData', 1);
+            }
             var renderFn = _.artTemplate.compile(tpl);
             $('#listMore').append(renderFn({
               list: d.data

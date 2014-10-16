@@ -22,7 +22,9 @@ define(['events'], function(events){
           if(!data.ClassID){
             data.ClassID = "";
           }
-          view.getData(data);
+          if(!$('#listMore').data('noData')){
+            view.getData(data);
+          }
         }
       });
   };
