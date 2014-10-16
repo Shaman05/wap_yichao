@@ -91,37 +91,12 @@ define(['events'], function(events){
             service.prescriptionsAdd(options, function(d){
               alert(d.message);
               if(d.status == '1'){
-                var $selectedShow = $item.find('.yanguangdan');
-                var $RightSph = $wrap.find('[name=RightSph]')[0];
-                var $RightCyl = $wrap.find('[name=RightCyl]')[0];
-                var $RightAxis = $wrap.find('[name=RightAxis]')[0];
-                var $LeftSph = $wrap.find('[name=LeftSph]')[0];
-                var $LeftCyl = $wrap.find('[name=LeftCyl]')[0];
-                var $LeftAxis = $wrap.find('[name=LeftAxis]')[0];
-                var $PD = $wrap.find('[name=PD]')[0];
-                var opt = {
-                  RightSph: $RightSph.options[$RightSph.selectedIndex].text  //右眼度数
-                  , RightCyl: $RightCyl.options[$RightCyl.selectedIndex].text  //右眼散光
-                  , RightAxis: $RightAxis.options[$RightAxis.selectedIndex].text  //右眼轴位
-                  , LeftSph: $LeftSph.options[$LeftSph.selectedIndex].text  //左眼度数
-                  , LeftCyl: $LeftCyl.options[$LeftCyl.selectedIndex].text  //左眼散光
-                  , LeftAxis: $LeftAxis.options[$LeftAxis.selectedIndex].text  //左眼轴位
-                  , PD: $PD.options[$PD.selectedIndex].text  //瞳距
-                };
-                $item.data('ygd', opt);
-                $selectedShow.find('.rsph').text(opt.RightSph);
-                $selectedShow.find('.lsph').text(opt.LeftSph);
-                $selectedShow.find('.rcyl').text(opt.RightCyl);
-                $selectedShow.find('.lcyl').text(opt.LeftCyl);
-                $selectedShow.find('.raxis').text(opt.RightAxis);
-                $selectedShow.find('.laxis').text(opt.LeftAxis);
-                $selectedShow.find('.pd').text(opt.PD);
-                $('#maskLayer').hide();
-                $wrap.hide();
-                $selectedShow.show();
+                fillData($item, $wrap);
               }
             });
           }
+        }else{
+          fillData($item, $wrap);
         }
       })
       .on('click', '.cancel', function(){
@@ -195,6 +170,37 @@ define(['events'], function(events){
         }
       });
   };
+
+  function fillData($item, $wrap){
+    var $selectedShow = $item.find('.yanguangdan');
+    var $RightSph = $wrap.find('[name=RightSph]')[0];
+    var $RightCyl = $wrap.find('[name=RightCyl]')[0];
+    var $RightAxis = $wrap.find('[name=RightAxis]')[0];
+    var $LeftSph = $wrap.find('[name=LeftSph]')[0];
+    var $LeftCyl = $wrap.find('[name=LeftCyl]')[0];
+    var $LeftAxis = $wrap.find('[name=LeftAxis]')[0];
+    var $PD = $wrap.find('[name=PD]')[0];
+    var opt = {
+      RightSph: $RightSph.options[$RightSph.selectedIndex].text  //右眼度数
+      , RightCyl: $RightCyl.options[$RightCyl.selectedIndex].text  //右眼散光
+      , RightAxis: $RightAxis.options[$RightAxis.selectedIndex].text  //右眼轴位
+      , LeftSph: $LeftSph.options[$LeftSph.selectedIndex].text  //左眼度数
+      , LeftCyl: $LeftCyl.options[$LeftCyl.selectedIndex].text  //左眼散光
+      , LeftAxis: $LeftAxis.options[$LeftAxis.selectedIndex].text  //左眼轴位
+      , PD: $PD.options[$PD.selectedIndex].text  //瞳距
+    };
+    $item.data('ygd', opt);
+    $selectedShow.find('.rsph').text(opt.RightSph);
+    $selectedShow.find('.lsph').text(opt.LeftSph);
+    $selectedShow.find('.rcyl').text(opt.RightCyl);
+    $selectedShow.find('.lcyl').text(opt.LeftCyl);
+    $selectedShow.find('.raxis').text(opt.RightAxis);
+    $selectedShow.find('.laxis').text(opt.LeftAxis);
+    $selectedShow.find('.pd').text(opt.PD);
+    $('#maskLayer').hide();
+    $wrap.hide();
+    $selectedShow.show();
+  }
 
   function hideYgd($obj){
     $('#maskLayer').hide();
