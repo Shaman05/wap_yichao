@@ -17,10 +17,12 @@ define(['events'], function(events){
       var Zip = $('[name=Zip]').val();
       var FullName = $('[name=FullName]').val();
       var Mobile = $('[name=Mobile]').val();
+      var FullText = $('#cityLabel').text();
+      var selectedData = JSON.parse(window.sessionStorage.getItem('selectedCity') || '{}');
       var options = {
-          Province: ""
-        , City: ""
-        , Area: ""
+          Province: selectedData.province
+        , City: selectedData.city
+        , Area: selectedData.area
         , Street: Street || ''
         , Zip: Zip || ''
         , FullName: FullName || ''
@@ -28,6 +30,7 @@ define(['events'], function(events){
         , Mobile: Mobile || ''
         , Email: ""
         , AreaID: ""
+        , FullText: FullText || ''
         , IsDefault: 0
       };
       checkInput() && service.memberAddressAdd(options, function(d){

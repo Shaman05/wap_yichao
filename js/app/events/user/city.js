@@ -32,10 +32,19 @@ define(['events'], function(events){
             }else{
               var lis = $this.parents('li').toArray().reverse();
               var text = '';
+              var province = lis[0] && $(lis[0]).attr('data-text');
+              var city = lis[1] && $(lis[1]).attr('data-text');
+              var area = lis[2] && $(lis[2]).attr('data-text');
               for(var i = 0; i < lis.length; i++){
-                text += $(lis[i]).attr('data-text');
+                var $item = $(lis[i]);
+                text += $item.attr('data-text');
               }
-              window.sessionStorage.setItem('selectedCity', '{"text": "' + text + '"}');
+              window.sessionStorage.setItem('selectedCity', '{' +
+                '"text": "' + text +
+                ',"province": ' + province +
+                ',"city": ' + city +
+                ',"area": ' + area +
+              + '"}');
               util.toPage('user.addAddress');
             }
           });
