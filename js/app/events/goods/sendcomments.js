@@ -15,6 +15,7 @@ define(['events'], function(events){
         var $content = $('#CommentContent');
         if(!$.trim($content.val())){
           alert('评论内容不能为空！');
+          return;
         }
         var opt = {
             OrderID: param.OrderID  //来源订单ID
