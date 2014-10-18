@@ -11,15 +11,15 @@
       <table class="appoinTab" width="100%">
         <tr>
           <td width="30%" align="right">手机号码</td>
-          <td width="70%"><input type="text" value="请填写手机号码" class="inputCommon"></td>
+          <td width="70%"><input id="yyTel" type="text" placeholder="请填写手机号码" class="inputCommon"></td>
         </tr>
         <tr>
           <td valign="top" align="right">预约需求</td>
-          <td><textarea class="inputCommon" style="height: 90px; line-height: 22px;" name="" id="" cols="50" rows="10">有其它需求可在此处填写（50个字）</textarea></td>
+          <td><textarea placeholder="有其它需求可在此处填写（50个字）" class="inputCommon" style="height: 90px; line-height: 22px;" name="" id="yyContent" cols="50" rows="10"></textarea></td>
         </tr>
         <tr>
           <td></td>
-          <td><button class="subApp" type="submit">提交预约</button></td>
+          <td><button class="subApp" type="submit" id="submitYY">提交预约</button></td>
         </tr>
         <tr>
           <td></td>
@@ -29,7 +29,7 @@
     </div>
   </div>
   <p class="redPhoneBox">免费发送店铺地址到手机</p>
-  <div class="phoneNumBox"><label for=""><input type="text" class="inputCommon" style="width:60%;"><button type="submit" class="red sendPh">发送到手机</button></label></div>
+  <div class="phoneNumBox"><label for=""><input placeholder="请填写手机号码" id="getAddressTel" type="text" class="inputCommon" style="width:60%;"><button id="sendAddress" type="submit" class="red sendPh">发送到手机</button></label></div>
   <div class="serviceList">
     <ul>
       <li><label for="" class="icn_label icn_label1"></label><span class="con_span">

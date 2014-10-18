@@ -14,6 +14,25 @@ define(['events'], function(events){
     $(document)
       .on('click', '#showEntityInfo', function(){
         $('#entityInfo').toggle();
+      })
+      //提交预约
+      .on('click', '#submitYY', function(){
+        var tel = $.trim($('#yyTel').val());
+        var content = $.trim($('#yyContent').val());
+        if(!tel || !content){
+          alert('电话号码或预约内容必填！');
+          return;
+        }
+
+      })
+      //发送店铺地址
+      .on('click', '#sendAddress', function(){
+        var tel = $.trim($('#getAddressTel').val());
+        var content = $('#shopAddress').text();
+        if(!tel){
+          alert('请填写电话号码！');
+          return;
+        }
       });
   };
 
