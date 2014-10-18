@@ -168,6 +168,13 @@ define(['events'], function(events){
         if($(this).val() == "0.00"){
           $LeftAxis.selectedIndex = 0;
         }
+      })
+      .on('click', '.edit_ygd_btn', function(){
+        var $this = $(this);
+        var $item = $this.parents('.cart-item');
+        var $mask = $('#maskLayer');
+        $mask.show();
+        $item.find('.ygdWrap').show();
       });
   };
 
@@ -198,13 +205,14 @@ define(['events'], function(events){
     $selectedShow.find('.laxis').text(opt.LeftAxis);
     $selectedShow.find('.pd').text(opt.PD);
     $('#maskLayer').hide();
+    $item.find('.carBtnBox').hide();
     $wrap.hide();
     $selectedShow.show();
   }
 
   function hideYgd($obj){
     $('#maskLayer').hide();
-    $obj.empty().hide();
+    $obj.hide();
   }
 
   function metaApplyPayBtn(enable){
