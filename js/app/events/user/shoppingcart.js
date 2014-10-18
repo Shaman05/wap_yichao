@@ -68,6 +68,11 @@ define(['events'], function(events){
         $mask.show();
         view.toEditYGD($this.parents('li').find('.ygdWrap'));
       })
+      //没验光单
+      .on('click', '.applyNoYgd', function(){
+        $(this).parents('.ygdWrap').empty();
+        $('#maskLayer').hide();
+      })
       .on('click', '.applySelectYgd', function(){
         var $this = $(this);
         var $item = $this.parents('.cart-item');
