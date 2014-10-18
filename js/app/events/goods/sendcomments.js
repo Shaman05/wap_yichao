@@ -13,6 +13,9 @@ define(['events'], function(events){
       .on('click', '[type=submit]', function(){
         var param = util.getParam();
         var $content = $('#CommentContent');
+        if(!$.trim($content.val())){
+          alert('评论内容不能为空！');
+        }
         var opt = {
             OrderID: param.OrderID  //来源订单ID
           , GoodsID: param.GoodsID   //评价商品ID
