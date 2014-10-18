@@ -51,6 +51,21 @@ define(['events'], function(events){
         });
         $('#totalPay').text(totalPayPrice);
       })
+      //删除商品
+      .on('click', '.delGoodSelect', function(){
+        var $this = $(this);
+        var cartId = $this.attr('data-CartID');
+        var tempCartList = JSON.parse(window.sessionStorage.getItem('tempCartList'));
+        if(confirm('确认删除该商品吗？')){
+          /*for(var i = 0; i < tempCartList.length; i++){
+            if(cartId == tempCartList[i]['CartID']){
+              tempCartList.splice(i, 1);
+            }
+          }
+          window.sessionStorage.setItem('tempCartList', JSON.stringify(tempCartList));*/
+          $this.parents('.cart-item').remove();
+        }
+      })
       //结算
       .on('click', '#applyPayBtn', function(){
         if(!$(this).hasClass('disab')){

@@ -2,6 +2,7 @@
 <ul class="proCarList">
     <% for(var i = 0; i < list.length; i++){ %>
     <li class="cart-item" data-price="<%= list[i].SalePrice %>" data-count="<%= list[i].Qty %>" <% if(i % 2){ %>class="focus"<% } %>>
+        <a href="javascript:" class="delGoodSelect" data-CartID="<%= list[i].CartID %>">删除</a>
         <span class="radius">
             <input value="<%= list[i].CartID %>" type="checkbox" id="radio-<%= i %>" name="radio-<%= i %>-set" class="regular-radio big-radio" />
             <label for="radio-<%= i %>"></label>
