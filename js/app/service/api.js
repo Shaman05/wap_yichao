@@ -343,6 +343,15 @@ define(['./base'], function (base) {
           ParentID: ParentID || ""
         };
         callApi.call(this, ShopHandler, data, callback);
+      },
+
+      //添加评论
+      addComment: function(commentOptions, callback){
+        var data = {
+          OP: "MemberCommentAdd"
+        };
+        data = $.extend(data, commentOptions);
+        callApi.call(this, GoodsHandler, data, callback);
       }
     })
   );

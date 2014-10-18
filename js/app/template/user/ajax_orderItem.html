@@ -37,8 +37,8 @@
                 <button type="button" class="buttonYellow buttonYw">我要付款</button>
                 <% } %>
                 <% if(list[i].StatusID == 100){ %>
-                <!--<button type="button" class="buttonGreen buttonGn">我要评价</button>-->
-                <button type="button" class="buttonGreen buttonGn">查看评价</button>
+                <a href="#ac=goods.sendcomments&OrderID=<%= list[i].OrderID %>" class="buttonGreen buttonGn">我要评价</a>
+                <a href="javascript:" class="buttonGreen buttonGn">查看评价</a>
                 <% } %>
                 <% if(list[i].StatusID == 80){ %>
                 <button type="button" class="buttonYellow buttonYw">确认收货</button>
