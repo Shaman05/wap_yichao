@@ -71,7 +71,8 @@
         groupbuy_info: '团购套餐',
         product_info: '产品详情',
         product_list: '产品框架',
-        sort: '所有商品分类'
+        sort: '所有商品分类',
+        sendcomments:'评价商品'
       },
       user: {
         addAddress: '新增收货地址',

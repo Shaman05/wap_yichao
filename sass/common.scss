@@ -4,7 +4,7 @@ $black: #000 !default;
 $textColor: $black !default;
 $red : #b81c2b !default;
 $red_01:#d00000;
-@import 'D:/sassData/sassCore/base';
+@import 'D:/sassData_yichao/sassCore/base';
 em,i{ font-style: normal;}
 a,a:link{
     color:$black;
@@ -1518,7 +1518,13 @@ display:block;
         height: 28px; 
         line-height: 28px;
       }
-      &.tars{
+      a{
+        display: inline-block;
+        width:95%;
+        height: 28px; 
+        line-height: 28px;
+      }
+      .tars{
         @extend .tar;
         font-family: $fontCn;
        cursor:pointer;
@@ -1644,6 +1650,10 @@ display:block;
   }
 .myAllOrder{
   border-bottom:#f4f4f4 solid 10px;
+  &.borderNo{
+    border:none;
+    padding:2% 0;
+  }
 }
 
 .stepBox{
@@ -2646,3 +2656,79 @@ border-bottom:#dddddd solid 1px;
   border:none;
   @include height(false, 30px, 30px);
 }
+
+/* send comment star */
+.sendCommentBox{
+  padding:0 2%;
+}
+.starBox{
+  padding:2% 0;
+  overflow: hidden;
+}
+  .comment_star{
+    height:22px;
+    width:124px;
+    @include position(0);
+    background:url(/images/xinbig.png) repeat-x;
+    background-size:26px;
+    cursor:pointer;
+    li{
+      float:left;
+      padding:0px;
+      margin:0px;
+      a{
+        display:block;
+        width:24px;
+        height:22px;
+        overflow:hidden;
+        text-indent:-9999px;
+        @include position(1);
+        z-index:5;
+        &.one-star{left:0;}
+        &.one-star.focus{width:24px;}
+        &.two-stars{left:24px;}
+        &.two-stars.focus{width:48px;}
+        &.three-stars{left:48px;}
+        &.three-stars.focus{width:72px;}
+        &.four-stars{left:72px;}
+        &.four-stars.focus{width:96px;}
+        &.five-stars{left:96px;}
+        &.five-stars.focus{width:124px;}
+        &.focus{
+          background:url(/images/xinbig.png) repeat-x 0 -24px;
+          background-size:26px;
+          z-index:3;
+          left:0;
+        }
+      }
+    }
+  }
+ .firstTxt{
+    @include height(false, 25px, 25px);   
+    float: left;
+    padding-right:20px;
+   }
+.sendBoxC{
+  padding:0 0 10px;
+  @extend .tac;
+  .inputCommon{
+    @include height(false, 160px, 22px); 
+    width:98%;
+  }
+}
+.sendSubBtnsC{
+   @include height(false, 40px, 40px);   
+   background:$red;
+   color:$white;
+   @extend .tac;
+   @extend .f20;
+   border:none; 
+   width:100%;
+}
+.sendSubBtBOX{
+  padding:5% 0;
+}
+.cityBox{
+  min-height: 300px;
+}
+ 
