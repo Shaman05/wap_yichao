@@ -23,7 +23,13 @@ define(['events'], function(events){
           alert('电话号码或预约内容必填！');
           return;
         }
-
+        var opt = {};
+        service.msmYY(opt, function(d){
+          alert(d);
+          if(d.status == "1"){
+            $('#yyContent').val('');
+          }
+        });
       })
       //发送店铺地址
       .on('click', '#sendAddress', function(){

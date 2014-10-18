@@ -352,6 +352,15 @@ define(['./base'], function (base) {
         };
         data = $.extend(data, commentOptions);
         callApi.call(this, GoodsHandler, data, callback);
+      },
+
+      //短信预约
+      msmYY: function(commentOptions, callback){
+        var data = {
+          OP: ""
+        };
+        data = $.extend(data, commentOptions);
+        callApi.call(this, GoodsHandler, data, callback);
       }
     })
   );
