@@ -33,9 +33,23 @@ define(['events'], function(events){
           var $this = $(this);
           $(this).find('input[type=checkbox]')[0].checked = true;
           totalPayPrice += (parseFloat($this.attr('data-price')) * parseInt($this.attr('data-count'), 10));
-          $('#totalPay').text(totalPayPrice);
           metaApplyPayBtn(totalPayPrice > 0);
         });
+        $('#totalPay').text(totalPayPrice);
+      })
+      //反选
+      .on('click', '#unSelect', function(){
+        var totalPayPrice = 0;
+        $.each($('.proCarList li'), function(){
+          var $this = $(this);
+          var checkbox = $(this).find('input[type=checkbox]')[0];
+          checkbox.checked = !checkbox.checked;
+          if(checkbox.checked){
+            totalPayPrice += (parseFloat($this.attr('data-price')) * parseInt($this.attr('data-count'), 10));
+          }
+          metaApplyPayBtn(totalPayPrice > 0);
+        });
+        $('#totalPay').text(totalPayPrice);
       })
       //结算
       .on('click', '#applyPayBtn', function(){
