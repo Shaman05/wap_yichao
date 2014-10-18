@@ -41,10 +41,10 @@ define(['events'], function(events){
               }
               window.sessionStorage.setItem('selectedCity', '{' +
                 '"text": "' + text +
-                ',"province": ' + province +
-                ',"city": ' + city +
-                ',"area": ' + area +
-              + '"}');
+                '","province": "' + province +
+                '","city": "' + city +
+                '","area": "' + area +
+              '"}');
               util.toPage('user.addAddress');
             }
           });
