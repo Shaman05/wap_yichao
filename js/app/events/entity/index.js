@@ -15,6 +15,9 @@ define(['events'], function(events){
       .on('click', '#showEntityInfo', function(){
         $('#entityInfo').toggle();
       })
+      .on('click', '#appoBtns', function(){
+        $('#appoinContent').toggle();
+      })
       //提交预约
       .on('click', '#submitYY', function(){
         var tel = $.trim($('#yyTel').val());
