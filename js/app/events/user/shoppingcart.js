@@ -231,9 +231,23 @@ define(['events'], function(events){
       .on('click', '.edit_ygd_btn', function(){
         var $this = $(this);
         var $item = $this.parents('.cart-item');
+        var $ygdWrap = $item.find('.ygdWrap');
         var $mask = $('#maskLayer');
         $mask.show();
-        $item.find('.ygdWrap').show();
+        view.toSelectYGD($ygdWrap, function(d){
+          if(d.status == 1){
+            var data = d.data;
+            var html = '';
+            if(data && data.length > 0){
+              for(var i = 0; i < data.length; i++){
+                var time = data[i]['CreateTime'];
+                html += '<a href="javascript:" class="aa" data-id="' + data[i]['PrescriptionsID'] + '">' + time.split(' ')[0]  + '</a>';
+              }
+              $ygdWrap.find('.historyYGD').html(html).find('a').eq(0).trigger('click');
+              $ygdWrap.find('.ygd_info').show();
+            }
+          }
+        });
       });
   };
 
