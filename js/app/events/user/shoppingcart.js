@@ -136,7 +136,7 @@ define(['events'], function(events){
           var leftData = checkLeftInput();
           var rightData = checkRightInput();
           if(leftData.status && rightData.status){
-            var userInfo = window.sessionStorage.getItem('userInfo');
+            var userInfo = JSON.parse(window.sessionStorage.getItem('userInfo'));
             var options = {
               RightSph: $wrap.find('[name=RightSph]').val()  //右眼度数
               , RightCyl: rightData.RightCyl  //右眼散光
@@ -145,7 +145,7 @@ define(['events'], function(events){
               , LeftCyl: leftData.LeftCyl  //左眼散光
               , LeftAxis: leftData.LeftAxis  //左眼轴位
               , PD: $wrap.find('[name=PD]').val()  //瞳距
-              , RealName: userInfo ? JSON.parse(window.sessionStorage.getItem('userInfo'))[0]['UserName'] : ''  //验光单姓名
+              , RealName: userInfo ? userInfo['UserName'] : ''  //验光单姓名
             };
             service.prescriptionsAdd(options, function(d){
               alert(d.message);
