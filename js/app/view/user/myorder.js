@@ -22,7 +22,7 @@ define([
           var renderFn = _.artTemplate.compile(tpl);
           $('#myOrderList').html(renderFn({
             showPaging: true,
-            list: d.data,
+            list: d.data["tblOrder"],
             StatusID: StatusID,
             pageIndex: data.PageIndex,
             total: d.nPageCount,

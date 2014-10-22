@@ -11,19 +11,17 @@
         </div>
         <ul class="proCarList proCarList_ord">
           <%
-            var goods = [];
-            var count = goods.length;
+            var goods = list[i].tblOrderGoods;
+            var count = (goods && goods.length) || 0;
           %>
           <% for(var j = 0; j < count; j++){ %>
           <li <% if(j > 0){ %>style="display: none;"<% } %>>
-              <span class="carProImg"><a href="javascript:;"><img src="../images/img10.png" alt=""></a></span>
-              <div class="carContent orderCon">
-                <span class="carProTitle">
-                  <a href="javascript:;">Levi's李维斯LS06148Z 正品 板材近视男款眼镜</a>
-                  <em class="cpPrice">￥199.00<br/>X1</em>
-                </span>
-                <p class="sezhi">规格：深蓝色C02；</p>
-              </div>
+            <span class="carProImg"><a href="#ac=goods.product_info&GoodsID=<%= goods[j].GoodsID %>"><img src="<%= goods[j].SmallImage %>" alt=""></a></span>
+            <div class="carContent">
+            <span class="carProTitle"><a href="#ac=goods.product_info&GoodsID=<%= goods[j].GoodsID %>"><%= goods[j].GoodsName %>
+            </a><em class="cpPrice"><%= goods[j].SalePrice %><br/>X<%= goods[j].Qty %></em></span>
+                <p class="sezhi">规格：<%= goods[j].SkuName %></p>
+            </div>
           </li>
           <% } %>
         </ul>
