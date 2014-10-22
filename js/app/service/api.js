@@ -355,11 +355,11 @@ define(['./base'], function (base) {
       },
 
       //短信预约
-      msmYY: function(commentOptions, callback){
+      msmYY: function(smsOptions, callback){
         var data = {
-          OP: ""
+          OP: "SmsMessage"
         };
-        data = $.extend(data, commentOptions);
+        data = $.extend(data, smsOptions);
         callApi.call(this, GoodsHandler, data, callback);
       },
 

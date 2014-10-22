@@ -26,11 +26,20 @@ define(['events'], function(events){
           alert('电话号码或预约内容必填！');
           return;
         }
-        var opt = {};
+        var opt = {
+            ShopID: $('#ShopID').val()
+          , Name: $('#ShopName').val()
+          , Phone: tel
+          , Email: ""
+          , ReservationTime: ""
+          , Content: content
+        };
         service.msmYY(opt, function(d){
-          alert(d);
+          alert(d.message);
           if(d.status == "1"){
+            $('#yyTel').val('');
             $('#yyContent').val('');
+            $('#appoinContent').hide();
           }
         });
       })
