@@ -52,18 +52,43 @@ define(['events'], function(events){
         $('#totalPay').text(totalPayPrice);
       })
       //删除商品
-      .on('click', '.delGoodSelect', function(){
-        var $this = $(this);
-        var cartId = $this.attr('data-CartID');
-        var tempCartList = JSON.parse(window.sessionStorage.getItem('tempCartList'));
-        if(confirm('确认删除该商品吗？')){
-          /*for(var i = 0; i < tempCartList.length; i++){
-            if(cartId == tempCartList[i]['CartID']){
-              tempCartList.splice(i, 1);
-            }
+      .on('click', '#deleteSelect', function(){
+        var totalPayPrice = 0;
+        var selectedId = [];
+        $.each($('.proCarList li'), function(){
+          var $this = $(this);
+          var checkbox = $(this).find('input[type=checkbox]')[0];
+          if(checkbox.checked){
+            selectedId.push(checkbox.value);
           }
-          window.sessionStorage.setItem('tempCartList', JSON.stringify(tempCartList));*/
-          $this.parents('.cart-item').remove();
+        });
+        if(selectedId.length == 0){
+          alert('未选择商品!');
+          return false;
+        }
+        if(confirm('确认删除所选商品吗？')){
+          $.each($('.proCarList li'), function(){
+            var $this = $(this);
+            var checkbox = $(this).find('input[type=checkbox]')[0];
+            if(checkbox.checked){
+              $this.remove();
+            }
+          });
+          service.delCartId(selectedId.join(','), function(d){
+            if(d.status == "1"){
+              $.each($('.proCarList li'), function(){
+                var $this = $(this);
+                var checkbox = $(this).find('input[type=checkbox]')[0];
+                if(checkbox.checked){
+                  totalPayPrice += (parseFloat($this.attr('data-price')) * parseInt($this.attr('data-count'), 10));
+                }
+                metaApplyPayBtn(totalPayPrice > 0);
+              });
+              $('#totalPay').text(totalPayPrice);
+            }else{
+              alert(d.message);
+            }
+          });
         }
       })
       //结算

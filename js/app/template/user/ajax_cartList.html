@@ -2,7 +2,6 @@
 <ul class="proCarList">
     <% for(var i = 0; i < list.length; i++){ %>
     <li class="cart-item" data-price="<%= list[i].SalePrice %>" data-count="<%= list[i].Qty %>" <% if(i % 2){ %>class="focus"<% } %>>
-        <a href="javascript:" class="delGoodSelect" data-CartID="<%= list[i].CartID %>">删除</a>
         <span class="radius">
             <input value="<%= list[i].CartID %>" type="checkbox" id="radio-<%= i %>" name="radio-<%= i %>-set" class="regular-radio big-radio" />
             <label for="radio-<%= i %>"></label>
@@ -62,6 +61,7 @@
     <span class="sp_01">
         <a href="javascript:" id="selectAll">全选</a>
         <a href="javascript:" id="unSelect">反选</a>
+        <a href="javascript:" id="deleteSelect">删除</a>
     </span>
     <span class="sp_03"><button type="button" class="buttonRed disab" id="applyPayBtn">结算</button></span>
     <span class="sp_02"><p>合计：￥<em id="totalPay">0.00</em></p><span>不含运费</span></span>

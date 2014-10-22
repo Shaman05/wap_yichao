@@ -361,6 +361,15 @@ define(['./base'], function (base) {
         };
         data = $.extend(data, commentOptions);
         callApi.call(this, GoodsHandler, data, callback);
+      },
+
+      //删除购物车
+      delCartId: function(CartId, callback){
+        var data = {
+          OP: "OrderCarDel",
+          CartId: CartId
+        };
+        callApi.call(this, OrderCartHandler, data, callback);
       }
     })
   );
