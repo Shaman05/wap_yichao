@@ -64,8 +64,8 @@ define(['util'], function(util){
         alert('No data response!');
         return;
       }
-      if(data.status && data.status == '0'){
-        if(data.needLogin === true || data.needLogin === 'true' || data.needLogin === 'True' || data.needLogin === 1 || data.needLogin === '1'){
+      if(data.needLogin === true || data.needLogin === 'true' || data.needLogin === 'True' || data.needLogin === 1 || data.needLogin === '1'){
+        if(data.bLogin === false || data.bLogin === 'false' || data.bLogin === 'False' || data.bLogin === '0' || data.bLogin === 0){
           window.sessionStorage.removeItem('userInfo');
           location.hash = '#ac=user.login';
           return;
