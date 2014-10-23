@@ -13,11 +13,15 @@ define(['events'], function(events){
     events.init();
 
     $(document).on('click', '#applyAddAddress', function(){
-      var Street = $('[name=Street]').val();
-      var Zip = $('[name=Zip]').val();
-      var FullName = $('[name=FullName]').val();
-      var Mobile = $('[name=Mobile]').val();
+      var Street = $.trim($('[name=Street]').val());
+      var Zip = $.trim($('[name=Zip]').val());
+      var FullName = $.trim($('[name=FullName]').val());
+      var Mobile = $.trim($('[name=Mobile]').val());
       var FullText = $('#cityLabel').text();
+      if(!FullName || !Mobile || !Street || !Zip){
+        alert('收货信息填写不完整！');
+        return;
+      }
       var selectedData = JSON.parse(window.sessionStorage.getItem('selectedCity') || '{}');
       var options = {
           Province: selectedData.province
@@ -33,6 +37,7 @@ define(['events'], function(events){
         , FullText: FullText || ''
         , IsDefault: 0
       };
+      window.sessionStorage.setItem('inputAddressData', JSON.stringify(options));
       checkInput() && service.memberAddressAdd(options, function(d){
         alert(d.message);
         if(d.status == '1'){
