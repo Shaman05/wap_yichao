@@ -13,6 +13,16 @@
                 </select>
             </p>
         </div>
+        <input type="hidden" name="GoodsID" value="<%= tblGoods[i].GoodsID %>"/>
+        <input type="hidden" name="GoodsTypeID" value="<%= tblGoods[i].GoodsTypeID %>"/>
+        <input type="hidden" name="OriginalPrice" value="<%= tblGoods[i].OriginalPrice %>"/>
+        <input type="hidden" name="LevelDiscount" value="<%= tblGoods[i].LevelDiscount %>"/>
+        <input type="hidden" name="PromotionID" value="<%= tblGoods[i].PromotionID %>"/>
+        <input type="hidden" name="Point" value="<%= tblGoods[i].Point %>"/>
+        <input type="hidden" name="Weight" value="<%= tblGoods[i].Weight %>"/>
+        <input type="hidden" name="ParentID" value="<%= tblGoods[i].ParentID %>"/>
+        <input type="hidden" name="GoodsName" value="<%= tblGoods[i].GoodsName %>"/>
+        <input type="hidden" name="SalePrice" value="<%= tblGoods[i].SalePrice %>"/>
     </li>
     <% } %>
 </ul>
@@ -23,5 +33,5 @@
 <% } %>
 <div class="groupInfoBuy">
     套餐价：￥<%= tblPromotionSet[0]["Price"] %>  原价：<em><%= tblPromotionSet[0]["PriceOriginal"] %></em><br/>
-    <button class="buttonRed" type="button">加入购物车</button>
+    <button id="addToCartBtn" class="buttonRed" type="button">加入购物车</button>
 </div>
