@@ -26,7 +26,7 @@
     <label class="name">选择镜框</label>
     <span class="ctent" data-glassFrame>
         <% if(skuList['sku']){for(var i = 0; i < skuList['sku'].length; i++){ %>
-          <a data-skuID="<%= skuList['sku'][i].skuID %>" href="javascript:"><%= skuList['sku'][i].skuName %></a>
+          <a data-itemCode="<%= skuList['sku'][i].itemCode %>" data-skuID="<%= skuList['sku'][i].skuID %>" href="javascript:"><%= skuList['sku'][i].skuName %></a>
         <% }} %>
     </span>
   </li>
@@ -36,6 +36,7 @@
         <% if(jingpian['sku']){for(var i = 0; i < jingpian['sku'].length; i++){ %>
           <a data-goodsID="<%= jingpian['sku'][i].goodsID %>" href="javascript:"><%= jingpian['sku'][i].goodsName %></a>
         <% }} %>
+        <a href="javascript:;" class="lastA" id="selectMore">点击选购更多镜片</a>
     </span>
   </li>
 </ul>
