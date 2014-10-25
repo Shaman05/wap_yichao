@@ -24,6 +24,7 @@ define([
             var renderFn = _.artTemplate.compile(infoTpl);
             info['skuList'] = d.data['skulist'];
             info['jingpian'] = d.data['jingpian'];
+            info['sph'] = d.data['sph'];
             $('#proInfoBox').html(renderFn(info));
             data.commentsTimes = info['CommentTimes'];
             $('#details_img').html(info['Description']);

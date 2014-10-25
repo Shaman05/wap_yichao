@@ -22,23 +22,37 @@
     <p class="last"><%= Stock %></p>
     <% } %>
   </li>
-  <li>
-    <label class="name">选择镜框</label>
-    <span class="ctent" data-glassFrame>
-        <% if(skuList['sku']){for(var i = 0; i < skuList['sku'].length; i++){ %>
-          <a data-itemCode="<%= skuList['sku'][i].itemCode %>" data-skuID="<%= skuList['sku'][i].skuID %>" href="javascript:"><%= skuList['sku'][i].skuName %></a>
-        <% }} %>
-    </span>
-  </li>
-  <li>
-    <label class="name">选择镜片</label>
-    <span class="ctent" data-glassLens>
-        <% if(jingpian['sku']){for(var i = 0; i < jingpian['sku'].length; i++){ %>
-          <a data-goodsID="<%= jingpian['sku'][i].goodsID %>" href="javascript:"><%= jingpian['sku'][i].goodsName %></a>
-        <% }} %>
-        <a href="javascript:;" class="lastA" id="selectMore">点击选购更多镜片</a>
-    </span>
-  </li>
+    <% if(skuList['sku'] && skuList['sku'].length > 0){ %>
+      <li>
+        <label class="name">选择镜框</label>
+        <span class="ctent" data-glassFrame>
+            <% if(skuList['sku']){for(var i = 0; i < skuList['sku'].length; i++){ %>
+              <a data-itemCode="<%= skuList['sku'][i].itemCode %>" data-skuID="<%= skuList['sku'][i].skuID %>" href="javascript:"><%= skuList['sku'][i].skuName %></a>
+            <% }} %>
+        </span>
+      </li>
+    <% } %>
+    <% if(jingpian){ %>
+      <li>
+        <label class="name">选择镜片</label>
+        <span class="ctent" data-glassLens>
+            <% if(jingpian['sku']){for(var i = 0; i < jingpian['sku'].length; i++){ %>
+              <a data-goodsID="<%= jingpian['sku'][i].goodsID %>" href="javascript:"><%= jingpian['sku'][i].goodsName %></a>
+            <% }} %>
+            <a href="javascript:;" class="lastA" id="selectMore">点击选购更多镜片</a>
+        </span>
+      </li>
+    <% } %>
+    <% if(sph){ %>
+    <li>
+        <label class="name">选择度数</label>
+        <span class="ctent" data-glassLens>
+            <% for(var i = 0; i < sph.length; i++){ %>
+              <a href="javascript:"><%= sph[i] %></a>
+            <% } %>
+        </span>
+    </li>
+    <% } %>
 </ul>
 <div id="moreSelectWrap" style="display: none; position: relative; z-index: 9999; background: #ffffff;">
     <div class="selectMore">
