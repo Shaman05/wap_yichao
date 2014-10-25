@@ -370,6 +370,15 @@ define(['./base'], function (base) {
           CartId: CartId
         };
         callApi.call(this, OrderCartHandler, data, callback);
+      },
+
+      //获取镜框 镜片 接口
+      getGoodsSku: function(GoodsId, callback){
+        var data = {
+          OP: "GoodsSku",
+          GoodsId: GoodsId
+        };
+        callApi.call(this, GoodsHandler, data, callback);
       }
     })
   );

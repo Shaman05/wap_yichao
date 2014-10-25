@@ -19,12 +19,16 @@ define([
         _this.imgSlider(data);
         //商品信息
         _this.model.goodsInfo(data.GoodsID, function(d){
-          var renderFn = _.artTemplate.compile(infoTpl);
           var info = d.data[0];
-          $('#proInfoBox').html(renderFn(info));
-          data.commentsTimes = info['CommentTimes'];
-          $('#details_img').html(info['Description']);
-          _this.getComments(data);
+          _this.model.getGoodsSku(data.GoodsID, function(d){
+            var renderFn = _.artTemplate.compile(infoTpl);
+            info['skuList'] = d.data['skulist'];
+            info['jingpian'] = d.data['jingpian'];
+            $('#proInfoBox').html(renderFn(info));
+            data.commentsTimes = info['CommentTimes'];
+            $('#details_img').html(info['Description']);
+            _this.getComments(data);
+          });
         });
       },
       getComments: function(data){
