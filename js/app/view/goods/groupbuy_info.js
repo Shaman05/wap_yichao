@@ -13,7 +13,7 @@ define([
       ready: function(data){
         this.model.groupBuyInfo(data.PromotionID, function(d){
           var renderFn = _.artTemplate.compile(tpl);
-          $('#groupBox').html(renderFn(d.data[0]));
+          $('#groupInfo').html(renderFn(d.data));
         });
       }
     })
