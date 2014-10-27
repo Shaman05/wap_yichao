@@ -23,34 +23,23 @@ define(['events'], function(events){
         var userInput = getUserInput();
         if(userInput.status){
           service.orderAdd({
-              TotalAmount: userInput.totalPay
-            , DiscountAmount: ""
-            , ShipID: ""
-            , ShipAmount: ""
-            , CouponID: ""
-            , CouponCode: ""
-            , CouponAmount: ""
-            , GiftCardID: ""
-            , GiftCardCode: ""
-            , GiftCardAmount: ""
-            , PaymentID: userInput.paymentType
-            , PaymentAmount: ""
-            , IsInvoice: ""
-            , InvoiceAmount: ""
-            , InvoiceTitle: ""
-            , InvoiceContent: ""
-            , GivePoint: ""
-            , Province: ""
-            , City: ""
-            , Area: ""
-            , Street: ""
-            , Fullname: "测试一下"
-            , Tel: ""
-            , Mobile: "15988148346"
-            , Email: "hhtian@163.com"
-            , Remark: ""
-            , LevelID: ""
-            , FlagID: ""
+	            AddID: "100014"
+	          , Remark: "343"
+	          , ShipID: "0"
+	          , ShipAmount: "5.5"
+	          , DiscountAmount: "2.5"
+	          , invoiceID: "0"
+	          , CouponAmount: "0"
+	          , CouponCode: ""
+	          , CouponID: "0"
+	          , Point: "0"
+	          , GivePoint: "0"
+	          , CpsID: ""
+	          , CpsKey: ""
+	          , CpsUserID: ""
+	          , TotalAmount: userInput.totalPay
+	          , CartID: "1,2,3"
+	          , PaymentID: userInput.paymentType
           }, function(d){
             alert(d.message);
             if(d.status == '1'){
