@@ -379,7 +379,16 @@ define(['./base'], function (base) {
           GoodsId: GoodsId
         };
         callApi.call(this, GoodsHandler, data, callback);
-      }
+      },
+
+	    //订单详情
+	    getOrderByID: function(OrderID, callback){
+		    var data = {
+			    OP: "GetOrderByID",
+			    OrderID: OrderID
+		    };
+		    callApi.call(this, OrderHandler, data, callback);
+	    }
     })
   );
 });
