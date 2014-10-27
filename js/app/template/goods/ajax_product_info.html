@@ -48,7 +48,7 @@
         <label class="name">选择度数</label>
         <span class="ctent" data-glassLens>
             <% for(var i = 0; i < sph.length; i++){ %>
-              <a href="javascript:"><%= sph[i] %></a>
+              <a data-sph="<%= sph[i] %>" href="javascript:"><%= sph[i] %></a>
             <% } %>
         </span>
     </li>

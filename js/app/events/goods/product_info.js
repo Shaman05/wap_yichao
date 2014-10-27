@@ -36,17 +36,14 @@ define(['events'], function(events){
       })
       //加入购物车
       .on('click', '#addToCartBtn', function(){
-        var $glassframeSelected = $('[data-glassframe]').find('.focus');
-        var skuName = $glassframeSelected.text();
-        var skuCode = $glassframeSelected.attr('data-itemCode');
-        var LensesID = $('[data-glasslens]').find('.focus').attr('data-goodsid');
-        service.addToCart({
+				var checkData = checkSelect();
+		    checkData.flag && service.addToCart({
             UserTicket: "23232"  //未登录用户票据 待确认
           , GoodsID: $('#GoodsID').val()  //商品ID
           , GoodsName: $('#GoodsName').val()  //商品名称
           , GoodsTypeID: $('#GoodsTypeID').val()  //商品类型
-          , SkuName: skuName  //商品SKU名称
-          , SkuCode: skuCode  //商品SKU代号
+          , SkuName: checkData.skuName  //商品SKU名称
+          , SkuCode: checkData.skuCode  //商品SKU代号
           , Qty: 1  //商品数量
           , IsChangeQty: ""  //是否允许更新数量 待确认
           , SalePrice: parseFloat($('#SalePrice').val())  //销售价格
@@ -59,7 +56,7 @@ define(['events'], function(events){
           , IsChild: "23"  //是否为子级 待确认
           , Expired: "23"  //未结算过期时间 待确认
           , PrescriptionsID: ""   //验光单ID 选验光单时追加
-          , LensesID: LensesID  //眼镜架配的镜片商品ID
+          , LensesID: checkData.LensesID  //眼镜架配的镜片商品ID
           , IsOnlyFrames: "23"  //待确认
           , IsCustomzied: "23"  //待确认
           , GoodsBrandID: "23"  //待确认
@@ -71,9 +68,42 @@ define(['events'], function(events){
       });
 
     function checkSelect(){
-      return {
-
-      };
+	    var data = {
+		    flag: true,
+		    skuName: '',
+		    skuCode: '',
+		    LensesID: '',
+		    sph: ''
+	    };
+	    var $glassframe = $('[data-glassframe]');
+	    var $glassframeSelected = $glassframe.find('.focus');
+	    var skuName = $glassframeSelected.text();
+	    var skuCode = $glassframeSelected.attr('data-itemCode');
+	    if($glassframe.size() > 0){
+		    if(!skuName){
+			    data.flag = false;
+			    alert('请选择镜框！');
+		    }else{
+			    data.skuName = skuName;
+			    data.skuCode = skuCode;
+			    var LensesID = $('[data-glasslens]').find('.focus').attr('data-goodsID');
+			    if(!LensesID){
+				    data.flag = false;
+				    alert('请选择镜片！');
+			    }else{
+				    data.LensesID = LensesID;
+			    }
+		    }
+	    }else{
+		    var sph = $('[data-glasslens]').find('.focus').attr('data-sph');
+		    if(!sph){
+			    data.flag = false;
+			    alert('请选度数！');
+		    }else{
+			    data.sph = sph;
+		    }
+	    }
+      return data;
     }
 
   };
