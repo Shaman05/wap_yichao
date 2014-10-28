@@ -22,6 +22,13 @@ define(['events'], function(events){
       .on('click', '#submitOrderBtn', function(){
         var userInput = getUserInput();
         if(userInput.status){
+	        var selectedCart = JSON.parse(window.sessionStorage.getItem('selectedTempCartList'));
+	        var cartId = [];
+	        if(selectedCart){
+		        for(var i = 0; i < selectedCart.length; i++){
+			        cartId.push(selectedCart[i]['CartID']);
+		        }
+	        }
           service.orderAdd({
 	            AddID: "100014"
 	          , Remark: "343"
@@ -38,7 +45,7 @@ define(['events'], function(events){
 	          , CpsKey: ""
 	          , CpsUserID: ""
 	          , TotalAmount: userInput.totalPay
-	          , CartID: "1,2,3"
+	          , CartID: cartId.join(',')
 	          , PaymentID: userInput.paymentType
           }, function(d){
             alert(d.message);
