@@ -61,7 +61,7 @@ define(['events'], function(events){
     var userInput = {
       status: true,
       AddID: $('#AddID').val(),
-      Remark: $.$trim($('#remark').val()),
+      Remark: $.trim($('#remark').val()),
       totalPay: parseFloat($('#totalPay').text())
     };
     //是否选择支付方式
