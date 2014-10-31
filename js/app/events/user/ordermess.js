@@ -30,17 +30,17 @@ define(['events'], function(events){
 		        }
 	        }
           service.orderAdd({
-	            AddID: "100014"
-	          , Remark: "343"
-	          , ShipID: "0"
-	          , ShipAmount: "5.5"
-	          , DiscountAmount: "2.5"
-	          , invoiceID: "0"
-	          , CouponAmount: "0"
-	          , CouponCode: ""
-	          , CouponID: "0"
-	          , Point: "0"
-	          , GivePoint: "0"
+	            AddID: userInput.AddID  //收货地址ID
+	          , Remark: userInput.Remark  //补充说明
+	          , ShipID: "0"  //运输方式
+	          , ShipAmount: "0.00"  //运费金额
+	          , DiscountAmount: "0.00"  //优惠金额
+	          , CouponAmount: "0"  //优惠券金额
+            , CouponCode: ""  //优惠券号码
+            , CouponID: "0"  //优惠券ID
+            , Point: "0"
+            , invoiceID: "0"
+            , GivePoint: "0"
 	          , CpsID: ""
 	          , CpsKey: ""
 	          , CpsUserID: ""
@@ -60,10 +60,16 @@ define(['events'], function(events){
   function getUserInput(){
     var userInput = {
       status: true,
+      AddID: $('#AddID').val(),
+      Remark: $.$trim($('#remark').val()),
       totalPay: parseFloat($('#totalPay').text())
     };
     //是否选择支付方式
     var $payment = $('#paymentType').find('.focus');
+    if(!userInput.AddID){
+      userInput.status = false;
+      alert('未选择收货地址，如果您还没有收货地址，请先添加收货地址！');
+    }
     if($payment.size() == 0){
       userInput.status = false;
       alert('请选择支付方式！');

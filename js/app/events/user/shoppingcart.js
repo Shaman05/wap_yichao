@@ -252,7 +252,7 @@ define(['events'], function(events){
   };
 
   function fillData($item, $wrap){
-    var $selectedShow = $item.find('.yanguangdan');
+    var $selectedShow = $item.find('.editYgdWrap');
     var $RightSph = $wrap.find('[name=RightSph]')[0];
     var $RightCyl = $wrap.find('[name=RightCyl]')[0];
     var $RightAxis = $wrap.find('[name=RightAxis]')[0];
