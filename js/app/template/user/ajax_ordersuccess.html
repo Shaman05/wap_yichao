@@ -1,12 +1,12 @@
 <div class="succNote">
     订单提交成功，请及时付款，以便订单尽快发货。<br/>订单号：<span id="orderId"><%= OrderID %></span>
 </div>
-<% if(paymentType == '1'){ %>
+<% if(paymentType == 109){ %>
 <!-- 支付宝支付 -->
 <div class="zhifuway"><img src="../images/zhifubao_s.png" alt=""><br/><button type="button" class="buttonYellow" id="toPay">进入支付宝支付</button></div>
 <!-- 支付宝支付 end -->
 <% } %>
-<% if(paymentType == '2'){ %>
+<% if(paymentType == 106){ %>
 <!-- 货到付款 star -->
 <div class="zhifuway"><img src="../images/huodaofu.png" alt=""><p class="phNote">请保持“收货人手机”畅通，便于
     我们电话核对信息。</p><p class="sf">电话核对后才会发货</p></div>
