@@ -37,7 +37,7 @@
         <label class="name">选择镜片</label>
         <span class="ctent" data-glassLens>
             <% if(jingpian['sku']){for(var i = 0; i < jingpian['sku'].length; i++){ %>
-              <a data-goodsID="<%= jingpian['sku'][i].goodsID %>" href="javascript:"><%= jingpian['sku'][i].goodsName %></a>
+              <a data-goodsID="<%= jingpian['sku'][i].goodsID %>" href="javascript:" <% if(i > 2){ %>style="display:none"<% } %>><%= jingpian['sku'][i].goodsName %></a>
             <% }} %>
             <a href="javascript:;" class="lastA" id="selectMore">点击选购更多镜片</a>
         </span>

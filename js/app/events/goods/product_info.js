@@ -30,9 +30,10 @@ define(['events'], function(events){
       })
       //更多镜片
       .on('click', '#selectMore', function(){
-        var $e = $('#moreSelectWrap');
-        $('#maskLayer').show();
-        $e.toggle($e[0].style.display == "none");
+        /*var $e = $('#moreSelectWrap');
+         $('#maskLayer').show();
+         $e.toggle($e[0].style.display == "none");*/
+        $('[data-glassLens]').find('a').show();
       })
       //加入购物车
       .on('click', '#addToCartBtn', function(){
