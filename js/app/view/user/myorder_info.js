@@ -12,7 +12,11 @@ define([
       model: new model,
 	    ready: function(data){
 				this.model.getOrderByID(data.OrderID, function(d){
-
+          var renderFn = _.artTemplate.compile(tpl);
+          $('#orderInfoWrap').html(renderFn({
+            info: d.data['tblOrder'][0],
+            list: d.data['tblOrderGoods']
+          }));
 				});
 	    }
     })

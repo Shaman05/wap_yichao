@@ -1,29 +1,40 @@
 <!-- 3种按按钮状态下 start -->
 <div class="order_state mrbn tac">
-    <button type="button" class="buttonGreen buttonGn">我要评价</button><br/><br/>
-    <button type="button" class="buttonYellow buttonYw">我要付款</button><br/><br/>
-    <button type="button" class="buttonYellow buttonYw">确认收货</button>
+  <% if(info.StatusID == 10){ %>
+  <button type="button" class="buttonYellow buttonYw">我要付款</button>
+  <% } %>
+  <% if(info.StatusID == 100){ %>
+    <% if(info.ISPL == "False"){ %>
+    <a href="#ac=goods.sendcomments&OrderID=<%= info.OrderID %>" class="buttonGreen buttonGn">我要评价</a>
+    <% }else{ %>
+    <a href="javascript:" class="buttonGreen buttonGn">查看评价</a>
+    <% } %>
+  <% } %>
+  <% if(info.StatusID == 80){ %>
+  <button type="button" class="buttonYellow buttonYw">确认收货</button>
+  <% } %>
 </div>
 <!-- 3种按按钮状态下 end -->
 <div class="order_state mrbn">
-    <p class="orderInfos"><em class="f1">订单号：224021</em>订单金额：￥199.00<br/>成交时间：2014-07-22 11：30</p>
+    <p class="orderInfos"><em class="f1">订单号：<%= info.OrderID %></em>订单金额：￥<%= info.TotalAmount %><br/>成交时间：<%= info.CreateTime %></p>
 </div>
 <div class="order_state mrbn bdbN">
-    <p class="order_user"><em class="f1">章先生</em><em>18052641125</em><br/>浙江省杭州市余杭区文一西路1218号恒生科技园1号楼318室
-    </p>
+    <p class="order_user"><em class="f1"><%= info.Fullname %></em><em>18052641125</em><br/><%= info.Street %></p>
 </div>
 <div class="myAllOrder">
     <ul class="proCarList">
+      <% for(var i = 0; i < list.length; i++){ %>
         <li>
-            <span class="carProImg"><a href="javascript:;"><img src="../images/img10.png" alt=""></a></span>
+            <span class="carProImg"><a href="javascript:;"><img src="<%= list[i].SmallImage %>" alt=""></a></span>
             <div class="carContent orderCon">
-			<span class="carProTitle"><a href="javascript:;">Levi's李维斯LS06148Z 正品 板材近视男款眼镜
-            </a><em class="cpPrice">￥199.00<br/>X1</em></span>
-                <p class="sezhi">规格：深蓝色C02；</p>
+			        <span class="carProTitle">
+                <a href="javascript:;"><%= list[i].GoodsName %></a>
+                <em class="cpPrice">￥<%= list[i].GoodsPrice %><br/>X1</em></span>
+                <p class="sezhi">规格：<%= list[i].SkuName %></p>
             </div>
             <p class="fixclear"></p>
-            <div class="yanguangdanBox">
-                <!-- 有验光单数据 -->
+            <!--<div class="yanguangdanBox">
+                &lt;!&ndash; 有验光单数据 &ndash;&gt;
                 <div class="yanguangdan">
                     <em class="emjiao"></em>
                     <div class="yanBox">
@@ -59,17 +70,12 @@
                         </table>
                     </div>
                 </div>
-                <!-- 有验光单数据 end -->
-            </div>
+                &lt;!&ndash; 有验光单数据 end &ndash;&gt;
+            </div>-->
         </li>
-        <li>
-            <span class="carProImg"><a href="javascript:;"><img src="../images/img10.png" alt=""></a></span>
-            <div class="carContent orderCon">
-			<span class="carProTitle"><a href="javascript:;">Levi's李维斯LS06148Z 正品 板材近视男款眼镜
-            </a><em class="cpPrice">￥199.00<br/>X1</em></span>
-                <p class="sezhi">规格：深蓝色C02；</p>
-            </div>
-        </li>
+      <% } %>
     </ul>
 </div>
-<p class="feedback">留言：做精细些，发9816枪色，差价205元已经补过了。</p>
+<% if(info.Remark){ %>
+  <p class="feedback">留言：<%= info.Remark %></p>
+<% } %>
